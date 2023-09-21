@@ -1019,7 +1019,7 @@ scr_customizing_Currency As screen:
     Gallery1_18 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =223
-        Items: ='public.currency'
+        Items: ='public.Currency'
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =10
@@ -1034,7 +1034,7 @@ scr_customizing_Currency As screen:
             OnSelect: =Select(Parent)
             PaddingTop: =8
             Size: =12
-            Text: =ThisItem.cod_currency
+            Text: =ThisItem.currency
             Width: =152
             ZIndex: =1
 
@@ -1061,7 +1061,8 @@ scr_customizing_Currency As screen:
             Height: =20
             Image: =editar
             OnSelect: |-
-                =UpdateContext({varpopupCnfEditTerms:true})
+                =Reset(TextInput2_57);
+                UpdateContext({varpopupCnfEditTerms:true})
             Width: =20
             X: =911
             Y: =8
@@ -1162,7 +1163,7 @@ scr_customizing_Currency As screen:
             HoverFill: |
                 =ColorValue(varprimaryColor)
             OnSelect: |
-                =Patch('public.currency',Defaults('public.currency'),{id_currency:First(SortByColumns('public.currency',"id_currency",SortOrder.Descending)).id_currency+1,cod_currency:TextInput2_56.Text});
+                =Patch('public.Currency',Defaults('public.Currency'),{id_currency:First(SortByColumns('public.Currency',"id_currency",SortOrder.Descending)).id_currency+1,currency:TextInput2_56.Text});
                 UpdateContext({varshowPopUpProveedores:false})
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -1238,6 +1239,7 @@ scr_customizing_Currency As screen:
             BorderColor: =ColorValue(varlineColor)
             BorderThickness: =1
             Default: =""
+            FontWeight: =FontWeight.Lighter
             Height: =44
             HoverBorderColor: =ColorValue(varlineColor)
             HoverFill: =RGBA(255, 255, 255, 1)
@@ -1257,13 +1259,14 @@ scr_customizing_Currency As screen:
             Fill: |
                 =ColorValue(varprimaryColor)
             Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
+            FontWeight: =FontWeight.Lighter
             Height: =44
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: |
                 =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varshowPopUpProveedores:false})
+                =Patch('public.Currency',LookUp('public.Currency', id_currency = Gallery1_18.Selected.id_currency),{currency:TextInput2_57.Text});
+                UpdateContext({varpopupCnfEditTerms:false})
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: |
@@ -1361,7 +1364,7 @@ scr_customizing_Currency As screen:
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(255, 0, 0, 1)
             OnSelect: |-
-                =Remove('public.currency',Gallery1_18.Selected); UpdateContext({varpopupEliminateTerms:false})
+                =Remove('public.Currency',Gallery1_18.Selected); UpdateContext({varpopupEliminateTerms:false})
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 0, 0, 1)

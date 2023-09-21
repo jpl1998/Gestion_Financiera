@@ -7,7 +7,7 @@
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
         "appVer": "3.23092.13",
-        "modifiedOn": "2023-09-21 16:39:12",
+        "modifiedOn": "2023-09-21 16:36:20",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
