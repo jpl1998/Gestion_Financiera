@@ -8,8 +8,8 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
         "apiVer": 1,
         "appVer": "3.23092.13",
-        "modifiedOn": "2023-09-21 22:28:03",
-        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[bank]\":[\"get\"],\"[public].[bank_entity_relationship]\":[\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"]}}",
+        "modifiedOn": "2023-09-21 22:44:03",
+        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",

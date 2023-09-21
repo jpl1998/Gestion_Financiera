@@ -2984,7 +2984,7 @@ scr_customizing_Entities As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="8"
+                Text: =CountRows(Filter('public.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))
                 Width: =50
                 X: =551
                 ZIndex: =13

@@ -904,7 +904,7 @@ scr_customizing_Bank As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: =CustomGallerySample
+                Items: ='public.Bank_Entity_Relationship'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -920,7 +920,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="xxxx-xxxx-xxxx"
+                    Text: =ThisItem.account_num
                     Width: =152
                     X: =15
                     ZIndex: =1
@@ -959,7 +959,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="C01_1"
+                    Text: =ThisItem.c_bank
                     Width: =80
                     X: =222
                     ZIndex: =11
@@ -969,8 +969,8 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="100000056"
-                    Width: =120
+                    Text: =ThisItem.account_identifier
+                    Width: =145
                     X: =353
                     ZIndex: =12
 
@@ -979,7 +979,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="Family Office"
+                    Text: =LookUp('public.Entity', id_entity = ThisItem.id_entity).entity
                     Width: =120
                     X: =550
                     ZIndex: =13
@@ -989,7 +989,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="USD"
+                    Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
                     Width: =60
                     X: =740
                     ZIndex: =14
@@ -1024,8 +1024,8 @@ scr_customizing_Bank As screen:
                 RadiusTopLeft: =1
                 RadiusTopRight: =1
                 Size: =12
-                Text: ="Subclass"
-                Width: =78
+                Text: ="Bank Account"
+                Width: =164
                 X: =38
                 Y: =143
                 ZIndex: =5
@@ -1449,7 +1449,20 @@ scr_customizing_Bank As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'public.Bank_Entity_Relationship',
+                        Defaults('public.Bank_Entity_Relationship'),
+                        {
+                            id_bank_entity_relationship: First(SortByColumns('public.Bank_Entity_Relationship',"id_bank_entity_relationship",SortOrder.Descending)).id_bank_entity_relationship+1,
+                            id_bank: varSelectedBank.id_bank,
+                            id_entity: EntityAccountDropdown.Selected.id_entity,
+                            id_currency: CurrencyAccountDropdown.Selected.id_currency,
+                            account_num: AccountNumberTextInput.Text,
+                            c_bank: CBankTextInput.Text,
+                            account_identifier: AccountIdentifierTextInput.Text
+                        }
+                    );
+                    UpdateContext({varpopupAddBank1:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1489,12 +1502,12 @@ scr_customizing_Bank As screen:
                 Y: =399
                 ZIndex: =31
 
-            Dropdown2_20 As dropdown:
+            EntityAccountDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='public.Entity'
                 Width: =344
                 X: =38
                 Y: =443
@@ -1512,7 +1525,7 @@ scr_customizing_Bank As screen:
                 Y: =179
                 ZIndex: =33
 
-            TextInput2_65 As text:
+            CBankTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -1539,7 +1552,7 @@ scr_customizing_Bank As screen:
                 Y: =289
                 ZIndex: =35
 
-            TextInput2_66 As text:
+            AccountIdentifierTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -1567,18 +1580,18 @@ scr_customizing_Bank As screen:
                 Y: =513
                 ZIndex: =37
 
-            Dropdown2_21 As dropdown:
+            CurrencyAccountDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='public.Currency'
                 Width: =344
                 X: =38
                 Y: =557
                 ZIndex: =38
 
-            TextInput2_67 As text:
+            AccountNumberTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -2090,7 +2103,7 @@ scr_customizing_Bank As screen:
                 Y: =78
                 ZIndex: =36
 
-            TextInput2_61 As text:
+            NewBankTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -2119,7 +2132,15 @@ scr_customizing_Bank As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'public.Bank',
+                        Defaults('public.Bank'),
+                        {
+                            id_bank:First(SortByColumns('public.Bank',"id_bank",SortOrder.Descending)).id_bank+1,
+                            bank: NewBankTextInput.Text
+                        }
+                    );
+                    UpdateContext({varpopupconfgAddBank:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -2230,7 +2251,7 @@ scr_customizing_Bank As screen:
         Gallery1_17 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Bank'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -2245,7 +2266,7 @@ scr_customizing_Bank As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="JP Morgan"
+                Text: =ThisItem.bank
                 Width: =152
                 ZIndex: =1
 
@@ -2284,7 +2305,7 @@ scr_customizing_Bank As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="5"
+                Text: =CountRows(Filter('public.Bank_Entity_Relationship', id_bank = ThisItem.id_bank))
                 Width: =55
                 X: =295
                 ZIndex: =11
@@ -2293,7 +2314,7 @@ scr_customizing_Bank As screen:
                 Height: =20
                 Icon: =Icon.ChevronRight
                 OnSelect: |-
-                    =UpdateContext({varpopupAddBank:true})
+                    =UpdateContext({varSelectedBank: ThisItem, varpopupAddBank:true})
                 Width: =20
                 X: =951
                 Y: =8
