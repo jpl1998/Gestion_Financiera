@@ -5265,19 +5265,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_8.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.EntityNameTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_8.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.EntityNameTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Entities",
-                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_8"
+                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.EntityNameTextInput"
               }
             }
           ],
@@ -5295,19 +5295,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_11.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TinTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_11.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TinTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Entities",
-                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_11"
+                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TinTextInput"
               }
             }
           ],
@@ -5325,19 +5325,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_12.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.BusinessNameTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_12.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.BusinessNameTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Entities",
-                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.TextInput2_12"
+                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.BusinessNameTextInput"
               }
             }
           ],
@@ -5355,19 +5355,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_14.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.CurrencyEntityDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_14.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.CurrencyEntityDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Entities",
-                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_14"
+                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.CurrencyEntityDropdown"
               }
             }
           ],
@@ -5385,19 +5385,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_15.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.StatusEntityDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_15.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.StatusEntityDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Entities",
-                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.Dropdown2_15"
+                "type": "scr_customizing_Entities.grpCrearOrdenDeCompra_6.StatusEntityDropdown"
               }
             }
           ],
