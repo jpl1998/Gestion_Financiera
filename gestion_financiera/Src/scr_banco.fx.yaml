@@ -70,7 +70,7 @@ scr_banco As screen:
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =692
+                Height: =744
                 Width: =1245
                 X: =0
                 Y: =0
@@ -80,14 +80,14 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =223
-                    Items: =CustomGallerySample
+                    Items: ='public.Bank_Entity_Relationship'
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
                     TemplatePadding: =10
                     TemplateSize: =36
                     Width: =1217
-                    Y: =507
+                    Y: =517
                     ZIndex: =1
 
                     Label4_49 As label:
@@ -95,7 +95,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="ASB_1"
+                        Text: =ThisItem.c_bank
                         Width: =80
                         X: =5
                         ZIndex: =1
@@ -123,7 +123,7 @@ scr_banco As screen:
                         Height: =20
                         Image: =archivo
                         OnSelect: |-
-                            =UpdateContext({varshowPopUpAddMovement:true})
+                            =UpdateContext({varSelectedAccount:ThisItem, varshowPopUpAddMovement:true})
                         Width: =20
                         X: =1140
                         Y: =8
@@ -144,7 +144,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="ATLANTIC SECURITY BANK"
+                        Text: =LookUp('public.Bank', id_bank = ThisItem.id_bank).bank
                         Width: =208
                         X: =108
                         ZIndex: =12
@@ -154,7 +154,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="104632-1"
+                        Text: =ThisItem.account_num
                         Width: =90
                         X: =375
                         ZIndex: =13
@@ -164,7 +164,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="100000513281"
+                        Text: =ThisItem.account_identifier
                         Width: =120
                         X: =555
                         ZIndex: =14
@@ -174,7 +174,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="USD"
+                        Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
                         Width: =44
                         X: =751
                         ZIndex: =15
@@ -184,7 +184,7 @@ scr_banco As screen:
                         OnSelect: =Select(Parent)
                         PaddingTop: =8
                         Size: =12
-                        Text: ="01/07/2021"
+                        Text: ="DATE"
                         Width: =101
                         X: =872
                         ZIndex: =16
@@ -205,7 +205,7 @@ scr_banco As screen:
                     Height: =1
                     Width: =1201
                     X: =7
-                    Y: =506
+                    Y: =526
                     ZIndex: =2
 
                 Button2_179 As button:
@@ -230,7 +230,7 @@ scr_banco As screen:
                     Text: ="C_Bank"
                     Width: =95
                     X: =10
-                    Y: =460
+                    Y: =480
                     ZIndex: =3
 
                 Button2_180 As button:
@@ -252,10 +252,10 @@ scr_banco As screen:
                     RadiusTopLeft: =1
                     RadiusTopRight: =1
                     Size: =12
-                    Text: ="Bank Account"
+                    Text: ="Bank"
                     Width: =130
                     X: =138
-                    Y: =460
+                    Y: =480
                     ZIndex: =4
 
                 Button2_181 As button:
@@ -280,7 +280,7 @@ scr_banco As screen:
                     Text: ="Bank Account"
                     Width: =130
                     X: =370
-                    Y: =460
+                    Y: =480
                     ZIndex: =5
 
                 Button2_182 As button:
@@ -305,7 +305,7 @@ scr_banco As screen:
                     Text: ="Account Identifies"
                     Width: =150
                     X: =552
-                    Y: =460
+                    Y: =480
                     ZIndex: =6
 
                 Button2_183 As button:
@@ -330,7 +330,7 @@ scr_banco As screen:
                     Text: ="Currency"
                     Width: =100
                     X: =744
-                    Y: =460
+                    Y: =480
                     ZIndex: =7
 
                 Button2_184 As button:
@@ -355,7 +355,7 @@ scr_banco As screen:
                     Text: ="Operation Date"
                     Width: =131
                     X: =865
-                    Y: =460
+                    Y: =480
                     ZIndex: =8
 
                 Button2_185 As button:
@@ -380,7 +380,7 @@ scr_banco As screen:
                     Text: ="Status"
                     Width: =61
                     X: =1015
-                    Y: =460
+                    Y: =480
                     ZIndex: =9
 
                 TextInput1_8 As text:
@@ -405,7 +405,7 @@ scr_banco As screen:
                     RadiusTopRight: =4
                     Width: =1180
                     X: =20
-                    Y: =392
+                    Y: =412
                     ZIndex: =10
 
                 Icon2_127 As icon.Search:
@@ -415,7 +415,7 @@ scr_banco As screen:
                     OnSelect: =
                     Width: =20
                     X: =35
-                    Y: =404
+                    Y: =424
                     ZIndex: =11
 
                 Container3_2 As groupContainer.manualLayoutContainer:
@@ -424,7 +424,7 @@ scr_banco As screen:
                     Visible: =Gallery2.Selected.Value="Balance Sheet"
                     Width: =1207
                     X: =10
-                    Y: =35
+                    Y: =55
                     ZIndex: =12
 
                     Rectangle1_14 As rectangle:
@@ -592,7 +592,7 @@ scr_banco As screen:
                     Visible: =Gallery2.Selected.Value="Cash Flow"
                     Width: =1207
                     X: =10
-                    Y: =35
+                    Y: =55
                     ZIndex: =13
 
                     Rectangle1_17 As rectangle:
@@ -763,7 +763,7 @@ scr_banco As screen:
                     Visible: =Gallery2.Selected.Value="Gain/Loss"
                     Width: =1207
                     X: =10
-                    Y: =35
+                    Y: =55
                     ZIndex: =14
 
                     Rectangle1_20 As rectangle:
@@ -961,35 +961,34 @@ scr_banco As screen:
                         Y: =25
                         ZIndex: =11
 
-    Gallery2 As gallery.galleryHorizontal:
-        DelayItemLoading: =true
-        Height: =55
-        Items: =["Balance Sheet", "Cash Flow", "Gain/Loss"]
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =160
-        Width: =600
-        X: =105
-        Y: =89
-        ZIndex: =6
+                Gallery2 As gallery.galleryHorizontal:
+                    DelayItemLoading: =true
+                    Height: =55
+                    Items: =["Balance Sheet", "Cash Flow", "Gain/Loss"]
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateSize: =160
+                    Width: =600
+                    X: =10
+                    ZIndex: =15
 
-        Label3 As label:
-            Align: =Align.Center
-            Color: =If(ThisItem.IsSelected, ColorValue(varprimaryColor), ColorValue(varlineColor))
-            Height: =45
-            OnSelect: =Select(Parent)
-            Size: =16
-            Text: =ThisItem.Value
-            Width: =160
-            ZIndex: =1
+                    Label3 As label:
+                        Align: =Align.Center
+                        Color: =If(ThisItem.IsSelected, ColorValue(varprimaryColor), ColorValue(varlineColor))
+                        Height: =45
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Value
+                        Width: =160
+                        ZIndex: =1
 
-        Rectangle1_22 As rectangle:
-            Fill: =ColorValue(varprimaryColor)
-            Height: =3
-            Visible: =ThisItem.IsSelected
-            Width: =154
-            X: =6
-            Y: =40
-            ZIndex: =2
+                    Rectangle1_22 As rectangle:
+                        Fill: =ColorValue(varprimaryColor)
+                        Height: =3
+                        Visible: =ThisItem.IsSelected
+                        Width: =154
+                        X: =6
+                        Y: =40
+                        ZIndex: =2
 
     Container3 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)

@@ -6,9 +6,10 @@
       "displayName": "PostgreSQL",
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+        "apiVer": 1,
         "appVer": "3.23092.13",
-        "modifiedOn": "2023-09-21 16:36:20",
-        "policy": "{\"type\":\"unused\"}",
+        "modifiedOn": "2023-09-21 21:16:48",
+        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[bank]\":[\"get\"],\"[public].[bank_entity_relationship]\":[\"get\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"]}}",
         "version": 1
       },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",

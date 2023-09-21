@@ -81,7 +81,7 @@ scr_managemenent As screen:
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =1030
+                Height: =956
                 Width: =1245
                 X: =0
                 Y: =0
