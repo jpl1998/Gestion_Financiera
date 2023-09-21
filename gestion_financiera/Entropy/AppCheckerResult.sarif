@@ -30315,19 +30315,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.Dropdown2_4.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.MovementTypeDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.Dropdown2_4.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.MovementTypeDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Canvas1_4.DataCard1_2.Dropdown2_4"
+                "type": "scr_banco.Canvas1_4.DataCard1_2.MovementTypeDropdown"
               }
             }
           ],
@@ -30345,19 +30345,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.DatePicker1.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.AdquisitionDateMovementDatePicker.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.DatePicker1.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.AdquisitionDateMovementDatePicker.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Canvas1_4.DataCard1_2.DatePicker1"
+                "type": "scr_banco.Canvas1_4.DataCard1_2.AdquisitionDateMovementDatePicker"
               }
             }
           ],
@@ -30375,19 +30375,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_38.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.MovementAmountMovementTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_38.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.MovementAmountMovementTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_38"
+                "type": "scr_banco.Canvas1_4.DataCard1_2.MovementAmountMovementTextInput"
               }
             }
           ],
@@ -30405,19 +30405,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_43.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.DescriptionMovementTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_43.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.DescriptionMovementTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_43"
+                "type": "scr_banco.Canvas1_4.DataCard1_2.DescriptionMovementTextInput"
               }
             }
           ],
@@ -30435,19 +30435,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_44.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.CusipMovementTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_44.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Canvas1_4.DataCard1_2.CusipMovementTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Canvas1_4.DataCard1_2.TextInput2_44"
+                "type": "scr_banco.Canvas1_4.DataCard1_2.CusipMovementTextInput"
               }
             }
           ],
@@ -52597,36 +52597,6 @@
           },
           "ruleId": "app-ScreenHasManyControls",
           "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.varSelectedAccount"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.varSelectedAccount",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varSelectedAccount",
-                "module": "scr_banco",
-                "type": "scr_banco"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 9
         },
         {
           "locations": [
