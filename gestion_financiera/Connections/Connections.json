@@ -1,0 +1,132 @@
+{
+  "68d67470-63f5-41f7-9370-65b7a5cf2bd2": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "PostgreSQL",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+        "appVer": "3.23092.13",
+        "modifiedOn": "2023-09-21 16:36:20",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_postgresql",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_postgresql/connections/d6d8e57614e647e1af10c78f0bd8f068"
+    },
+    "datasets": {
+      "default": {
+        "dataSources": {
+          "public.Accounting_Period": {
+            "tableName": "[public].[Accounting_Period]"
+          },
+          "public.Accounting_Period_Month": {
+            "tableName": "[public].[Accounting_Period_Month]"
+          },
+          "public.Asset_Class": {
+            "tableName": "[public].[Asset_Class]"
+          },
+          "public.Asset_Relationship": {
+            "tableName": "[public].[Asset_Relationship]"
+          },
+          "public.Asset_Subclass": {
+            "tableName": "[public].[Asset_Subclass]"
+          },
+          "public.Balance_Structure": {
+            "tableName": "[public].[Balance_Structure]"
+          },
+          "public.Bank": {
+            "tableName": "[public].[Bank]"
+          },
+          "public.Bank_Balance": {
+            "tableName": "[public].[Bank_Balance]"
+          },
+          "public.Bank_Entity_Relationship": {
+            "tableName": "[public].[Bank_Entity_Relationship]"
+          },
+          "public.Bank_Movement": {
+            "tableName": "[public].[Bank_Movement]"
+          },
+          "public.Country": {
+            "tableName": "[public].[Country]"
+          },
+          "public.Currency": {
+            "tableName": "[public].[Currency]"
+          },
+          "public.Document_Type": {
+            "tableName": "[public].[Document_Type]"
+          },
+          "public.Entity": {
+            "tableName": "[public].[Entity]"
+          },
+          "public.Files_History": {
+            "tableName": "[public].[Files_History]"
+          },
+          "public.Investment": {
+            "tableName": "[public].[Investment]"
+          },
+          "public.Investment_Data": {
+            "tableName": "[public].[Investment_Data]"
+          },
+          "public.Investment_Entity": {
+            "tableName": "[public].[Investment_Entity]"
+          },
+          "public.Operation_Table": {
+            "tableName": "[public].[Operation_Table]"
+          },
+          "public.Risk_Scale": {
+            "tableName": "[public].[Risk_Scale]"
+          },
+          "public.Roles": {
+            "tableName": "[public].[Roles]"
+          },
+          "public.Sector": {
+            "tableName": "[public].[Sector]"
+          },
+          "public.System_Value": {
+            "tableName": "[public].[System_Value]"
+          },
+          "public.Terms": {
+            "tableName": "[public].[Terms]"
+          },
+          "public.User_Role": {
+            "tableName": "[public].[User_Role]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "public.Accounting_Period",
+      "public.Accounting_Period_Month",
+      "public.Asset_Class",
+      "public.Asset_Relationship",
+      "public.Asset_Subclass",
+      "public.Balance_Structure",
+      "public.Bank",
+      "public.Bank_Balance",
+      "public.Bank_Entity_Relationship",
+      "public.Bank_Movement",
+      "public.Country",
+      "public.Currency",
+      "public.Document_Type",
+      "public.Files_History",
+      "public.Entity",
+      "public.Investment",
+      "public.Investment_Data",
+      "public.Investment_Entity",
+      "public.Operation_Table",
+      "public.Risk_Scale",
+      "public.Roles",
+      "public.Sector",
+      "public.System_Value",
+      "public.Terms",
+      "public.User_Role"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
+  }
+}

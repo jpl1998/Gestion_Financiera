@@ -1,0 +1,25 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-08-31T17:20:39.4620000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "balance_date": "balance_date",
+      "final_balance": "final_balance",
+      "id_balance": "id_balance",
+      "id_bank_entity_relationship": "id_bank_entity_relationship",
+      "id_period": "id_period",
+      "ind_act": "ind_act",
+      "initial_balance": "initial_balance"
+    },
+    "DatasetName": "default",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "public.Bank_Balance",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-08-31T17:20:39.4620000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "id_bank": "id_bank",
+      "id_operation_table": "id_operation_table",
+      "id_system_value": "id_system_value",
+      "item": "item",
+      "sign": "sign",
+      "type": "type"
+    },
+    "DatasetName": "default",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "public.Operation_Table",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

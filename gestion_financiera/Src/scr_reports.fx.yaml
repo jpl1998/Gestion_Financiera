@@ -1,0 +1,1738 @@
+scr_reports As screen:
+
+    Screen_reports1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Image17 As image:
+            Height: =240
+            Image: =detail
+            Width: =382
+            X: =110
+            Y: =135
+            ZIndex: =1
+
+        Image18 As image:
+            Height: =240
+            Image: =summary
+            Width: =382
+            X: =520
+            Y: =135
+            ZIndex: =2
+
+        Image19 As image:
+            Height: =240
+            Image: =profitability
+            Width: =382
+            X: =930
+            Y: =135
+            ZIndex: =3
+
+        Image20 As image:
+            Height: =240
+            Image: =board
+            Width: =382
+            X: =110
+            Y: =418
+            ZIndex: =4
+
+        Image21 As image:
+            Height: =240
+            Image: =legal
+            Width: =382
+            X: =520
+            Y: =418
+            ZIndex: =5
+
+        Image22 As image:
+            Height: =240
+            Image: =tbd
+            Width: =382
+            X: =930
+            Y: =418
+            ZIndex: =6
+
+        Label1 As label:
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Size: =24
+            Text: ="Reports"
+            Width: =132
+            X: =645
+            Y: =31
+            ZIndex: =7
+
+        Label1_1 As label:
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.Arial
+            Size: =12
+            Text: ="What kind of report do you want to see?"
+            Width: =296
+            X: =563
+            Y: =71
+            ZIndex: =8
+
+        Container2_17 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(242, 242, 242, 1)
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =If(varshowPopUphitosdecompra,182,73)
+            ZIndex: =29
+
+            img_familyoffice_28 As image:
+                Image: |
+                    =logo
+                Visible: =!varshowPopUphitosdecompra
+                Width: =60
+                X: =7
+                Y: =10
+                ZIndex: =1
+
+            imgusuario_21 As image:
+                Height: =48
+                Image: |
+                    =User().Image
+                RadiusBottomLeft: |
+                    =60
+                RadiusBottomRight: =60
+                RadiusTopLeft: |
+                    =60
+                RadiusTopRight: |
+                    =60
+                Width: =48
+                X: =12
+                Y: =197
+                ZIndex: =2
+
+            img_customizing_72 As image:
+                Height: =48
+                Image: |
+                    =salir
+                OnSelect: |-
+                    =Navigate(scr_home);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =696
+                ZIndex: =3
+
+            img_customizing_21 As image:
+                Height: =48
+                Image: =documento
+                OnSelect: |-
+                    =Navigate(scr_managemenent);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Tooltip: =
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =265
+                ZIndex: =4
+
+            img_customizing_22 As image:
+                Height: =48
+                Image: =reports1
+                OnSelect: =reports1
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =402
+                ZIndex: =6
+
+            img_customizing_71 As image:
+                Height: =48
+                Image: =arriba
+                OnSelect: |-
+                    =UpdateContext({varpopupdowload:true});
+                    UpdateContext({varpopupdowloadDailyxls:false});
+                    UpdateContext({varpopupdowloadDailyxls1:false});
+                    UpdateContext({varpopupdowloadDailyxls2:false});
+                    UpdateContext({varpopupdowloadAccountxls:false});
+                    UpdateContext({varpopupdowloadAccountxls1:false});
+                    UpdateContext({varpopupdowloadAccountxls2:false});
+                    UpdateContext({varpopupdowloadAccountpdf:false});
+                    UpdateContext({varpopupdowloadAccountpdf1:false});
+                    UpdateContext({varpopupdowloadAccountpdf2:false});
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =469
+                ZIndex: =7
+
+            Image2_9 As image:
+                Height: =32
+                Image: =desplegar
+                OnSelect: |-
+                    =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
+                Visible: =!varshowPopUphitosdecompra
+                Width: =32
+                X: =20
+                Y: =143
+                ZIndex: =8
+
+            Image8_9 As image:
+                Height: =48
+                Image: ='guardar 1'
+                OnSelect: |-
+                    =Navigate(scr_customizing_Entities);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =537
+                ZIndex: =10
+
+            Image13_9 As image:
+                Height: =48
+                Image: =banco
+                OnSelect: |-
+                    =Navigate(scr_banco);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =!varshowPopUphitosdecompra
+                Width: =48
+                X: =12
+                Y: =333
+                ZIndex: =16
+
+            Image7_9 As image:
+                Height: =48
+                Image: =guardar2
+                OnSelect: |-
+                    =Navigate(scr_customizing_Entities);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =varshowPopUphitosdecompra
+                Width: =156
+                X: =12
+                Y: =537
+                ZIndex: =17
+
+            Image9_9 As image:
+                Height: =48
+                Image: =upload2
+                OnSelect: |-
+                    =UpdateContext({varpopupdowload:true});
+                    UpdateContext({varpopupdowloadDailyxls:false});
+                    UpdateContext({varpopupdowloadDailyxls1:false});
+                    UpdateContext({varpopupdowloadDailyxls2:false});
+                    UpdateContext({varpopupdowloadAccountxls:false});
+                    UpdateContext({varpopupdowloadAccountxls1:false});
+                    UpdateContext({varpopupdowloadAccountxls2:false});
+                    UpdateContext({varpopupdowloadAccountpdf:false});
+                    UpdateContext({varpopupdowloadAccountpdf1:false});
+                    UpdateContext({varpopupdowloadAccountpdf2:false});
+                Visible: =varshowPopUphitosdecompra
+                Width: =156
+                X: =12
+                Y: =469
+                ZIndex: =18
+
+            Image10_9 As image:
+                Height: =48
+                Image: =reports3
+                Visible: =varshowPopUphitosdecompra
+                Width: =156
+                X: =12
+                Y: =402
+                ZIndex: =19
+
+            Image11_9 As image:
+                Height: =48
+                Image: =banks2
+                OnSelect: |-
+                    =Navigate(scr_banco);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =varshowPopUphitosdecompra
+                Width: =156
+                X: =12
+                Y: =333
+                ZIndex: =20
+
+            Image12_9 As image:
+                Height: =48
+                Image: =managment2
+                OnSelect: |-
+                    =Navigate(scr_managemenent);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =varshowPopUphitosdecompra
+                Width: =156
+                X: =12
+                Y: =265
+                ZIndex: =21
+
+            txtusuario_9 As label:
+                Color: =RGBA(77, 77, 77, 1)
+                Fill: =RGBA(70, 140, 140, 0)
+                Font: =Font.'Lato Hairline'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                LineHeight: =0
+                Size: =12
+                Text: |
+                    =User().FullName
+                Visible: =varshowPopUphitosdecompra
+                Width: =122
+                X: =60
+                Y: =197
+                ZIndex: =22
+
+            Image14_8 As image:
+                Height: =32
+                Image: =hidemenu
+                OnSelect: |-
+                    =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
+                Visible: =varshowPopUphitosdecompra
+                Width: =140
+                X: =21
+                Y: =143
+                ZIndex: =23
+
+            img_familyoffice_40 As image:
+                Image: |
+                    =logo
+                Visible: =varshowPopUphitosdecompra
+                Width: =60
+                X: =61
+                Y: =10
+                ZIndex: =24
+
+            Image15_9 As image:
+                Height: =48
+                Image: =home2
+                OnSelect: |-
+                    =Navigate(scr_home);
+                    If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+                Visible: =varshowPopUphitosdecompra
+                Width: =155
+                X: =13
+                Y: =696
+                ZIndex: =25
+
+    Screen_Download_9 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =50
+
+        rctdegradado_156 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowload:false})
+            Visible: =varpopupdowload
+            Width: =1366
+            ZIndex: =9
+
+        grpCrearOrdenDeCompra_48 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =515
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowload
+            Width: =515
+            X: =427
+            Y: =126
+            ZIndex: =10
+
+            TxtOrdendeCompra_299 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =37
+                Size: =20
+                Text: ="Upload"
+                Width: =109
+                X: =200
+                Y: =26
+                ZIndex: =34
+
+            Icon2_121 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowload:false})
+                Width: =20
+                X: =458
+                Y: =34
+                ZIndex: =35
+
+            TxtOrdendeCompra_300 As label:
+                Align: =Align.Center
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =59
+                Size: =12
+                Text: ="What data loading process will you perform?"
+                Width: =446
+                X: =32
+                Y: =63
+                ZIndex: =36
+
+            Button1_247 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Next"
+                Width: =440
+                X: =40
+                Y: =438
+                ZIndex: =38
+
+            Button1_244 As button:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Color: =RGBA(77, 77, 77, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =80
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(77, 77, 77, 1)
+                HoverFill: |
+                    =ColorValue(varlineColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls:true});
+                    UpdateContext({varpopupdowload:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(77, 77, 77, 1)
+                PressedFill: |
+                    =ColorValue(varlineColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Benchmark (xls)"
+                Width: =440
+                X: =38
+                Y: =133
+                ZIndex: =39
+
+            Button1_245 As button:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Color: =RGBA(77, 77, 77, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =80
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(77, 77, 77, 1)
+                HoverFill: |
+                    =ColorValue(varlineColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls:true});
+                    UpdateContext({varpopupdowload:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(77, 77, 77, 1)
+                PressedFill: |
+                    =ColorValue(varlineColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Bank Statements (xls)"
+                Width: =440
+                X: =38
+                Y: =231
+                ZIndex: =42
+
+            Button1_246 As button:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Color: =RGBA(77, 77, 77, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =80
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(77, 77, 77, 1)
+                HoverFill: |
+                    =ColorValue(varlineColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf:true});
+                    UpdateContext({varpopupdowload:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(77, 77, 77, 1)
+                PressedFill: |
+                    =ColorValue(varlineColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Bank Statements (pdf)"
+                Width: =440
+                X: =40
+                Y: =329
+                ZIndex: =43
+
+            Image3_18 As image:
+                Height: =48
+                Image: =excel
+                Width: =48
+                X: =60
+                Y: =149
+                ZIndex: =44
+
+            Image3_19 As image:
+                Height: =48
+                Image: =excel
+                Width: =48
+                X: =60
+                Y: =247
+                ZIndex: =45
+
+            Image4_9 As image:
+                Height: =42
+                Image: =pdf
+                Width: =42
+                X: =66
+                Y: =348
+                ZIndex: =46
+
+        rctdegradado_157 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadDailyxls:false});
+                UpdateContext({varpopupdowload:true})
+            Visible: =varpopupdowloadDailyxls
+            Width: =1366
+            ZIndex: =11
+
+        grpdownloadxls_37 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadDailyxls
+            Width: =504
+            X: =430
+            Y: =219
+            ZIndex: =12
+
+            TxtOrdendeCompra_301 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =20
+                Text: ="Upload Benchmark "
+                Width: =320
+                X: =92
+                Y: =29
+                ZIndex: =34
+
+            Icon2_122 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_249 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: |
+                    =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls1:true});
+                    UpdateContext({varpopupdowloadDailyxls:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =202
+                ZIndex: =38
+
+            Button1_248 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =3
+                Color: |
+                    =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =73
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Upload Document"
+                Width: =440
+                X: =32
+                Y: =96
+                ZIndex: =39
+
+        rctdegradado_155 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadDailyxls1:false});
+                UpdateContext({varpopupdowloadDailyxls:true})
+            Visible: =varpopupdowloadDailyxls1
+            Width: =1366
+            ZIndex: =13
+
+        grpdownloadxls1_37 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =229
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadDailyxls1
+            Width: =504
+            X: =433
+            Y: =247
+            ZIndex: =14
+
+            TxtOrdendeCompra_297 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =20
+                Text: ="Upload Benchmark "
+                Width: =368
+                X: =56
+                Y: =23
+                ZIndex: =34
+
+            Icon2_120 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls1:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_243 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls2:true});
+                    UpdateContext({varpopupdowloadDailyxls1:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =164
+                ZIndex: =38
+
+            Image5_148 As image:
+                Height: =32
+                Image: =excel
+                Width: =32
+                X: =32
+                Y: =96
+                ZIndex: =40
+
+            TxtOrdendeCompra_298 As label:
+                Color: =RGBA(77, 77, 77, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =16
+                Text: ="Benchmark 1"
+                Width: =320
+                X: =80
+                Y: =98
+                ZIndex: =41
+
+            Image5_149 As image:
+                Height: =32
+                Image: =check
+                Width: =32
+                X: =400
+                Y: =96
+                ZIndex: =42
+
+            Image5_150 As image:
+                Height: =32
+                Image: =borrar
+                Width: =32
+                X: =446
+                Y: =96
+                ZIndex: =43
+
+        rctdegradado_158 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadDailyxls2:false})
+            Visible: =varpopupdowloadDailyxls2
+            Width: =1366
+            ZIndex: =15
+
+        grpdownloadxls2_37 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =357
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadDailyxls2
+            Width: =420
+            X: =474
+            Y: =205
+            ZIndex: =16
+
+            TxtOrdendeCompra_306 As label:
+                Color: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =22
+                Size: =16
+                Text: |-
+                    ="Success
+                    "
+                Width: =103
+                X: =158
+                Y: =148
+                ZIndex: =1
+
+            Button1_254 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls2:true});
+                    UpdateContext({varpopupdowloadDailyxls1:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Nice!"
+                Width: =344
+                X: =38
+                Y: =284
+                ZIndex: =2
+
+            Image5_152 As image:
+                Height: =80
+                Image: =check
+                Width: =80
+                X: =170
+                Y: =32
+                ZIndex: =3
+
+            TxtOrdendeCompra_307 As label:
+                Align: =Align.Center
+                Color: =RGBA(77, 77, 77, 1)
+                Font: =Font.Arial
+                Height: =60
+                Size: =16
+                Text: ="The data of                                   has been loaded succesfully"
+                Width: =344
+                X: =37
+                Y: =185
+                ZIndex: =4
+
+            TxtOrdendeCompra_308 As label:
+                Color: =RGBA(77, 77, 77, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =26
+                Size: =16
+                Text: ="""Daily Operations 1"""
+                Width: =218
+                X: =163
+                Y: =188
+                ZIndex: =5
+
+            rctdegradado_159 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0.2)
+                Height: =357
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls:false});
+                    UpdateContext({varpopupdowload:true})
+                Visible: =varpopupdowloadDailyxls
+                Width: =420
+                ZIndex: =6
+
+            grpdownloadxls_38 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =276
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Visible: =varpopupdowloadDailyxls
+                Width: =420
+                Y: =81
+                ZIndex: =7
+
+                TxtOrdendeCompra_303 As label:
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    Size: =20
+                    Text: ="Upload Daily Operations"
+                    Width: =320
+                    X: =92
+                    Y: =29
+                    ZIndex: =34
+
+                Icon2_123 As icon.Cancel:
+                    Height: =20
+                    Icon: =Icon.Cancel
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadDailyxls:false})
+                    Width: =20
+                    X: =452
+                    Y: =34
+                    ZIndex: =35
+
+                Button1_252 As button:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =ColorValue(varlineColor)
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =44
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverColor: |
+                        =ColorValue(varlineColor)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadDailyxls1:true});
+                        UpdateContext({varpopupdowloadDailyxls:false})
+                    PressedBorderColor: =RGBA(255, 255, 255, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: |
+                        =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =12
+                    Text: ="Upload to system"
+                    Width: =440
+                    X: =32
+                    Y: =202
+                    ZIndex: =38
+
+                Button1_251 As button:
+                    BorderColor: =ColorValue(varprimaryColor)
+                    BorderStyle: =BorderStyle.Dashed
+                    BorderThickness: =3
+                    Color: |
+                        =ColorValue(varprimaryColor)
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =73
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: |
+                        =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =UpdateContext({varshowPopUpProveedores:false})
+                    PressedBorderColor: =RGBA(255, 255, 255, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: |
+                        =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =16
+                    Text: ="Upload Document"
+                    Width: =440
+                    X: =32
+                    Y: =96
+                    ZIndex: =39
+
+            rctdegradado_160 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0.2)
+                Height: =357
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls1:false})
+                Visible: =varpopupdowloadDailyxls1
+                Width: =420
+                ZIndex: =8
+
+            grpdownloadxls1_38 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =229
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Visible: =varpopupdowloadDailyxls1
+                Width: =420
+                Y: =128
+                ZIndex: =9
+
+                TxtOrdendeCompra_304 As label:
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    Size: =20
+                    Text: ="Upload Daily Operations"
+                    Width: =320
+                    X: =92
+                    Y: =29
+                    ZIndex: =34
+
+                Icon2_124 As icon.Cancel:
+                    Height: =20
+                    Icon: =Icon.Cancel
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadDailyxls1:false})
+                    Width: =20
+                    X: =452
+                    Y: =34
+                    ZIndex: =35
+
+                Button1_253 As button:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    Color: =ColorValue(varlineColor)
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =44
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: |
+                        =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadDailyxls2:true});
+                        UpdateContext({varpopupdowloadDailyxls1:false})
+                    PressedBorderColor: =RGBA(255, 255, 255, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: |
+                        =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =12
+                    Text: ="Upload to system"
+                    Width: =440
+                    X: =32
+                    Y: =164
+                    ZIndex: =38
+
+                Image5_153 As image:
+                    Height: =32
+                    Image: =excel
+                    Width: =32
+                    X: =32
+                    Y: =96
+                    ZIndex: =40
+
+                TxtOrdendeCompra_305 As label:
+                    Color: =RGBA(77, 77, 77, 1)
+                    Font: =Font.Arial
+                    Height: =30
+                    Size: =16
+                    Text: ="Daily Operations 1"
+                    Width: =320
+                    X: =80
+                    Y: =98
+                    ZIndex: =41
+
+                Image5_154 As image:
+                    Height: =32
+                    Image: =check
+                    Width: =32
+                    X: =400
+                    Y: =96
+                    ZIndex: =42
+
+                Image5_155 As image:
+                    Height: =32
+                    Image: =borrar
+                    Width: =32
+                    X: =446
+                    Y: =96
+                    ZIndex: =43
+
+            rctdegradado_161 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0.2)
+                Height: =357
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadDailyxls2:false})
+                Visible: =varpopupdowloadDailyxls2
+                Width: =420
+                ZIndex: =10
+
+            grpdownloadxls2_38 As groupContainer.manualLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =357
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Visible: =varpopupdowloadDailyxls2
+                Width: =420
+                ZIndex: =11
+
+                TxtOrdendeCompra_302 As label:
+                    Color: =ColorValue(varprimaryColor)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =22
+                    Size: =16
+                    Text: |-
+                        ="Success
+                        "
+                    Width: =103
+                    X: =158
+                    Y: =148
+                    ZIndex: =1
+
+                Button1_250 As button:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =ColorValue(varprimaryColor)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =44
+                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: |
+                        =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadDailyxls2:false})
+                    PressedBorderColor: =RGBA(255, 255, 255, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: |
+                        =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =12
+                    Text: ="Nice!"
+                    Width: =344
+                    X: =38
+                    Y: =284
+                    ZIndex: =2
+
+                Image5_151 As image:
+                    Height: =80
+                    Image: =check
+                    Width: =80
+                    X: =170
+                    Y: =32
+                    ZIndex: =3
+
+                HtmlText1_38 As htmlViewer:
+                    Font: =Font.Arial
+                    Height: =67
+                    HtmlText: |-
+                        ="<center> The data of <b><font color=""#000000"">""Benchmark""</font></b> has been loaded succesfully"
+                    Size: =16
+                    Width: =344
+                    X: =37
+                    Y: =193
+                    ZIndex: =6
+
+        rctdegradado_154 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountxls:false});
+                UpdateContext({varpopupdowload:true})
+            Visible: =varpopupdowloadAccountxls
+            Width: =1366
+            ZIndex: =17
+
+        grpdownloadxls_36 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadAccountxls
+            Width: =504
+            X: =430
+            Y: =219
+            ZIndex: =18
+
+            TxtOrdendeCompra_296 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =25
+                Size: =20
+                Text: ="Upload Bank Statements"
+                Width: =365
+                X: =69
+                Y: =31
+                ZIndex: =34
+
+            Icon2_119 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_242 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: |
+                    =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls1:true});
+                    UpdateContext({varpopupdowloadAccountxls:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =202
+                ZIndex: =38
+
+            Button1_241 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =3
+                Color: |
+                    =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =73
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Upload Document"
+                Width: =440
+                X: =32
+                Y: =96
+                ZIndex: =39
+
+        rctdegradado_153 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountxls1:false});
+                UpdateContext({varpopupdowloadAccountxls:true})
+            Visible: =varpopupdowloadAccountxls1
+            Width: =1366
+            ZIndex: =19
+
+        grpdownloadxls1_36 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =229
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadAccountxls1
+            Width: =504
+            X: =433
+            Y: =247
+            ZIndex: =20
+
+            TxtOrdendeCompra_294 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =20
+                Text: ="Upload Bank Statements"
+                Width: =368
+                X: =56
+                Y: =23
+                ZIndex: =34
+
+            Icon2_118 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls1:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_240 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls2:true});
+                    UpdateContext({varpopupdowloadAccountxls1:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =164
+                ZIndex: =38
+
+            Image5_145 As image:
+                Height: =32
+                Image: =excel
+                Width: =32
+                X: =32
+                Y: =96
+                ZIndex: =40
+
+            TxtOrdendeCompra_295 As label:
+                Color: =RGBA(77, 77, 77, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =16
+                Text: ="Bank Statements 1"
+                Width: =320
+                X: =80
+                Y: =98
+                ZIndex: =41
+
+            Image5_146 As image:
+                Height: =32
+                Image: =check
+                Width: =32
+                X: =400
+                Y: =96
+                ZIndex: =42
+
+            Image5_147 As image:
+                Height: =32
+                Image: =borrar
+                Width: =32
+                X: =446
+                Y: =96
+                ZIndex: =43
+
+        rctdegradado_152 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountxls2:false});
+            Visible: |+
+                =varpopupdowloadAccountxls2
+                
+            Width: =1366
+            ZIndex: =21
+
+        grpdownloadxls2_36 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =357
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: |+
+                =varpopupdowloadAccountxls2
+                
+            Width: =420
+            X: =475
+            Y: =205
+            ZIndex: =22
+
+            TxtOrdendeCompra_293 As label:
+                Color: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =22
+                Size: =16
+                Text: |-
+                    ="Success
+                    "
+                Width: =103
+                X: =158
+                Y: =148
+                ZIndex: =1
+
+            Button1_239 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls2:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Nice!"
+                Width: =344
+                X: =38
+                Y: =284
+                ZIndex: =2
+
+            Image5_144 As image:
+                Height: =80
+                Image: =check
+                Width: =80
+                X: =170
+                Y: =32
+                ZIndex: =3
+
+            HtmlText1_37 As htmlViewer:
+                Font: =Font.Arial
+                Height: =90
+                HtmlText: |-
+                    ="<center> The data of <b><font color=""#000000"">""Bank Statements""</font></b> has been loaded succesfully"
+                Size: =16
+                Width: =344
+                X: =38
+                Y: =182
+                ZIndex: =6
+
+        rctdegradado_162 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountpdf:false});
+                UpdateContext({varpopupdowload:true})
+            Visible: =varpopupdowloadAccountpdf
+            Width: =1366
+            ZIndex: =23
+
+        grpdownloadxls_39 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadAccountpdf
+            Width: =504
+            X: =430
+            Y: =219
+            ZIndex: =24
+
+            TxtOrdendeCompra_309 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =22
+                Size: =20
+                Text: ="Upload Bank Statements"
+                Width: =324
+                X: =90
+                Y: =32
+                ZIndex: =34
+
+            Icon2_125 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_256 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: |
+                    =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf1:true});
+                    UpdateContext({varpopupdowloadAccountpdf:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =202
+                ZIndex: =38
+
+            Button1_255 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =3
+                Color: |
+                    =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =73
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =16
+                Text: ="Upload Document"
+                Width: =440
+                X: =32
+                Y: =96
+                ZIndex: =39
+
+        rctdegradado_163 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountpdf1:false});
+                UpdateContext({varpopupdowloadAccountpdf:true})
+            Visible: =varpopupdowloadAccountpdf1
+            Width: =1366
+            ZIndex: =25
+
+        grpdownloadxls1_39 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =229
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadAccountpdf1
+            Width: =504
+            X: =433
+            Y: =247
+            ZIndex: =26
+
+            TxtOrdendeCompra_310 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =20
+                Text: ="Upload Bank Statements"
+                Width: =368
+                X: =56
+                Y: =23
+                ZIndex: =34
+
+            Icon2_126 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf1:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =35
+
+            Button1_257 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varlineColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf2:true});
+                    UpdateContext({varpopupdowloadAccountpdf1:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Upload to system"
+                Width: =440
+                X: =32
+                Y: =164
+                ZIndex: =38
+
+            Image5_156 As image:
+                Height: =32
+                Image: =excel
+                Width: =32
+                X: =32
+                Y: =96
+                ZIndex: =40
+
+            TxtOrdendeCompra_311 As label:
+                Color: =RGBA(77, 77, 77, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =16
+                Text: ="Bank Statements 1"
+                Width: =320
+                X: =80
+                Y: =98
+                ZIndex: =41
+
+            Image5_157 As image:
+                Height: =32
+                Image: =check
+                Width: =32
+                X: =400
+                Y: =96
+                ZIndex: =42
+
+            Image5_158 As image:
+                Height: =32
+                Image: =borrar
+                Width: =32
+                X: =446
+                Y: =96
+                ZIndex: =43
+
+        rctdegradado_164 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupdowloadAccountpdf2:false});
+            Visible: =varpopupdowloadAccountpdf2
+            Width: =1366
+            ZIndex: =27
+
+        grpdownloadxls2_39 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =357
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupdowloadAccountpdf2
+            Width: =420
+            X: =475
+            Y: =205
+            ZIndex: =28
+
+            TxtOrdendeCompra_312 As label:
+                Color: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =22
+                Size: =16
+                Text: |-
+                    ="Success
+                    "
+                Width: =103
+                X: =158
+                Y: =148
+                ZIndex: =1
+
+            Button1_258 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountpdf2:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Nice!"
+                Width: =344
+                X: =38
+                Y: =284
+                ZIndex: =2
+
+            Image5_159 As image:
+                Height: =80
+                Image: =check
+                Width: =80
+                X: =170
+                Y: =32
+                ZIndex: =3
+
+            HtmlText1_39 As htmlViewer:
+                Font: =Font.Arial
+                Height: =90
+                HtmlText: |-
+                    ="<center> The data of <b><font color=""#000000"">""Bank Statements""</font></b> has been loaded succesfully"
+                Size: =16
+                Width: =344
+                X: =38
+                Y: =182
+                ZIndex: =6
+

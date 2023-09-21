@@ -1,0 +1,34 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-08-31T17:20:39.4620000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "adquisition_date": "adquisition_date",
+      "code": "code",
+      "comision": "comision",
+      "cusip": "cusip",
+      "description": "description",
+      "exchange_rate": "exchange_rate",
+      "fund_management": "fund_management",
+      "id_country": "id_country",
+      "id_currency": "id_currency",
+      "id_currency_local": "id_currency_local",
+      "id_investment": "id_investment",
+      "id_risk": "id_risk",
+      "id_sector": "id_sector",
+      "id_subclass": "id_subclass",
+      "id_term": "id_term",
+      "isin": "isin"
+    },
+    "DatasetName": "default",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "public.Investment",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

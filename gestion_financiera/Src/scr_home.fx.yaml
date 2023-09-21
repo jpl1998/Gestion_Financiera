@@ -1,0 +1,194 @@
+scr_home As screen:
+    Fill: =
+
+    img_familyoffice As image:
+        Height: =120
+        Image: =GestionFinanciera
+        Width: =120
+        X: =623
+        Y: =56
+        ZIndex: =1
+
+    "'lbl_ tittle' As label":
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Size: =24
+        Text: ="Welcome, Mark Woods"
+        Width: =360
+        X: =503
+        Y: =232
+        ZIndex: =2
+
+    btn_investment_management As button:
+        BorderColor: =ColorValue(varlineColor)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        Height: =180
+        HoverBorderColor: =ColorValue(varprimaryColor)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(scr_managemenent)
+        PaddingTop: =70
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =16
+        Text: ="Investment Management"
+        Width: =240
+        X: =100
+        Y: =400
+        ZIndex: =3
+
+    lbl_subtittle As label:
+        Font: =Font.Arial
+        Size: =16
+        Text: ="Wich function would you like to perform today?"
+        Width: =455
+        X: =455
+        Y: =296
+        ZIndex: =4
+
+    btn_security As button:
+        BorderColor: =ColorValue(varprimaryColor)
+        Color: =ColorValue(varprimaryColor)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =44
+        HoverBorderColor: =ColorValue(varprimaryColor)
+        HoverColor: =ColorValue(varprimaryColor)
+        HoverFill: =ColorFade(ColorValue(varprimaryColor), 0.9)
+        OnSelect: =Navigate(scr_security)
+        PaddingLeft: =40
+        PressedColor: =ColorValue(varprimaryColor)
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Security"
+        Width: =200
+        X: =583
+        Y: =635
+        ZIndex: =5
+
+    img_investmentmanagement As image:
+        Height: =48
+        Image: =InvestmentManagement
+        OnSelect: =Navigate(scr_managemenent)
+        Width: =48
+        X: =196
+        Y: =424
+        ZIndex: =6
+
+    img_security As image:
+        Height: =24
+        Image: =security
+        OnSelect: =Navigate(scr_security)
+        Width: =24
+        X: =624
+        Y: =646
+        ZIndex: =7
+
+    btn_banks As button:
+        BorderColor: =ColorValue(varlineColor)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        Height: =180
+        HoverBorderColor: =ColorValue(varprimaryColor)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(scr_banco)
+        PaddingTop: =70
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =16
+        Text: ="Banks"
+        Width: =240
+        X: =408
+        Y: =400
+        ZIndex: =8
+
+    btn_analize_reports As button:
+        BorderColor: =ColorValue(varlineColor)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        Height: =180
+        HoverBorderColor: =ColorValue(varprimaryColor)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(scr_reports)
+        PaddingTop: =70
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =16
+        Text: ="Analize Reports"
+        Width: =240
+        X: =717
+        Y: =400
+        ZIndex: =9
+
+    btn_customizing As button:
+        BorderColor: =ColorValue(varlineColor)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        Height: =180
+        HoverBorderColor: =ColorValue(varprimaryColor)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Navigate(scr_customizing_Entities)
+        PaddingTop: =70
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =16
+        Text: ="Customizing"
+        Width: =240
+        X: =1026
+        Y: =400
+        ZIndex: =10
+
+    img_customizing As image:
+        Height: =48
+        Image: =Customizing
+        OnSelect: =Navigate(scr_customizing_Entities)
+        Width: =48
+        X: =1122
+        Y: =424
+        ZIndex: =11
+
+    img_banks As image:
+        Height: =48
+        Image: =Banks
+        OnSelect: =Navigate(scr_banco)
+        Width: =48
+        X: =504
+        Y: =424
+        ZIndex: =12
+
+    img_analize_reports As image:
+        Height: =48
+        Image: ='Analize Reports'
+        OnSelect: =Navigate(scr_reports)
+        Width: =48
+        X: =813
+        Y: =424
+        ZIndex: =13
+

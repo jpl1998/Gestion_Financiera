@@ -1,0 +1,25 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-08-31T17:20:39.4620000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "adquisition_value": "adquisition_value",
+      "id_bank_entity_relationship": "id_bank_entity_relationship",
+      "id_investment": "id_investment",
+      "id_investment_entity": "id_investment_entity",
+      "quantity": "quantity",
+      "total_value": "total_value",
+      "unit_cost": "unit_cost"
+    },
+    "DatasetName": "default",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "public.Investment_Entity",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]
