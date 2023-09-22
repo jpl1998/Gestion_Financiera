@@ -455,7 +455,7 @@ scr_customizing_Terms As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |
-                    =Patch('public.terms',Defaults('public.terms'),{id_term: First(SortByColumns('public.terms', "id_term", SortOrder.Descending)).id_term + 1,term: TextInput2_22.Text});
+                    =Patch('public.Terms',Defaults('public.Terms'),{id_term: First(SortByColumns('public.Terms', "id_term", SortOrder.Descending)).id_term + 1,term: TextInput2_22.Text});
                     UpdateContext({varpopupconfgAddTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -563,7 +563,8 @@ scr_customizing_Terms As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Terms',LookUp('public.Terms', id_term = Gallery1_8.Selected.id_term),{term:TextInput2_23.Text});
+                    UpdateContext({varpopupCnfEditTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -668,7 +669,7 @@ scr_customizing_Terms As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.terms',Gallery1_8.Selected); UpdateContext({varpopupEliminateTerms:false})
+                    =Remove('public.Terms',Gallery1_8.Selected); UpdateContext({varpopupEliminateTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -791,7 +792,7 @@ scr_customizing_Terms As screen:
         Gallery1_8 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.terms'
+            Items: ='public.Terms'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -833,7 +834,8 @@ scr_customizing_Terms As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupCnfEditTerms:true})
+                    =Reset(TextInput2_23);
+                    UpdateContext({varpopupCnfEditTerms:true})
                 Width: =20
                 X: =911
                 Y: =8

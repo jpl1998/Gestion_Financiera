@@ -455,7 +455,8 @@ scr_customizing_Risk As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Risk_Scale',Defaults('public.Risk_Scale'),{id_risk:First(SortByColumns('public.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
+                    UpdateContext({varpopupconfgAddRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -562,7 +563,8 @@ scr_customizing_Risk As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Risk_Scale',LookUp('public.Risk_Scale', id_risk = Gallery1_6.Selected.id_risk),{risk:TextInput2_19.Text});
+                    UpdateContext({varpopupCnfEditRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -666,7 +668,9 @@ scr_customizing_Risk As screen:
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove('public.Risk_Scale',Gallery1_6.Selected);
+                    UpdateContext({varpopupEliminateRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -746,7 +750,8 @@ scr_customizing_Risk As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupconfgAddRisk:true})
+                =Reset(TextInput2_13);
+                UpdateContext({varpopupconfgAddRisk:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
@@ -788,7 +793,7 @@ scr_customizing_Risk As screen:
         Gallery1_6 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Risk_Scale'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -803,7 +808,7 @@ scr_customizing_Risk As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Moderate Risk"
+                Text: =ThisItem.risk
                 Width: =152
                 ZIndex: =1
 
@@ -830,7 +835,8 @@ scr_customizing_Risk As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupCnfEditRisk:true})
+                    =Reset(TextInput2_19);
+                    UpdateContext({varpopupCnfEditRisk:true})
                 Width: =20
                 X: =911
                 Y: =8

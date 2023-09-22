@@ -887,7 +887,7 @@ scr_customizing_Class As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: =CustomGallerySample
+                Items: ='public.Asset_Subclass'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -903,7 +903,7 @@ scr_customizing_Class As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="Energing Markets"
+                    Text: =ThisItem.subclass
                     Width: =152
                     X: =15
                     ZIndex: =1
@@ -931,7 +931,8 @@ scr_customizing_Class As screen:
                     Height: =20
                     Image: =editar
                     OnSelect: |-
-                        =UpdateContext({varpopupCnfEditClass:true})
+                        =Reset(TextInput2_15);
+                        UpdateContext({varpopupCnfEditClass:true})
                     Width: =20
                     X: =891
                     Y: =8
@@ -1010,7 +1011,8 @@ scr_customizing_Class As screen:
                 HoverBorderColor: =
                 HoverFill: =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupAddClass1:true})
+                    =Reset(TextInput2_16);
+                    UpdateContext({varpopupAddClass1:true})
                 PressedBorderColor: =
                 PressedFill: =ColorValue(varprimaryColor)
                 RadiusBottomLeft: =2
@@ -1119,7 +1121,8 @@ scr_customizing_Class As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Asset_Subclass',LookUp('public.Asset_Subclass', id_subclass = Gallery1_4.Selected.id_subclass),{subclass:TextInput2_15.Text});
+                    UpdateContext({varpopupCnfEditClass:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1184,7 +1187,7 @@ scr_customizing_Class As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =12
-                Text: ="Class"
+                Text: ="Subclass"
                 Width: =143
                 X: =32
                 Y: =72
@@ -1219,7 +1222,8 @@ scr_customizing_Class As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Asset_Subclass',Defaults('public.Asset_Subclass'),{id_subclass:First(SortByColumns('public.Asset_Subclass',"id_subclass",SortOrder.Descending)).id_subclass+1,subclass:TextInput2_16.Text});
+                    UpdateContext({varpopupAddClass1:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1316,7 +1320,9 @@ scr_customizing_Class As screen:
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove('public.Asset_Subclass',Gallery1_4.Selected);
+                    UpdateContext({varpopupEliminateClass:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -1826,7 +1832,7 @@ scr_customizing_Class As screen:
             Color: =RGBA(26, 26, 26, 1)
             DisabledBorderColor: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =36
+            Height: =35
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverColor: =RGBA(166, 166, 166, 1)
             HoverFill: =RGBA(255, 255, 255, 1)

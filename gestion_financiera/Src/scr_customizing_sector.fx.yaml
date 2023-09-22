@@ -455,7 +455,8 @@ scr_customizing_sector As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Sector',Defaults('public.Sector'),{id_sector: First(SortByColumns('public.Sector', "id_sector", SortOrder.Descending)).id_sector + 1,sector: TextInput2_30.Text});
+                    UpdateContext({varpopupconfgAddCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -564,7 +565,8 @@ scr_customizing_sector As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Sector',LookUp('public.Sector', id_sector = Gallery1_12.Selected.id_sector),{sector:TextInput2_35.Text});
+                    UpdateContext({varpopupCnfEditCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -668,7 +670,9 @@ scr_customizing_sector As screen:
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove('public.Sector',Gallery1_12.Selected);
+                    UpdateContext({varpopupEliminateCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -749,7 +753,8 @@ scr_customizing_sector As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupconfgAddCurrency:true})
+                =Reset(TextInput2_30);
+                UpdateContext({varpopupconfgAddCurrency:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
@@ -791,7 +796,7 @@ scr_customizing_sector As screen:
         Gallery1_12 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Sector'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -806,7 +811,7 @@ scr_customizing_sector As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Cash"
+                Text: =ThisItem.sector
                 Width: =152
                 ZIndex: =1
 
@@ -833,7 +838,8 @@ scr_customizing_sector As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupCnfEditCurrency:true})
+                    =Reset(TextInput2_35);
+                    UpdateContext({varpopupCnfEditCurrency:true})
                 Width: =20
                 X: =911
                 Y: =8
