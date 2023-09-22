@@ -104,7 +104,7 @@ scr_banco As screen:
                         Height: =20
                         Image: =preguntas
                         OnSelect: |-
-                            =UpdateContext({varshowPopUpIconDetalle:true})
+                            =UpdateContext({varSelectedAccount: ThisItem, varshowPopUpIconDetalle:true})
                         Width: =20
                         X: =1170
                         Y: =8
@@ -1147,7 +1147,7 @@ scr_banco As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpEditMovement:true})
+                    =UpdateContext({varSelectedMovement:ThisItem, varshowPopUpEditMovement:true})
                 Width: =20
                 X: =1165
                 Y: =8
@@ -1178,7 +1178,7 @@ scr_banco As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="-$50.000"
+                Text: =ThisItem.movement_amount
                 Width: =120
                 X: =498
                 ZIndex: =14
@@ -1198,7 +1198,7 @@ scr_banco As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="---------"
+                Text: =ThisItem.description
                 Width: =101
                 X: =811
                 Y: =1
@@ -1209,7 +1209,7 @@ scr_banco As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="CAS78"
+                Text: =ThisItem.cusip
                 Width: =101
                 X: =990
                 Y: =1
@@ -3346,11 +3346,11 @@ scr_banco As screen:
                             {
                                 id_movement: First(SortByColumns('public.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
                                 id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
-                                id_period: 1,
+                                //id_period: 1,
                                 movement_type: MovementTypeDropdown.Selected.Value,
                                 adquisition_date: AdquisitionDateMovementDatePicker.SelectedDate,
                                 movement_amount: Value(MovementAmountMovementTextInput.Text),
-                                final_balance: 0000,
+                                final_balance: 10000,
                                 description: DescriptionMovementTextInput.Text,
                                 cusip: CusipMovementTextInput.Text
                             }
@@ -3608,7 +3608,7 @@ scr_banco As screen:
                 TextInput2_39 As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
-                    Default: =""
+                    Default: =varSelectedMovement.movement_amount
                     Height: =46
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =RGBA(255, 255, 255, 1)
@@ -3646,7 +3646,7 @@ scr_banco As screen:
                     Font: =Font.Arial
                     Height: =26
                     Size: =12
-                    Text: ="Jp Morgan"
+                    Text: =LookUp('public.Bank', id_bank = varSelectedAccount.id_bank).bank
                     Width: =94
                     X: =91
                     Y: =102
@@ -3670,7 +3670,7 @@ scr_banco As screen:
                     Font: =Font.Arial
                     Height: =24
                     Size: =12
-                    Text: ="111-222-333"
+                    Text: =varSelectedAccount.account_num
                     Width: =115
                     X: =155
                     Y: =133
@@ -3679,7 +3679,7 @@ scr_banco As screen:
                 TextInput2_45 As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
-                    Default: =""
+                    Default: =varSelectedMovement.description
                     Height: =46
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =RGBA(255, 255, 255, 1)
@@ -3691,7 +3691,7 @@ scr_banco As screen:
                 TextInput2_46 As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
-                    Default: =""
+                    Default: =varSelectedMovement.cusip
                     Height: =46
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =RGBA(255, 255, 255, 1)
@@ -3721,6 +3721,7 @@ scr_banco As screen:
 
                 DatePicker1_1 As datepicker:
                     BorderColor: =ColorValue(varlineColor)
+                    DefaultDate: =varSelectedMovement.adquisition_date
                     Height: =49
                     IconBackground: =Color.White
                     IconFill: =Color.Black
