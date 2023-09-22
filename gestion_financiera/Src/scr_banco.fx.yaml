@@ -3356,7 +3356,8 @@ scr_banco As screen:
                                 description: DescriptionMovementTextInput.Text,
                                 cusip: CusipMovementTextInput.Text
                             }
-                        )
+                        );
+                        UpdateContext({varshowPopUpAddMovement:false})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =ColorValue(varprimaryColor)
                     RadiusBottomLeft: =2
