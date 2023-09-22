@@ -1307,7 +1307,7 @@ scr_managemenent As screen:
             Width: =250
             X: =676
             Y: =619
-            ZIndex: =54
+            ZIndex: =3
 
         Image6_3 As image:
             Height: =32
@@ -1315,7 +1315,7 @@ scr_managemenent As screen:
             Width: =32
             X: =785
             Y: =633
-            ZIndex: =59
+            ZIndex: =4
 
         Container5 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
@@ -1323,7 +1323,7 @@ scr_managemenent As screen:
             Width: =525
             X: =100
             Y: =121
-            ZIndex: =61
+            ZIndex: =5
 
             Button2_193 As button:
                 Align: =Align.Left
@@ -2142,7 +2142,7 @@ scr_managemenent As screen:
             Width: =520
             X: =676
             Y: =105
-            ZIndex: =64
+            ZIndex: =6
 
             Button2_352 As button:
                 Align: =Align.Left
@@ -2751,7 +2751,7 @@ scr_managemenent As screen:
             Width: =250
             X: =1007
             Y: =15
-            ZIndex: =65
+            ZIndex: =7
 
         Button1_345 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -2778,7 +2778,7 @@ scr_managemenent As screen:
             Width: =250
             X: =946
             Y: =619
-            ZIndex: =66
+            ZIndex: =8
 
         Image6_4 As image:
             Height: =32
@@ -2786,7 +2786,7 @@ scr_managemenent As screen:
             Width: =32
             X: =1055
             Y: =633
-            ZIndex: =67
+            ZIndex: =9
 
         Image33 As image:
             Height: =18
@@ -2794,7 +2794,7 @@ scr_managemenent As screen:
             Width: =530
             X: =477
             Y: =26
-            ZIndex: =68
+            ZIndex: =10
 
         Image34 As image:
             Height: =690
@@ -2802,15 +2802,7 @@ scr_managemenent As screen:
             Width: =18
             X: =32
             Y: =68
-            ZIndex: =69
-
-        Image36 As image:
-            Height: =18
-            Image: =bordeabajo2
-            Width: =1210
-            X: =33
-            Y: =742
-            ZIndex: =70
+            ZIndex: =11
 
         Image37 As image:
             Height: =690
@@ -2818,7 +2810,15 @@ scr_managemenent As screen:
             Width: =18
             X: =1232
             Y: =69
-            ZIndex: =71
+            ZIndex: =12
+
+        Image36 As image:
+            Height: =18
+            Image: =bordeabajo2
+            Width: =1210
+            X: =33
+            Y: =742
+            ZIndex: =13
 
     Screen_Download_14 As group:
         Height: =5
