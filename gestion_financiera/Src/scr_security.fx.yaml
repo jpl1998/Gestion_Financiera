@@ -75,7 +75,7 @@ scr_security As screen:
         Gallery1 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.User_Role'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -90,7 +90,7 @@ scr_security As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Mauricio Martins"
+                Text: =ThisItem.username
                 Width: =152
                 ZIndex: =1
 
@@ -105,7 +105,7 @@ scr_security As screen:
             Label2_22 As label:
                 Height: =36
                 Size: =12
-                Text: ="Board Menber"
+                Text: =LookUp('public.Roles', id_role = ThisItem.id_role).role
                 Width: =169
                 X: =501
                 ZIndex: =3
@@ -115,7 +115,7 @@ scr_security As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
-                Text: ="Active"
+                Text: =If(ThisItem.status, "Active","Inactivo")
                 Width: =81
                 X: =694
                 ZIndex: =4
@@ -330,7 +330,7 @@ scr_security As screen:
                 Y: =288
                 ZIndex: =18
 
-            TextInput2_4 As text:
+            UserNameTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -357,7 +357,17 @@ scr_security As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'public.User_Role',
+                        Defaults('public.User_Role'),
+                        {
+                            id_user: First(SortByColumns('public.User_Role',"id_user",SortOrder.Descending)).id_role+1,
+                            username: UserNameTextInput.Text,
+                            id_role: UserRoleDropdown.Selected.id_role,
+                            status: UserStatusDropdown.Selected.Value = "Activo"
+                        }
+                    );
+                    UpdateContext({varpopupAddUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -372,25 +382,25 @@ scr_security As screen:
                 Y: =404
                 ZIndex: =29
 
-            Dropdown1 As dropdown:
+            UserRoleDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='public.Roles'
                 Width: =344
                 X: =38
                 Y: =227
                 ZIndex: =32
 
-            Dropdown1_1 As dropdown:
+            UserStatusDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
                 Height: =44
-                Items: =DropDownSample
+                Items: =["Activo","Inactivo"]
                 Width: =344
                 X: =38
                 Y: =335
