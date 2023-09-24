@@ -2765,7 +2765,7 @@ scr_managemenent As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupBankReconcilation:true})
+                =UpdateContext({varpopupTrade:true})
             PaddingTop: =40
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
@@ -8721,6 +8721,394 @@ scr_managemenent As screen:
                 Y: =452
                 ZIndex: =48
 
+    Group3_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =68
+
+        rctdegradado_275 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupTrade:false})
+            Visible: =varpopupTrade
+            Width: =1366
+            ZIndex: =65
+
+        grpCrearOrdenDeCompra_95 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =501
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupTrade
+            Width: =974
+            X: =196
+            Y: =133
+            ZIndex: =66
+
+            TxtOrdendeCompra_588 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Trade"
+                Width: =190
+                X: =390
+                Y: =25
+                ZIndex: =34
+
+            Icon2_219 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupTrade:false})
+                Width: =20
+                X: =910
+                Y: =31
+                ZIndex: =35
+
+            Button2_70 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Entity"
+                Width: =120
+                X: =51
+                Y: =76
+                ZIndex: =36
+
+            Gallery1_5 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =209
+                Items: =CustomGallerySample
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =10
+                TemplateSize: =36
+                Width: =890
+                X: =40
+                Y: =124
+                ZIndex: =37
+
+                Label4_78 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="Family Office"
+                    Width: =170
+                    ZIndex: =1
+
+                Rectangle3_5 As rectangle:
+                    BorderColor: =RGBA(147, 147, 147, 1)
+                    Fill: =RGBA(147, 147, 147, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =870
+                    Y: =35
+                    ZIndex: =9
+
+                Label4_79 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="JP Morgan"
+                    Width: =115
+                    X: =159
+                    ZIndex: =11
+
+                Label4_80 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="111-222-333"
+                    Width: =120
+                    X: =322
+                    ZIndex: =12
+
+                Label4_81 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="52"
+                    Width: =50
+                    X: =502
+                    ZIndex: =13
+
+                Label4_82 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="20"
+                    Width: =40
+                    X: =615
+                    ZIndex: =14
+
+                Label4_92 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="$750.00"
+                    Width: =90
+                    X: =730
+                    ZIndex: =15
+
+                Image1_71 As image:
+                    Height: =20
+                    Image: =editar
+                    OnSelect: |-
+                        =UpdateContext({varshowPopUpEditTrade:true})
+                    Width: =20
+                    X: =840
+                    Y: =8
+                    ZIndex: =16
+
+            Iconline_12 As rectangle:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: |
+                    =
+                Fill: =RGBA(51, 51, 51, 1)
+                Height: =0
+                Width: =823
+                Y: =53
+                ZIndex: =38
+
+            Iconline_16 As rectangle:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: |
+                    =
+                Fill: =RGBA(51, 51, 51, 1)
+                Height: =1
+                Width: =880
+                X: =42
+                Y: =123
+                ZIndex: =39
+
+            Button2_64 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Bank Name"
+                Width: =120
+                X: =202
+                Y: =76
+                ZIndex: =40
+
+            Button2_65 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Bank Account"
+                Width: =140
+                X: =368
+                Y: =76
+                ZIndex: =41
+
+            Button2_66 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Quantity"
+                Width: =100
+                X: =529
+                Y: =76
+                ZIndex: =42
+
+            Button2_71 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Unit Trade"
+                Width: =100
+                X: =640
+                Y: =76
+                ZIndex: =43
+
+            TxtOrdendeCompra_589 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                Height: =32
+                Size: =12
+                Text: ="Trade Date"
+                Width: =90
+                X: =45
+                Y: =325
+                ZIndex: =45
+
+            DatePicker1_9 As datepicker:
+                BorderColor: =ColorValue(varlineColor)
+                Height: =44
+                IconBackground: =Color.White
+                IconFill: =Color.Black
+                Width: =408
+                X: =51
+                Y: =365
+                ZIndex: =46
+
+            TxtOrdendeCompra_590 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                Height: =32
+                Size: =12
+                Text: ="Total Trade Amount"
+                X: =508
+                Y: =325
+                ZIndex: =47
+
+            TextInput2_96 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =408
+                X: =514
+                Y: =365
+                ZIndex: =48
+
+            Button1_426 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =48
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupTrade:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save Trade"
+                Width: =408
+                X: =281
+                Y: =430
+                ZIndex: =49
+
+            Button2_362 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =35
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Market Unit Price"
+                Width: =131
+                X: =750
+                Y: =76
+                ZIndex: =51
+
     Container2_22 As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(255, 255, 255, 1)
         DropShadow: =DropShadow.None
@@ -8731,7 +9119,7 @@ scr_managemenent As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Width: =If(varshowPopUphitosdecompra,182,73)
-        ZIndex: =65
+        ZIndex: =69
 
         img_familyoffice_46 As image:
             Image: |
@@ -8959,4 +9347,263 @@ scr_managemenent As screen:
             X: =13
             Y: =696
             ZIndex: =25
+
+    Scn_Screen_22 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =70
+
+        rctdegradado_276 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varshowPopUpEditTrade:false})
+            Visible: =varshowPopUpEditTrade
+            Width: =1366
+            ZIndex: =67
+
+        grpCrearOrdenDeCompra_96 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =609
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varshowPopUpEditTrade
+            Width: =543
+            X: =442
+            Y: =57
+            ZIndex: =68
+
+            TxtOrdendeCompra_591 As label:
+                Align: =Align.Center
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Trade"
+                Width: =165
+                X: =188
+                Y: =31
+                ZIndex: =34
+
+            Icon2_220 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpEditTrade:false})
+                Width: =26
+                X: =477
+                Y: =37
+                ZIndex: =35
+
+            TxtOrdendeCompra_592 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: |-
+                    ="Entity:"
+                Width: =192
+                X: =38
+                Y: =75
+                ZIndex: =36
+
+            Button1_427 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =48
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save"
+                Width: =464
+                X: =38
+                Y: =530
+                ZIndex: =38
+
+            TxtOrdendeCompra_595 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Movement Amount"
+                Width: =170
+                X: =34
+                Y: =408
+                ZIndex: =39
+
+            TxtOrdendeCompra_593 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Quantity Available"
+                Width: =175
+                X: =34
+                Y: =188
+                ZIndex: =41
+
+            TxtOrdendeCompra_594 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Unit Trade"
+                Width: =175
+                X: =34
+                Y: =298
+                ZIndex: =43
+
+            TextInput2_97 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =48
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =464
+                X: =38
+                Y: =452
+                ZIndex: =48
+
+            TxtOrdendeCompra_596 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Market Unit Price"
+                Width: =175
+                X: =299
+                Y: =298
+                ZIndex: =49
+
+            TextInput2_98 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =48
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =200
+                X: =38
+                Y: =342
+                ZIndex: =50
+
+            TextInput2_99 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =48
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =200
+                X: =303
+                Y: =342
+                ZIndex: =51
+
+            TextInput2_100 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =48
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =464
+                X: =38
+                Y: =232
+                ZIndex: =52
+
+            TxtOrdendeCompra_597 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =12
+                Text: ="Family Office"
+                Width: =192
+                X: =161
+                Y: =75
+                ZIndex: =53
+
+            TxtOrdendeCompra_598 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: |-
+                    ="Bank Name:"
+                Width: =192
+                X: =38
+                Y: =110
+                ZIndex: =54
+
+            TxtOrdendeCompra_599 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: |-
+                    ="Bank Account:"
+                Width: =192
+                X: =38
+                Y: =145
+                ZIndex: =55
+
+            TxtOrdendeCompra_600 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =12
+                Text: ="JP Morgan"
+                Width: =192
+                X: =161
+                Y: =110
+                ZIndex: =56
+
+            TxtOrdendeCompra_601 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                Height: =30
+                Size: =12
+                Text: ="111-222-333"
+                Width: =192
+                X: =161
+                Y: =145
+                ZIndex: =57
 

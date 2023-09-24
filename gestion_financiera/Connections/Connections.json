@@ -6,9 +6,10 @@
       "displayName": "PostgreSQL",
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+        "apiVer": 1,
         "appVer": "3.23092.13",
-        "modifiedOn": "2023-09-22 19:25:50",
-        "policy": "{\"type\":\"unused\"}",
+        "modifiedOn": "2023-09-24 23:05:44",
+        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"],\"[public].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[roles]\":[\"get\"],\"[public].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[system_value]\":[\"get\"],\"[public].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[user_role]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",
