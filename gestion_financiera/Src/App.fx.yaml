@@ -2,7 +2,8 @@ App As appinfo:
     BackEnabled: =false
     OnStart: |-
         =Set(varlineColor,"#D4D4D4");
-        Set(varprimaryColor,"#4180c2")
+        Set(varprimaryColor,"#4180c2");
+        Set(varTableBackground, "#4280C21A")
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

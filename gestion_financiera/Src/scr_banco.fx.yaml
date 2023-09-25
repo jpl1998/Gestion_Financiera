@@ -532,6 +532,7 @@ scr_banco As screen:
 
                             Container7_1 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
@@ -598,6 +599,7 @@ scr_banco As screen:
 
                             Container7_3 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
@@ -708,6 +710,7 @@ scr_banco As screen:
 
                             Container7_6 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
@@ -975,6 +978,7 @@ scr_banco As screen:
 
                             Container7_10 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
@@ -1041,6 +1045,7 @@ scr_banco As screen:
 
                             Container7_12 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
@@ -1421,6 +1426,7 @@ scr_banco As screen:
 
                             Container7_18 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
+                                Fill: =ColorValue(varTableBackground)
                                 LayoutMinHeight: =30
                                 LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
