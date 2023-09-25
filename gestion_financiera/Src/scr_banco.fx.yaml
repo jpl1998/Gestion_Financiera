@@ -207,7 +207,8 @@ scr_banco As screen:
                                 Height: =20
                                 Image: =check2
                                 OnSelect: |
-                                    =UpdateContext({varpopupdowloadAccountxls:true});
+                                    =UpdateContext({varSelectedAccount:ThisItem, varpopupdowloadAccountxls:true});
+                                    Reset(CargaEstadoCuentaAdjunto);
                                 Width: =20
                                 X: =5
                                 Y: =10
