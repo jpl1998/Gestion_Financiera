@@ -4753,3 +4753,15 @@ scr_banco As screen:
             Y: =696
             ZIndex: =25
 
+    Button3 As button:
+        OnSelect: =CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,"s","d",varSelectedAccount.id_bank)
+        Text: ="Button"
+        X: =95
+        Y: =70
+        ZIndex: =35
+
+    Form1 As form:
+        X: =296
+        Y: =141
+        ZIndex: =36
+
