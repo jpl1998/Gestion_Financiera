@@ -90,26 +90,6 @@ scr_banco As screen:
                     Y: =517
                     ZIndex: =1
 
-                    Label4_49 As label:
-                        Height: =36
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: =ThisItem.c_bank
-                        Width: =80
-                        X: =5
-                        ZIndex: =1
-
-                    Image1_62 As image:
-                        Height: =20
-                        Image: =preguntas
-                        OnSelect: |-
-                            =UpdateContext({varSelectedAccount: ThisItem, varshowPopUpIconDetalle:true})
-                        Width: =20
-                        X: =1170
-                        Y: =8
-                        ZIndex: =8
-
                     Rectangle3_22 As rectangle:
                         BorderColor: =RGBA(147, 147, 147, 1)
                         Fill: =RGBA(147, 147, 147, 1)
@@ -119,83 +99,153 @@ scr_banco As screen:
                         Y: =35
                         ZIndex: =9
 
-                    Image1_61 As image:
-                        Height: =20
-                        Image: =archivo
-                        OnSelect: |-
-                            =UpdateContext({varSelectedAccount:ThisItem, varshowPopUpAddMovement:true})
-                        Width: =20
-                        X: =1140
-                        Y: =8
-                        ZIndex: =10
-
-                    Image1_60 As image:
-                        Height: =20
-                        Image: =check2
-                        OnSelect: |
-                            =UpdateContext({varpopupdowloadAccountxls:true});
-                        Width: =20
-                        X: =1110
-                        Y: =8
-                        ZIndex: =11
-
-                    Label4_50 As label:
+                    Container10 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
                         Height: =36
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: =LookUp('public.Bank', id_bank = ThisItem.id_bank).bank
-                        Width: =208
-                        X: =108
-                        ZIndex: =12
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1197
+                        ZIndex: =18
 
-                    Label4_51 As label:
-                        Height: =36
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: =ThisItem.account_num
-                        Width: =143
-                        X: =339
-                        ZIndex: =13
+                        Label4_49 As label:
+                            Height: =36
+                            LayoutMinWidth: =100
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.c_bank
+                            Width: =120
+                            ZIndex: =1
 
-                    Label4_52 As label:
-                        Height: =36
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: =ThisItem.account_identifier
-                        Width: =120
-                        X: =555
-                        ZIndex: =14
+                        Label4_50 As label:
+                            FillPortions: =1
+                            Height: =36
+                            LayoutMinWidth: =208
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =LookUp('public.Bank', id_bank = ThisItem.id_bank).bank
+                            Width: =208
+                            X: =108
+                            ZIndex: =2
 
-                    Label4_53 As label:
-                        Height: =36
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
-                        Width: =44
-                        X: =751
-                        ZIndex: =15
+                        Label4_51 As label:
+                            Align: =Align.Center
+                            FillPortions: =1
+                            Height: =36
+                            LayoutMinWidth: =180
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.account_num
+                            X: =339
+                            ZIndex: =3
 
-                    Label4_54 As label:
-                        Height: =35
-                        OnSelect: =Select(Parent)
-                        PaddingTop: =8
-                        Size: =12
-                        Text: ="DATE"
-                        Width: =101
-                        X: =872
-                        ZIndex: =16
+                        Label4_52 As label:
+                            Align: =Align.Center
+                            FillPortions: =1
+                            Height: =36
+                            LayoutMinWidth: =200
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.account_identifier
+                            Width: =200
+                            X: =555
+                            ZIndex: =4
 
-                    Image6_2 As image:
-                        Height: =24
-                        Image: =Imagen1
-                        Width: =73
-                        X: =1000
-                        Y: =6
-                        ZIndex: =17
+                        Label4_53 As label:
+                            Align: =Align.Center
+                            FillPortions: =1
+                            Height: =36
+                            LayoutMinWidth: =50
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
+                            Width: =50
+                            X: =751
+                            ZIndex: =5
+
+                        Label4_54 As label:
+                            Align: =Align.Center
+                            FillPortions: =1
+                            Height: =35
+                            LayoutMinWidth: =120
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: ="DATE"
+                            Width: =120
+                            X: =872
+                            ZIndex: =6
+
+                        Container11 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutMinHeight: =10
+                            LayoutMinWidth: =120
+                            ZIndex: =8
+
+                            Image6_2 As image:
+                                Height: =24
+                                Image: =Imagen1
+                                Width: =73
+                                X: =25
+                                Y: =5
+                                ZIndex: =1
+
+                        Container11_1 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =10
+                            LayoutMinWidth: =20
+                            Width: =30
+                            ZIndex: =9
+
+                            Image1_60 As image:
+                                Height: =20
+                                Image: =check2
+                                OnSelect: |
+                                    =UpdateContext({varpopupdowloadAccountxls:true});
+                                Width: =20
+                                X: =5
+                                Y: =10
+                                ZIndex: =1
+
+                        Container11_2 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =10
+                            LayoutMinWidth: =20
+                            Width: =30
+                            ZIndex: =10
+
+                            Image1_61 As image:
+                                Height: =20
+                                Image: =archivo
+                                OnSelect: |-
+                                    =UpdateContext({varSelectedAccount:ThisItem, varshowPopUpAddMovement:true})
+                                Width: =20
+                                X: =5
+                                Y: =10
+                                ZIndex: =1
+
+                        Container11_3 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =10
+                            LayoutMinWidth: =20
+                            Width: =30
+                            ZIndex: =11
+
+                            Image1_62 As image:
+                                Height: =20
+                                Image: =preguntas
+                                OnSelect: |-
+                                    =UpdateContext({varSelectedAccount: ThisItem, varshowPopUpIconDetalle:true})
+                                Width: =20
+                                X: =5
+                                Y: =10
+                                ZIndex: =1
 
                 Iconline_45 As rectangle:
                     BorderColor: =RGBA(255, 255, 255, 1)
@@ -207,180 +257,6 @@ scr_banco As screen:
                     X: =7
                     Y: =526
                     ZIndex: =2
-
-                Button2_179 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="C_Bank"
-                    Width: =95
-                    X: =10
-                    Y: =480
-                    ZIndex: =3
-
-                Button2_180 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Bank"
-                    Width: =130
-                    X: =138
-                    Y: =480
-                    ZIndex: =4
-
-                Button2_181 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Bank Account"
-                    Width: =130
-                    X: =370
-                    Y: =480
-                    ZIndex: =5
-
-                Button2_182 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Account Identifies"
-                    Width: =150
-                    X: =552
-                    Y: =480
-                    ZIndex: =6
-
-                Button2_183 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Currency"
-                    Width: =100
-                    X: =744
-                    Y: =480
-                    ZIndex: =7
-
-                Button2_184 As button:
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Last Operation Date"
-                    Width: =131
-                    X: =865
-                    Y: =480
-                    ZIndex: =8
-
-                Button2_185 As button:
-                    Align: =Align.Left
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
-                    Color: =RGBA(26, 26, 26, 1)
-                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =36
-                    HoverBorderColor: =RGBA(255, 255, 255, 1)
-                    HoverColor: =RGBA(166, 166, 166, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    PressedBorderColor: =RGBA(255, 255, 255, 1)
-                    PressedColor: =RGBA(166, 166, 166, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Size: =12
-                    Text: ="Status"
-                    Width: =61
-                    X: =1015
-                    Y: =480
-                    ZIndex: =9
 
                 TextInput1_8 As text:
                     BorderColor: =RGBA(212, 212, 212, 1)
@@ -1653,6 +1529,205 @@ scr_banco As screen:
                         X: =6
                         Y: =40
                         ZIndex: =2
+
+                Container12 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =46
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =1109
+                    X: =10
+                    Y: =480
+                    ZIndex: =16
+
+                    Button2_179 As button:
+                        Align: =Align.Left
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =100
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="C_Bank"
+                        Width: =120
+                        X: =10
+                        Y: =480
+                        ZIndex: =1
+
+                    Button2_180 As button:
+                        Align: =Align.Left
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =210
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Bank"
+                        Width: =130
+                        X: =128
+                        Y: =480
+                        ZIndex: =2
+
+                    Button2_181 As button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =180
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Bank Account"
+                        Width: =130
+                        X: =360
+                        Y: =480
+                        ZIndex: =3
+
+                    Button2_182 As button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =200
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Account Identifies"
+                        Width: =150
+                        X: =542
+                        Y: =480
+                        ZIndex: =4
+
+                    Button2_183 As button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =50
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Currency"
+                        Width: =100
+                        X: =734
+                        Y: =480
+                        ZIndex: =5
+
+                    Button2_184 As button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =120
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Last Operation Date"
+                        Width: =131
+                        X: =855
+                        Y: =480
+                        ZIndex: =6
+
+                    Button2_185 As button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinWidth: =120
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Status"
+                        Width: =61
+                        X: =1005
+                        Y: =480
+                        ZIndex: =7
 
     Container3 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)

@@ -3394,49 +3394,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_60"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62"
               }
             }
           ],
@@ -3454,19 +3424,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_3.Image1_62"
               }
             }
           ],
@@ -3484,19 +3454,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61.TabIndex"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_61"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61"
               }
             }
           ],
@@ -3514,19 +3484,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_2.Image1_61"
               }
             }
           ],
@@ -3544,19 +3514,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62.TabIndex"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Image1_62"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60"
               }
             }
           ],
@@ -3568,6 +3538,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery1_22.Container10.Container11_1.Image1_60"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -53464,7 +53464,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"scr_banco\" is 498, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"scr_banco\" is 524, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
