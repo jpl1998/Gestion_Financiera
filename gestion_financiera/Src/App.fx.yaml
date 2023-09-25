@@ -3,7 +3,8 @@ App As appinfo:
     OnStart: |-
         =Set(varlineColor,"#D4D4D4");
         Set(varprimaryColor,"#4180c2");
-        Set(varTableBackground, "#4280C21A")
+        Set(varTableBackground, "#4280C21A");
+        Set(varCurrentPeriod, LookUp('public.Accounting_Period_Month',status="Open"))
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

@@ -4080,19 +4080,43 @@ scr_banco As screen:
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =ColorValue(varprimaryColor)
                     OnSelect: |-
-                        =Patch(
+                        =UpdateContext({varInitialBalance: LookUp('public.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act).final_balance});
+                        
+                        Patch(
                             'public.Bank_Movement',
                             Defaults('public.Bank_Movement'),
                             {
                                 id_movement: First(SortByColumns('public.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
                                 id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
-                                //id_period: 1,
+                                id_period: varCurrentPeriod.id_month,
                                 movement_type: MovementTypeDropdown.Selected.Value,
                                 adquisition_date: AdquisitionDateMovementDatePicker.SelectedDate,
                                 movement_amount: Value(MovementAmountMovementTextInput.Text),
-                                final_balance: 10000,
+                                final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text),
                                 description: DescriptionMovementTextInput.Text,
                                 cusip: CusipMovementTextInput.Text
+                            }
+                        );
+                        
+                        UpdateIf(
+                            'public.Bank_Balance',
+                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                            {
+                                ind_act: false
+                            }
+                        );
+                        
+                        Patch(
+                            'public.Bank_Balance',
+                            Defaults('public.Bank_Balance'),
+                            {
+                                id_balance: First(SortByColumns('public.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance+1,
+                                id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
+                                id_period: varCurrentPeriod.id_month,
+                                balance_date: Today(),
+                                initial_balance: varInitialBalance,
+                                final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text),
+                                ind_act: true
                             }
                         );
                         UpdateContext({varshowPopUpAddMovement:false})
