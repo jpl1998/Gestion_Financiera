@@ -52344,19 +52344,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.CargaEstadoCuentaAdjunto.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.CargaEstadoCuentaAdjunto.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.CargaEstadoCuentaAdjunto"
+                "type": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto"
               }
             }
           ],
@@ -52368,6 +52368,66 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls1_40.Image5_163.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls1_40.Image5_163.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.grpdownloadxls1_40.Image5_163"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls1_40.Image5_163.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls1_40.Image5_163.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_banco",
+                "type": "scr_banco.grpdownloadxls1_40.Image5_163"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -53481,18 +53541,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.CargaEstadoCuentaAdjunto"
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.CargaEstadoCuentaAdjunto",
+                  "fullyQualifiedName": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "module": "scr_banco",
-                "type": "scr_banco.CargaEstadoCuentaAdjunto"
+                "type": "scr_banco.grpdownloadxls_40.CargaEstadoCuentaAdjunto"
               }
             }
           ],

@@ -2423,7 +2423,8 @@ scr_banco As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupdowloadAccountxls:true});
+                =Reset(CargaEstadoCuentaAdjunto);
+                UpdateContext({varpopupdowloadAccountxls:true});
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
@@ -3610,23 +3611,14 @@ scr_banco As screen:
                 Width: =365
                 X: =69
                 Y: =31
-                ZIndex: =34
-
-            Icon2_129 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupdowloadAccountxls:false})
-                Width: =20
-                X: =452
-                Y: =34
-                ZIndex: =35
+                ZIndex: =1
 
             Button1_262 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 Color: =ColorValue(varlineColor)
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.View
                 Fill: =RGBA(255, 255, 255, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Normal
@@ -3635,9 +3627,7 @@ scr_banco As screen:
                 HoverColor: |
                     =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
-                OnSelect: |-
-                    =UpdateContext({varpopupdowloadAccountxls1:true});
-                    UpdateContext({varpopupdowloadAccountxls:false})
+                OnSelect: =
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -3651,7 +3641,7 @@ scr_banco As screen:
                 Width: =440
                 X: =32
                 Y: =202
-                ZIndex: =38
+                ZIndex: =2
 
             Button1_261 As button:
                 BorderColor: =ColorValue(varprimaryColor)
@@ -3682,7 +3672,53 @@ scr_banco As screen:
                 Width: =440
                 X: =32
                 Y: =96
-                ZIndex: =39
+                ZIndex: =3
+
+            CargaEstadoCuentaAdjunto As attachments:
+                AddAttachmentText: =
+                BorderColor: |-
+                    =ColorValue("#A0835C")
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(0, 0, 0, 0)
+                DropTargetBorderStyle: =BorderStyle.None
+                Fill: =RGBA(0, 0, 0, 0)
+                Font: =Font.'Segoe UI'
+                Height: =183
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0.1)
+                IsInDataCard: =true
+                ItemFill: =
+                Items: =
+                MaxAttachments: =1
+                MaxAttachmentSize: =20
+                MaxAttachmentsText: =
+                NoAttachmentsText: =
+                OnAddFile: |-
+                    =UpdateContext({varpopupdowloadAccountxls1:true});
+                    UpdateContext({varpopupdowloadAccountxls:false})
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5,0)
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0.02)
+                Reset: =true
+                Size: =25
+                Tooltip: =
+                Visible: =varpopupdowloadAccountxls
+                Width: =455
+                X: =24
+                ZIndex: =4
+
+            Icon2_129 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupdowloadAccountxls:false})
+                Width: =20
+                X: =452
+                Y: =34
+                ZIndex: =5
 
         rctdegradado_166 As rectangle:
             Fill: =RGBA(0, 0, 0, 0.2)
@@ -3732,9 +3768,8 @@ scr_banco As screen:
             Button1_260 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
-                Color: =ColorValue(varlineColor)
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
+                Fill: =ColorValue(varprimaryColor)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Normal
                 Height: =44
@@ -3743,7 +3778,11 @@ scr_banco As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =UpdateContext({varpopupdowloadAccountxls2:true});
-                    UpdateContext({varpopupdowloadAccountxls1:false})
+                    UpdateContext({varpopupdowloadAccountxls1:false});
+                    UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
+                    UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
+                    RemoveIf('public.Bank_Movement_Imported',true);
+                    CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -3770,12 +3809,12 @@ scr_banco As screen:
             TxtOrdendeCompra_315 As label:
                 Color: =RGBA(77, 77, 77, 1)
                 Font: =Font.Arial
-                Height: =30
-                Size: =16
-                Text: ="Bank Statements 1"
+                Height: =32
+                Size: =11
+                Text: =First(CargaEstadoCuentaAdjunto.Attachments).Name
                 Width: =320
                 X: =80
-                Y: =98
+                Y: =96
                 ZIndex: =41
 
             Image5_162 As image:
@@ -3789,6 +3828,10 @@ scr_banco As screen:
             Image5_163 As image:
                 Height: =32
                 Image: =borrar
+                OnSelect: |-
+                    =Reset(CargaEstadoCuentaAdjunto);
+                    UpdateContext({varpopupdowloadAccountxls1:false});
+                    UpdateContext({varpopupdowloadAccountxls:true})
                 Width: =32
                 X: =446
                 Y: =96
@@ -4752,48 +4795,6 @@ scr_banco As screen:
             X: =13
             Y: =696
             ZIndex: =25
-
-    Button3 As button:
-        OnSelect: |-
-            =UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
-            UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
-            CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-        Text: ="Button"
-        X: =95
-        Y: =70
-        ZIndex: =35
-
-    CargaEstadoCuentaAdjunto As attachments:
-        AddAttachmentText: =
-        BorderColor: |-
-            =ColorValue("#A0835C")
-        BorderStyle: =BorderStyle.None
-        DropTargetBorderStyle: =BorderStyle.None
-        Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Segoe UI'
-        Height: =247
-        HoverColor: =RGBA(0, 0, 0, 0)
-        HoverFill: =RGBA(0, 0, 0, 0.1)
-        IsInDataCard: =true
-        ItemFill: =
-        Items: =
-        MaxAttachments: =1
-        MaxAttachmentSize: =20
-        MaxAttachmentsText: =
-        NoAttachmentsText: =
-        OnAddFile: =
-        PaddingBottom: =5
-        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5,0)
-        PaddingRight: =5
-        PaddingTop: =5
-        PressedColor: =RGBA(0, 0, 0, 0)
-        PressedFill: =RGBA(0, 0, 0, 0.02)
-        Reset: =true
-        Size: =35
-        Tooltip: =
-        Width: =210
-        X: =614
-        ZIndex: =37
 
     ArchivoImage As image:
         Image: =First(CargaEstadoCuentaAdjunto.Attachments).Value
