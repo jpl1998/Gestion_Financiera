@@ -446,37 +446,41 @@ scr_banco As screen:
                         ZIndex: =6
 
                         Label3_16 As label:
-                            Height: =20
+                            Align: =Align.Center
+                            Height: =21
                             Size: =10
                             Text: ="Last Period"
-                            Width: =80
-                            X: =309
+                            Width: =114
+                            X: =296
                             Y: =5
                             ZIndex: =1
 
                         Label3_17 As label:
+                            Align: =Align.Center
                             Height: =20
                             Size: =10
                             Text: ="This Period"
-                            Width: =80
+                            Width: =105
                             X: =444
                             Y: =5
                             ZIndex: =2
 
                         Label3_19 As label:
-                            Height: =20
+                            Align: =Align.Center
+                            Height: =21
                             Size: =10
                             Text: ="(as of 5/31/23)"
-                            Width: =100
-                            X: =299
+                            Width: =143
+                            X: =285
                             Y: =25
                             ZIndex: =3
 
                         Label3_18 As label:
-                            Height: =22
+                            Align: =Align.Center
+                            Height: =23
                             Size: =10
                             Text: ="(as of 6/30/23)"
-                            Width: =102
+                            Width: =134
                             X: =433
                             Y: =23
                             ZIndex: =4
