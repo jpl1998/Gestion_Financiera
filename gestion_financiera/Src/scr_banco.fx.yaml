@@ -441,7 +441,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: =Filter('public.Investment',LookUp('public.Asset_Relationship',
                                     ZIndex: =3
 
                             Container7_2 As groupContainer.horizontalAutoLayoutContainer:
@@ -1854,7 +1854,7 @@ scr_banco As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Bank_Movement'
+            Items: =Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
