@@ -4754,7 +4754,10 @@ scr_banco As screen:
             ZIndex: =25
 
     Button3 As button:
-        OnSelect: =CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,"s","d",varSelectedAccount.id_bank)
+        OnSelect: |-
+            =UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
+            UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
+            CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
         Text: ="Button"
         X: =95
         Y: =70
@@ -4764,4 +4767,43 @@ scr_banco As screen:
         X: =296
         Y: =141
         ZIndex: =36
+
+    CargaEstadoCuentaAdjunto As attachments:
+        AddAttachmentText: =
+        BorderColor: |-
+            =ColorValue("#A0835C")
+        BorderStyle: =BorderStyle.None
+        DropTargetBorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        Height: =247
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0.1)
+        IsInDataCard: =true
+        ItemFill: =
+        Items: =
+        MaxAttachments: =1
+        MaxAttachmentSize: =20
+        MaxAttachmentsText: =
+        NoAttachmentsText: =
+        OnAddFile: =
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5,0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0.02)
+        Reset: =true
+        Size: =35
+        Tooltip: =
+        Width: =210
+        X: =614
+        ZIndex: =37
+
+    ArchivoImage As image:
+        Image: =First(CargaEstadoCuentaAdjunto.Attachments).Value
+        Visible: =false
+        X: =1266
+        Y: =668
+        ZIndex: =38
 
