@@ -4763,11 +4763,6 @@ scr_banco As screen:
         Y: =70
         ZIndex: =35
 
-    Form1 As form:
-        X: =296
-        Y: =141
-        ZIndex: =36
-
     CargaEstadoCuentaAdjunto As attachments:
         AddAttachmentText: =
         BorderColor: |-
