@@ -185,12 +185,14 @@ scr_banco As screen:
                             LayoutMinWidth: =120
                             ZIndex: =8
 
-                            Image6_2 As image:
-                                Height: =24
-                                Image: =Imagen1
-                                Width: =73
-                                X: =25
-                                Y: =5
+                            Button2 As button:
+                                DisplayMode: =DisplayMode.View
+                                Height: =25
+                                Size: =9
+                                Text: ="Error"
+                                Width: =75
+                                X: =(Parent.Width-Self.Width)/2
+                                Y: =(Parent.Height-Self.Height)/2
                                 ZIndex: =1
 
                         Container11_1 As groupContainer.manualLayoutContainer:
@@ -441,7 +443,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Filter('public.Investment',LookUp('public.Asset_Class', class = "Equity").id_class
+                                    Text: =Sum(Filter('public.Investment_Data', id_investment in Filter('public.Investment', id_subclass in Filter('public.Asset_Relationship', id_class = LookUp('public.Asset_Class', class = "Equity").id_class).id_asset_relationship).id_investment),profitability)
                                     ZIndex: =3
 
                             Container7_2 As groupContainer.horizontalAutoLayoutContainer:
@@ -1546,6 +1548,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         Height: =36
                         HoverBorderColor: =RGBA(255, 255, 255, 1)
@@ -1573,6 +1576,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
@@ -1600,6 +1604,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
@@ -1627,6 +1632,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
@@ -1654,6 +1660,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
@@ -1681,6 +1688,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
@@ -1708,6 +1716,7 @@ scr_banco As screen:
                         BorderThickness: =0
                         Color: =RGBA(26, 26, 26, 1)
                         DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
                         Fill: =RGBA(255, 255, 255, 1)
                         FillPortions: =1
                         Height: =36
