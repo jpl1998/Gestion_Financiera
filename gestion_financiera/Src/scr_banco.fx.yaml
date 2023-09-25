@@ -441,7 +441,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Filter('public.Investment',LookUp('public.Asset_Relationship',
+                                    Text: =Filter('public.Investment',LookUp('public.Asset_Class', class = "Equity").id_class
                                     ZIndex: =3
 
                             Container7_2 As groupContainer.horizontalAutoLayoutContainer:

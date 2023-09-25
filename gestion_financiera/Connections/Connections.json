@@ -8,7 +8,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
         "apiVer": 1,
         "appVer": "3.23092.13",
-        "modifiedOn": "2023-09-25 16:58:07",
+        "modifiedOn": "2023-09-25 17:00:07",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[accounting_period_month]\":[\"get\"],\"[public].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_balance]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"],\"[public].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[roles]\":[\"get\"],\"[public].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[system_value]\":[\"get\"],\"[public].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[user_role]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },
