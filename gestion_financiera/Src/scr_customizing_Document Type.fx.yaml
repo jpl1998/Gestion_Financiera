@@ -478,7 +478,8 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Document_Type',Defaults('public.Document_Type'),{id_doc_type: First(SortByColumns('public.Document_Type', "id_doc_type", SortOrder.Descending)).id_doc_type + 1,doc_type: TextInput2_26.Text,code: TextInput2_54.Text});
+                    UpdateContext({varpopupconfgAddDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -613,7 +614,8 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Document_Type',LookUp('public.Document_Type', id_doc_type = Gallery1_10.Selected.id_doc_type),{doc_type:TextInput2_27.Text},{code:TextInput2_55.Text});
+                    UpdateContext({varpopupCnfEditDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -745,7 +747,9 @@
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove('public.Document_Type',Gallery1_10.Selected);
+                    UpdateContext({varpopupEliminateDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -825,7 +829,9 @@
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupconfgAddDocument:true})
+                =Reset(TextInput2_26);
+                Reset(TextInput2_54);
+                UpdateContext({varpopupconfgAddDocument:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
@@ -867,14 +873,14 @@
         Gallery1_10 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Document_Type'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
             TemplateSize: =36
             Width: =991
-            X: =343
-            Y: =136
+            X: =350
+            Y: =126
             ZIndex: =7
 
             Label4_16 As label:
@@ -882,7 +888,7 @@
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Asset Purchases"
+                Text: =ThisItem.doc_type
                 ZIndex: =1
 
             Image1_49 As image:
@@ -908,7 +914,9 @@
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupCnfEditDocument:true})
+                    =Reset(TextInput2_27);
+                    Reset(TextInput2_55);
+                    UpdateContext({varpopupCnfEditDocument:true})
                 Width: =20
                 X: =911
                 Y: =8
@@ -919,7 +927,7 @@
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="PO"
+                Text: =ThisItem.code
                 X: =359
                 ZIndex: =11
 

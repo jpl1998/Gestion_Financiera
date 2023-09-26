@@ -374,7 +374,8 @@ scr_customizing_accounting As screen:
         HoverBorderColor: =
         HoverFill: =ColorValue(varprimaryColor)
         OnSelect: |-
-            =UpdateContext({varpopupAddClass1:true})
+            =Reset(TextInput2_40);
+            UpdateContext({varpopupAddClass1:true})
         PressedBorderColor: =
         PressedFill: =ColorValue(varprimaryColor)
         RadiusBottomLeft: =2
@@ -782,7 +783,8 @@ scr_customizing_accounting As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Accounting_Period',Defaults('public.Accounting_Period'),{id_period: First(SortByColumns('public.Accounting_Period', "id_period", SortOrder.Descending)).id_period + 1,period: TextInput2_40.Text});
+                    UpdateContext({varpopupAddClass1:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1647,7 +1649,7 @@ scr_customizing_accounting As screen:
         Gallery1_14 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Accounting_Period' 
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -1662,7 +1664,7 @@ scr_customizing_accounting As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="2023"
+                Text: =ThisItem.period
                 Width: =152
                 ZIndex: =1
 

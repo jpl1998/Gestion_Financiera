@@ -539,7 +539,12 @@ scr_customizing_Operations As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch('public.Operation_Table',Defaults('public.Operation_Table'),
+                    {id_operation_table: First(SortByColumns('public.Operation_Table', "id_operation_table", SortOrder.Descending)).id_operation_table + 1,item: TextInput2_24.Text,type: Dropdown2_25.Selected.Value,
+                    sign: Dropdown2_23.Selected.Value,
+                    id_system_value: Value(Dropdown2_24.Selected.Value)}
+                    );
+                    UpdateContext({varpopupconfgAddOperation:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -967,7 +972,8 @@ scr_customizing_Operations As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varpopupconfgAddOperation:true})
+                =Reset(TextInput2_24);
+                UpdateContext({varpopupconfgAddOperation:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
@@ -1009,7 +1015,7 @@ scr_customizing_Operations As screen:
         Gallery1_9 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Operation_Table'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -1024,7 +1030,7 @@ scr_customizing_Operations As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Income"
+                Text: =ThisItem.type
                 Width: =90
                 ZIndex: =1
 
@@ -1062,7 +1068,7 @@ scr_customizing_Operations As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="+"
+                Text: =ThisItem.sign
                 Width: =50
                 X: =188
                 ZIndex: =11
@@ -1072,7 +1078,7 @@ scr_customizing_Operations As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Deposit"
+                Text: =ThisItem.id_system_value
                 Width: =90
                 X: =368
                 ZIndex: =12
@@ -1082,7 +1088,7 @@ scr_customizing_Operations As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Deposit"
+                Text: =ThisItem.item
                 Width: =90
                 X: =608
                 ZIndex: =13

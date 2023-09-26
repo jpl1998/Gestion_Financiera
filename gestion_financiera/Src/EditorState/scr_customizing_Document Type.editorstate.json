@@ -16489,7 +16489,14 @@
     "Gallery1_10": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "CustomGallerySample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "WrapCount",
         {
           "AFDDataSourceName": "",
@@ -16554,7 +16561,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Gallery1_10",
-      "ParentIndex": 21,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17479,7 +17486,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpCrearOrdenDeCompra_46",
-      "ParentIndex": 20,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
