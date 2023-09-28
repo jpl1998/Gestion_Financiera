@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "bc55c066-c5b6-4f64-92cd-4fbf72b9fb79",
+    "Name": "CargadeEstadodeCuenta-MorganStanley",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": null
+  }
+]

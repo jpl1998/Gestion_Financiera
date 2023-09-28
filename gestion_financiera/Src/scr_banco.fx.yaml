@@ -3783,7 +3783,9 @@ scr_banco As screen:
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
                     RemoveIf('public.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
-                    CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
