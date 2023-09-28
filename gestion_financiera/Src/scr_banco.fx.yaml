@@ -4551,8 +4551,9 @@ scr_banco As screen:
                     BorderColor: =ColorValue(varlineColor)
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(51, 51, 51, 1)
+                    Default: =varSelectedMovement.movement_type
                     Height: =45
-                    Items: =DropDownSample
+                    Items: =Distinct('public.System_Value',value)
                     Width: =428
                     X: =28
                     Y: =244
