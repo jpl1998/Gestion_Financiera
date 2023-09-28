@@ -17178,7 +17178,14 @@
     "Dropdown2_22": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         {
           "AFDDataSourceName": "",
@@ -17284,7 +17291,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"bank\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -17495,7 +17502,14 @@
     "Dropdown2_23": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         {
           "AFDDataSourceName": "",
@@ -17601,7 +17615,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"item\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -17812,7 +17826,14 @@
     "Dropdown2_24": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         {
           "AFDDataSourceName": "",
@@ -17918,7 +17939,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"item\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -18129,7 +18150,14 @@
     "Dropdown2_25": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DropDownSample",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionColor",
         {
           "AFDDataSourceName": "",
@@ -18235,7 +18263,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Value\":\"Value\"}",
+          "NameMap": "{\"Value\":\"item\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },

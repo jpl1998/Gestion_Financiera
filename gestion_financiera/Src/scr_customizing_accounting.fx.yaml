@@ -450,16 +450,17 @@ scr_customizing_accounting As screen:
             Gallery1_13 As gallery.galleryVertical:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
-                Height: =223
-                Items: =CustomGallerySample
+                Height: =324
+                Items: ='public.Accounting_Period_Month'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =10
                 TemplateSize: =36
-                Width: =411
-                X: =25
-                Y: =227
+                Width: =979
+                WrapCount: =2
+                X: =35
+                Y: =238
                 ZIndex: =3
 
                 Label4_20 As label:
@@ -471,15 +472,6 @@ scr_customizing_accounting As screen:
                     Width: =152
                     X: =15
                     ZIndex: =1
-
-                Rectangle3_13 As rectangle:
-                    BorderColor: =RGBA(147, 147, 147, 1)
-                    Fill: =RGBA(147, 147, 147, 1)
-                    Height: =1
-                    OnSelect: =Select(Parent)
-                    Width: =970
-                    Y: =35
-                    ZIndex: =9
 
                 Label4_22 As label:
                     Color: =RGBA(54, 176, 75, 1)
@@ -527,7 +519,7 @@ scr_customizing_accounting As screen:
                 Text: ="Month"
                 Width: =78
                 X: =48
-                Y: =190
+                Y: =189
                 ZIndex: =5
 
             Button2_84 As button:
@@ -588,55 +580,8 @@ scr_customizing_accounting As screen:
                 Text: ="Close"
                 Width: =78
                 X: =330
-                Y: =190
+                Y: =189
                 ZIndex: =11
-
-            Gallery1_15 As gallery.galleryVertical:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DelayItemLoading: =true
-                Height: =223
-                Items: =CustomGallerySample
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                ShowScrollbar: =false
-                TemplatePadding: =10
-                TemplateSize: =36
-                Width: =427
-                X: =583
-                Y: =227
-                ZIndex: =12
-
-                Label4_23 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="July"
-                    Width: =152
-                    X: =15
-                    ZIndex: =1
-
-                Rectangle3_15 As rectangle:
-                    BorderColor: =RGBA(147, 147, 147, 1)
-                    Fill: =RGBA(147, 147, 147, 1)
-                    Height: =1
-                    OnSelect: =Select(Parent)
-                    Width: =391
-                    Y: =35
-                    ZIndex: =9
-
-                Label4_24 As label:
-                    Color: =RGBA(166, 166, 166, 1)
-                    FontWeight: =FontWeight.Semibold
-                    Height: =35
-                    OnSelect: |-
-                        =UpdateContext({varpopupClosePeriod:true})
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="Pending"
-                    Width: =106
-                    X: =285
-                    ZIndex: =11
 
             Iconline_42 As rectangle:
                 BorderColor: =RGBA(255, 255, 255, 1)
@@ -645,7 +590,7 @@ scr_customizing_accounting As screen:
                 Fill: =RGBA(51, 51, 51, 1)
                 Height: =1
                 Width: =395
-                X: =591
+                X: =520
                 Y: =226
                 ZIndex: =13
 
@@ -670,8 +615,8 @@ scr_customizing_accounting As screen:
                 Size: =12
                 Text: ="Month"
                 Width: =78
-                X: =605
-                Y: =190
+                X: =534
+                Y: =189
                 ZIndex: =14
 
             Button2_105 As button:
@@ -695,8 +640,8 @@ scr_customizing_accounting As screen:
                 Size: =12
                 Text: ="Close"
                 Width: =78
-                X: =887
-                Y: =190
+                X: =816
+                Y: =189
                 ZIndex: =15
 
         rctdegradado_265 As rectangle:
