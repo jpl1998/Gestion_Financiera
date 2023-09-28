@@ -539,12 +539,24 @@ scr_customizing_Operations As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Operation_Table',Defaults('public.Operation_Table'),
-                    {id_operation_table: First(SortByColumns('public.Operation_Table', "id_operation_table", SortOrder.Descending)).id_operation_table + 1,item: TextInput2_24.Text,type: Dropdown2_25.Selected.Value,
-                    sign: Dropdown2_23.Selected.Value,
-                    id_system_value: Value(Dropdown2_24.Selected.Value)}
+                    =Patch(
+                        'public.Operation_Table',
+                        Defaults('public.Operation_Table'),
+                        {
+                            id_operation_table: First(
+                                SortByColumns(
+                                    'public.Operation_Table',
+                                    "id_operation_table",
+                                    SortOrder.Descending
+                                )
+                            ).id_operation_table + 1,
+                            item: TextInput2_24.Text,
+                            type: Dropdown2_25.Selected.Value,
+                            sign: Dropdown2_23.Selected.Value,
+                            id_system_value: Value(Dropdown2_24.Selected.id_system_value)
+                        }
                     );
-                    UpdateContext({varpopupconfgAddOperation:false})
+                    UpdateContext({varpopupconfgAddOperation: false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -576,8 +588,10 @@ scr_customizing_Operations As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =If(Dropdown2_25.Selected.Value="Income","+","-")
+                DisplayMode: =DisplayMode.View
                 Height: =44
-                Items: ='public.Operation_Table'
+                Items: =["+","-"]
                 Width: =344
                 X: =42
                 Y: =237
@@ -600,7 +614,7 @@ scr_customizing_Operations As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='public.Operation_Table'
+                Items: =Filter('public.System_Value', (Dropdown2_25.Selected.Value="Income" && type="I") || (Dropdown2_25.Selected.Value="Outcome" && type="O"))
                 Width: =344
                 X: =42
                 Y: =351
@@ -623,7 +637,7 @@ scr_customizing_Operations As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='type'
+                Items: =["Income", "Outcome"]
                 Width: =344
                 X: =42
                 Y: =123

@@ -468,7 +468,7 @@ scr_customizing_accounting As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="January"
+                    Text: =ThisItem.month
                     Width: =152
                     X: =15
                     ZIndex: =1
@@ -703,6 +703,7 @@ scr_customizing_accounting As screen:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -728,8 +729,68 @@ scr_customizing_accounting As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Accounting_Period',Defaults('public.Accounting_Period'),{id_period: First(SortByColumns('public.Accounting_Period', "id_period", SortOrder.Descending)).id_period + 1,period: TextInput2_40.Text});
-                    UpdateContext({varpopupAddClass1:false})
+                    =UpdateContext({varNewPeriod:
+                        Patch(
+                            'public.Accounting_Period',
+                            Defaults('public.Accounting_Period'),
+                            {
+                                id_period: First(
+                                    SortByColumns(
+                                        'public.Accounting_Period',
+                                        "id_period",
+                                        SortOrder.Descending
+                                    )
+                                ).id_period + 1,
+                                period: TextInput2_40.Text
+                            }
+                        )
+                    });
+                    ForAll(
+                        Sequence(12,1) As x,
+                        Patch(
+                            'public.Accounting_Period_Month',
+                            Defaults('public.Accounting_Period_Month'),
+                            {
+                                id_month: First(
+                                    SortByColumns(
+                                        'public.Accounting_Period_Month',
+                                        "id_month",
+                                        SortOrder.Descending
+                                    )
+                                ).id_month + 1,
+                                id_period: varNewPeriod.id_period,
+                                month_num: x.Value,
+                                month: Switch(
+                                    x.Value,
+                                    1,
+                                    "Enero",
+                                    2,
+                                    "Febrero",
+                                    3,
+                                    "Marzo",
+                                    4,
+                                    "Abril",
+                                    5,
+                                    "Mayo",
+                                    6,
+                                    "Junio",
+                                    7,
+                                    "Julio",
+                                    8,
+                                    "Agosto",
+                                    9,
+                                    "Setiembre",
+                                    10,
+                                    "Octubre",
+                                    11,
+                                    "Noviembre",
+                                    12,
+                                    "Diciembre"
+                                )
+                            }
+                        )
+                    );
+                    UpdateContext({varpopupAddClass1: false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
