@@ -3785,7 +3785,8 @@ scr_banco As screen:
                     RemoveIf('public.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -3812,7 +3813,7 @@ scr_banco As screen:
             TxtOrdendeCompra_315 As label:
                 Color: =RGBA(77, 77, 77, 1)
                 Font: =Font.Arial
-                Height: =32
+                Height: =55
                 Size: =11
                 Text: =First(CargaEstadoCuentaAdjunto.Attachments).Name
                 Width: =320

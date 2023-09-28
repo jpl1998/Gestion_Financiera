@@ -59,7 +59,8 @@
     "dependents": [
       "3409b741-ac7a-4f66-9efa-ece11bf43ea2",
       "6b6d5d3a-579a-4ec2-bafb-df71de381c60",
-      "5d3618cb-2c21-47ee-b411-d86dd7217504"
+      "5d3618cb-2c21-47ee-b411-d86dd7217504",
+      "b7f56315-65c3-4717-94b6-890271cf1314"
     ],
     "id": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8"
   },
@@ -120,7 +121,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
         "apiVer": 1,
         "appVer": "3.23093.15",
-        "modifiedOn": "2023-09-28 21:01:05",
+        "modifiedOn": "2023-09-28 21:48:26",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[accounting_period]\":[\"post\",\"patch\",\"get\"],\"[public].[accounting_period_month]\":[\"post\",\"patch\",\"get\"],\"[public].[asset_class]\":[\"get\"],\"[public].[asset_relationship]\":[\"get\"],\"[public].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[balance_structure]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_balance]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement_imported]\":[\"get\",\"delete\"],\"[public].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[document_type]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"],\"[public].[investment]\":[\"get\"],\"[public].[investment_data]\":[\"get\"],\"[public].[operation_table]\":[\"post\",\"patch\",\"get\"],\"[public].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[roles]\":[\"get\"],\"[public].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[system_value]\":[\"get\"],\"[public].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[user_role]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },
@@ -246,7 +247,8 @@
     "dependents": [
       "3409b741-ac7a-4f66-9efa-ece11bf43ea2",
       "6b6d5d3a-579a-4ec2-bafb-df71de381c60",
-      "5d3618cb-2c21-47ee-b411-d86dd7217504"
+      "5d3618cb-2c21-47ee-b411-d86dd7217504",
+      "b7f56315-65c3-4717-94b6-890271cf1314"
     ],
     "id": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
   },
@@ -298,6 +300,36 @@
     "dependents": [],
     "id": "6b6d5d3a-579a-4ec2-bafb-df71de381c60"
   },
+  "b7f56315-65c3-4717-94b6-890271cf1314": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3cd81dda-c69a-4efe-8f21-d3205a1b5b27"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3cd81dda-c69a-4efe-8f21-d3205a1b5b27"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CargadeEstadodeCuenta-CreditSuisse"
+    ],
+    "dependencies": {
+      "shared_excelonlinebusiness": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3",
+      "shared_onedriveforbusiness": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8",
+      "shared_postgresql": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
+    },
+    "dependents": [],
+    "id": "b7f56315-65c3-4717-94b6-890271cf1314"
+  },
   "cb2d30c5-741f-4c50-a414-8c93aeee3bc3": {
     "connectionRef": {
       "displayName": "Excel Online (Business)",
@@ -310,7 +342,8 @@
     "dependents": [
       "3409b741-ac7a-4f66-9efa-ece11bf43ea2",
       "6b6d5d3a-579a-4ec2-bafb-df71de381c60",
-      "5d3618cb-2c21-47ee-b411-d86dd7217504"
+      "5d3618cb-2c21-47ee-b411-d86dd7217504",
+      "b7f56315-65c3-4717-94b6-890271cf1314"
     ],
     "id": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3"
   }

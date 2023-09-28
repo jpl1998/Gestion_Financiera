@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "3cd81dda-c69a-4efe-8f21-d3205a1b5b27",
+    "Name": "CargadeEstadodeCuenta-CreditSuisse",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": null
+  }
+]
