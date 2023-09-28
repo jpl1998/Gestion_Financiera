@@ -26,7 +26,7 @@
                   "charLength": 83,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "CountRows(Filter('public.Bank_Entity_Relationship';id_entity = ThisItem.id_entity))"
+                    "text": "CountRows(Filter('public.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))"
                   }
                 }
               },
@@ -146,7 +146,7 @@
                   "charLength": 80,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "CountRows(Filter('public.Bank_Entity_Relationship'; id_bank = ThisItem.id_bank))"
+                    "text": "CountRows(Filter('public.Bank_Entity_Relationship', id_bank = ThisItem.id_bank))"
                   }
                 }
               },
@@ -1794,66 +1794,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_customizing_Document Type",
-                "type": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_customizing_Document Type",
-                "type": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'scr_customizing_Document Type'.Gallery1_10.AccessibleLabel"
                 }
               ],
@@ -2017,6 +1957,66 @@
                 "member": "TabIndex",
                 "module": "scr_customizing_Document Type",
                 "type": "'scr_customizing_Document Type'.Gallery1_10.Image1_49"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_customizing_Document Type",
+                "type": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_customizing_Document Type",
+                "type": "'scr_customizing_Document Type'.grpCrearOrdenDeCompra_46.Icon2_103"
               }
             }
           ],
@@ -37584,36 +37584,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_customizing_Balance Structure",
-                "type": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50.AccessibleLabel"
                 }
               ],
@@ -37638,6 +37608,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_customizing_Balance Structure",
+                "type": "'scr_customizing_Balance Structure'.Gallery1_11.Image1_50"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -53665,72 +53665,72 @@
               "id": "app-UnusedMediaResources",
               "messageStrings": {
                 "issue": {
-                  "text": "Archivos multimedia sin usar"
+                  "text": "Unused media files"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite el archivo multimedia que no se use en el panel Medios."
+                  "Remove the unused media file in the Media pane."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "No hay ninguna fórmula de control que haga referencia a este archivo multimedia, por lo que no es necesario. Si se quita, mejorará el rendimiento."
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
-                  "text": "Variable no utilizada"
+                  "text": "Unused variable"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Quite la variable no utilizada."
+                  "Remove the unused variable."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Esta variable está declarada, pero ningún control hace referencia a ella, por lo que no es necesaria."
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
               }
             },
             {
               "id": "app-ScreenHasManyControls",
               "messageStrings": {
                 "issue": {
-                  "text": "Demasiados controles en una pantalla"
+                  "text": "Too many controls on a screen"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Reduzca el número de controles en la pantalla.",
-                  "Divida la aplicación en más pantallas para reducir la complejidad por pantalla.",
-                  "Use componentes para unificar los controles agrupados que sean idénticos en todas las pantallas y, así, reducir los duplicados.",
-                  "Use galerías para representar una serie de controles similares repetidos.",
-                  "Divida la aplicación en varias aplicaciones para que cada una sea más pequeña y cuente con mejor rendimiento."
+                  "Reduce the number of controls on the screen.",
+                  "Break the app into more screens to reduce the per-screen complexity.",
+                  "Use components to unify grouped controls that are identical across screens, reducing duplication.",
+                  "Use galleries to represent a series of repeated similar controls.",
+                  "Break the app into multiple apps so that each app is small and performant."
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Los controles consumen recursos y, si una pantalla tiene demasiados controles, la aplicación puede dejar de responder o ralentizarse. La complejidad estimada de \"scr_managemenent\" es 1004, que es superior al umbral máximo recomendado (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"scr_managemenent\" is 1004, which exceeds the maximum threshold recommended (300)."
               }
             },
             {
               "id": "app-NumericPropertySizeWarning",
               "messageStrings": {
                 "issue": {
-                  "text": "Permitir la carga de archivos grandes de hasta 10\u00A0MB"
+                  "text": "Allowing upload of large files up to 10 MB"
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Reflexione sobre si necesita archivos adjuntos de este tamaño."
+                  "Consider whether you need attachments of this size."
                 ],
                 "level": "Low",
                 "primaryCategory": "performance",
-                "whyFix": "Se recomienda hacer pruebas en todas las plataformas compatibles para asegurarse de que los archivos adjuntos de este tamaño se pueden cargar correctamente."
+                "whyFix": "We recommend testing on all supported platforms to ensure that attachments of this size can be uploaded successfully."
               }
             }
           ],
