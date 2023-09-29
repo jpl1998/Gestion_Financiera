@@ -54,6 +54,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_customizing_Class.Gallery1_3.Label4_5.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_customizing_Class.Gallery1_3.Label4_5.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 72,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "CountRows(Filter('public.Asset_Subclass', ThisItem.id_class = id_class))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "scr_customizing_Class",
+                "type": "scr_customizing_Class.Gallery1_3.Label4_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scr_customizing_Entities.Gallery1_1.Label4_8.Text"
                 }
               ],

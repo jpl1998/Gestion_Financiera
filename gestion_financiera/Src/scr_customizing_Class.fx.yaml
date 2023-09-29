@@ -1813,7 +1813,7 @@ scr_customizing_Class As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="5"
+                Text: =CountRows(Filter('public.Asset_Subclass', ThisItem.id_class = id_class))
                 Width: =55
                 X: =295
                 ZIndex: =11
