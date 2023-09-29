@@ -2103,7 +2103,7 @@ scr_banco As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             DelayItemLoading: =true
             Height: =223
-            Items: =Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month)
+            Items: =Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -2469,7 +2469,7 @@ scr_banco As screen:
         HtmlText1_62 As htmlViewer:
             Font: =Font.Arial
             Height: =46
-            HtmlText: ="$8.326.249,87"
+            HtmlText: =First(SortByColumns(Filter('public.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('public.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
             Size: =20
             X: =50
             Y: =162
