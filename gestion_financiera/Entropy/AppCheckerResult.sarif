@@ -20364,19 +20364,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.PeriodMonthGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.PeriodMonthGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_accounting",
-                "type": "scr_customizing_accounting.Container1_3.Gallery1_13"
+                "type": "scr_customizing_accounting.Container1_3.PeriodMonthGallery"
               }
             }
           ],
@@ -20394,79 +20394,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.PeriodMonthGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.PeriodMonthGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_accounting",
-                "type": "scr_customizing_accounting.Container1_3.Gallery1_13"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "scr_customizing_accounting",
-                "type": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_customizing_accounting",
-                "type": "scr_customizing_accounting.Container1_3.Gallery1_13.Label4_22"
+                "type": "scr_customizing_accounting.Container1_3.PeriodMonthGallery"
               }
             }
           ],

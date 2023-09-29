@@ -909,13 +909,13 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sales"),
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
                                                 movement_amount
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_32 As label:
@@ -924,7 +924,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'public.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'public.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Sale"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =3
 
                             Container7_11 As groupContainer.horizontalAutoLayoutContainer:
@@ -964,7 +984,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'public.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'public.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Other Incomes"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =3
 
                             Container7_12 As groupContainer.horizontalAutoLayoutContainer:
@@ -1005,7 +1045,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'public.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'public.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Tax Withholding"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =3
 
                             Label7_2 As label:
