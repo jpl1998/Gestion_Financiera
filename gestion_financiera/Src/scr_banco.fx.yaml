@@ -841,20 +841,20 @@ scr_banco As screen:
                                     Text: ="Purchases"
                                     ZIndex: =1
 
-                                Label6_28 As label:
+                                PurchaseCurrentPeriodLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
                                                 movement_amount
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_29 As label:
@@ -902,7 +902,7 @@ scr_banco As screen:
                                     Text: ="Sales and Redemptions"
                                     ZIndex: =1
 
-                                Label6_31 As label:
+                                SalesCurrentPeriodLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -942,7 +942,7 @@ scr_banco As screen:
                                     Text: ="Income and Distributions"
                                     ZIndex: =1
 
-                                Label6_34 As label:
+                                IncomeCurrentPeriodLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -983,7 +983,7 @@ scr_banco As screen:
                                     Text: ="Tax Withholdings"
                                     ZIndex: =1
 
-                                Label6_37 As label:
+                                TaxCurrentPeriodLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -1038,7 +1038,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: =Text(Sum(PurchaseCurrentPeriodLabel.Text,SalesCurrentPeriodLabel.Text,IncomeCurrentPeriodLabel.Text,TaxCurrentPeriodLabel.Text),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_41 As label:
@@ -4193,7 +4193,7 @@ scr_banco As screen:
                                 id_movement: First(SortByColumns('public.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
                                 id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
                                 id_period: varCurrentPeriod.id_month,
-                                movement_type: MovementTypeDropdown.Selected.Value,
+                                movement_type: MovementTypeDropdown.Selected.value,
                                 adquisition_date: AdquisitionDateMovementDatePicker.SelectedDate,
                                 movement_amount: Value(MovementAmountMovementTextInput.Text),
                                 final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text),
@@ -4251,7 +4251,7 @@ scr_banco As screen:
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(51, 51, 51, 1)
                     Height: =45
-                    Items: =Distinct('public.System_Value',value)
+                    Items: ='public.System_Value'
                     Width: =428
                     X: =28
                     Y: =244
