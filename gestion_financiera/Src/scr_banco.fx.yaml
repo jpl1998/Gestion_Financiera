@@ -401,7 +401,20 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Cash").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_2 As label:
@@ -410,7 +423,20 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Cash").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_1 As groupContainer.horizontalAutoLayoutContainer:
@@ -753,18 +779,9 @@ scr_banco As screen:
                         Y: =40
                         ZIndex: =7
 
-                        Title2 As label:
-                            Align: =Align.Center
-                            Height: =22
-                            Text: ="Título del gráfico"
-                            Width: =559
-                            X: =648
-                            Y: =15
-                            ZIndex: =8
-
                         PieChart2 As pieChart:
                             Height: =330
-                            Items: =PieChartSample
+                            Items: =AddColumns(GroupBy(AddColumns('public.Investment_Data' As x,"movementType",LookUp('public.Investment', id_investment = x.id_investment).id_class),"movementType","groupType"),"typeName",LookUp('public.Asset_Class',id_class = movementType).class,"sumAmount",Sum(groupType,profitability))
                             Width: =437
                             X: =610
                             Y: =15
@@ -830,7 +847,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="This Year"
                             Width: =80
-                            X: =435
+                            X: =455
                             Y: =6
                             ZIndex: =2
 
@@ -848,7 +865,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="(01/01/23-6/30/23)"
                             Width: =130
-                            X: =424
+                            X: =434
                             Y: =24
                             ZIndex: =4
 
@@ -891,7 +908,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =First(SortByColumns(Filter('public.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance
+                                    Text: =Text(First(SortByColumns(Filter('public.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance,"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_26 As label:
