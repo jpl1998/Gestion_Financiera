@@ -445,19 +445,19 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Equity").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment),
+                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
                                                         profitability
                                                     ),
                                                     Value
                                                 )
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_2 As groupContainer.horizontalAutoLayoutContainer:
@@ -490,7 +490,20 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Fixed Income").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_3 As groupContainer.horizontalAutoLayoutContainer:
@@ -524,7 +537,20 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Label7 As label:

@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2023-08-31T17:20:30.6460000Z",
+      "LastChangedTimeString": "2023-09-26T16:15:49.0690000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -12,6 +12,7 @@
       "id_investment": "id_investment",
       "id_investment_data": "id_investment_data",
       "id_investment_entity": "id_investment_entity",
+      "id_period": "id_period",
       "ind_act": "ind_act",
       "margin": "margin",
       "market_unit_price": "market_unit_price",
