@@ -813,7 +813,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: =First(SortByColumns(Filter('public.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance
                                     ZIndex: =2
 
                                 Label6_26 As label:
@@ -823,7 +823,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: =First(SortByColumns(Filter('public.Bank_Balance',id_period = First(SortByColumns(Filter('public.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
                                     ZIndex: =3
 
                             Container7_9 As groupContainer.horizontalAutoLayoutContainer:
@@ -850,7 +850,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_period, movement_type = "Purchase"),
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
                                                 movement_amount
                                             ),
                                             Value
@@ -863,7 +863,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'public.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'public.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Purchase"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =3
 
                             Container7_10 As groupContainer.horizontalAutoLayoutContainer:
@@ -888,7 +908,14 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sales"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =2
 
                                 Label6_32 As label:
@@ -921,7 +948,14 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Other Incomes"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =2
 
                                 Label6_35 As label:
@@ -955,7 +989,14 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =2
 
                                 Label6_38 As label:
