@@ -2495,10 +2495,17 @@ scr_banco As screen:
             ZIndex: =40
 
         HtmlText1_72 As htmlViewer:
+            Color: =RGBA(0, 128, 0, 1)
             Font: =Font.Arial
             Height: =46
             HtmlText: |-
-                ="<b><font color=""#008000"">$150.000,00</font>"
+                =Text(Sum(
+                    ForAll(
+                        Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                        movement_amount
+                    ),
+                    Value
+                ),"$0,000.00")
             Size: =20
             Width: =169
             X: =435
