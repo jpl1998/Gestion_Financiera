@@ -2501,7 +2501,7 @@ scr_banco As screen:
             HtmlText: |-
                 =Text(Sum(
                     ForAll(
-                        Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                        Filter('public.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
                         movement_amount
                     ),
                     Value
@@ -2556,7 +2556,14 @@ scr_banco As screen:
         HtmlText1_79 As htmlViewer:
             Font: =Font.Arial
             Height: =46
-            HtmlText: ="$0,00"
+            HtmlText: |-
+                =Sum(
+                    ForAll(
+                        Filter('public.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                        movement_amount
+                    ),
+                    Value
+                )
             Size: =20
             Width: =114
             X: =634
