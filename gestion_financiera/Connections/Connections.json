@@ -119,9 +119,10 @@
       "displayName": "PostgreSQL",
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
+        "apiVer": 1,
         "appVer": "3.23093.15",
-        "modifiedOn": "2023-09-29 14:26:58",
-        "policy": "{\"type\":\"unused\"}",
+        "modifiedOn": "2023-09-29 15:53:13",
+        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[accounting_period]\":[\"post\",\"patch\",\"get\"],\"[public].[accounting_period_month]\":[\"post\",\"patch\",\"get\"],\"[public].[asset_class]\":[\"get\"],\"[public].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[balance_structure]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_balance]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement_imported]\":[\"get\",\"delete\"],\"[public].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[document_type]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"],\"[public].[investment]\":[\"get\"],\"[public].[investment_data]\":[\"get\"],\"[public].[operation_table]\":[\"post\",\"patch\",\"get\"],\"[public].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[roles]\":[\"get\"],\"[public].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[system_value]\":[\"get\"],\"[public].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[user_role]\":[\"post\",\"patch\",\"get\"]}}",
         "version": 1
       },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",
@@ -141,9 +142,6 @@
           },
           "public.Asset_Class": {
             "tableName": "[public].[Asset_Class]"
-          },
-          "public.Asset_Relationship": {
-            "tableName": "[public].[Asset_Relationship]"
           },
           "public.Asset_Subclass": {
             "tableName": "[public].[Asset_Subclass]"
@@ -218,7 +216,6 @@
       "public.Accounting_Period",
       "public.Accounting_Period_Month",
       "public.Asset_Class",
-      "public.Asset_Relationship",
       "public.Asset_Subclass",
       "public.Balance_Structure",
       "public.Bank",

@@ -174,7 +174,7 @@ scr_banco As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="DATE"
+                            Text: =First(SortByColumns(Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=ThisItem.id_bank_entity_relationship),"id_movement",SortOrder.Descending)).adquisition_date
                             Width: =120
                             X: =872
                             ZIndex: =6
@@ -750,7 +750,7 @@ scr_banco As screen:
                         Label3_21 As label:
                             Height: =20
                             Size: =10
-                            Text: ="Last Period"
+                            Text: ="This Year"
                             Width: =80
                             X: =435
                             Y: =6
@@ -847,7 +847,14 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Sum(
+                                            ForAll(
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_period, movement_type = "Purchase"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        )
                                     ZIndex: =2
 
                                 Label6_29 As label:
