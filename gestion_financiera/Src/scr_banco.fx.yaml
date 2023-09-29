@@ -1238,19 +1238,10 @@ scr_banco As screen:
                         Y: =40
                         ZIndex: =7
 
-                        Title3 As label:
-                            Align: =Align.Center
-                            Height: =23
-                            Text: ="Título del gráfico"
-                            Width: =551
-                            X: =656
-                            Y: =14
-                            ZIndex: =8
-
                         ColumnChart1 As barChart:
                             GridStyle: =GridStyle.YOnly
                             Height: =249
-                            Items: =Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month)
+                            Items: =DropColumns(AddColumns(GroupBy(Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month),"movement_type","groupType"),"sumAmount",Sum(groupType,movement_amount)),"groupType")
                             Width: =565
                             X: =615
                             Y: =23
@@ -1260,7 +1251,7 @@ scr_banco As screen:
                             Font: =Font.Arial
                             Height: =51
                             ItemColorSet: =ColumnChart1.ItemColorSet
-                            Items: =ColumnChart1.SeriesLabels
+                            Items: =ColumnChart1.SelectedItems
                             Width: =356
                             X: =656
                             Y: =295
