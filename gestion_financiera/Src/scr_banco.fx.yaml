@@ -838,7 +838,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="This Period"
                             Width: =90
-                            X: =300
+                            X: =310
                             Y: =6
                             ZIndex: =1
 
@@ -847,7 +847,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="This Year"
                             Width: =80
-                            X: =455
+                            X: =460
                             Y: =6
                             ZIndex: =2
 
@@ -856,7 +856,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="(06/01/23-6/30/23)"
                             Width: =130
-                            X: =280
+                            X: =290
                             Y: =26
                             ZIndex: =3
 
@@ -865,7 +865,7 @@ scr_banco As screen:
                             Size: =10
                             Text: ="(01/01/23-6/30/23)"
                             Width: =130
-                            X: =434
+                            X: =439
                             Y: =24
                             ZIndex: =4
 
@@ -1478,7 +1478,7 @@ scr_banco As screen:
                                 Label6_51 As label:
                                     FillPortions: =1
                                     Height: =30
-                                    LayoutMinWidth: =280
+                                    LayoutMinWidth: =180
                                     Size: =12
                                     Text: ="Short-Term Gain"
                                     ZIndex: =1
@@ -1501,6 +1501,15 @@ scr_banco As screen:
                                     Text: ="$118,536.11"
                                     ZIndex: =3
 
+                                Label6_66 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: ="$118,536.11"
+                                    ZIndex: =4
+
                             Container7_18 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 Fill: =ColorValue(varTableBackground)
@@ -1512,7 +1521,7 @@ scr_banco As screen:
                                 Label6_54 As label:
                                     FillPortions: =1
                                     Height: =30
-                                    LayoutMinWidth: =280
+                                    LayoutMinWidth: =180
                                     Size: =12
                                     Text: ="Short-Term (Loss)"
                                     ZIndex: =1
@@ -1535,6 +1544,15 @@ scr_banco As screen:
                                     Text: ="$118,536.11"
                                     ZIndex: =3
 
+                                Label6_67 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: ="$118,536.11"
+                                    ZIndex: =4
+
                             Label7_6 As label:
                                 AlignInContainer: =AlignInContainer.Stretch
                                 Fill: =ColorValue(varlineColor)
@@ -1553,7 +1571,7 @@ scr_banco As screen:
                                     FillPortions: =1
                                     FontWeight: =FontWeight.Bold
                                     Height: =30
-                                    LayoutMinWidth: =280
+                                    LayoutMinWidth: =180
                                     Size: =12
                                     Text: ="Total Short-Term"
                                     ZIndex: =1
@@ -1578,6 +1596,15 @@ scr_banco As screen:
                                     Text: ="$118,536.11"
                                     ZIndex: =3
 
+                                Label6_68 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: ="$118,536.11"
+                                    ZIndex: =4
+
                             Container7_20 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 LayoutAlignItems: =LayoutAlignItems.End
@@ -1589,7 +1616,7 @@ scr_banco As screen:
                                 Label6_60 As label:
                                     FillPortions: =1
                                     Height: =30
-                                    LayoutMinWidth: =280
+                                    LayoutMinWidth: =180
                                     Size: =12
                                     Text: ="Long-Term (Loss)"
                                     ZIndex: =1
@@ -1612,6 +1639,15 @@ scr_banco As screen:
                                     Text: ="$118,536.11"
                                     ZIndex: =3
 
+                                Label6_69 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: ="$118,536.11"
+                                    ZIndex: =4
+
                             Label7_5 As label:
                                 AlignInContainer: =AlignInContainer.Stretch
                                 Fill: =ColorValue(varlineColor)
@@ -1630,7 +1666,7 @@ scr_banco As screen:
                                     FillPortions: =1
                                     FontWeight: =FontWeight.Bold
                                     Height: =30
-                                    LayoutMinWidth: =280
+                                    LayoutMinWidth: =180
                                     Size: =12
                                     Text: ="TOTAL GAIN/(LOSS)"
                                     ZIndex: =1
@@ -1654,6 +1690,15 @@ scr_banco As screen:
                                     Size: =12
                                     Text: ="$118,536.11"
                                     ZIndex: =3
+
+                                Label6_70 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: ="$118,536.11"
+                                    ZIndex: =4
 
                     CompositeColumnChart1_1 As group:
                         Height: =5
