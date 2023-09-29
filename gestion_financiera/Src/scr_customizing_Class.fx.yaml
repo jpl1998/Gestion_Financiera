@@ -887,7 +887,7 @@ scr_customizing_Class As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: ='public.Asset_Subclass'
+                Items: =Filter('public.Asset_Subclass', varSelectedClass.id_class = id_class)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -1222,8 +1222,22 @@ scr_customizing_Class As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Asset_Subclass',Defaults('public.Asset_Subclass'),{id_subclass:First(SortByColumns('public.Asset_Subclass',"id_subclass",SortOrder.Descending)).id_subclass+1,subclass:TextInput2_16.Text});
-                    UpdateContext({varpopupAddClass1:false})
+                    =Patch(
+                        'public.Asset_Subclass',
+                        Defaults('public.Asset_Subclass'),
+                        {
+                            id_subclass: First(
+                                SortByColumns(
+                                    'public.Asset_Subclass',
+                                    "id_subclass",
+                                    SortOrder.Descending
+                                )
+                            ).id_subclass + 1,
+                            id_class: varSelectedClass.id_class,
+                            subclass: TextInput2_16.Text
+                        }
+                    );
+                    UpdateContext({varpopupAddClass1: false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1745,7 +1759,7 @@ scr_customizing_Class As screen:
         Gallery1_3 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: =CustomGallerySample
+            Items: ='public.Asset_Class'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -1760,7 +1774,7 @@ scr_customizing_Class As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: ="Equity"
+                Text: =ThisItem.class
                 Width: =152
                 ZIndex: =1
 
@@ -1808,7 +1822,7 @@ scr_customizing_Class As screen:
                 Height: =20
                 Icon: =Icon.ChevronRight
                 OnSelect: |-
-                    =UpdateContext({varpopupAddClass:true})
+                    =UpdateContext({varSelectedClass:ThisItem, varpopupAddClass:true})
                 Width: =20
                 X: =951
                 Y: =8
