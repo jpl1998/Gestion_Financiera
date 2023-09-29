@@ -1190,7 +1190,7 @@ scr_banco As screen:
                         ColumnChart1 As barChart:
                             GridStyle: =GridStyle.YOnly
                             Height: =249
-                            Items: =ColumnChartSample
+                            Items: =Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month)
                             Width: =565
                             X: =615
                             Y: =23
