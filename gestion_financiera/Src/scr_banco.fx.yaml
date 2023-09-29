@@ -864,7 +864,7 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter(
                                                     'public.Accounting_Period_Month',
@@ -883,7 +883,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_10 As groupContainer.horizontalAutoLayoutContainer:
@@ -925,7 +925,7 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter(
                                                     'public.Accounting_Period_Month',
@@ -944,7 +944,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_11 As groupContainer.horizontalAutoLayoutContainer:
