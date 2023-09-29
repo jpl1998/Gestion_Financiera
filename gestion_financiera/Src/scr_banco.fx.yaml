@@ -1125,13 +1125,13 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
                                                 movement_amount
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_38 As label:
@@ -1141,7 +1141,7 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Sum(
+                                        =Text(Sum(
                                             ForAll(
                                                 Filter(
                                                     'public.Accounting_Period_Month',
@@ -1160,7 +1160,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        )
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Label7_2 As label:
