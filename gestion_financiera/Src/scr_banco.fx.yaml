@@ -226,7 +226,12 @@ scr_banco As screen:
                                 Height: =20
                                 Image: =archivo
                                 OnSelect: |-
-                                    =UpdateContext({varSelectedAccount:ThisItem, varshowPopUpAddMovement:true})
+                                    =Reset(MovementTypeDropdown);
+                                    Reset(AdquisitionDateMovementDatePicker);
+                                    Reset(MovementAmountMovementTextInput);
+                                    Reset(DescriptionMovementTextInput);
+                                    Reset(CusipMovementTextInput);
+                                    UpdateContext({varSelectedAccount:ThisItem, varshowPopUpAddMovement:true})
                                 Width: =20
                                 X: =5
                                 Y: =10
@@ -2651,7 +2656,12 @@ scr_banco As screen:
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
             OnSelect: |-
-                =UpdateContext({varshowPopUpAddMovement:true})
+                =Reset(MovementTypeDropdown);
+                Reset(AdquisitionDateMovementDatePicker);
+                Reset(MovementAmountMovementTextInput);
+                Reset(DescriptionMovementTextInput);
+                Reset(CusipMovementTextInput);
+                UpdateContext({varshowPopUpAddMovement:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)
             RadiusBottomLeft: =2
