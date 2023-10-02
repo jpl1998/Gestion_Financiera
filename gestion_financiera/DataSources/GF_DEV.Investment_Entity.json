@@ -1,0 +1,25 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2023-09-27T16:28:12.8130000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "adquisition_value": "adquisition_value",
+      "id_bank_entity_relationship": "id_bank_entity_relationship",
+      "id_investment": "id_investment",
+      "id_investment_entity": "id_investment_entity",
+      "quantity": "quantity",
+      "total_value": "total_value",
+      "unit_cost": "unit_cost"
+    },
+    "DatasetName": "bicroslandfodbserv.database.windows.net,BICROSLANDFO",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "GF_DEV.Investment_Entity",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

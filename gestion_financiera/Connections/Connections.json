@@ -47,6 +47,136 @@
     "dependents": [],
     "id": "3409b741-ac7a-4f66-9efa-ece11bf43ea2"
   },
+  "4820fa8c-d289-4fcc-85f7-91a04adbc03d": {
+    "connectionRef": {
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
+        "appVer": "3.23093.15",
+        "modifiedOn": "2023-10-02 22:07:40",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1654/1.0.1654.3414/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/2245e19b2af54960a135f06a138c0503"
+    },
+    "datasets": {
+      "bicroslandfodbserv.database.windows.net,BICROSLANDFO": {
+        "dataSources": {
+          "GF_DEV.Accounting_Period": {
+            "tableName": "[GF_DEV].[Accounting_Period]"
+          },
+          "GF_DEV.Accounting_Period_Month": {
+            "tableName": "[GF_DEV].[Accounting_Period_Month]"
+          },
+          "GF_DEV.Asset_Class": {
+            "tableName": "[GF_DEV].[Asset_Class]"
+          },
+          "GF_DEV.Asset_Subclass": {
+            "tableName": "[GF_DEV].[Asset_Subclass]"
+          },
+          "GF_DEV.Balance_Structure": {
+            "tableName": "[GF_DEV].[Balance_Structure]"
+          },
+          "GF_DEV.Bank": {
+            "tableName": "[GF_DEV].[Bank]"
+          },
+          "GF_DEV.Bank_Balance": {
+            "tableName": "[GF_DEV].[Bank_Balance]"
+          },
+          "GF_DEV.Bank_Entity_Relationship": {
+            "tableName": "[GF_DEV].[Bank_Entity_Relationship]"
+          },
+          "GF_DEV.Bank_Movement": {
+            "tableName": "[GF_DEV].[Bank_Movement]"
+          },
+          "GF_DEV.Bank_Movement_Imported": {
+            "tableName": "[GF_DEV].[Bank_Movement_Imported]"
+          },
+          "GF_DEV.Country": {
+            "tableName": "[GF_DEV].[Country]"
+          },
+          "GF_DEV.Currency": {
+            "tableName": "[GF_DEV].[Currency]"
+          },
+          "GF_DEV.Document_Type": {
+            "tableName": "[GF_DEV].[Document_Type]"
+          },
+          "GF_DEV.Entity": {
+            "tableName": "[GF_DEV].[Entity]"
+          },
+          "GF_DEV.Files_History": {
+            "tableName": "[GF_DEV].[Files_History]"
+          },
+          "GF_DEV.Investment": {
+            "tableName": "[GF_DEV].[Investment]"
+          },
+          "GF_DEV.Investment_Data": {
+            "tableName": "[GF_DEV].[Investment_Data]"
+          },
+          "GF_DEV.Investment_Entity": {
+            "tableName": "[GF_DEV].[Investment_Entity]"
+          },
+          "GF_DEV.Operation_Table": {
+            "tableName": "[GF_DEV].[Operation_Table]"
+          },
+          "GF_DEV.Risk_Scale": {
+            "tableName": "[GF_DEV].[Risk_Scale]"
+          },
+          "GF_DEV.Roles": {
+            "tableName": "[GF_DEV].[Roles]"
+          },
+          "GF_DEV.Sector": {
+            "tableName": "[GF_DEV].[Sector]"
+          },
+          "GF_DEV.System_Value": {
+            "tableName": "[GF_DEV].[System_Value]"
+          },
+          "GF_DEV.Terms": {
+            "tableName": "[GF_DEV].[Terms]"
+          },
+          "GF_DEV.User_Role": {
+            "tableName": "[GF_DEV].[User_Role]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "GF_DEV.Accounting_Period",
+      "GF_DEV.Accounting_Period_Month",
+      "GF_DEV.Asset_Class",
+      "GF_DEV.Asset_Subclass",
+      "GF_DEV.Balance_Structure",
+      "GF_DEV.Bank",
+      "GF_DEV.Bank_Balance",
+      "GF_DEV.Bank_Entity_Relationship",
+      "GF_DEV.Bank_Movement",
+      "GF_DEV.Country",
+      "GF_DEV.Bank_Movement_Imported",
+      "GF_DEV.Currency",
+      "GF_DEV.Document_Type",
+      "GF_DEV.Entity",
+      "GF_DEV.Files_History",
+      "GF_DEV.Investment",
+      "GF_DEV.Investment_Data",
+      "GF_DEV.Investment_Entity",
+      "GF_DEV.Operation_Table",
+      "GF_DEV.Risk_Scale",
+      "GF_DEV.Roles",
+      "GF_DEV.Sector",
+      "GF_DEV.System_Value",
+      "GF_DEV.Terms",
+      "GF_DEV.User_Role"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "bicroslandfodbserv.database.windows.net,BICROSLANDFO"
+    ],
+    "id": "4820fa8c-d289-4fcc-85f7-91a04adbc03d"
+  },
   "53593df6-e7d9-4c5f-bbcd-693b3ba645f8": {
     "connectionRef": {
       "displayName": "OneDrive for Business",
@@ -118,11 +248,10 @@
       "apiTier": "Premium",
       "displayName": "PostgreSQL",
       "executionRestrictions": {
-        "apiId": "/providers/microsoft.powerapps/apis/shared_postgresql",
-        "apiVer": 1,
+        "apiId": "unknown",
         "appVer": "3.23093.15",
-        "modifiedOn": "2023-10-02 17:46:47",
-        "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[public].[accounting_period]\":[\"post\",\"patch\",\"get\"],\"[public].[accounting_period_month]\":[\"post\",\"patch\",\"get\"],\"[public].[asset_class]\":[\"get\"],\"[public].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[balance_structure]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[bank]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_balance]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[public].[bank_movement_imported]\":[\"get\",\"delete\"],\"[public].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[document_type]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[entity]\":[\"post\",\"patch\",\"get\"],\"[public].[investment]\":[\"get\"],\"[public].[investment_data]\":[\"get\"],\"[public].[operation_table]\":[\"post\",\"patch\",\"get\"],\"[public].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[roles]\":[\"get\"],\"[public].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[system_value]\":[\"get\"],\"[public].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[public].[user_role]\":[\"post\",\"patch\",\"get\"]}}",
+        "modifiedOn": "2023-10-02 22:07:40",
+        "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
       "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/postgresql/icon.png",
@@ -131,114 +260,8 @@
       "parameterHintsV2": {},
       "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_postgresql/connections/d6d8e57614e647e1af10c78f0bd8f068"
     },
-    "datasets": {
-      "default": {
-        "dataSources": {
-          "public.Accounting_Period": {
-            "tableName": "[public].[Accounting_Period]"
-          },
-          "public.Accounting_Period_Month": {
-            "tableName": "[public].[Accounting_Period_Month]"
-          },
-          "public.Asset_Class": {
-            "tableName": "[public].[Asset_Class]"
-          },
-          "public.Asset_Subclass": {
-            "tableName": "[public].[Asset_Subclass]"
-          },
-          "public.Balance_Structure": {
-            "tableName": "[public].[Balance_Structure]"
-          },
-          "public.Bank": {
-            "tableName": "[public].[Bank]"
-          },
-          "public.Bank_Balance": {
-            "tableName": "[public].[Bank_Balance]"
-          },
-          "public.Bank_Entity_Relationship": {
-            "tableName": "[public].[Bank_Entity_Relationship]"
-          },
-          "public.Bank_Movement": {
-            "tableName": "[public].[Bank_Movement]"
-          },
-          "public.Bank_Movement_Imported": {
-            "tableName": "[public].[Bank_Movement_Imported]"
-          },
-          "public.Country": {
-            "tableName": "[public].[Country]"
-          },
-          "public.Currency": {
-            "tableName": "[public].[Currency]"
-          },
-          "public.Document_Type": {
-            "tableName": "[public].[Document_Type]"
-          },
-          "public.Entity": {
-            "tableName": "[public].[Entity]"
-          },
-          "public.Files_History": {
-            "tableName": "[public].[Files_History]"
-          },
-          "public.Investment": {
-            "tableName": "[public].[Investment]"
-          },
-          "public.Investment_Data": {
-            "tableName": "[public].[Investment_Data]"
-          },
-          "public.Investment_Entity": {
-            "tableName": "[public].[Investment_Entity]"
-          },
-          "public.Operation_Table": {
-            "tableName": "[public].[Operation_Table]"
-          },
-          "public.Risk_Scale": {
-            "tableName": "[public].[Risk_Scale]"
-          },
-          "public.Roles": {
-            "tableName": "[public].[Roles]"
-          },
-          "public.Sector": {
-            "tableName": "[public].[Sector]"
-          },
-          "public.System_Value": {
-            "tableName": "[public].[System_Value]"
-          },
-          "public.Terms": {
-            "tableName": "[public].[Terms]"
-          },
-          "public.User_Role": {
-            "tableName": "[public].[User_Role]"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "public.Accounting_Period",
-      "public.Accounting_Period_Month",
-      "public.Asset_Class",
-      "public.Asset_Subclass",
-      "public.Balance_Structure",
-      "public.Bank",
-      "public.Bank_Balance",
-      "public.Bank_Entity_Relationship",
-      "public.Bank_Movement",
-      "public.Country",
-      "public.Currency",
-      "public.Document_Type",
-      "public.Files_History",
-      "public.Entity",
-      "public.Investment",
-      "public.Investment_Data",
-      "public.Investment_Entity",
-      "public.Operation_Table",
-      "public.Risk_Scale",
-      "public.Roles",
-      "public.Sector",
-      "public.System_Value",
-      "public.Terms",
-      "public.User_Role",
-      "public.Bank_Movement_Imported"
-    ],
+    "datasets": {},
+    "dataSources": [],
     "dependencies": {},
     "dependents": [
       "3409b741-ac7a-4f66-9efa-ece11bf43ea2",

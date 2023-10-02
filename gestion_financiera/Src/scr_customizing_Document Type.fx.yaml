@@ -478,7 +478,7 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Document_Type',Defaults('public.Document_Type'),{id_doc_type: First(SortByColumns('public.Document_Type', "id_doc_type", SortOrder.Descending)).id_doc_type + 1,doc_type: TextInput2_26.Text,code: TextInput2_54.Text});
+                    =Patch('GF_DEV.Document_Type',Defaults('GF_DEV.Document_Type'),{id_doc_type: First(SortByColumns('GF_DEV.Document_Type', "id_doc_type", SortOrder.Descending)).id_doc_type + 1,doc_type: TextInput2_26.Text,code: TextInput2_54.Text});
                     UpdateContext({varpopupconfgAddDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -614,7 +614,7 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Document_Type',LookUp('public.Document_Type', id_doc_type = Gallery1_10.Selected.id_doc_type),{doc_type:TextInput2_27.Text},{code:TextInput2_55.Text});
+                    =Patch('GF_DEV.Document_Type',LookUp('GF_DEV.Document_Type', id_doc_type = Gallery1_10.Selected.id_doc_type),{doc_type:TextInput2_27.Text},{code:TextInput2_55.Text});
                     UpdateContext({varpopupCnfEditDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -748,7 +748,7 @@
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Document_Type',Gallery1_10.Selected);
+                    =Remove('GF_DEV.Document_Type',Gallery1_10.Selected);
                     UpdateContext({varpopupEliminateDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -873,7 +873,7 @@
         Gallery1_10 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Document_Type'
+            Items: ='GF_DEV.Document_Type'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

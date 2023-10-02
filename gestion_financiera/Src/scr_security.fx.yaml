@@ -75,7 +75,7 @@ scr_security As screen:
         Gallery1 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.User_Role'
+            Items: ='GF_DEV.User_Role'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -105,7 +105,7 @@ scr_security As screen:
             Label2_22 As label:
                 Height: =36
                 Size: =12
-                Text: =LookUp('public.Roles', id_role = ThisItem.id_role).role
+                Text: =LookUp('GF_DEV.Roles', id_role = ThisItem.id_role).role
                 Width: =169
                 X: =501
                 ZIndex: =3
@@ -358,10 +358,10 @@ scr_security As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.User_Role',
-                        Defaults('public.User_Role'),
+                        'GF_DEV.User_Role',
+                        Defaults('GF_DEV.User_Role'),
                         {
-                            id_user: First(SortByColumns('public.User_Role',"id_user",SortOrder.Descending)).id_role+1,
+                            id_user: First(SortByColumns('GF_DEV.User_Role',"id_user",SortOrder.Descending)).id_role+1,
                             username: UserNameTextInput.Text,
                             id_role: UserRoleDropdown.Selected.id_role,
                             status: UserStatusDropdown.Selected.Value = "Activo"
@@ -388,7 +388,7 @@ scr_security As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
                 Height: =44
-                Items: ='public.Roles'
+                Items: ='GF_DEV.Roles'
                 Width: =344
                 X: =38
                 Y: =227

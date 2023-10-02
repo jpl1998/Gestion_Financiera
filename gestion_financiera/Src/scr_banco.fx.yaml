@@ -80,7 +80,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =223
-                    Items: =Filter('public.Bank_Entity_Relationship', id_bank = LookUp('public.Bank', Lower(TextInput1_8.Text) in Lower(bank)).id_bank, TextInput1_8.Text in account_num, TextInput1_8.Text in account_identifier, TextInput1_8.Text in c_bank)
+                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank = LookUp('GF_DEV.Bank', Lower(TextInput1_8.Text) in Lower(bank)).id_bank, TextInput1_8.Text in account_num, TextInput1_8.Text in account_identifier, TextInput1_8.Text in c_bank)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -123,7 +123,7 @@ scr_banco As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: =LookUp('public.Bank', id_bank = ThisItem.id_bank).bank
+                            Text: =LookUp('GF_DEV.Bank', id_bank = ThisItem.id_bank).bank
                             Width: =208
                             X: =108
                             ZIndex: =2
@@ -161,7 +161,7 @@ scr_banco As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
+                            Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
                             Width: =50
                             X: =751
                             ZIndex: =5
@@ -174,7 +174,7 @@ scr_banco As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: =First(SortByColumns(Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=ThisItem.id_bank_entity_relationship),"id_movement",SortOrder.Descending)).adquisition_date
+                            Text: =First(SortByColumns(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=ThisItem.id_bank_entity_relationship),"id_movement",SortOrder.Descending)).adquisition_date
                             Width: =120
                             X: =872
                             ZIndex: =6
@@ -410,10 +410,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Cash").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Cash").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
                                                         profitability
                                                     ),
                                                     Value
@@ -432,10 +432,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Cash").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Cash").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
                                                         profitability
                                                     ),
                                                     Value
@@ -470,10 +470,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Equity").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Equity").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
                                                         profitability
                                                     ),
                                                     Value
@@ -492,10 +492,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Equity").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Equity").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
                                                         profitability
                                                     ),
                                                     Value
@@ -529,10 +529,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Fixed Income").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Fixed Income").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
                                                         profitability
                                                     ),
                                                     Value
@@ -551,10 +551,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Fixed Income").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Fixed Income").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
                                                         profitability
                                                     ),
                                                     Value
@@ -589,10 +589,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Alternatives").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
                                                         profitability
                                                     ),
                                                     Value
@@ -611,10 +611,10 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Investment', id_class = LookUp('public.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Alternatives").id_class) As x,
                                                 Sum(
                                                     ForAll(
-                                                        Filter('public.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month),
                                                         profitability
                                                     ),
                                                     Value
@@ -791,10 +791,10 @@ scr_banco As screen:
                                 =AddColumns(
                                     GroupBy(
                                         AddColumns(
-                                            'public.Investment_Data' As x,
+                                            'GF_DEV.Investment_Data' As x,
                                             "movementType",
                                             LookUp(
-                                                'public.Investment',
+                                                'GF_DEV.Investment',
                                                 id_investment = x.id_investment
                                             ).id_class
                                         ),
@@ -803,7 +803,7 @@ scr_banco As screen:
                                     ),
                                     "typeName",
                                     LookUp(
-                                        'public.Asset_Class',
+                                        'GF_DEV.Asset_Class',
                                         id_class = movementType
                                     ).class,
                                     "sumAmount",
@@ -941,7 +941,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Text(First(SortByColumns(Filter('public.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance,"$0,000.00")
+                                    Text: =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance,"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_26 As label:
@@ -951,7 +951,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =First(SortByColumns(Filter('public.Bank_Balance',id_period = First(SortByColumns(Filter('public.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
+                                    Text: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
                                     ZIndex: =3
 
                             Container7_9 As groupContainer.horizontalAutoLayoutContainer:
@@ -978,7 +978,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
+                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
                                                 movement_amount
                                             ),
                                             Value
@@ -995,13 +995,13 @@ scr_banco As screen:
                                         =Text(Sum(
                                             ForAll(
                                                 Filter(
-                                                    'public.Accounting_Period_Month',
+                                                    'GF_DEV.Accounting_Period_Month',
                                                     id_period = varCurrentPeriod.id_period
                                                 ) As x,
                                                 Sum(
                                                     ForAll(
                                                         Filter(
-                                                            'public.Bank_Movement',
+                                                            'GF_DEV.Bank_Movement',
                                                             id_period = x.id_month,
                                                             movement_type = "Purchase"
                                                         ),
@@ -1039,7 +1039,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
                                                 movement_amount
                                             ),
                                             Value
@@ -1056,13 +1056,13 @@ scr_banco As screen:
                                         =Text(Sum(
                                             ForAll(
                                                 Filter(
-                                                    'public.Accounting_Period_Month',
+                                                    'GF_DEV.Accounting_Period_Month',
                                                     id_period = varCurrentPeriod.id_period
                                                 ) As x,
                                                 Sum(
                                                     ForAll(
                                                         Filter(
-                                                            'public.Bank_Movement',
+                                                            'GF_DEV.Bank_Movement',
                                                             id_period = x.id_month,
                                                             movement_type = "Sale"
                                                         ),
@@ -1099,7 +1099,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Other Incomes"),
+                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Other Incomes"),
                                                 movement_amount
                                             ),
                                             Value
@@ -1116,13 +1116,13 @@ scr_banco As screen:
                                         =Sum(
                                             ForAll(
                                                 Filter(
-                                                    'public.Accounting_Period_Month',
+                                                    'GF_DEV.Accounting_Period_Month',
                                                     id_period = varCurrentPeriod.id_period
                                                 ) As x,
                                                 Sum(
                                                     ForAll(
                                                         Filter(
-                                                            'public.Bank_Movement',
+                                                            'GF_DEV.Bank_Movement',
                                                             id_period = x.id_month,
                                                             movement_type = "Other Incomes"
                                                         ),
@@ -1160,7 +1160,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
                                                 movement_amount
                                             ),
                                             Value
@@ -1177,13 +1177,13 @@ scr_banco As screen:
                                         =Text(Sum(
                                             ForAll(
                                                 Filter(
-                                                    'public.Accounting_Period_Month',
+                                                    'GF_DEV.Accounting_Period_Month',
                                                     id_period = varCurrentPeriod.id_period
                                                 ) As x,
                                                 Sum(
                                                     ForAll(
                                                         Filter(
-                                                            'public.Bank_Movement',
+                                                            'GF_DEV.Bank_Movement',
                                                             id_period = x.id_month,
                                                             movement_type = "Tax Withholding"
                                                         ),
@@ -1264,7 +1264,7 @@ scr_banco As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Transfers"),
+                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Transfers"),
                                                 movement_amount
                                             ),
                                             Value
@@ -1281,13 +1281,13 @@ scr_banco As screen:
                                         =Text(Sum(
                                             ForAll(
                                                 Filter(
-                                                    'public.Accounting_Period_Month',
+                                                    'GF_DEV.Accounting_Period_Month',
                                                     id_period = varCurrentPeriod.id_period
                                                 ) As x,
                                                 Sum(
                                                     ForAll(
                                                         Filter(
-                                                            'public.Bank_Movement',
+                                                            'GF_DEV.Bank_Movement',
                                                             id_period = x.id_month,
                                                             movement_type = "Transfers"
                                                         ),
@@ -1401,7 +1401,7 @@ scr_banco As screen:
                                     AddColumns(
                                         GroupBy(
                                             Filter(
-                                                'public.Bank_Movement',
+                                                'GF_DEV.Bank_Movement',
                                                 id_period = varCurrentPeriod.id_month
                                             ),
                                             "movement_type",
@@ -2186,7 +2186,7 @@ scr_banco As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             DelayItemLoading: =true
             Height: =223
-            Items: =Filter('public.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship)
+            Items: =Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -2552,7 +2552,7 @@ scr_banco As screen:
         HtmlText1_62 As htmlViewer:
             Font: =Font.Arial
             Height: =46
-            HtmlText: =First(SortByColumns(Filter('public.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('public.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
+            HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
             Size: =20
             X: =50
             Y: =162
@@ -2584,7 +2584,7 @@ scr_banco As screen:
             HtmlText: |-
                 =Text(Sum(
                     ForAll(
-                        Filter('public.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                        Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
                         movement_amount
                     ),
                     Value
@@ -2642,7 +2642,7 @@ scr_banco As screen:
             HtmlText: |-
                 =Sum(
                     ForAll(
-                        Filter('public.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                        Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
                         movement_amount
                     ),
                     Value
@@ -4123,7 +4123,7 @@ scr_banco As screen:
                     UpdateContext({varpopupdowloadAccountxls1:false});
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
-                    RemoveIf('public.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
+                    RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
@@ -4416,7 +4416,7 @@ scr_banco As screen:
                     Font: =Font.Arial
                     Height: =26
                     Size: =12
-                    Text: =LookUp('public.Bank', id_bank = varSelectedAccount.id_bank).bank
+                    Text: =LookUp('GF_DEV.Bank', id_bank = varSelectedAccount.id_bank).bank
                     Width: =94
                     X: =91
                     Y: =102
@@ -4477,13 +4477,13 @@ scr_banco As screen:
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =ColorValue(varprimaryColor)
                     OnSelect: |-
-                        =UpdateContext({varInitialBalance: LookUp('public.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act).final_balance});
+                        =UpdateContext({varInitialBalance: LookUp('GF_DEV.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act).final_balance});
                         
                         Patch(
-                            'public.Bank_Movement',
-                            Defaults('public.Bank_Movement'),
+                            'GF_DEV.Bank_Movement',
+                            Defaults('GF_DEV.Bank_Movement'),
                             {
-                                id_movement: First(SortByColumns('public.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
+                                id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
                                 id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
                                 id_period: varCurrentPeriod.id_month,
                                 movement_type: MovementTypeDropdown.Selected.value,
@@ -4496,7 +4496,7 @@ scr_banco As screen:
                         );
                         
                         UpdateIf(
-                            'public.Bank_Balance',
+                            'GF_DEV.Bank_Balance',
                             id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
                             {
                                 ind_act: false
@@ -4504,10 +4504,10 @@ scr_banco As screen:
                         );
                         
                         Patch(
-                            'public.Bank_Balance',
-                            Defaults('public.Bank_Balance'),
+                            'GF_DEV.Bank_Balance',
+                            Defaults('GF_DEV.Bank_Balance'),
                             {
-                                id_balance: First(SortByColumns('public.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance+1,
+                                id_balance: First(SortByColumns('GF_DEV.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance+1,
                                 id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
                                 id_period: varCurrentPeriod.id_month,
                                 balance_date: Today(),
@@ -4544,7 +4544,7 @@ scr_banco As screen:
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(51, 51, 51, 1)
                     Height: =45
-                    Items: =Filter('public.System_Value',value<>"Purchase",value<>"Sale")
+                    Items: =Filter('GF_DEV.System_Value',value<>"Purchase",value<>"Sale")
                     Width: =428
                     X: =28
                     Y: =244
@@ -4807,7 +4807,7 @@ scr_banco As screen:
                     Font: =Font.Arial
                     Height: =26
                     Size: =12
-                    Text: =LookUp('public.Bank', id_bank = varSelectedAccount.id_bank).bank
+                    Text: =LookUp('GF_DEV.Bank', id_bank = varSelectedAccount.id_bank).bank
                     Width: =94
                     X: =91
                     Y: =102
@@ -4897,7 +4897,7 @@ scr_banco As screen:
                     ChevronFill: =RGBA(51, 51, 51, 1)
                     Default: =varSelectedMovement.movement_type
                     Height: =45
-                    Items: =Distinct('public.System_Value',value)
+                    Items: =Distinct('GF_DEV.System_Value',value)
                     Width: =428
                     X: =28
                     Y: =244

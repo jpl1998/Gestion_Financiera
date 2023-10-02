@@ -454,7 +454,7 @@ scr_customizing_country As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |
-                    =Patch('public.Country',Defaults('public.Country'),{id_country: First(SortByColumns('public.Country', "id_country", SortOrder.Descending)).id_country + 1,country: TextInput2_20.Text});
+                    =Patch('GF_DEV.Country',Defaults('GF_DEV.Country'),{id_country: First(SortByColumns('GF_DEV.Country', "id_country", SortOrder.Descending)).id_country + 1,country: TextInput2_20.Text});
                     UpdateContext({varpopupconfgAddCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -562,7 +562,7 @@ scr_customizing_country As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Country',LookUp('public.Country', id_country = Gallery1_7.Selected.id_country),{country:TextInput2_21.Text});
+                    =Patch('GF_DEV.Country',LookUp('GF_DEV.Country', id_country = Gallery1_7.Selected.id_country),{country:TextInput2_21.Text});
                     UpdateContext({varpopupCnfEditCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -668,7 +668,7 @@ scr_customizing_country As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Country',Gallery1_7.Selected); UpdateContext({varpopupEliminateCurrency:false})
+                    =Remove('GF_DEV.Country',Gallery1_7.Selected); UpdateContext({varpopupEliminateCurrency:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -792,7 +792,7 @@ scr_customizing_country As screen:
         Gallery1_7 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Country'
+            Items: ='GF_DEV.Country'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

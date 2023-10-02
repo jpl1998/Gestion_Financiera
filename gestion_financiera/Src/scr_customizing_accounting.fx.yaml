@@ -451,7 +451,7 @@ scr_customizing_accounting As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =324
-                Items: ='public.Accounting_Period_Month'
+                Items: ='GF_DEV.Accounting_Period_Month'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -740,12 +740,12 @@ scr_customizing_accounting As screen:
                 OnSelect: |-
                     =UpdateContext({varNewPeriod:
                         Patch(
-                            'public.Accounting_Period',
-                            Defaults('public.Accounting_Period'),
+                            'GF_DEV.Accounting_Period',
+                            Defaults('GF_DEV.Accounting_Period'),
                             {
                                 id_period: First(
                                     SortByColumns(
-                                        'public.Accounting_Period',
+                                        'GF_DEV.Accounting_Period',
                                         "id_period",
                                         SortOrder.Descending
                                     )
@@ -757,12 +757,12 @@ scr_customizing_accounting As screen:
                     ForAll(
                         Sequence(12,1) As x,
                         Patch(
-                            'public.Accounting_Period_Month',
-                            Defaults('public.Accounting_Period_Month'),
+                            'GF_DEV.Accounting_Period_Month',
+                            Defaults('GF_DEV.Accounting_Period_Month'),
                             {
                                 id_month: First(
                                     SortByColumns(
-                                        'public.Accounting_Period_Month',
+                                        'GF_DEV.Accounting_Period_Month',
                                         "id_month",
                                         SortOrder.Descending
                                     )
@@ -1572,15 +1572,15 @@ scr_customizing_accounting As screen:
             HoverFill: =RGBA(255, 0, 0, 1)
             OnSelect: |-
                 =Patch(
-                    'public.Accounting_Period_Month',
-                    LookUp('public.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
+                    'GF_DEV.Accounting_Period_Month',
+                    LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
                     {
                         status:"Closed"
                     }
                 );
                 Patch(
-                    'public.Accounting_Period_Month',
-                    LookUp('public.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
+                    'GF_DEV.Accounting_Period_Month',
+                    LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
                     {
                         status:"Open"
                     }
@@ -1603,7 +1603,7 @@ scr_customizing_accounting As screen:
             Font: =Font.Arial
             Height: =51
             HtmlText: |-
-                ="<center> Are you sure to close the period <b><font color=""#4280c2"">"& PeriodMonthGallery.Selected.month & " " &  LookUp('public.Accounting_Period', id_period = PeriodMonthGallery.Selected.id_period).period & "</font></b> ? No more movements can be registered in this period.
+                ="<center> Are you sure to close the period <b><font color=""#4280c2"">"& PeriodMonthGallery.Selected.month & " " &  LookUp('GF_DEV.Accounting_Period', id_period = PeriodMonthGallery.Selected.id_period).period & "</font></b> ? No more movements can be registered in this period.
                 "
             Width: =372
             X: =24
@@ -1680,7 +1680,7 @@ scr_customizing_accounting As screen:
         Gallery1_14 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Accounting_Period' 
+            Items: ='GF_DEV.Accounting_Period' 
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

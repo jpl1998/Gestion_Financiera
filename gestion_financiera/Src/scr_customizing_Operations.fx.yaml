@@ -5,7 +5,7 @@ scr_customizing_Operations As screen:
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
         Height: =44
-        Items: ='public.Bank'
+        Items: ='GF_DEV.Bank'
         Width: =344
         X: =350
         Y: =100
@@ -540,12 +540,12 @@ scr_customizing_Operations As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Operation_Table',
-                        Defaults('public.Operation_Table'),
+                        'GF_DEV.Operation_Table',
+                        Defaults('GF_DEV.Operation_Table'),
                         {
                             id_operation_table: First(
                                 SortByColumns(
-                                    'public.Operation_Table',
+                                    'GF_DEV.Operation_Table',
                                     "id_operation_table",
                                     SortOrder.Descending
                                 )
@@ -614,7 +614,7 @@ scr_customizing_Operations As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =Filter('public.System_Value', (Dropdown2_25.Selected.Value="Income" && type="I") || (Dropdown2_25.Selected.Value="Outcome" && type="O"))
+                Items: =Filter('GF_DEV.System_Value', (Dropdown2_25.Selected.Value="Income" && type="I") || (Dropdown2_25.Selected.Value="Outcome" && type="O"))
                 Width: =344
                 X: =42
                 Y: =351
@@ -686,8 +686,8 @@ scr_customizing_Operations As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Operation_Table',
-                        LookUp('public.Operation_Table', id_operation_table = Gallery1_9.Selected.id_operation_table),
+                        'GF_DEV.Operation_Table',
+                        LookUp('GF_DEV.Operation_Table', id_operation_table = Gallery1_9.Selected.id_operation_table),
                         {
                             item: TextInput2_25.Text,
                             type: Dropdown2_28.Selected.Value,
@@ -802,7 +802,7 @@ scr_customizing_Operations As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =Filter('public.System_Value', (Dropdown2_28.Selected.Value="Income" && type="I") || (Dropdown2_28.Selected.Value="Outcome" && type="O"))
+                Items: =Filter('GF_DEV.System_Value', (Dropdown2_28.Selected.Value="Income" && type="I") || (Dropdown2_28.Selected.Value="Outcome" && type="O"))
                 Width: =344
                 X: =41
                 Y: =353
@@ -1042,7 +1042,7 @@ scr_customizing_Operations As screen:
         Gallery1_9 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Operation_Table'
+            Items: ='GF_DEV.Operation_Table'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

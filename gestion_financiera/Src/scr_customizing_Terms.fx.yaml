@@ -455,7 +455,7 @@ scr_customizing_Terms As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |
-                    =Patch('public.Terms',Defaults('public.Terms'),{id_term: First(SortByColumns('public.Terms', "id_term", SortOrder.Descending)).id_term + 1,term: TextInput2_22.Text});
+                    =Patch('GF_DEV.Terms',Defaults('GF_DEV.Terms'),{id_term: First(SortByColumns('GF_DEV.Terms', "id_term", SortOrder.Descending)).id_term + 1,term: TextInput2_22.Text});
                     UpdateContext({varpopupconfgAddTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -563,7 +563,7 @@ scr_customizing_Terms As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Terms',LookUp('public.Terms', id_term = Gallery1_8.Selected.id_term),{term:TextInput2_23.Text});
+                    =Patch('GF_DEV.Terms',LookUp('GF_DEV.Terms', id_term = Gallery1_8.Selected.id_term),{term:TextInput2_23.Text});
                     UpdateContext({varpopupCnfEditTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -669,7 +669,7 @@ scr_customizing_Terms As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Terms',Gallery1_8.Selected); UpdateContext({varpopupEliminateTerms:false})
+                    =Remove('GF_DEV.Terms',Gallery1_8.Selected); UpdateContext({varpopupEliminateTerms:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -792,7 +792,7 @@ scr_customizing_Terms As screen:
         Gallery1_8 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Terms'
+            Items: ='GF_DEV.Terms'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

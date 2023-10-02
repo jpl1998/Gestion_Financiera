@@ -589,7 +589,7 @@ scr_customizing_Bank As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Bank',Gallery1_17.Selected); UpdateContext({varpopupEliminateBank:false})
+                    =Remove('GF_DEV.Bank',Gallery1_17.Selected); UpdateContext({varpopupEliminateBank:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -905,7 +905,7 @@ scr_customizing_Bank As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: ='public.Bank_Entity_Relationship'
+                Items: ='GF_DEV.Bank_Entity_Relationship'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -980,7 +980,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: =LookUp('public.Entity', id_entity = ThisItem.id_entity).entity
+                    Text: =LookUp('GF_DEV.Entity', id_entity = ThisItem.id_entity).entity
                     Width: =120
                     X: =550
                     ZIndex: =13
@@ -990,7 +990,7 @@ scr_customizing_Bank As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
+                    Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
                     Width: =60
                     X: =740
                     ZIndex: =14
@@ -1451,10 +1451,10 @@ scr_customizing_Bank As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Bank_Entity_Relationship',
-                        Defaults('public.Bank_Entity_Relationship'),
+                        'GF_DEV.Bank_Entity_Relationship',
+                        Defaults('GF_DEV.Bank_Entity_Relationship'),
                         {
-                            id_bank_entity_relationship: First(SortByColumns('public.Bank_Entity_Relationship',"id_bank_entity_relationship",SortOrder.Descending)).id_bank_entity_relationship+1,
+                            id_bank_entity_relationship: First(SortByColumns('GF_DEV.Bank_Entity_Relationship',"id_bank_entity_relationship",SortOrder.Descending)).id_bank_entity_relationship+1,
                             id_bank: varSelectedBank.id_bank,
                             id_entity: EntityAccountDropdown.Selected.id_entity,
                             id_currency: CurrencyAccountDropdown.Selected.id_currency,
@@ -1508,7 +1508,7 @@ scr_customizing_Bank As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='public.Entity'
+                Items: ='GF_DEV.Entity'
                 Width: =344
                 X: =38
                 Y: =443
@@ -1586,7 +1586,7 @@ scr_customizing_Bank As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='public.Currency'
+                Items: ='GF_DEV.Currency'
                 Width: =344
                 X: =38
                 Y: =557
@@ -2134,10 +2134,10 @@ scr_customizing_Bank As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Bank',
-                        Defaults('public.Bank'),
+                        'GF_DEV.Bank',
+                        Defaults('GF_DEV.Bank'),
                         {
-                            id_bank:First(SortByColumns('public.Bank',"id_bank",SortOrder.Descending)).id_bank+1,
+                            id_bank:First(SortByColumns('GF_DEV.Bank',"id_bank",SortOrder.Descending)).id_bank+1,
                             bank: NewBankTextInput.Text
                         }
                     );
@@ -2252,7 +2252,7 @@ scr_customizing_Bank As screen:
         Gallery1_17 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Bank'
+            Items: ='GF_DEV.Bank'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -2306,7 +2306,7 @@ scr_customizing_Bank As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =CountRows(Filter('public.Bank_Entity_Relationship', id_bank = ThisItem.id_bank))
+                Text: =CountRows(Filter('GF_DEV.Bank_Entity_Relationship', id_bank = ThisItem.id_bank))
                 Width: =55
                 X: =295
                 ZIndex: =11

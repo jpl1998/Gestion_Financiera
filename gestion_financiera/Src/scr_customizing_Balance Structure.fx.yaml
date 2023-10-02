@@ -453,7 +453,7 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Balance_Structure',Defaults('public.Balance_Structure'),{id_balance: First(SortByColumns('public.Balance_Structure', "id_balance", SortOrder.Descending)).id_balance + 1,balance: TextInput2_28.Text});
+                    =Patch('GF_DEV.Balance_Structure',Defaults('GF_DEV.Balance_Structure'),{id_balance: First(SortByColumns('GF_DEV.Balance_Structure', "id_balance", SortOrder.Descending)).id_balance + 1,balance: TextInput2_28.Text});
                     UpdateContext({varpopupconfgAddBalance:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -561,7 +561,7 @@
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Balance_Structure',LookUp('public.Balance_Structure', id_balance = Gallery1_11.Selected.id_balance),{balance:TextInput2_29.Text});
+                    =Patch('GF_DEV.Balance_Structure',LookUp('GF_DEV.Balance_Structure', id_balance = Gallery1_11.Selected.id_balance),{balance:TextInput2_29.Text});
                     UpdateContext({varpopupCnfEditBalance:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -667,7 +667,7 @@
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Balance_Structure',Gallery1_11.Selected);
+                    =Remove('GF_DEV.Balance_Structure',Gallery1_11.Selected);
                     UpdateContext({varpopupEliminateDocument:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -791,7 +791,7 @@
         Gallery1_11 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Balance_Structure'
+            Items: ='GF_DEV.Balance_Structure'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

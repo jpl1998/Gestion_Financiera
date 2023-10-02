@@ -887,7 +887,7 @@ scr_customizing_Class As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: =Filter('public.Asset_Subclass', varSelectedClass.id_class = id_class)
+                Items: =Filter('GF_DEV.Asset_Subclass', varSelectedClass.id_class = id_class)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -1121,7 +1121,7 @@ scr_customizing_Class As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Asset_Subclass',LookUp('public.Asset_Subclass', id_subclass = Gallery1_4.Selected.id_subclass),{subclass:TextInput2_15.Text});
+                    =Patch('GF_DEV.Asset_Subclass',LookUp('GF_DEV.Asset_Subclass', id_subclass = Gallery1_4.Selected.id_subclass),{subclass:TextInput2_15.Text});
                     UpdateContext({varpopupCnfEditClass:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -1223,12 +1223,12 @@ scr_customizing_Class As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Asset_Subclass',
-                        Defaults('public.Asset_Subclass'),
+                        'GF_DEV.Asset_Subclass',
+                        Defaults('GF_DEV.Asset_Subclass'),
                         {
                             id_subclass: First(
                                 SortByColumns(
-                                    'public.Asset_Subclass',
+                                    'GF_DEV.Asset_Subclass',
                                     "id_subclass",
                                     SortOrder.Descending
                                 )
@@ -1335,7 +1335,7 @@ scr_customizing_Class As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Asset_Subclass',Gallery1_4.Selected);
+                    =Remove('GF_DEV.Asset_Subclass',Gallery1_4.Selected);
                     UpdateContext({varpopupEliminateClass:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -1759,7 +1759,7 @@ scr_customizing_Class As screen:
         Gallery1_3 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Asset_Class'
+            Items: ='GF_DEV.Asset_Class'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -1813,7 +1813,7 @@ scr_customizing_Class As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =CountRows(Filter('public.Asset_Subclass', ThisItem.id_class = id_class))
+                Text: =CountRows(Filter('GF_DEV.Asset_Subclass', ThisItem.id_class = id_class))
                 Width: =55
                 X: =295
                 ZIndex: =11

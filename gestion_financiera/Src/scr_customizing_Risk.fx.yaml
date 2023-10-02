@@ -455,7 +455,7 @@ scr_customizing_Risk As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Risk_Scale',Defaults('public.Risk_Scale'),{id_risk:First(SortByColumns('public.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
+                    =Patch('GF_DEV.Risk_Scale',Defaults('GF_DEV.Risk_Scale'),{id_risk:First(SortByColumns('GF_DEV.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
                     UpdateContext({varpopupconfgAddRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -563,7 +563,7 @@ scr_customizing_Risk As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch('public.Risk_Scale',LookUp('public.Risk_Scale', id_risk = Gallery1_6.Selected.id_risk),{risk:TextInput2_19.Text});
+                    =Patch('GF_DEV.Risk_Scale',LookUp('GF_DEV.Risk_Scale', id_risk = Gallery1_6.Selected.id_risk),{risk:TextInput2_19.Text});
                     UpdateContext({varpopupCnfEditRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -669,7 +669,7 @@ scr_customizing_Risk As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Risk_Scale',Gallery1_6.Selected);
+                    =Remove('GF_DEV.Risk_Scale',Gallery1_6.Selected);
                     UpdateContext({varpopupEliminateRisk:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -793,7 +793,7 @@ scr_customizing_Risk As screen:
         Gallery1_6 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='public.Risk_Scale'
+            Items: ='GF_DEV.Risk_Scale'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

@@ -607,10 +607,10 @@ scr_customizing_Entities As screen:
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
                     =Patch(
-                        'public.Entity',
-                        Defaults('public.Entity'),
+                        'GF_DEV.Entity',
+                        Defaults('GF_DEV.Entity'),
                         {
-                            id_entity: First(SortByColumns('public.Entity',"id_entity",SortOrder.Descending)).id_entity+1,
+                            id_entity: First(SortByColumns('GF_DEV.Entity',"id_entity",SortOrder.Descending)).id_entity+1,
                             id_currency: CurrencyEntityDropdown.Selected.id_currency,
                             entity: EntityNameTextInput.Text,
                             tin: TinTextInput.Text,
@@ -651,7 +651,7 @@ scr_customizing_Entities As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='public.Currency'
+                Items: ='GF_DEV.Currency'
                 Width: =344
                 X: =38
                 Y: =452
@@ -846,7 +846,7 @@ scr_customizing_Entities As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='public.Currency'
+                Items: ='GF_DEV.Currency'
                 Width: =344
                 X: =37
                 Y: =452
@@ -1036,7 +1036,7 @@ scr_customizing_Entities As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('public.Entity',Gallery1_1.Selected); UpdateContext({varpopupEliminateEntity:false})
+                    =Remove('GF_DEV.Entity',Gallery1_1.Selected); UpdateContext({varpopupEliminateEntity:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -2914,7 +2914,7 @@ scr_customizing_Entities As screen:
         Gallery1_1 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =359
-            Items: ='public.Entity'
+            Items: ='GF_DEV.Entity'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -2987,7 +2987,7 @@ scr_customizing_Entities As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =CountRows(Filter('public.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))
+                Text: =CountRows(Filter('GF_DEV.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))
                 Width: =50
                 X: =551
                 ZIndex: =13
@@ -2997,7 +2997,7 @@ scr_customizing_Entities As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =LookUp('public.Currency', id_currency = ThisItem.id_currency).currency
+                Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
                 Width: =50
                 X: =672
                 ZIndex: =14
