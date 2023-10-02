@@ -1164,7 +1164,7 @@ scr_customizing_Currency As screen:
                 =ColorValue(varprimaryColor)
             OnSelect: |
                 =Patch('GF_DEV.Currency',Defaults('GF_DEV.Currency'),{id_currency:First(SortByColumns('GF_DEV.Currency',"id_currency",SortOrder.Descending)).id_currency+1,currency:TextInput2_56.Text});
-                UpdateContext({varshowPopUpProveedores:false})
+                UpdateContext({varpopupconfgAddTerms:false})
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: |
