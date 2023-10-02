@@ -1367,26 +1367,32 @@ scr_banco As screen:
                         ZIndex: =7
 
                         ColumnChart1 As barChart:
-                            GridStyle: =GridStyle.YOnly
-                            Height: =249
+                            GridStyle: =GridStyle.All
+                            Height: =282
                             Items: |-
-                                =AddColumns(
-                                    SortByColumns(
-                                        Filter(
-                                            'public.Bank_Movement',
-                                            id_period = varCurrentPeriod.id_month
+                                =With({col:DropColumns(
+                                    AddColumns(
+                                        GroupBy(
+                                            Filter(
+                                                'public.Bank_Movement',
+                                                id_period = varCurrentPeriod.id_month
+                                            ),
+                                            "movement_type",
+                                            "groupType"
                                         ),
-                                        "movement_type",
-                                        "groupType"
+                                        "sumAmount",
+                                        Sum(
+                                            ForAll(
+                                                groupType As x,
+                                                x.movement_amount
+                                            ),
+                                            Value
+                                        ),
+                                        "label",
+                                        movement_type
                                     ),
-                                    "sumAmount",
-                                    Sum(
-                                        groupType,
-                                        movement_amount
-                                    ).Value,
-                                    "label",
-                                    movement_type
-                                )
+                                    "groupType"
+                                )},col)
                             Width: =565
                             X: =615
                             Y: =23
@@ -1394,12 +1400,12 @@ scr_banco As screen:
 
                         Legend3 As legend:
                             Font: =Font.Arial
-                            Height: =51
+                            Height: =26
                             ItemColorSet: =ColumnChart1.ItemColorSet
-                            Items: =ColumnChart1.SeriesLabels
-                            Width: =356
+                            Items: =ColumnChart1.SelectedItems
+                            Width: =524
                             X: =656
-                            Y: =295
+                            Y: =320
                             ZIndex: =10
 
                     Rectangle1_24 As rectangle:
