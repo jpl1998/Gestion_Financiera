@@ -787,7 +787,34 @@ scr_banco As screen:
 
                         PieChart2 As pieChart:
                             Height: =330
-                            Items: =AddColumns(GroupBy(AddColumns('public.Investment_Data' As x,"movementType",LookUp('public.Investment', id_investment = x.id_investment).id_class),"movementType","groupType"),"typeName",LookUp('public.Asset_Class',id_class = movementType).class,"sumAmount",Sum(groupType,profitability))
+                            Items: |-
+                                =AddColumns(
+                                    GroupBy(
+                                        AddColumns(
+                                            'public.Investment_Data' As x,
+                                            "movementType",
+                                            LookUp(
+                                                'public.Investment',
+                                                id_investment = x.id_investment
+                                            ).id_class
+                                        ),
+                                        "movementType",
+                                        "groupType"
+                                    ),
+                                    "typeName",
+                                    LookUp(
+                                        'public.Asset_Class',
+                                        id_class = movementType
+                                    ).class,
+                                    "sumAmount",
+                                    Sum(
+                                        ForAll(
+                                            groupType As x,
+                                            x.profitability
+                                        ),
+                                        Value
+                                    )
+                                )
                             Width: =437
                             X: =610
                             Y: =15
