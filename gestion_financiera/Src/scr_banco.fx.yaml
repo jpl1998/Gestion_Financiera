@@ -80,7 +80,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =223
-                    Items: ='public.Bank_Entity_Relationship'
+                    Items: =Filter('public.Bank_Entity_Relationship', id_bank = LookUp('public.Bank', Lower(TextInput1_8.Text) in Lower(bank)).id_bank, TextInput1_8.Text in account_num, TextInput1_8.Text in account_identifier, TextInput1_8.Text in c_bank)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -276,10 +276,11 @@ scr_banco As screen:
                     DisabledFill: =RGBA(0, 0, 0, 0)
                     Fill: =RGBA(147, 147, 147, 0)
                     Height: =44
-                    HintText: ="        Search bank account"
+                    HintText: ="Search bank account"
                     HoverBorderColor: =RGBA(212, 212, 212, 1)
                     HoverColor: =RGBA(147, 147, 147, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
+                    PaddingLeft: =50
                     PressedColor: =RGBA(147, 147, 147, 1)
                     PressedFill: =
                     RadiusBottomLeft: =4
@@ -1233,7 +1234,14 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Transfers"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_44 As label:
@@ -1242,7 +1250,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'public.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'public.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Transfers"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =3
 
                             Label7_3 As label:
@@ -1341,7 +1369,24 @@ scr_banco As screen:
                         ColumnChart1 As barChart:
                             GridStyle: =GridStyle.YOnly
                             Height: =249
-                            Items: =AddColumns(GroupBy(Filter('public.Bank_Movement',id_period = varCurrentPeriod.id_month),"movement_type","groupType"),"sumAmount",Sum(groupType, movement_amount))
+                            Items: |-
+                                =AddColumns(
+                                    SortByColumns(
+                                        Filter(
+                                            'public.Bank_Movement',
+                                            id_period = varCurrentPeriod.id_month
+                                        ),
+                                        "movement_type",
+                                        "groupType"
+                                    ),
+                                    "sumAmount",
+                                    Sum(
+                                        groupType,
+                                        movement_amount
+                                    ).Value,
+                                    "label",
+                                    movement_type
+                                )
                             Width: =565
                             X: =615
                             Y: =23
@@ -1351,7 +1396,7 @@ scr_banco As screen:
                             Font: =Font.Arial
                             Height: =51
                             ItemColorSet: =ColumnChart1.ItemColorSet
-                            Items: =ColumnChart1.SelectedItems
+                            Items: =ColumnChart1.SeriesLabels
                             Width: =356
                             X: =656
                             Y: =295
@@ -4410,7 +4455,7 @@ scr_banco As screen:
                                 id_period: varCurrentPeriod.id_month,
                                 movement_type: MovementTypeDropdown.Selected.value,
                                 adquisition_date: AdquisitionDateMovementDatePicker.SelectedDate,
-                                movement_amount: Value(MovementAmountMovementTextInput.Text),
+                                movement_amount: Value(MovementAmountMovementTextInput.Text) * If(MovementTypeDropdown.Selected.type = "O", -1, 1),
                                 final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text),
                                 description: DescriptionMovementTextInput.Text,
                                 cusip: CusipMovementTextInput.Text
@@ -4434,7 +4479,7 @@ scr_banco As screen:
                                 id_period: varCurrentPeriod.id_month,
                                 balance_date: Today(),
                                 initial_balance: varInitialBalance,
-                                final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text),
+                                final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text) * If(MovementTypeDropdown.Selected.type = "O", -1, 1),
                                 ind_act: true
                             }
                         );
@@ -4466,7 +4511,7 @@ scr_banco As screen:
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(51, 51, 51, 1)
                     Height: =45
-                    Items: ='public.System_Value'
+                    Items: =Filter('public.System_Value',value<>"Purchase",value<>"Sale")
                     Width: =428
                     X: =28
                     Y: =244

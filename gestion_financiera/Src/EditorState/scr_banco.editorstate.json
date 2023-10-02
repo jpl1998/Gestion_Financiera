@@ -17783,7 +17783,14 @@
         "Font",
         "Width",
         "Height",
-        "DisplayMode",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "DisplayMode",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         "Size",
         "BorderThickness",
@@ -17800,6 +17807,14 @@
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
           "InvariantPropertyName": "ItemsGap",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Markers",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -17819,7 +17834,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Labels\":\"movement_type\",\"Series1\":\"sumAmount\",\"Series2\":\"sumAmount\",\"Series3\":\"sumAmount\",\"Series4\":\"sumAmount\",\"Series5\":\"sumAmount\",\"Series6\":\"sumAmount\",\"Series7\":\"sumAmount\",\"Series8\":\"sumAmount\",\"Series9\":\"sumAmount\"}",
+          "NameMap": "{\"Labels\":\"label\",\"Series1\":\"id_bank_entity_relationship\",\"Series2\":\"id_period\",\"Series3\":\"id_period\",\"Series4\":\"id_period\",\"Series5\":\"id_period\",\"Series6\":\"id_period\",\"Series7\":\"id_period\",\"Series8\":\"id_period\",\"Series9\":\"id_period\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
@@ -17916,6 +17931,11 @@
         {
           "Category": "Design",
           "PropertyName": "ItemsGap",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Markers",
           "RuleProviderType": "Unknown"
         }
       ],
@@ -92756,6 +92776,14 @@
           "InvariantPropertyName": "HintText",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "PaddingLeft",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -92974,6 +93002,11 @@
         {
           "Category": "Design",
           "PropertyName": "LineHeight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PaddingLeft",
           "RuleProviderType": "Unknown"
         }
       ],
