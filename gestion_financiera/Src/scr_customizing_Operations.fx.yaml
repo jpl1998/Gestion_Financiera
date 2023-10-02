@@ -672,55 +672,6 @@ scr_customizing_Operations As screen:
             Y: =75
             ZIndex: =36
 
-            TxtOrdendeCompra_94 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="Edit Item"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_29 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupCnfEditOperation:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_95 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =29
-                Size: =12
-                Text: ="Item"
-                Width: =169
-                X: =36
-                Y: =420
-                ZIndex: =14
-
-            TextInput2_25 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =465
-                ZIndex: =15
-
             Button1_46 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
@@ -734,7 +685,17 @@ scr_customizing_Operations As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'public.Operation_Table',
+                        LookUp('public.Operation_Table', id_operation_table = Gallery1_9.Selected.id_operation_table),
+                        {
+                            item: TextInput2_25.Text,
+                            type: Dropdown2_28.Selected.Value,
+                            sign: Dropdown2_26.Selected.Value,
+                            id_system_value: Value(Dropdown2_27.Selected.id_system_value)
+                        }
+                    );
+                    UpdateContext({varpopupCnfEditOperation:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -750,6 +711,55 @@ scr_customizing_Operations As screen:
                 Y: =542
                 ZIndex: =16
 
+            TxtOrdendeCompra_94 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Edit Item"
+                Width: =105
+                X: =158
+                Y: =33
+                ZIndex: =17
+
+            Icon2_29 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupconfgAddOperation:false})
+                Width: =20
+                X: =361
+                Y: =39
+                ZIndex: =18
+
+            TxtOrdendeCompra_95 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =29
+                Size: =12
+                Text: ="Item"
+                Width: =169
+                X: =35
+                Y: =420
+                ZIndex: =19
+
+            TextInput2_25 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =37
+                Y: =465
+                ZIndex: =20
+
             TxtOrdendeCompra_505 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
@@ -758,20 +768,22 @@ scr_customizing_Operations As screen:
                 Size: =12
                 Text: ="Sign"
                 Width: =90
-                X: =36
+                X: =35
                 Y: =195
-                ZIndex: =17
+                ZIndex: =22
 
             Dropdown2_26 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =If(Dropdown2_28.Selected.Value="Income","+","-")
+                DisplayMode: =DisplayMode.View
                 Height: =44
-                Items: =DropDownSample
+                Items: =["+","-"]
                 Width: =344
-                X: =42
+                X: =41
                 Y: =239
-                ZIndex: =18
+                ZIndex: =23
 
             TxtOrdendeCompra_508 As label:
                 Color: =RGBA(99, 99, 99, 1)
@@ -781,20 +793,20 @@ scr_customizing_Operations As screen:
                 Size: =12
                 Text: ="System Value"
                 Width: =120
-                X: =36
+                X: =35
                 Y: =309
-                ZIndex: =19
+                ZIndex: =24
 
             Dropdown2_27 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: =Filter('public.System_Value', (Dropdown2_28.Selected.Value="Income" && type="I") || (Dropdown2_28.Selected.Value="Outcome" && type="O"))
                 Width: =344
-                X: =42
+                X: =41
                 Y: =353
-                ZIndex: =20
+                ZIndex: =25
 
             TxtOrdendeCompra_509 As label:
                 Color: =RGBA(99, 99, 99, 1)
@@ -802,21 +814,22 @@ scr_customizing_Operations As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =12
-                Text: ="Operation Table"
-                X: =36
+                Text: ="Type"
+                Width: =90
+                X: =35
                 Y: =81
-                ZIndex: =21
+                ZIndex: =26
 
             Dropdown2_28 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: =["Income", "Outcome"]
                 Width: =344
-                X: =42
+                X: =41
                 Y: =125
-                ZIndex: =22
+                ZIndex: =27
 
     four_Screen_8 As group:
         Height: =5
