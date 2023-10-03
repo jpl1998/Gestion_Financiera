@@ -705,7 +705,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'GF_DEV.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'GF_DEV.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Dividend"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,0.00")
                                     ZIndex: =3
 
                             Container7_6 As groupContainer.horizontalAutoLayoutContainer:
@@ -746,7 +766,27 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'GF_DEV.Accounting_Period_Month',
+                                                    id_period = varCurrentPeriod.id_period
+                                                ) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter(
+                                                            'GF_DEV.Bank_Movement',
+                                                            id_period = x.id_month,
+                                                            movement_type = "Interest"
+                                                        ),
+                                                        movement_amount
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$0,0.00")
                                     ZIndex: =3
 
                             Label7_1 As label:
