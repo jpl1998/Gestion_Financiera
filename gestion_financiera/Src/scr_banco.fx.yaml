@@ -80,7 +80,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =223
-                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank in  Search('GF_DEV.Bank', SearchBankTextInput.Text,"bank").id_bank, SearchBankTextInput.Text in account_num, SearchBankTextInput.Text in account_identifier, SearchBankTextInput.Text in c_bank)
+                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank in Search('GF_DEV.Bank', SearchBankTextInput.Text,"bank").id_bank, SearchBankTextInput.Text in account_num, SearchBankTextInput.Text in account_identifier, SearchBankTextInput.Text in c_bank)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -842,33 +842,36 @@ scr_banco As screen:
                         PieChart2 As pieChart:
                             Height: =330
                             Items: |-
-                                =AddColumns(
-                                    GroupBy(
+                                =DropColumns(
                                         AddColumns(
-                                            'GF_DEV.Investment_Data' As x,
-                                            "movementType",
+                                            GroupBy(
+                                                AddColumns(
+                                                    'GF_DEV.Investment_Data' As x,
+                                                    "movementType",
+                                                    LookUp(
+                                                        'GF_DEV.Investment',
+                                                        id_investment = x.id_investment
+                                                    ).id_class
+                                                ),
+                                                "movementType",
+                                                "groupType"
+                                            ),
+                                            "typeName",
                                             LookUp(
-                                                'GF_DEV.Investment',
-                                                id_investment = x.id_investment
-                                            ).id_class
+                                                'GF_DEV.Asset_Class',
+                                                id_class = movementType
+                                            ).class,
+                                            "sumAmount",
+                                            Sum(
+                                                ForAll(
+                                                    groupType As x,
+                                                    x.profitability
+                                                ),
+                                                Value
+                                            )
                                         ),
-                                        "movementType",
                                         "groupType"
-                                    ),
-                                    "typeName",
-                                    LookUp(
-                                        'GF_DEV.Asset_Class',
-                                        id_class = movementType
-                                    ).class,
-                                    "sumAmount",
-                                    Sum(
-                                        ForAll(
-                                            groupType As x,
-                                            x.profitability
-                                        ),
-                                        Value
                                     )
-                                )
                             Width: =437
                             X: =610
                             Y: =15

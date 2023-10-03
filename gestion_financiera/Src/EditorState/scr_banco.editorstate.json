@@ -85680,7 +85680,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Labels\":\"typeName\",\"Series\":\"movementType\"}",
+          "NameMap": "{\"Labels\":\"typeName\",\"Series\":\"sumAmount\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
