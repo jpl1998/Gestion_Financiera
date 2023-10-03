@@ -2951,7 +2951,16 @@ scr_banco As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         DelayItemLoading: =true
                         Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
-                        Items: =Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
+                        Items: |-
+                            =With(
+                                        {
+                                            temp:Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
+                                        },
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period) As x,
+                                            LookUp(temp, x.adquisition_date = Text(adquisition_date,"yyyy-mm-dd"))
+                                        )
+                                    )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
@@ -2995,7 +3004,7 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =ThisItem.adquisition_date
+                                Text: =Text(ThisItem.adquisition_date,"yyyy-mm-dd")
                                 X: =201
                                 ZIndex: =2
 
