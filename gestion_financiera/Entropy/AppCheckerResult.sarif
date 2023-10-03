@@ -144,7 +144,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 99,
+                  "charOffset": 50,
                   "snippet": {
                     "text": "in"
                   }
@@ -159,7 +159,7 @@
           ],
           "message": {
             "arguments": [
-              "LookUp"
+              "Filter"
             ],
             "id": "issue"
           },
@@ -30714,19 +30714,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.TextInput1_9.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.SearchMovementTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.TextInput1_9.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.SearchMovementTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.TextInput1_9"
+                "type": "scr_banco.Container3.SearchMovementTextInput"
               }
             }
           ],
@@ -31494,19 +31494,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.TextInput1_8.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.SearchBankTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.TextInput1_8.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.SearchBankTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.TextInput1_8"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.SearchBankTextInput"
               }
             }
           ],
@@ -52625,6 +52625,36 @@
               },
               "properties": {
                 "member": "Imagen1",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.upload"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.upload",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "upload",
                 "module": "App",
                 "type": "App"
               }

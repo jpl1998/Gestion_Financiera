@@ -80,7 +80,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =223
-                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank = LookUp('GF_DEV.Bank', Lower(TextInput1_8.Text) in Lower(bank)).id_bank, TextInput1_8.Text in account_num, TextInput1_8.Text in account_identifier, TextInput1_8.Text in c_bank)
+                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank in  Search('GF_DEV.Bank', SearchBankTextInput.Text,"bank").id_bank, SearchBankTextInput.Text in account_num, SearchBankTextInput.Text in account_identifier, SearchBankTextInput.Text in c_bank)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -266,7 +266,7 @@ scr_banco As screen:
                     Y: =526
                     ZIndex: =2
 
-                TextInput1_8 As text:
+                SearchBankTextInput As text:
                     BorderColor: =RGBA(212, 212, 212, 1)
                     BorderThickness: =1
                     Color: =RGBA(147, 147, 147, 1)
@@ -2240,7 +2240,7 @@ scr_banco As screen:
             BorderColor: =RGBA(255, 255, 255, 1)
             DelayItemLoading: =true
             Height: =223
-            Items: =Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship)
+            Items: =Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -2297,7 +2297,7 @@ scr_banco As screen:
                     OnSelect: =
                     PaddingTop: =8
                     Size: =12
-                    Text: =ThisItem.movement_amount
+                    Text: =Text(ThisItem.movement_amount,"$0,0.00")
                     Width: =200
                     X: =498
                     ZIndex: =3
@@ -2359,7 +2359,7 @@ scr_banco As screen:
             Y: =521
             ZIndex: =25
 
-        TextInput1_9 As text:
+        SearchMovementTextInput As text:
             BorderColor: =RGBA(212, 212, 212, 1)
             BorderThickness: =1
             Color: =RGBA(147, 147, 147, 1)
@@ -2369,10 +2369,11 @@ scr_banco As screen:
             DisabledFill: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(147, 147, 147, 0)
             Height: =44
-            HintText: ="        Search bank account"
+            HintText: ="Search movement"
             HoverBorderColor: =RGBA(212, 212, 212, 1)
             HoverColor: =RGBA(147, 147, 147, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
+            PaddingLeft: =50
             PressedColor: =RGBA(147, 147, 147, 1)
             PressedFill: =
             RadiusBottomLeft: =4
@@ -2391,7 +2392,7 @@ scr_banco As screen:
             Height: =44
             Items: =DropDownSample
             Width: =200
-            X: =762
+            X: =1049
             Y: =18
             ZIndex: =34
 
@@ -2635,33 +2636,6 @@ scr_banco As screen:
             Y: =422
             ZIndex: =56
 
-        Button1_341 As button:
-            BorderColor: =ColorValue(varprimaryColor)
-            BorderThickness: =1
-            Color: =ColorValue(varprimaryColor)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Lighter
-            Height: =44
-            HoverBorderColor: =
-            HoverFill: =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =Reset(CargaEstadoCuentaAdjunto);
-                UpdateContext({varpopupdowloadAccountxls:true});
-            PressedBorderColor: =
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Upload Bank Statement"
-            Width: =260
-            X: =980
-            Y: =18
-            ZIndex: =57
-
         Icon2_165 As icon.Search:
             Color: =RGBA(77, 77, 77, 1)
             Height: =20
@@ -2671,14 +2645,6 @@ scr_banco As screen:
             X: =52
             Y: =434
             ZIndex: =58
-
-        Image16 As image:
-            Height: =20
-            Image: =upload
-            Width: =20
-            X: =995
-            Y: =30
-            ZIndex: =60
 
         Container8_1 As groupContainer.horizontalAutoLayoutContainer:
             DropShadow: =DropShadow.None
@@ -2691,6 +2657,7 @@ scr_banco As screen:
             ZIndex: =61
 
             Button2_186 As button:
+                Align: =Align.Left
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 Color: =RGBA(26, 26, 26, 1)
