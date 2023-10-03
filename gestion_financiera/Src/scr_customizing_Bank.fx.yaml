@@ -589,7 +589,8 @@ scr_customizing_Bank As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('GF_DEV.Bank',Gallery1_17.Selected); UpdateContext({varpopupEliminateBank:false})
+                    =RemoveIf('GF_DEV.Bank_Entity_Relationship', id_bank = BanksGallery.Selected.id_bank);
+                    Remove('GF_DEV.Bank',BanksGallery.Selected); UpdateContext({varpopupEliminateBank:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -608,7 +609,7 @@ scr_customizing_Bank As screen:
                 Font: =Font.Arial
                 Height: =59
                 HtmlText: |-
-                    ="<center> The <b><font color=""#4280c2"">"" JP Morgan""</font></b> item and all associated banks (3) will be permanently deleted. Are you sure you want to delete it? "
+                    ="<center> The <b><font color=""#4280c2"">" & BanksGallery.Selected.bank & "</font></b> item and all associated banks (" & CountRows(Filter('GF_DEV.Bank_Entity_Relationship', id_bank = BanksGallery.Selected.id_bank)) &") will be permanently deleted. Are you sure you want to delete it? "
                 Width: =372
                 X: =24
                 Y: =76
@@ -901,11 +902,11 @@ scr_customizing_Bank As screen:
                 Y: =30
                 ZIndex: =2
 
-            Gallery1_16 As gallery.galleryVertical:
+            BankAccountGallery As gallery.galleryVertical:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =223
-                Items: ='GF_DEV.Bank_Entity_Relationship'
+                Items: =Filter('GF_DEV.Bank_Entity_Relationship',varSelectedBank.id_bank = id_bank)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -1689,7 +1690,9 @@ scr_customizing_Bank As screen:
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove('GF_DEV.Bank_Entity_Relationship', BankAccountGallery.Selected);
+                    UpdateContext({varpopupEliminateBank1:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -1708,7 +1711,7 @@ scr_customizing_Bank As screen:
                 Font: =Font.Arial
                 Height: =46
                 HtmlText: |-
-                    ="<center> The <b><font color=""#4280c2"">""xxxx-xxxx-xxxx""</font></b> item will be permantly deleted. 
+                    ="<center> The <b><font color=""#4280c2"">" & BankAccountGallery.Selected.account_num & "</font></b> item will be permantly deleted. 
                     Are you sure you want delete it? "
                 Width: =372
                 X: =24
@@ -2249,7 +2252,7 @@ scr_customizing_Bank As screen:
             Y: =100
             ZIndex: =6
 
-        Gallery1_17 As gallery.galleryVertical:
+        BanksGallery As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
             Items: ='GF_DEV.Bank'

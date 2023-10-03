@@ -174,12 +174,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Label4_28.Text"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Label4_28.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Label4_28.Text",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Label4_28.Text",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -193,7 +193,47 @@
               "properties": {
                 "member": "Text",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Label4_28"
+                "type": "scr_customizing_Bank.BanksGallery.Label4_28"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_customizing_Bank.grpCrearOrdenDeCompra_72.HtmlText1_115.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_customizing_Bank.grpCrearOrdenDeCompra_72.HtmlText1_115.HtmlText",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 93,
+                  "charOffset": 122,
+                  "snippet": {
+                    "text": "CountRows(Filter('GF_DEV.Bank_Entity_Relationship', id_bank = BanksGallery.Selected.id_bank))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "scr_customizing_Bank",
+                "type": "scr_customizing_Bank.grpCrearOrdenDeCompra_72.HtmlText1_115"
               }
             }
           ],
@@ -26474,19 +26514,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery"
               }
             }
           ],
@@ -26504,19 +26544,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery"
               }
             }
           ],
@@ -26534,19 +26574,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54"
               }
             }
           ],
@@ -26564,19 +26604,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_54"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_54"
               }
             }
           ],
@@ -26594,19 +26634,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55"
               }
             }
           ],
@@ -26624,19 +26664,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Container1_4.Gallery1_16.Image1_55"
+                "type": "scr_customizing_Bank.Container1_4.BankAccountGallery.Image1_55"
               }
             }
           ],
@@ -27134,19 +27174,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17"
+                "type": "scr_customizing_Bank.BanksGallery"
               }
             }
           ],
@@ -27164,19 +27204,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17"
+                "type": "scr_customizing_Bank.BanksGallery"
               }
             }
           ],
@@ -27194,19 +27234,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_56.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_56.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_56.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_56.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Image1_56"
+                "type": "scr_customizing_Bank.BanksGallery.Image1_56"
               }
             }
           ],
@@ -27224,19 +27264,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_56.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_56.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_56.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_56.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Image1_56"
+                "type": "scr_customizing_Bank.BanksGallery.Image1_56"
               }
             }
           ],
@@ -27254,19 +27294,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_57.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_57.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_57.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_57.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Image1_57"
+                "type": "scr_customizing_Bank.BanksGallery.Image1_57"
               }
             }
           ],
@@ -27284,19 +27324,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_57.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_57.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Image1_57.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Image1_57.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Image1_57"
+                "type": "scr_customizing_Bank.BanksGallery.Image1_57"
               }
             }
           ],
@@ -27314,19 +27354,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Icon1_7.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Icon1_7.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Icon1_7.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Icon1_7.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Icon1_7"
+                "type": "scr_customizing_Bank.BanksGallery.Icon1_7"
               }
             }
           ],
@@ -27344,19 +27384,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Icon1_7.TabIndex"
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Icon1_7.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Bank.Gallery1_17.Icon1_7.TabIndex",
+                  "fullyQualifiedName": "scr_customizing_Bank.BanksGallery.Icon1_7.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_customizing_Bank",
-                "type": "scr_customizing_Bank.Gallery1_17.Icon1_7"
+                "type": "scr_customizing_Bank.BanksGallery.Icon1_7"
               }
             }
           ],
