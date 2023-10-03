@@ -2126,705 +2126,740 @@ scr_banco As screen:
         X: =73
         ZIndex: =20
 
-        Icon2 As icon.ArrowLeft:
-            Color: =Color.Black
-            Height: =32
-            Icon: =Icon.ArrowLeft
-            OnSelect: |-
-                =UpdateContext({varshowPopUpIconDetalle:false})
-            Width: =32
-            X: =32
-            Y: =30
-            ZIndex: =1
+        Canvas1 As fluidGrid.fluidGridWithBlankCard:
+            BorderThickness: =0
+            Height: =Parent.Height - Self.Y
+            Width: =Parent.Width
+            ZIndex: =65
 
-        Label5 As label:
-            Color: =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            Size: =24
-            Text: ="JP MORGAN(111-222-333)"
-            Width: =402
-            X: =80
-            Y: =26
-            ZIndex: =2
+            DataCard2 As dataCard:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =441
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
 
-        Gallery1_26 As gallery.galleryVertical:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            DelayItemLoading: =true
-            Height: =223
-            Items: =Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            ShowScrollbar: =false
-            TemplatePadding: =10
-            TemplateSize: =36
-            Width: =1217
-            X: =32
-            Y: =522
-            ZIndex: =24
-
-            Rectangle3_26 As rectangle:
-                BorderColor: =RGBA(147, 147, 147, 1)
-                Fill: =RGBA(147, 147, 147, 1)
-                Height: =1
-                OnSelect: =Select(Parent)
-                Width: =1195
-                Y: =35
-                ZIndex: =9
-
-            Container8 As groupContainer.horizontalAutoLayoutContainer:
-                DropShadow: =DropShadow.None
-                Height: =36
-                LayoutAlignItems: =LayoutAlignItems.Stretch
-                LayoutMode: =LayoutMode.Auto
-                Width: =1197
-                ZIndex: =18
-
-                Label4_65 As label:
-                    Height: =36
-                    LayoutMinHeight: =15
-                    OnSelect: =
-                    PaddingTop: =8
-                    Size: =12
-                    Text: =ThisItem.movement_type
-                    Width: =180
+                Icon2 As icon.ArrowLeft:
+                    Color: =Color.Black
+                    Height: =32
+                    Icon: =Icon.ArrowLeft
+                    OnSelect: |-
+                        =UpdateContext({varshowPopUpIconDetalle:false})
+                    Width: =32
+                    X: =40
+                    Y: =35
                     ZIndex: =1
 
-                Label4_66 As label:
-                    Align: =Align.Center
-                    Height: =36
-                    LayoutMinHeight: =15
-                    OnSelect: =
-                    PaddingTop: =8
-                    Size: =12
-                    Text: =ThisItem.adquisition_date
-                    Width: =200
-                    X: =201
+                Label5 As label:
+                    Color: =ColorValue(varprimaryColor)
+                    Font: =Font.Arial
+                    Size: =24
+                    Text: ="JP MORGAN(111-222-333)"
+                    Width: =402
+                    X: =88
+                    Y: =31
                     ZIndex: =2
 
-                Label4_68 As label:
-                    Align: =Align.Center
-                    Height: =36
-                    LayoutMinHeight: =15
-                    OnSelect: =
-                    PaddingTop: =8
-                    Size: =12
-                    Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                Dropdown2_5 As dropdown:
+                    BorderColor: =ColorValue(varlineColor)
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronFill: =RGBA(51, 51, 51, 1)
+                    Height: =44
+                    Items: =DropDownSample
                     Width: =200
-                    X: =498
+                    X: =1057
+                    Y: =23
                     ZIndex: =3
 
-                Label4_70 As label:
-                    Align: =Align.Center
-                    FillPortions: =1
-                    Height: =35
-                    LayoutMinHeight: =15
-                    OnSelect: =
-                    PaddingTop: =8
-                    Size: =10
-                    Text: =ThisItem.description
-                    Width: =101
-                    X: =811
-                    Y: =1
+                Container13 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =233
+                    Width: =1172
+                    X: =49
+                    Y: =118
                     ZIndex: =4
 
-                Label4_71 As label:
-                    Align: =Align.Center
-                    Height: =35
-                    LayoutMinHeight: =15
-                    OnSelect: =
-                    PaddingTop: =8
-                    Size: =12
-                    Text: =ThisItem.cusip
-                    Width: =200
-                    X: =990
-                    Y: =1
-                    ZIndex: =5
-
-                Container9 As groupContainer.manualLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    DropShadow: =DropShadow.None
-                    FillPortions: =0
-                    LayoutMinHeight: =12
-                    LayoutMinWidth: =250
-                    Width: =50
-                    ZIndex: =6
-
-                    Image1_64 As image:
-                        Height: =20
-                        Image: =editar
-                        OnSelect: |-
-                            =UpdateContext({varSelectedMovement:ThisItem, varshowPopUpEditMovement:true})
-                        Width: =20
-                        X: =15
+                    HtmlText1_53 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: ="Initial Balance"
+                        Size: =12
+                        Width: =110
+                        X: =13
                         Y: =10
                         ZIndex: =1
 
-        Iconline_46 As rectangle:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: |
-                =
-            Fill: =RGBA(51, 51, 51, 1)
-            Height: =1
-            Width: =1201
-            X: =39
-            Y: =521
-            ZIndex: =25
+                    HtmlText1_54 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: ="Income"
+                        Size: =12
+                        Width: =77
+                        X: =221
+                        Y: =10
+                        ZIndex: =2
 
-        SearchMovementTextInput As text:
-            BorderColor: =RGBA(212, 212, 212, 1)
-            BorderThickness: =1
-            Color: =RGBA(147, 147, 147, 1)
-            Default: =
-            DisabledBorderColor: =RGBA(212, 212, 212, 1)
-            DisabledColor: =RGBA(147, 147, 147, 1)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(147, 147, 147, 0)
-            Height: =44
-            HintText: ="Search movement"
-            HoverBorderColor: =RGBA(212, 212, 212, 1)
-            HoverColor: =RGBA(147, 147, 147, 1)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            PaddingLeft: =50
-            PressedColor: =RGBA(147, 147, 147, 1)
-            PressedFill: =
-            RadiusBottomLeft: =4
-            RadiusBottomRight: =4
-            RadiusTopLeft: =4
-            RadiusTopRight: =4
-            Width: =1138
-            X: =39
-            Y: =422
-            ZIndex: =33
+                    HtmlText1_56 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: |-
+                            ="Sales<b><font color=""#008000""> (3)</font></b>"
+                        Size: =12
+                        Width: =98
+                        X: =396
+                        Y: =10
+                        ZIndex: =3
 
-        Dropdown2_5 As dropdown:
-            BorderColor: =ColorValue(varlineColor)
-            ChevronBackground: =RGBA(255, 255, 255, 1)
-            ChevronFill: =RGBA(51, 51, 51, 1)
-            Height: =44
-            Items: =DropDownSample
-            Width: =200
-            X: =1049
-            Y: =18
-            ZIndex: =34
+                    HtmlText1_57 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: ="Transfers"
+                        Size: =12
+                        Width: =110
+                        X: =595
+                        Y: =10
+                        ZIndex: =4
 
-        Button1_5 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =44
-            HoverBorderColor: =
-            HoverFill: =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =
-                Reset(CargaEstadoCuentaAdjunto);
-                UpdateContext({varpopupdowloadAccountxls:true});
-                //UpdateContext({varpopupBankReconcilation:true})
-            PressedBorderColor: =
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Upload Bank Statement"
-            Width: =260
-            X: =979
-            Y: =361
-            ZIndex: =54
+                    HtmlText1_58 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: ="Dividents"
+                        Size: =12
+                        Width: =85
+                        X: =786
+                        Y: =10
+                        ZIndex: =5
 
-        HtmlText1_76 As htmlViewer:
-            Font: =Font.Arial
-            Height: =48
-            HtmlText: ="Movements"
-            Size: =24
-            Width: =204
-            X: =39
-            Y: =359
-            ZIndex: =55
+                    HtmlText1_60 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =29
+                        HtmlText: |
+                            ="Interests"
+                        Size: =12
+                        Width: =110
+                        X: =979
+                        Y: =10
+                        ZIndex: =6
 
-        Button1_339 As button:
-            BorderColor: =ColorValue(varprimaryColor)
-            BorderThickness: =1
-            Color: =ColorValue(varprimaryColor)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Lighter
-            Height: =44
-            HoverBorderColor: =
-            HoverFill: =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =Reset(MovementTypeDropdown);
-                Reset(AdquisitionDateMovementDatePicker);
-                Reset(MovementAmountMovementTextInput);
-                Reset(DescriptionMovementTextInput);
-                Reset(CusipMovementTextInput);
-                UpdateContext({varshowPopUpAddMovement:true})
-            PressedBorderColor: =
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =28
-            Text: ="+"
-            Width: =44
-            X: =1195
-            Y: =422
-            ZIndex: =56
+                    HtmlText1_61 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: ="Final Balance"
+                        Size: =12
+                        Width: =110
+                        X: =11
+                        Y: =132
+                        ZIndex: =7
 
-        Icon2_165 As icon.Search:
-            Color: =RGBA(77, 77, 77, 1)
-            Height: =20
-            Icon: =Icon.Search
-            OnSelect: =
-            Width: =20
-            X: =52
-            Y: =434
-            ZIndex: =58
+                    HtmlText1_65 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: ="Tax Withholding"
+                        Size: =12
+                        Width: =124
+                        X: =593
+                        Y: =132
+                        ZIndex: =8
 
-        Container8_1 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =36
-            LayoutAlignItems: =LayoutAlignItems.Stretch
-            LayoutMode: =LayoutMode.Auto
-            Width: =1197
-            X: =41
-            Y: =476
-            ZIndex: =61
+                    HtmlText1_66 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: ="Record Balance"
+                        Size: =12
+                        Width: =129
+                        X: =979
+                        Y: =131
+                        ZIndex: =9
 
-            Button2_186 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                LayoutMinHeight: =15
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Movement Type"
-                Width: =180
-                X: =42
-                Y: =475
-                ZIndex: =1
+                    HtmlText1_67 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: |-
+                            ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
+                        Size: =12
+                        Width: =151
+                        X: =221
+                        Y: =132
+                        ZIndex: =10
 
-            Button2_187 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                LayoutMinHeight: =15
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Adquisition Date"
-                Width: =200
-                X: =180
-                Y: =475
+                    HtmlText1_68 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: |-
+                            ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
+                        Size: =12
+                        Width: =151
+                        X: =394
+                        Y: =132
+                        ZIndex: =11
+
+                    HtmlText1_69 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =32
+                        HtmlText: |-
+                            ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
+                        Size: =12
+                        Width: =219
+                        X: =779
+                        Y: =132
+                        ZIndex: =12
+
+                    HtmlText1_62 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
+                        Size: =20
+                        X: =11
+                        Y: =52
+                        ZIndex: =13
+
+                    HtmlText1_70 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =43
+                        HtmlText: ="$8.326.249,874"
+                        Size: =20
+                        X: =11
+                        Y: =172
+                        ZIndex: =14
+
+                    HtmlText1_71 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: ="$8,00"
+                        Size: =20
+                        Width: =114
+                        X: =218
+                        Y: =52
+                        ZIndex: =15
+
+                    HtmlText1_72 As htmlViewer:
+                        Color: =RGBA(0, 128, 0, 1)
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            =Text(Sum(
+                                ForAll(
+                                    Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                                    movement_amount
+                                ),
+                                Value
+                            ),"$0,000.00")
+                        Size: =20
+                        Width: =169
+                        X: =396
+                        Y: =52
+                        ZIndex: =16
+
+                    HtmlText1_73 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: ="$0,00"
+                        Size: =20
+                        Width: =114
+                        X: =595
+                        Y: =52
+                        ZIndex: =17
+
+                    HtmlText1_74 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: ="$0,00"
+                        Size: =20
+                        Width: =114
+                        X: =784
+                        Y: =52
+                        ZIndex: =18
+
+                    HtmlText1_75 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: ="$0,00"
+                        Size: =20
+                        Width: =114
+                        X: =978
+                        Y: =52
+                        ZIndex: =19
+
+                    HtmlText1_78 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            ="<b><font color=""#CC0000"">$150.000,00</font>"
+                        Size: =20
+                        Width: =169
+                        X: =396
+                        Y: =172
+                        ZIndex: =20
+
+                    HtmlText1_79 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            =Sum(
+                                ForAll(
+                                    Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                                    movement_amount
+                                ),
+                                Value
+                            )
+                        Size: =20
+                        Width: =114
+                        X: =593
+                        Y: =172
+                        ZIndex: =21
+
+                    HtmlText1_82 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            ="<b><font color=""#CC0000"">$150.000,00</font>"
+                        Size: =20
+                        Width: =169
+                        X: =221
+                        Y: =172
+                        ZIndex: =22
+
+                    HtmlText1_83 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            ="<b><font color=""#CC0000"">-$150.000,00</font>"
+                        Size: =20
+                        Width: =169
+                        X: =779
+                        Y: =172
+                        ZIndex: =23
+
+                    HtmlText1_80 As htmlViewer:
+                        Font: =Font.Arial
+                        Height: =46
+                        HtmlText: |-
+                            ="<b><font color=""#CC0000"">$8.326.249,87</font>"
+                        Size: =20
+                        Width: =193
+                        X: =979
+                        Y: =172
+                        ZIndex: =24
+
+                Label8 As label:
+                    Text: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period))
+                    X: =652
+                    Y: =31
+                    ZIndex: =5
+
+                Button1_5 As button:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =0
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: |
+                        =ColorValue(varprimaryColor)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =44
+                    HoverBorderColor: =
+                    HoverFill: =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =
+                        Reset(CargaEstadoCuentaAdjunto);
+                        UpdateContext({varpopupdowloadAccountxls:true});
+                        //UpdateContext({varpopupBankReconcilation:true})
+                    PressedBorderColor: =
+                    PressedFill: =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =12
+                    Text: ="Upload Bank Statement"
+                    Width: =260
+                    X: =980
+                    Y: =390
+                    ZIndex: =6
+
+                HtmlText1_76 As htmlViewer:
+                    Font: =Font.Arial
+                    Height: =48
+                    HtmlText: ="Movements"
+                    Size: =24
+                    Width: =204
+                    X: =40
+                    Y: =388
+                    ZIndex: =7
+
+                Icon3 As icon.Download:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =15
+                    Icon: =Icon.Download
+                    OnSelect: |-
+                        =Reset(CargaEstadoCuentaAdjunto);
+                        UpdateContext({varpopupdowloadAccountxls:true});
+                    Rotation: =180
+                    Width: =15
+                    X: =996
+                    Y: =404
+                    ZIndex: =8
+
+            DataCard3 As dataCard.blankCard:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =MovementsGallery.Y+MovementsGallery.Height+20
+                Width: =1293
+                X: =0
+                Y: =1
                 ZIndex: =2
 
-            Button2_189 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                LayoutMinHeight: =15
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Movement Amount"
-                Width: =200
-                X: =453
-                Y: =475
-                ZIndex: =3
+                MovementsGallery As gallery.galleryVertical:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    DelayItemLoading: =true
+                    Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
+                    Items: =Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowScrollbar: =false
+                    TemplatePadding: =10
+                    TemplateSize: =36
+                    Width: =1217
+                    X: =40
+                    Y: =118
+                    ZIndex: =1
 
-            Button2_191 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =1
-                Font: =Font.Arial
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                LayoutMinHeight: =15
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Description"
-                Width: =131
-                X: =803
-                Y: =475
-                ZIndex: =4
+                    Rectangle3_26 As rectangle:
+                        BorderColor: =RGBA(147, 147, 147, 1)
+                        Fill: =RGBA(147, 147, 147, 1)
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =1195
+                        Y: =35
+                        ZIndex: =9
 
-            Button2_192 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                LayoutMinHeight: =15
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="CUSIP"
-                Width: =200
-                X: =990
-                Y: =475
-                ZIndex: =5
+                    Container8 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =36
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1197
+                        ZIndex: =18
 
-            Container9_1 As groupContainer.manualLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
-                DropShadow: =DropShadow.None
-                FillPortions: =0
-                LayoutMinHeight: =12
-                LayoutMinWidth: =250
-                Width: =50
-                ZIndex: =6
+                        Label4_65 As label:
+                            Height: =36
+                            LayoutMinHeight: =15
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.movement_type
+                            Width: =180
+                            ZIndex: =1
 
-        Icon3 As icon.Download:
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =15
-            Icon: =Icon.Download
-            OnSelect: |-
-                =Reset(CargaEstadoCuentaAdjunto);
-                UpdateContext({varpopupdowloadAccountxls:true});
-            Rotation: =180
-            Width: =15
-            X: =995
-            Y: =375
-            ZIndex: =62
+                        Label4_66 As label:
+                            Align: =Align.Center
+                            Height: =36
+                            LayoutMinHeight: =15
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.adquisition_date
+                            Width: =200
+                            X: =201
+                            ZIndex: =2
 
-        Container13 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Height: =233
-            Width: =1172
-            X: =41
-            Y: =113
-            ZIndex: =63
+                        Label4_68 As label:
+                            Align: =Align.Center
+                            Height: =36
+                            LayoutMinHeight: =15
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                            Width: =200
+                            X: =498
+                            ZIndex: =3
 
-            HtmlText1_53 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: ="Initial Balance"
-                Size: =12
-                Width: =110
-                X: =13
-                Y: =10
-                ZIndex: =1
+                        Label4_70 As label:
+                            Align: =Align.Center
+                            FillPortions: =1
+                            Height: =35
+                            LayoutMinHeight: =15
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =10
+                            Text: =ThisItem.description
+                            Width: =101
+                            X: =811
+                            Y: =1
+                            ZIndex: =4
 
-            HtmlText1_54 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: ="Income"
-                Size: =12
-                Width: =77
-                X: =221
-                Y: =10
-                ZIndex: =2
+                        Label4_71 As label:
+                            Align: =Align.Center
+                            Height: =35
+                            LayoutMinHeight: =15
+                            OnSelect: =
+                            PaddingTop: =8
+                            Size: =12
+                            Text: =ThisItem.cusip
+                            Width: =200
+                            X: =990
+                            Y: =1
+                            ZIndex: =5
 
-            HtmlText1_56 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: |-
-                    ="Sales<b><font color=""#008000""> (3)</font></b>"
-                Size: =12
-                Width: =98
-                X: =396
-                Y: =10
-                ZIndex: =3
+                        Container9 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =12
+                            LayoutMinWidth: =250
+                            Width: =50
+                            ZIndex: =6
 
-            HtmlText1_57 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: ="Transfers"
-                Size: =12
-                Width: =110
-                X: =595
-                Y: =10
-                ZIndex: =4
+                            Image1_64 As image:
+                                Height: =20
+                                Image: =editar
+                                OnSelect: |-
+                                    =UpdateContext({varSelectedMovement:ThisItem, varshowPopUpEditMovement:true})
+                                Width: =20
+                                X: =15
+                                Y: =10
+                                ZIndex: =1
 
-            HtmlText1_58 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: ="Dividents"
-                Size: =12
-                Width: =85
-                X: =786
-                Y: =10
-                ZIndex: =5
+                Iconline_46 As rectangle:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: |
+                        =
+                    Fill: =RGBA(51, 51, 51, 1)
+                    Height: =1
+                    Width: =1201
+                    X: =47
+                    Y: =117
+                    ZIndex: =2
 
-            HtmlText1_60 As htmlViewer:
-                Font: =Font.Arial
-                Height: =29
-                HtmlText: |
-                    ="Interests"
-                Size: =12
-                Width: =110
-                X: =979
-                Y: =10
-                ZIndex: =6
+                SearchMovementTextInput As text:
+                    BorderColor: =RGBA(212, 212, 212, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(147, 147, 147, 1)
+                    Default: =
+                    DisabledBorderColor: =RGBA(212, 212, 212, 1)
+                    DisabledColor: =RGBA(147, 147, 147, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(147, 147, 147, 0)
+                    Height: =44
+                    HintText: ="Search movement"
+                    HoverBorderColor: =RGBA(212, 212, 212, 1)
+                    HoverColor: =RGBA(147, 147, 147, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PaddingLeft: =50
+                    PressedColor: =RGBA(147, 147, 147, 1)
+                    PressedFill: =
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =1138
+                    X: =47
+                    Y: =18
+                    ZIndex: =3
 
-            HtmlText1_61 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: ="Final Balance"
-                Size: =12
-                Width: =110
-                X: =11
-                Y: =132
-                ZIndex: =7
+                Button1_339 As button:
+                    BorderColor: =ColorValue(varprimaryColor)
+                    BorderThickness: =1
+                    Color: =ColorValue(varprimaryColor)
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Lighter
+                    Height: =44
+                    HoverBorderColor: =
+                    HoverFill: =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =Reset(MovementTypeDropdown);
+                        Reset(AdquisitionDateMovementDatePicker);
+                        Reset(MovementAmountMovementTextInput);
+                        Reset(DescriptionMovementTextInput);
+                        Reset(CusipMovementTextInput);
+                        UpdateContext({varshowPopUpAddMovement:true})
+                    PressedBorderColor: =
+                    PressedFill: =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =28
+                    Text: ="+"
+                    Width: =44
+                    X: =1203
+                    Y: =18
+                    ZIndex: =6
 
-            HtmlText1_65 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: ="Tax Withholding"
-                Size: =12
-                Width: =124
-                X: =593
-                Y: =132
-                ZIndex: =8
+                Icon2_165 As icon.Search:
+                    Color: =RGBA(77, 77, 77, 1)
+                    Height: =20
+                    Icon: =Icon.Search
+                    OnSelect: =
+                    Width: =20
+                    X: =60
+                    Y: =30
+                    ZIndex: =7
 
-            HtmlText1_66 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: ="Record Balance"
-                Size: =12
-                Width: =129
-                X: =979
-                Y: =131
-                ZIndex: =9
+                Container8_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =36
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =1197
+                    X: =49
+                    Y: =72
+                    ZIndex: =8
 
-            HtmlText1_67 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: |-
-                    ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
-                Size: =12
-                Width: =151
-                X: =221
-                Y: =132
-                ZIndex: =10
+                    Button2_186 As button:
+                        Align: =Align.Left
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.Arial
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =15
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Movement Type"
+                        Width: =180
+                        X: =42
+                        Y: =475
+                        ZIndex: =1
 
-            HtmlText1_68 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: |-
-                    ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
-                Size: =12
-                Width: =151
-                X: =394
-                Y: =132
-                ZIndex: =11
+                    Button2_187 As button:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.Arial
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =15
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Adquisition Date"
+                        Width: =200
+                        X: =180
+                        Y: =475
+                        ZIndex: =2
 
-            HtmlText1_69 As htmlViewer:
-                Font: =Font.Arial
-                Height: =32
-                HtmlText: |-
-                    ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
-                Size: =12
-                Width: =219
-                X: =779
-                Y: =132
-                ZIndex: =12
+                    Button2_189 As button:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.Arial
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =15
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Movement Amount"
+                        Width: =200
+                        X: =453
+                        Y: =475
+                        ZIndex: =3
 
-            HtmlText1_62 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
-                Size: =20
-                X: =11
-                Y: =52
-                ZIndex: =13
+                    Button2_191 As button:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        Font: =Font.Arial
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =15
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="Description"
+                        Width: =131
+                        X: =803
+                        Y: =475
+                        ZIndex: =4
 
-            HtmlText1_70 As htmlViewer:
-                Font: =Font.Arial
-                Height: =43
-                HtmlText: ="$8.326.249,874"
-                Size: =20
-                X: =11
-                Y: =172
-                ZIndex: =14
+                    Button2_192 As button:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(26, 26, 26, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.Arial
+                        Height: =36
+                        HoverBorderColor: =RGBA(255, 255, 255, 1)
+                        HoverColor: =RGBA(166, 166, 166, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =15
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(166, 166, 166, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =1
+                        RadiusBottomRight: =1
+                        RadiusTopLeft: =1
+                        RadiusTopRight: =1
+                        Size: =12
+                        Text: ="CUSIP"
+                        Width: =200
+                        X: =990
+                        Y: =475
+                        ZIndex: =5
 
-            HtmlText1_71 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: ="$8,00"
-                Size: =20
-                Width: =114
-                X: =218
-                Y: =52
-                ZIndex: =15
-
-            HtmlText1_72 As htmlViewer:
-                Color: =RGBA(0, 128, 0, 1)
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    =Text(Sum(
-                        ForAll(
-                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
-                            movement_amount
-                        ),
-                        Value
-                    ),"$0,000.00")
-                Size: =20
-                Width: =169
-                X: =396
-                Y: =52
-                ZIndex: =16
-
-            HtmlText1_73 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: ="$0,00"
-                Size: =20
-                Width: =114
-                X: =595
-                Y: =52
-                ZIndex: =17
-
-            HtmlText1_74 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: ="$0,00"
-                Size: =20
-                Width: =114
-                X: =784
-                Y: =52
-                ZIndex: =18
-
-            HtmlText1_75 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: ="$0,00"
-                Size: =20
-                Width: =114
-                X: =978
-                Y: =52
-                ZIndex: =19
-
-            HtmlText1_78 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<b><font color=""#CC0000"">$150.000,00</font>"
-                Size: =20
-                Width: =169
-                X: =396
-                Y: =172
-                ZIndex: =20
-
-            HtmlText1_79 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    =Sum(
-                        ForAll(
-                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
-                            movement_amount
-                        ),
-                        Value
-                    )
-                Size: =20
-                Width: =114
-                X: =593
-                Y: =172
-                ZIndex: =21
-
-            HtmlText1_82 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<b><font color=""#CC0000"">$150.000,00</font>"
-                Size: =20
-                Width: =169
-                X: =221
-                Y: =172
-                ZIndex: =22
-
-            HtmlText1_83 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<b><font color=""#CC0000"">-$150.000,00</font>"
-                Size: =20
-                Width: =169
-                X: =779
-                Y: =172
-                ZIndex: =23
-
-            HtmlText1_80 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<b><font color=""#CC0000"">$8.326.249,87</font>"
-                Size: =20
-                Width: =193
-                X: =979
-                Y: =172
-                ZIndex: =24
+                    Container9_1 As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        LayoutMinHeight: =12
+                        LayoutMinWidth: =250
+                        Width: =50
+                        ZIndex: =6
 
     Screen_Download_10 As group:
         Height: =5
