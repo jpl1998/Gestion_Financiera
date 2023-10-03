@@ -2147,98 +2147,6 @@ scr_banco As screen:
             Y: =26
             ZIndex: =2
 
-        HtmlText1_53 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: ="Initial Balance"
-            Size: =12
-            Width: =110
-            X: =52
-            Y: =120
-            ZIndex: =14
-
-        HtmlText1_54 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: ="Income"
-            Size: =12
-            Width: =77
-            X: =260
-            Y: =120
-            ZIndex: =15
-
-        HtmlText1_56 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: |-
-                ="Sales<b><font color=""#008000""> (3)</font></b>"
-            Size: =12
-            Width: =98
-            X: =435
-            Y: =120
-            ZIndex: =16
-
-        HtmlText1_57 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: ="Transfers"
-            Size: =12
-            Width: =110
-            X: =634
-            Y: =120
-            ZIndex: =17
-
-        HtmlText1_58 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: ="Dividents"
-            Size: =12
-            Width: =85
-            X: =825
-            Y: =120
-            ZIndex: =18
-
-        HtmlText1_60 As htmlViewer:
-            Font: =Font.Arial
-            Height: =29
-            HtmlText: |
-                ="Interests"
-            Size: =12
-            Width: =110
-            X: =1018
-            Y: =120
-            ZIndex: =19
-
-        HtmlText1_61 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: ="Final Balance"
-            Size: =12
-            Width: =110
-            X: =52
-            Y: =242
-            ZIndex: =20
-
-        HtmlText1_65 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: ="Tax Withholding"
-            Size: =12
-            Width: =124
-            X: =634
-            Y: =242
-            ZIndex: =22
-
-        HtmlText1_66 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: ="Record Balance"
-            Size: =12
-            Width: =129
-            X: =1018
-            Y: =241
-            ZIndex: =23
-
         Gallery1_26 As gallery.galleryVertical:
             BorderColor: =RGBA(255, 255, 255, 1)
             DelayItemLoading: =true
@@ -2398,176 +2306,6 @@ scr_banco As screen:
             X: =1049
             Y: =18
             ZIndex: =34
-
-        HtmlText1_67 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: |-
-                ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
-            Size: =12
-            Width: =151
-            X: =262
-            Y: =242
-            ZIndex: =35
-
-        HtmlText1_68 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: |-
-                ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
-            Size: =12
-            Width: =151
-            X: =435
-            Y: =242
-            ZIndex: =36
-
-        HtmlText1_69 As htmlViewer:
-            Font: =Font.Arial
-            Height: =32
-            HtmlText: |-
-                ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
-            Size: =12
-            Width: =219
-            X: =820
-            Y: =242
-            ZIndex: =37
-
-        HtmlText1_62 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
-            Size: =20
-            X: =50
-            Y: =162
-            ZIndex: =38
-
-        HtmlText1_70 As htmlViewer:
-            Font: =Font.Arial
-            Height: =43
-            HtmlText: ="$8.326.249,874"
-            Size: =20
-            X: =52
-            Y: =282
-            ZIndex: =39
-
-        HtmlText1_71 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: ="$8,00"
-            Size: =20
-            Width: =114
-            X: =257
-            Y: =162
-            ZIndex: =40
-
-        HtmlText1_72 As htmlViewer:
-            Color: =RGBA(0, 128, 0, 1)
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                =Text(Sum(
-                    ForAll(
-                        Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
-                        movement_amount
-                    ),
-                    Value
-                ),"$0,000.00")
-            Size: =20
-            Width: =169
-            X: =435
-            Y: =162
-            ZIndex: =41
-
-        HtmlText1_73 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: ="$0,00"
-            Size: =20
-            Width: =114
-            X: =634
-            Y: =162
-            ZIndex: =42
-
-        HtmlText1_74 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: ="$0,00"
-            Size: =20
-            Width: =114
-            X: =823
-            Y: =162
-            ZIndex: =43
-
-        HtmlText1_75 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: ="$0,00"
-            Size: =20
-            Width: =114
-            X: =1017
-            Y: =162
-            ZIndex: =44
-
-        HtmlText1_78 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                ="<b><font color=""#CC0000"">$150.000,00</font>"
-            Size: =20
-            Width: =169
-            X: =437
-            Y: =282
-            ZIndex: =47
-
-        HtmlText1_79 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                =Sum(
-                    ForAll(
-                        Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
-                        movement_amount
-                    ),
-                    Value
-                )
-            Size: =20
-            Width: =114
-            X: =634
-            Y: =282
-            ZIndex: =48
-
-        HtmlText1_82 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                ="<b><font color=""#CC0000"">$150.000,00</font>"
-            Size: =20
-            Width: =169
-            X: =262
-            Y: =282
-            ZIndex: =51
-
-        HtmlText1_83 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                ="<b><font color=""#CC0000"">-$150.000,00</font>"
-            Size: =20
-            Width: =169
-            X: =820
-            Y: =282
-            ZIndex: =52
-
-        HtmlText1_80 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                ="<b><font color=""#CC0000"">$8.326.249,87</font>"
-            Size: =20
-            Width: =193
-            X: =1018
-            Y: =282
-            ZIndex: =53
 
         Button1_5 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -2817,6 +2555,276 @@ scr_banco As screen:
             X: =995
             Y: =375
             ZIndex: =62
+
+        Container13 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Height: =233
+            Width: =1172
+            X: =41
+            Y: =113
+            ZIndex: =63
+
+            HtmlText1_53 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: ="Initial Balance"
+                Size: =12
+                Width: =110
+                X: =13
+                Y: =10
+                ZIndex: =1
+
+            HtmlText1_54 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: ="Income"
+                Size: =12
+                Width: =77
+                X: =221
+                Y: =10
+                ZIndex: =2
+
+            HtmlText1_56 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: |-
+                    ="Sales<b><font color=""#008000""> (3)</font></b>"
+                Size: =12
+                Width: =98
+                X: =396
+                Y: =10
+                ZIndex: =3
+
+            HtmlText1_57 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: ="Transfers"
+                Size: =12
+                Width: =110
+                X: =595
+                Y: =10
+                ZIndex: =4
+
+            HtmlText1_58 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: ="Dividents"
+                Size: =12
+                Width: =85
+                X: =786
+                Y: =10
+                ZIndex: =5
+
+            HtmlText1_60 As htmlViewer:
+                Font: =Font.Arial
+                Height: =29
+                HtmlText: |
+                    ="Interests"
+                Size: =12
+                Width: =110
+                X: =979
+                Y: =10
+                ZIndex: =6
+
+            HtmlText1_61 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: ="Final Balance"
+                Size: =12
+                Width: =110
+                X: =11
+                Y: =132
+                ZIndex: =7
+
+            HtmlText1_65 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: ="Tax Withholding"
+                Size: =12
+                Width: =124
+                X: =593
+                Y: =132
+                ZIndex: =8
+
+            HtmlText1_66 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: ="Record Balance"
+                Size: =12
+                Width: =129
+                X: =979
+                Y: =131
+                ZIndex: =9
+
+            HtmlText1_67 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: |-
+                    ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
+                Size: =12
+                Width: =151
+                X: =221
+                Y: =132
+                ZIndex: =10
+
+            HtmlText1_68 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: |-
+                    ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
+                Size: =12
+                Width: =151
+                X: =394
+                Y: =132
+                ZIndex: =11
+
+            HtmlText1_69 As htmlViewer:
+                Font: =Font.Arial
+                Height: =32
+                HtmlText: |-
+                    ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
+                Size: =12
+                Width: =219
+                X: =779
+                Y: =132
+                ZIndex: =12
+
+            HtmlText1_62 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
+                Size: =20
+                X: =11
+                Y: =52
+                ZIndex: =13
+
+            HtmlText1_70 As htmlViewer:
+                Font: =Font.Arial
+                Height: =43
+                HtmlText: ="$8.326.249,874"
+                Size: =20
+                X: =11
+                Y: =172
+                ZIndex: =14
+
+            HtmlText1_71 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: ="$8,00"
+                Size: =20
+                Width: =114
+                X: =218
+                Y: =52
+                ZIndex: =15
+
+            HtmlText1_72 As htmlViewer:
+                Color: =RGBA(0, 128, 0, 1)
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    =Text(Sum(
+                        ForAll(
+                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                            movement_amount
+                        ),
+                        Value
+                    ),"$0,000.00")
+                Size: =20
+                Width: =169
+                X: =396
+                Y: =52
+                ZIndex: =16
+
+            HtmlText1_73 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: ="$0,00"
+                Size: =20
+                Width: =114
+                X: =595
+                Y: =52
+                ZIndex: =17
+
+            HtmlText1_74 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: ="$0,00"
+                Size: =20
+                Width: =114
+                X: =784
+                Y: =52
+                ZIndex: =18
+
+            HtmlText1_75 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: ="$0,00"
+                Size: =20
+                Width: =114
+                X: =978
+                Y: =52
+                ZIndex: =19
+
+            HtmlText1_78 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<b><font color=""#CC0000"">$150.000,00</font>"
+                Size: =20
+                Width: =169
+                X: =396
+                Y: =172
+                ZIndex: =20
+
+            HtmlText1_79 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    =Sum(
+                        ForAll(
+                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                            movement_amount
+                        ),
+                        Value
+                    )
+                Size: =20
+                Width: =114
+                X: =593
+                Y: =172
+                ZIndex: =21
+
+            HtmlText1_82 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<b><font color=""#CC0000"">$150.000,00</font>"
+                Size: =20
+                Width: =169
+                X: =221
+                Y: =172
+                ZIndex: =22
+
+            HtmlText1_83 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<b><font color=""#CC0000"">-$150.000,00</font>"
+                Size: =20
+                Width: =169
+                X: =779
+                Y: =172
+                ZIndex: =23
+
+            HtmlText1_80 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<b><font color=""#CC0000"">$8.326.249,87</font>"
+                Size: =20
+                Width: =193
+                X: =979
+                Y: =172
+                ZIndex: =24
 
     Screen_Download_10 As group:
         Height: =5
@@ -4137,9 +4145,9 @@ scr_banco As screen:
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
                     RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    //'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -4159,7 +4167,7 @@ scr_banco As screen:
                 Height: =32
                 Image: =excel
                 Width: =32
-                X: =32
+                X: =22
                 Y: =96
                 ZIndex: =40
 
@@ -4170,7 +4178,7 @@ scr_banco As screen:
                 Size: =11
                 Text: =First(CargaEstadoCuentaAdjunto.Attachments).Name
                 Width: =320
-                X: =80
+                X: =70
                 Y: =96
                 ZIndex: =41
 
