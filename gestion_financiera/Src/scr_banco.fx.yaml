@@ -2951,16 +2951,7 @@ scr_banco As screen:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         DelayItemLoading: =true
                         Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
-                        Items: |-
-                            =With(
-                                {
-                                    temp:Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period)
-                                },
-                                ForAll(
-                                     As x,
-                                    LookUp(temp, Text(x.adquisition_date) = adquisition_date)
-                                )
-                            )
+                        Items: =Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
