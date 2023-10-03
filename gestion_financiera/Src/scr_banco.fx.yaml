@@ -985,7 +985,7 @@ scr_banco As screen:
                                         ),"$0,000.00")
                                     ZIndex: =2
 
-                                Label6_29 As label:
+                                PurchaseThisYearLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -1046,7 +1046,7 @@ scr_banco As screen:
                                         ),"$0,000.00")
                                     ZIndex: =2
 
-                                Label6_32 As label:
+                                SalesThisYearLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -1106,7 +1106,7 @@ scr_banco As screen:
                                         )
                                     ZIndex: =2
 
-                                Label6_35 As label:
+                                IncomeThisYearLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -1167,7 +1167,7 @@ scr_banco As screen:
                                         ),"$0,000.00")
                                     ZIndex: =2
 
-                                Label6_38 As label:
+                                TaxThisYearLabel As label:
                                     Align: =Align.Center
                                     FillPortions: =1
                                     Height: =30
@@ -1236,7 +1236,7 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: =Text(Sum(PurchaseThisYearLabel.Text,SalesThisYearLabel.Text,IncomeThisYearLabel.Text,TaxThisYearLabel.Text),"$0,000.00")
                                     ZIndex: =3
 
                             Container7_14 As groupContainer.horizontalAutoLayoutContainer:
@@ -4499,7 +4499,7 @@ scr_banco As screen:
                             'GF_DEV.Bank_Balance',
                             id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
                             {
-                                ind_act: false
+                                ind_act: 0
                             }
                         );
                         
@@ -4513,7 +4513,7 @@ scr_banco As screen:
                                 balance_date: Today(),
                                 initial_balance: varInitialBalance,
                                 final_balance: varInitialBalance + Value(MovementAmountMovementTextInput.Text) * If(MovementTypeDropdown.Selected.type = "O", -1, 1),
-                                ind_act: true
+                                ind_act: 1
                             }
                         );
                         UpdateContext({varshowPopUpAddMovement:false})

@@ -1571,20 +1571,24 @@ scr_customizing_accounting As screen:
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(255, 0, 0, 1)
             OnSelect: |-
-                =Patch(
-                    'GF_DEV.Accounting_Period_Month',
-                    LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
-                    {
-                        status:"Closed"
-                    }
+                =Concurrent(
+                    Patch(
+                        'GF_DEV.Accounting_Period_Month',
+                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
+                        {
+                            status:"Closed"
+                        }
+                    ),
+                    Patch(
+                        'GF_DEV.Accounting_Period_Month',
+                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
+                        {
+                            status:"Open"
+                        }
+                    ),
+                    Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"));
                 );
-                Patch(
-                    'GF_DEV.Accounting_Period_Month',
-                    LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
-                    {
-                        status:"Open"
-                    }
-                )
+                UpdateContext({varpopupClosePeriod:false})
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(255, 0, 0, 1)
