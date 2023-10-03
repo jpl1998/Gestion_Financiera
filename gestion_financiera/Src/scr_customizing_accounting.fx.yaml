@@ -773,29 +773,29 @@ scr_customizing_accounting As screen:
                                 month: Switch(
                                     x.Value,
                                     1,
-                                    "Enero",
+                                    "January",
                                     2,
-                                    "Febrero",
+                                    "February",
                                     3,
-                                    "Marzo",
+                                    "March",
                                     4,
-                                    "Abril",
+                                    "April",
                                     5,
-                                    "Mayo",
+                                    "May",
                                     6,
-                                    "Junio",
+                                    "June",
                                     7,
-                                    "Julio",
+                                    "July",
                                     8,
-                                    "Agosto",
+                                    "August",
                                     9,
-                                    "Setiembre",
+                                    "September",
                                     10,
-                                    "Octubre",
+                                    "October",
                                     11,
-                                    "Noviembre",
+                                    "November",
                                     12,
-                                    "Diciembre"
+                                    "December"
                                 )
                             }
                         )
@@ -1680,7 +1680,7 @@ scr_customizing_accounting As screen:
         Gallery1_14 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='GF_DEV.Accounting_Period' 
+            Items: ='GF_DEV.Accounting_Period'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10

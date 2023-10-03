@@ -615,7 +615,7 @@ scr_customizing_Entities As screen:
                             entity: EntityNameTextInput.Text,
                             tin: TinTextInput.Text,
                             business_name: BusinessNameTextInput.Text,
-                            status: StatusEntityDropdown.Selected.Value = "Active"
+                            status: If(StatusEntityDropdown.Selected.Value = "Active", 1, 0)
                         }
                     );
                     UpdateContext({varpopupconfgAddEntity:false})
@@ -3003,15 +3003,16 @@ scr_customizing_Entities As screen:
                 ZIndex: =14
 
             Label4_12 As label:
+                Align: =Align.Center
                 Color: =RGBA(54, 176, 75, 1)
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =If(ThisItem.status, "Active", "Inactive")
-                Width: =70
-                X: =773
+                Text: =If(ThisItem.status = "1", "Active", "Inactive")
+                Width: =90
+                X: =758
                 ZIndex: =15
 
         Iconline_8 As rectangle:
