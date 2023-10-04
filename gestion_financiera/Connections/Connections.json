@@ -271,54 +271,6 @@
     ],
     "id": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
   },
-  "6b6d5d3a-579a-4ec2-bafb-df71de381c60": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "53593df6-e7d9-4c5f-bbcd-693b3ba645f8": {
-          "value": "shared_onedriveforbusiness"
-        },
-        "68d67470-63f5-41f7-9370-65b7a5cf2bd2": {
-          "value": "shared_postgresql"
-        },
-        "cb2d30c5-741f-4c50-a414-8c93aeee3bc3": {
-          "value": "shared_excelonlinebusiness"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "0940c7f8-b0de-416c-8917-3c1843b5f30b"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_excelonlinebusiness": {
-          "value": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3"
-        },
-        "shared_onedriveforbusiness": {
-          "value": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8"
-        },
-        "shared_postgresql": {
-          "value": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "0940c7f8-b0de-416c-8917-3c1843b5f30b"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "CargadeEstadodeCuenta-JPMorgan"
-    ],
-    "dependencies": {
-      "shared_excelonlinebusiness": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3",
-      "shared_onedriveforbusiness": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8",
-      "shared_postgresql": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
-    },
-    "dependents": [],
-    "id": "6b6d5d3a-579a-4ec2-bafb-df71de381c60"
-  },
   "b7f56315-65c3-4717-94b6-890271cf1314": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -383,5 +335,60 @@
       "b7f56315-65c3-4717-94b6-890271cf1314"
     ],
     "id": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3"
+  },
+  "d8a120c7-2e69-4bec-86e0-60fbb3673d57": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1653/1.0.1653.3403/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "4820fa8c-d289-4fcc-85f7-91a04adbc03d": {
+          "value": "shared_sql"
+        },
+        "53593df6-e7d9-4c5f-bbcd-693b3ba645f8": {
+          "value": "shared_onedriveforbusiness"
+        },
+        "68d67470-63f5-41f7-9370-65b7a5cf2bd2": {
+          "value": "shared_postgresql"
+        },
+        "cb2d30c5-741f-4c50-a414-8c93aeee3bc3": {
+          "value": "shared_excelonlinebusiness"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "0940c7f8-b0de-416c-8917-3c1843b5f30b"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_excelonlinebusiness": {
+          "value": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3"
+        },
+        "shared_onedriveforbusiness": {
+          "value": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8"
+        },
+        "shared_postgresql": {
+          "value": "68d67470-63f5-41f7-9370-65b7a5cf2bd2"
+        },
+        "shared_sql": {
+          "value": "4820fa8c-d289-4fcc-85f7-91a04adbc03d"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "0940c7f8-b0de-416c-8917-3c1843b5f30b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CargadeEstadodeCuenta-JPMorgan"
+    ],
+    "dependencies": {
+      "shared_excelonlinebusiness": "cb2d30c5-741f-4c50-a414-8c93aeee3bc3",
+      "shared_onedriveforbusiness": "53593df6-e7d9-4c5f-bbcd-693b3ba645f8",
+      "shared_postgresql": "68d67470-63f5-41f7-9370-65b7a5cf2bd2",
+      "shared_sql": "4820fa8c-d289-4fcc-85f7-91a04adbc03d"
+    },
+    "dependents": [],
+    "id": "d8a120c7-2e69-4bec-86e0-60fbb3673d57"
   }
 }
