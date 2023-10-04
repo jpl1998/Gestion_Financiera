@@ -2665,6 +2665,24 @@ scr_banco As screen:
                             Y: =1
                             ZIndex: =9
 
+                        Container8_1 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =11
+                            LayoutMinWidth: =250
+                            Width: =40
+                            ZIndex: =10
+
+                            Image6 As image:
+                                Height: =36
+                                Image: =editar
+                                OnSelect: |-
+                                    =UpdateContext({varSelectedMovement:ThisItem, varshowPopUpEditMovement:true})
+                                PaddingBottom: =7
+                                PaddingTop: =7
+                                Width: =40
+                                ZIndex: =1
+
                 Container8_9 As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.None
                     Height: =36
@@ -2813,6 +2831,14 @@ scr_banco As screen:
                         X: =990
                         Y: =475
                         ZIndex: =9
+
+                    Container8 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        LayoutMinHeight: =11
+                        LayoutMinWidth: =250
+                        Width: =50
+                        ZIndex: =10
 
                 Iconline_70 As rectangle:
                     BorderColor: =RGBA(255, 255, 255, 1)
@@ -3449,6 +3475,330 @@ scr_banco As screen:
                     X: =If(MenuMovementsGallery.Selected.Value="Correct", 1136, 618)
                     Y: =60
                     ZIndex: =10
+
+                MenuMovementsGallery As gallery.galleryHorizontal:
+                    DelayItemLoading: =true
+                    Height: =55
+                    Items: =["Correct", "Error"]
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateSize: =160
+                    Width: =600
+                    X: =40
+                    Y: =5
+                    ZIndex: =11
+
+                    Label3_2 As label:
+                        Align: =Align.Center
+                        Color: =If(ThisItem.IsSelected, ColorValue(varprimaryColor), ColorValue(varlineColor))
+                        Height: =45
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.Value
+                        Width: =160
+                        ZIndex: =1
+
+                    Rectangle1_37 As rectangle:
+                        Fill: =ColorValue(varprimaryColor)
+                        Height: =3
+                        Visible: =ThisItem.IsSelected
+                        Width: =154
+                        X: =6
+                        Y: =40
+                        ZIndex: =2
+
+                CorrectMovementsContainer As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =CorrectMovementsGallery.Y+CorrectMovementsGallery.Height+20
+                    Visible: =MenuMovementsGallery.Selected.Value="Correct"
+                    Width: =1217
+                    X: =25
+                    Y: =115
+                    ZIndex: =12
+
+                    CorrectMovementsGallery As gallery.galleryVertical:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        DelayItemLoading: =true
+                        Height: =(Self.AllItemsCount*(Self.TemplateHeight+Self.TemplatePadding))+Self.TemplatePadding
+                        Items: |-
+                            =With(
+                                        {
+                                            temp: With(
+                                                {
+                                                    tempImported: Filter(
+                                                        'GF_DEV.Bank_Movement_Imported',
+                                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                        id_period = varCurrentPeriod.id_month
+                                                    ),
+                                                    tempBank: 
+                                                        Filter(
+                                                            'GF_DEV.Bank_Movement',
+                                                            id_period = varCurrentPeriod.id_month,
+                                                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                        )
+                                                },
+                                                ForAll(
+                                                    tempImported As x,
+                                                    LookUp(
+                                                        tempBank,
+                                                        x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
+                                                    )
+                                                )
+                                            )
+                                        },
+                                        Filter(temp,movement_type<>Blank())
+                            )
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        ShowScrollbar: =false
+                        TemplatePadding: =10
+                        TemplateSize: =36
+                        Width: =1217
+                        Y: =52
+                        ZIndex: =1
+
+                        Rectangle3_36 As rectangle:
+                            BorderColor: =RGBA(147, 147, 147, 1)
+                            Fill: =RGBA(147, 147, 147, 1)
+                            Height: =1
+                            OnSelect: =Select(Parent)
+                            Width: =689
+                            Y: =35
+                            ZIndex: =9
+
+                        Container8_12 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            Height: =35
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =680
+                            ZIndex: =18
+
+                            Label4_125 As label:
+                                Height: =36
+                                LayoutMinHeight: =15
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =ThisItem.movement_type
+                                Width: =135
+                                ZIndex: =1
+
+                            Label4_126 As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 255, 255, 0)
+                                Height: =36
+                                LayoutMinHeight: =15
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =ThisItem.adquisition_date
+                                Width: =135
+                                X: =201
+                                ZIndex: =2
+
+                            Label4_127 As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 255, 255, 0)
+                                Height: =35
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =160
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                X: =811
+                                Y: =1
+                                ZIndex: =5
+
+                            Label4_128 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Height: =35
+                                LayoutMinHeight: =15
+                                OnSelect: =
+                                PaddingTop: =0
+                                Size: =9
+                                Text: =ThisItem.description
+                                VerticalAlign: =VerticalAlign.Top
+                                X: =990
+                                Y: =1
+                                ZIndex: =8
+
+                            Label4_129 As label:
+                                Align: =Align.Center
+                                FillPortions: =1
+                                Height: =35
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =11
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =11
+                                Text: =ThisItem.cusip
+                                Width: =200
+                                X: =990
+                                Y: =1
+                                ZIndex: =9
+
+                    Iconline_71 As rectangle:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: |
+                            =
+                        Fill: =RGBA(51, 51, 51, 1)
+                        Height: =1
+                        Width: =1210
+                        X: =7
+                        Y: =51
+                        ZIndex: =2
+
+                    Container8_10 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =47
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1208
+                        X: =9
+                        Y: =6
+                        ZIndex: =3
+
+                        Button2_392 As button:
+                            Align: =Align.Left
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Movement Type"
+                            Width: =135
+                            X: =42
+                            Y: =475
+                            ZIndex: =1
+
+                        Button2_393 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Adquisition Date"
+                            Width: =135
+                            X: =180
+                            Y: =475
+                            ZIndex: =2
+
+                        Button2_394 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            LayoutMinWidth: =150
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Movement Amount"
+                            Width: =131
+                            X: =803
+                            Y: =475
+                            ZIndex: =5
+
+                        Button2_395 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Description"
+                            Width: =150
+                            X: =990
+                            Y: =475
+                            ZIndex: =8
+
+                        Button2_396 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            LayoutMinWidth: =100
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="CUSIP"
+                            Width: =200
+                            X: =990
+                            Y: =475
+                            ZIndex: =9
 
     Screen_Download_10 As group:
         Height: =5
