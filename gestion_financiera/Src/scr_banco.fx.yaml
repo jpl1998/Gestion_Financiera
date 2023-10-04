@@ -2873,6 +2873,7 @@ scr_banco As screen:
                     Height: =55
                     Items: =["Correct", "Error"]
                     LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =Reset(SearchMovementCorrectTextInput)
                     TemplateSize: =160
                     Width: =600
                     X: =40
@@ -2901,7 +2902,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(212, 212, 212, 1)
                     BorderThickness: =1
                     Color: =RGBA(147, 147, 147, 1)
-                    Default: =
+                    Default: =""
                     DisabledBorderColor: =RGBA(212, 212, 212, 1)
                     DisabledColor: =RGBA(147, 147, 147, 1)
                     DisabledFill: =RGBA(0, 0, 0, 0)
@@ -2918,7 +2919,7 @@ scr_banco As screen:
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
-                    Width: =1138
+                    Width: =If(MenuMovementsGallery.Selected.Value="Correct", 1138, 620)
                     X: =40
                     Y: =60
                     ZIndex: =2
@@ -3642,6 +3643,53 @@ scr_banco As screen:
                             X: =990
                             Y: =475
                             ZIndex: =9
+
+                Button1_341 As button:
+                    BorderColor: =ColorValue(varprimaryColor)
+                    BorderThickness: =1
+                    Color: =ColorValue(varprimaryColor)
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Lighter
+                    Height: =44
+                    HoverBorderColor: =
+                    HoverFill: =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =Reset(MovementTypeDropdown);
+                        Reset(AdquisitionDateMovementDatePicker);
+                        Reset(MovementAmountMovementTextInput);
+                        Reset(DescriptionMovementTextInput);
+                        Reset(CusipMovementTextInput);
+                        UpdateContext({varshowPopUpAddMovement:true})
+                    PressedBorderColor: =
+                    PressedFill: =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =28
+                    Text: ="+"
+                    Visible: =MenuMovementsGallery.Selected.Value="Error"
+                    Width: =44
+                    X: =688
+                    Y: =60
+                    ZIndex: =9
+
+                Icon4 As icon.Cancel:
+                    Color: =RGBA(212, 212, 212, 1)
+                    Height: =44
+                    Icon: =Icon.Cancel
+                    OnSelect: =Reset(SearchMovementCorrectTextInput)
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Visible: =!IsBlank(SearchMovementCorrectTextInput.Text)
+                    Width: =42
+                    X: =If(MenuMovementsGallery.Selected.Value="Correct", 1136, 618)
+                    Y: =60
+                    ZIndex: =10
 
     Screen_Download_10 As group:
         Height: =5
