@@ -8514,19 +8514,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_customizing_Operations.Dropdown2_22.AccessibleLabel"
+                  "fullyQualifiedName": "scr_customizing_Operations.BankDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_customizing_Operations.Dropdown2_22.AccessibleLabel",
+                  "fullyQualifiedName": "scr_customizing_Operations.BankDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_customizing_Operations",
-                "type": "scr_customizing_Operations.Dropdown2_22"
+                "type": "scr_customizing_Operations.BankDropdown"
               }
             }
           ],

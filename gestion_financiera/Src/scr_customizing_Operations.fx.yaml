@@ -1,6 +1,6 @@
 scr_customizing_Operations As screen:
 
-    Dropdown2_22 As dropdown:
+    BankDropdown As dropdown:
         BorderColor: =ColorValue(varlineColor)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
@@ -550,6 +550,7 @@ scr_customizing_Operations As screen:
                                     SortOrder.Descending
                                 )
                             ).id_operation_table + 1,
+                            id_bank:BankDropdown.Selected.id_bank,
                             item: TextInput2_24.Text,
                             type: Dropdown2_25.Selected.Value,
                             sign: Dropdown2_23.Selected.Value,
@@ -1042,7 +1043,7 @@ scr_customizing_Operations As screen:
         Gallery1_9 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =525
-            Items: ='GF_DEV.Operation_Table'
+            Items: =Filter('GF_DEV.Operation_Table',BankDropdown.Selected.id_bank=id_bank)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
