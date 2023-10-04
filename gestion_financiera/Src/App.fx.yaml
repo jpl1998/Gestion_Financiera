@@ -4,6 +4,7 @@ App As appinfo:
         =Set(varlineColor,"#D4D4D4");
         Set(varprimaryColor,"#4180c2");
         Set(varTableBackground, "#4280C21A");
+        Set(varYellowColor, ColorValue("#D9B600"));
         Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"))
     Theme: =PowerAppsTheme
 

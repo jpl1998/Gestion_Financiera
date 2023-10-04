@@ -189,7 +189,7 @@ scr_banco As screen:
                                 DisplayMode: =DisplayMode.View
                                 Height: =25
                                 Size: =9
-                                Text: ="Error"
+                                Text: ="Pending"
                                 Width: =75
                                 X: =(Parent.Width-Self.Width)/2
                                 Y: =(Parent.Height-Self.Height)/2
