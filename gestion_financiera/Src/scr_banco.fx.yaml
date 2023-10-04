@@ -3364,32 +3364,36 @@ scr_banco As screen:
                         DelayItemLoading: =true
                         Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
                         Items: |-
-                            =With(
-                                {
-                                    temp: With(
-                                        {
-                                            tempImported: Filter(
-                                                'GF_DEV.Bank_Movement_Imported',
-                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_month
-                                            ),
-                                            tempBank: Search(
-                                                Filter(
-                                                    'GF_DEV.Bank_Movement',
-                                                    id_period = varCurrentPeriod.id_month,
-                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                            =SortByColumns(
+                                With(
+                                    {
+                                        temp: With(
+                                            {
+                                                tempImported: Filter(
+                                                    'GF_DEV.Bank_Movement_Imported',
+                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                    id_period = varCurrentPeriod.id_month
                                                 ),
-                                                SearchMovementCorrectTextInput.Text,
-                                                "description",
-                                                "movement_type",
-                                                "cusip"
-                                            ),
-                                            tempCorrect: CorrectMovementsGallery.AllItems
-                                        },
-                                        Filter(tempBank, Not(id_movement in ShowColumns(tempCorrect,"id_movement")))
-                                    )
-                                },
-                                Filter(temp, movement_type<>Blank())
+                                                tempBank: Search(
+                                                    Filter(
+                                                        'GF_DEV.Bank_Movement',
+                                                        id_period = varCurrentPeriod.id_month,
+                                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                    ),
+                                                    SearchMovementCorrectTextInput.Text,
+                                                    "description",
+                                                    "movement_type",
+                                                    "cusip"
+                                                ),
+                                                tempCorrect: CorrectMovementsGallery.AllItems
+                                            },
+                                            Filter(tempBank, Not(id_movement in ShowColumns(tempCorrect,"id_movement")))
+                                        )
+                                    },
+                                    Filter(temp, movement_type<>Blank())
+                                ),
+                                "adquisition_date",
+                                SortOrder.Ascending
                             )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
@@ -3649,43 +3653,43 @@ scr_banco As screen:
                         DelayItemLoading: =true
                         Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
                         Items: |-
-                            =With(
-                                {
-                                    temp: With(
+                            =Search(
+                                SortByColumns(
+                                    With(
                                         {
-                                            tempImported: Filter(
-                                                'GF_DEV.Bank_Movement_Imported',
-                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_month
+                                            temp: With(
+                                                {
+                                                    tempImported: Filter(
+                                                        'GF_DEV.Bank_Movement_Imported',
+                                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                        id_period = varCurrentPeriod.id_month
+                                                    ),
+                                                    tempBank: 
+                                                        Filter(
+                                                            'GF_DEV.Bank_Movement',
+                                                            id_period = varCurrentPeriod.id_month,
+                                                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                        )
+                                                },
+                                                ForAll(
+                                                    tempBank As x,
+                                                    LookUp(
+                                                        tempImported,
+                                                        x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
+                                                    )
+                                                )
                                             ),
-                                            tempBank: Search(
-                                                Filter(
-                                                    'GF_DEV.Bank_Movement',
-                                                    id_period = varCurrentPeriod.id_month,
-                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
-                                                ),
-                                                SearchMovementCorrectTextInput.Text,
-                                                "description",
-                                                "movement_type",
-                                                "cusip"
-                                            )
+                                            tempImported: Filter(
+                                                        'GF_DEV.Bank_Movement_Imported',
+                                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                        id_period = varCurrentPeriod.id_month
+                                                    )
                                         },
-                                        ForAll(
-                                            tempBank As x,
-                                            LookUp(
-                                                tempImported,
-                                                x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
-                                            )
-                                        )
+                                        Filter(tempImported, Not(id_movement_imported in ShowColumns(temp,"id_movement_imported")))
                                     ),
-                                    tempImported: Filter(
-                                                'GF_DEV.Bank_Movement_Imported',
-                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_month
-                                            )
-                                },
-                                Filter(tempImported, Not(id_movement_imported in ShowColumns(temp,"id_movement_imported")))
-                            )
+                                    "adquisition_date",
+                                    SortOrder.Ascending
+                                ),SearchMovementCorrectTextInput.Text,"description","movement_type","cusip")
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
