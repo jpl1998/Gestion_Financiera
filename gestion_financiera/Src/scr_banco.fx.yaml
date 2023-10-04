@@ -2315,7 +2315,7 @@ scr_banco As screen:
                     HtmlText1_62 As htmlViewer:
                         Font: =Font.Arial
                         Height: =46
-                        HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_period),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
+                        HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_month),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
                         Size: =20
                         X: =11
                         Y: =52
@@ -2888,7 +2888,7 @@ scr_banco As screen:
                         Height: =45
                         OnSelect: =Select(Parent)
                         Size: =16
-                        Text: =ThisItem.Value & " (" & If(ThisItem.Value="Correct",CorrectMovementsGallery.AllItemsCount, ErrorMovementsGallery.AllItemsCount) & ")"
+                        Text: =ThisItem.Value & " (" & If(ThisItem.Value="Correct",CorrectMovementsGallery.AllItemsCount, Max(ErrorMovementsGallery.AllItemsCount,BankStatementDataGallery.AllItemsCount)) & ")"
                         Width: =160
                         ZIndex: =1
 
