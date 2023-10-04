@@ -726,7 +726,7 @@ scr_customizing_Operations As screen:
                 Height: =20
                 Icon: =Icon.Cancel
                 OnSelect: |-
-                    =UpdateContext({varpopupconfgAddOperation:false})
+                    =UpdateContext({varpopupCnfEditOperation:false})
                 Width: =20
                 X: =361
                 Y: =39
@@ -747,7 +747,7 @@ scr_customizing_Operations As screen:
             TextInput2_25 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Gallery1_9.Selected.item
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -1041,7 +1041,7 @@ scr_customizing_Operations As screen:
 
         Gallery1_9 As gallery.galleryVertical:
             DelayItemLoading: =true
-            Height: =223
+            Height: =525
             Items: ='GF_DEV.Operation_Table'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -1116,7 +1116,7 @@ scr_customizing_Operations As screen:
                 PaddingTop: =8
                 Size: =12
                 Text: =ThisItem.item
-                Width: =90
+                Width: =200
                 X: =608
                 ZIndex: =13
 
