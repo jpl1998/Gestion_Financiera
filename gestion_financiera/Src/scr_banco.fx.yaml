@@ -2446,12 +2446,6 @@ scr_banco As screen:
                         Y: =172
                         ZIndex: =24
 
-                Label8 As label:
-                    Text: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period))
-                    X: =652
-                    Y: =31
-                    ZIndex: =5
-
                 Button1_5 As button:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0
@@ -2868,6 +2862,7 @@ scr_banco As screen:
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =315
+                Visible: =!IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period))
                 Width: =1293
                 X: =0
                 Y: =2
@@ -2902,7 +2897,7 @@ scr_banco As screen:
                         Y: =40
                         ZIndex: =2
 
-                SearchMovementTextInput_1 As text:
+                SearchMovementCorrectTextInput As text:
                     BorderColor: =RGBA(212, 212, 212, 1)
                     BorderThickness: =1
                     Color: =RGBA(147, 147, 147, 1)
@@ -2953,14 +2948,31 @@ scr_banco As screen:
                         Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
                         Items: |-
                             =With(
-                                        {
-                                            temp:Search(Filter('GF_DEV.Bank_Movement',id_period=varCurrentPeriod.id_month, id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship),SearchMovementTextInput.Text,"description","movement_type","cusip")
-                                        },
-                                        ForAll(
-                                            Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period) As x,
-                                            LookUp(temp, x.adquisition_date = Text(adquisition_date,"yyyy-mm-dd"))
-                                        )
+                                {
+                                    temp: Filter(
+                                        'GF_DEV.Bank_Movement_Imported',
+                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                        id_period = varCurrentPeriod.id_period
                                     )
+                                },
+                                ForAll(
+                                    Search(
+                                        Filter(
+                                            'GF_DEV.Bank_Movement',
+                                            id_period = varCurrentPeriod.id_month,
+                                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                        ),
+                                        SearchMovementCorrectTextInput.Text,
+                                        "description",
+                                        "movement_type",
+                                        "cusip"
+                                    ) As x,
+                                    LookUp(
+                                        temp,
+                                        x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
+                                    )
+                                )
+                            )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
@@ -3004,7 +3016,7 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =Text(ThisItem.adquisition_date,"yyyy-mm-dd")
+                                Text: =ThisItem.adquisition_date
                                 X: =201
                                 ZIndex: =2
 
@@ -4641,7 +4653,7 @@ scr_banco As screen:
                     UpdateContext({varpopupdowloadAccountxls1:false});
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
-                    RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship /*,id_period=varCurrentPeriod.id_month*/);
+                    IfError(RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,id_period=varCurrentPeriod.id_month),true);
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
