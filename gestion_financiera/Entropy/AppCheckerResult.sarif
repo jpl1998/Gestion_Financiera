@@ -30564,19 +30564,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput"
+                "type": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5"
               }
             }
           ],
@@ -30594,49 +30594,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.TabIndex"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon3"
+                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon2"
               }
             }
           ],
@@ -30684,19 +30654,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon2.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon2.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon2"
+                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon3"
               }
             }
           ],
@@ -30714,19 +30684,79 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard2.Icon3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard2.Icon3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard2.Dropdown2_5"
+                "type": "scr_banco.Container3.Canvas1.DataCard3.SearchMovementTextInput"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery"
               }
             }
           ],
@@ -30774,19 +30804,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery"
+                "type": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64"
               }
             }
           ],
@@ -30834,19 +30864,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard3.MovementsGallery.Container8.Container9.Image1_64"
+                "type": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery"
               }
             }
           ],
@@ -30858,6 +30888,126 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementCorrectTextInput.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementCorrectTextInput.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementCorrectTextInput"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -52428,156 +52578,6 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard4.MenuMovementsGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementTextInput_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementTextInput_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard4.SearchMovementTextInput_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_banco",
-                "type": "scr_banco.Container3.Canvas1.DataCard4.CorrectMovementsContainer.CorrectMovementsGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
         },
         {
           "locations": [

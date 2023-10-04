@@ -2949,29 +2949,34 @@ scr_banco As screen:
                         Items: |-
                             =With(
                                 {
-                                    temp: Filter(
-                                        'GF_DEV.Bank_Movement_Imported',
-                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                        id_period = varCurrentPeriod.id_period
+                                    temp1: With(
+                                        {
+                                            temp: Filter(
+                                                'GF_DEV.Bank_Movement_Imported',
+                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                id_period = varCurrentPeriod.id_period
+                                            )
+                                        },
+                                        ForAll(
+                                            Search(
+                                                Filter(
+                                                    'GF_DEV.Bank_Movement',
+                                                    id_period = varCurrentPeriod.id_month,
+                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                ),
+                                                SearchMovementCorrectTextInput.Text,
+                                                "description",
+                                                "movement_type",
+                                                "cusip"
+                                            ) As x,
+                                            LookUp(
+                                                temp,
+                                                x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
+                                            )
+                                        )
                                     )
                                 },
-                                ForAll(
-                                    Search(
-                                        Filter(
-                                            'GF_DEV.Bank_Movement',
-                                            id_period = varCurrentPeriod.id_month,
-                                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
-                                        ),
-                                        SearchMovementCorrectTextInput.Text,
-                                        "description",
-                                        "movement_type",
-                                        "cusip"
-                                    ) As x,
-                                    LookUp(
-                                        temp,
-                                        x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
-                                    )
-                                )
+                                Filter(temp1, movement_type<>Blank())
                             )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
