@@ -2501,13 +2501,13 @@ scr_banco As screen:
                     Y: =404
                     ZIndex: =8
 
-            DataCard3 As dataCard.blankCard:
+            MovementsDataCard As dataCard.blankCard:
                 BorderColor: =RGBA(0, 0, 0, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =MovementsGallery.Y+MovementsGallery.Height+20
-                Visible: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period))
+                Visible: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month))
                 Width: =1293
                 X: =0
                 Y: =1
@@ -2859,13 +2859,13 @@ scr_banco As screen:
                         Width: =50
                         ZIndex: =6
 
-            DataCard4 As dataCard.blankCard:
+            ConsiliationDataCard As dataCard.blankCard:
                 BorderColor: =RGBA(0, 0, 0, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =315
-                Visible: =!IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_period))
+                Visible: =!IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month))
                 Width: =1293
                 X: =0
                 Y: =2
@@ -2940,6 +2940,7 @@ scr_banco As screen:
                 CorrectMovementsContainer As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.None
                     Height: =CorrectMovementsGallery.Y+CorrectMovementsGallery.Height+20
+                    Visible: =MenuMovementsGallery.Selected.Value="Correct"
                     Width: =1217
                     X: =25
                     Y: =115
@@ -2957,7 +2958,7 @@ scr_banco As screen:
                                             tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_period
+                                                id_period = varCurrentPeriod.id_month
                                             ),
                                             tempBank: Search(
                                                 Filter(
@@ -3370,7 +3371,7 @@ scr_banco As screen:
                                             tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_period
+                                                id_period = varCurrentPeriod.id_month
                                             ),
                                             tempBank: Search(
                                                 Filter(
@@ -3655,7 +3656,7 @@ scr_banco As screen:
                                             tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_period
+                                                id_period = varCurrentPeriod.id_month
                                             ),
                                             tempBank: Search(
                                                 Filter(
@@ -3680,7 +3681,7 @@ scr_banco As screen:
                                     tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                id_period = varCurrentPeriod.id_period
+                                                id_period = varCurrentPeriod.id_month
                                             )
                                 },
                                 Filter(tempImported, Not(id_movement_imported in ShowColumns(temp,"id_movement_imported")))
@@ -5219,10 +5220,10 @@ scr_banco As screen:
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
                     IfError(RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,id_period=varCurrentPeriod.id_month),true);
-                    //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    //'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,/*varCurrentPeriod.id_month*/1,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    //'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
