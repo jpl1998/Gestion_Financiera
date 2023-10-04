@@ -2917,7 +2917,7 @@ scr_banco As screen:
                     RadiusTopRight: =4
                     Width: =If(MenuMovementsGallery.Selected.Value="Correct", 1138, 620)
                     X: =40
-                    Y: =60
+                    Y: =70
                     ZIndex: =2
 
                 ErrorMovementsContainer As groupContainer.manualLayoutContainer:
@@ -2971,7 +2971,7 @@ scr_banco As screen:
                         TemplatePadding: =10
                         TemplateSize: =36
                         Width: =709
-                        Y: =52
+                        Y: =62
                         ZIndex: =1
 
                         Rectangle3_28 As rectangle:
@@ -3075,7 +3075,7 @@ scr_banco As screen:
                         LayoutMode: =LayoutMode.Auto
                         Width: =700
                         X: =9
-                        Y: =6
+                        Y: =16
                         ZIndex: =3
 
                         Button2_379 As button:
@@ -3267,7 +3267,7 @@ scr_banco As screen:
                         TemplateSize: =36
                         Width: =440
                         X: =771
-                        Y: =52
+                        Y: =62
                         ZIndex: =4
 
                         Rectangle3_34 As rectangle:
@@ -3342,7 +3342,7 @@ scr_banco As screen:
                         LayoutMode: =LayoutMode.Auto
                         Width: =434
                         X: =780
-                        Y: =6
+                        Y: =16
                         ZIndex: =6
 
                         Button2_381 As button:
@@ -3457,8 +3457,8 @@ scr_banco As screen:
                     Text: ="+"
                     Visible: =MenuMovementsGallery.Selected.Value="Error"
                     Width: =44
-                    X: =688
-                    Y: =60
+                    X: =692
+                    Y: =70
                     ZIndex: =9
 
                 Icon4 As icon.Cancel:
@@ -3473,7 +3473,7 @@ scr_banco As screen:
                     Visible: =!IsBlank(SearchMovementCorrectTextInput.Text)
                     Width: =42
                     X: =If(MenuMovementsGallery.Selected.Value="Correct", 1136, 618)
-                    Y: =60
+                    Y: =70
                     ZIndex: =10
 
                 MenuMovementsGallery As gallery.galleryHorizontal:
@@ -3493,7 +3493,7 @@ scr_banco As screen:
                         Height: =45
                         OnSelect: =Select(Parent)
                         Size: =16
-                        Text: =ThisItem.Value
+                        Text: =ThisItem.Value & " (" & If(ThisItem.Value ="Correct",CorrectMovementsGallery.AllItemsCount, Max(ErrorMovementsGallery.AllItemsCount, BankStatementDataGallery.AllItemsCount)) & ")"
                         Width: =160
                         ZIndex: =1
 
@@ -3561,16 +3561,16 @@ scr_banco As screen:
                             Fill: =RGBA(147, 147, 147, 1)
                             Height: =1
                             OnSelect: =Select(Parent)
-                            Width: =689
+                            Width: =Parent.Width
                             Y: =35
                             ZIndex: =9
 
                         Container8_12 As groupContainer.horizontalAutoLayoutContainer:
                             DropShadow: =DropShadow.None
-                            Height: =35
+                            Height: =36
                             LayoutAlignItems: =LayoutAlignItems.Stretch
                             LayoutMode: =LayoutMode.Auto
-                            Width: =680
+                            Width: =1197
                             ZIndex: =18
 
                             Label4_125 As label:
@@ -3580,51 +3580,76 @@ scr_banco As screen:
                                 PaddingTop: =8
                                 Size: =12
                                 Text: =ThisItem.movement_type
-                                Width: =135
                                 ZIndex: =1
 
                             Label4_126 As label:
                                 Align: =Align.Center
-                                Fill: =RGBA(255, 255, 255, 0)
+                                Fill: =RGBA(16, 124, 65, 0.1)
                                 Height: =36
                                 LayoutMinHeight: =15
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =ThisItem.adquisition_date
+                                Text: =ThisItem.adquisition_date 
                                 Width: =135
                                 X: =201
                                 ZIndex: =2
 
                             Label4_127 As label:
                                 Align: =Align.Center
-                                Fill: =RGBA(255, 255, 255, 0)
+                                Fill: =RGBA(16, 124, 65, 0.1)
                                 Height: =35
                                 LayoutMinHeight: =15
                                 LayoutMinWidth: =160
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Text: =ThisItem.adquisition_date 
+                                Width: =135
                                 X: =811
                                 Y: =1
-                                ZIndex: =5
+                                ZIndex: =3
+
+                            Container9_1 As groupContainer.manualLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                LayoutMinHeight: =11
+                                LayoutMinWidth: =250
+                                Width: =10
+                                ZIndex: =4
 
                             Label4_128 As label:
                                 Align: =Align.Center
                                 AlignInContainer: =AlignInContainer.Stretch
+                                Fill: =RGBA(16, 124, 65, 0.1)
                                 Height: =35
                                 LayoutMinHeight: =15
                                 OnSelect: =
                                 PaddingTop: =0
-                                Size: =9
-                                Text: =ThisItem.description
-                                VerticalAlign: =VerticalAlign.Top
+                                Size: =12
+                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Width: =160
                                 X: =990
                                 Y: =1
-                                ZIndex: =8
+                                ZIndex: =5
 
                             Label4_129 As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Fill: =RGBA(16, 124, 65, 0.1)
+                                Height: =35
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =11
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Width: =160
+                                X: =990
+                                Y: =1
+                                ZIndex: =6
+
+                            Label4_130 As label:
                                 Align: =Align.Center
                                 FillPortions: =1
                                 Height: =35
@@ -3632,12 +3657,26 @@ scr_banco As screen:
                                 LayoutMinWidth: =11
                                 OnSelect: =
                                 PaddingTop: =8
-                                Size: =11
-                                Text: =ThisItem.cusip
+                                Size: =10
+                                Text: =ThisItem.description
+                                VerticalAlign: =VerticalAlign.Top
                                 Width: =200
                                 X: =990
                                 Y: =1
-                                ZIndex: =9
+                                ZIndex: =7
+
+                            Label4_131 As label:
+                                Align: =Align.Center
+                                Height: =35
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =11
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =11
+                                Text: =ThisItem.cusip
+                                X: =990
+                                Y: =1
+                                ZIndex: =8
 
                     Iconline_71 As rectangle:
                         BorderColor: =RGBA(255, 255, 255, 1)
@@ -3652,7 +3691,7 @@ scr_banco As screen:
 
                     Container8_10 As groupContainer.horizontalAutoLayoutContainer:
                         DropShadow: =DropShadow.None
-                        Height: =47
+                        Height: =45
                         LayoutAlignItems: =LayoutAlignItems.Stretch
                         LayoutMode: =LayoutMode.Auto
                         Width: =1208
@@ -3683,7 +3722,7 @@ scr_banco As screen:
                             RadiusTopRight: =1
                             Size: =11
                             Text: ="Movement Type"
-                            Width: =135
+                            Width: =150
                             X: =42
                             Y: =475
                             ZIndex: =1
@@ -3722,7 +3761,6 @@ scr_banco As screen:
                             DisabledBorderColor: =RGBA(255, 255, 255, 1)
                             DisplayMode: =DisplayMode.View
                             Fill: =RGBA(255, 255, 255, 1)
-                            FillPortions: =1
                             Font: =Font.Arial
                             Height: =36
                             HoverBorderColor: =RGBA(255, 255, 255, 1)
@@ -3738,11 +3776,19 @@ scr_banco As screen:
                             RadiusTopLeft: =1
                             RadiusTopRight: =1
                             Size: =11
-                            Text: ="Movement Amount"
-                            Width: =131
+                            Text: ="Value Date"
+                            Width: =135
                             X: =803
                             Y: =475
-                            ZIndex: =5
+                            ZIndex: =3
+
+                        Container9 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutMinHeight: =11
+                            LayoutMinWidth: =250
+                            Width: =10
+                            ZIndex: =4
 
                         Button2_395 As button:
                             BorderColor: =RGBA(255, 255, 255, 1)
@@ -3765,13 +3811,39 @@ scr_banco As screen:
                             RadiusTopLeft: =1
                             RadiusTopRight: =1
                             Size: =11
-                            Text: ="Description"
-                            Width: =150
+                            Text: ="Movement Amount"
                             X: =990
                             Y: =475
-                            ZIndex: =8
+                            ZIndex: =5
 
                         Button2_396 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            LayoutMinWidth: =100
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Bank Statement"
+                            X: =990
+                            Y: =475
+                            ZIndex: =6
+
+                        Button2_397 As button:
                             BorderColor: =RGBA(255, 255, 255, 1)
                             BorderThickness: =0
                             Color: =RGBA(26, 26, 26, 1)
@@ -3794,11 +3866,50 @@ scr_banco As screen:
                             RadiusTopLeft: =1
                             RadiusTopRight: =1
                             Size: =11
-                            Text: ="CUSIP"
+                            Text: ="Description"
                             Width: =200
                             X: =990
                             Y: =475
-                            ZIndex: =9
+                            ZIndex: =7
+
+                        Button2_398 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            LayoutMinWidth: =100
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="CUSIP"
+                            Width: =150
+                            X: =990
+                            Y: =475
+                            ZIndex: =8
+
+                Icon5_1 As icon.Search:
+                    Color: =RGBA(212, 212, 212, 1)
+                    Height: =44
+                    Icon: =Icon.Search
+                    PaddingBottom: =10
+                    PaddingTop: =10
+                    Width: =45
+                    X: =40
+                    Y: =70
+                    ZIndex: =13
 
     Screen_Download_10 As group:
         Height: =5
