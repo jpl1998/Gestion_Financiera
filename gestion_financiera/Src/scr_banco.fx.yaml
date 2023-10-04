@@ -2665,24 +2665,6 @@ scr_banco As screen:
                             Y: =1
                             ZIndex: =9
 
-                        Container9 As groupContainer.manualLayoutContainer:
-                            DropShadow: =DropShadow.None
-                            FillPortions: =0
-                            LayoutMinHeight: =11
-                            LayoutMinWidth: =40
-                            Width: =40
-                            ZIndex: =10
-
-                            Image6 As image:
-                                Height: =36
-                                Image: =editar
-                                OnSelect: |-
-                                    =UpdateContext({varshowPopUpEditMovement:true})
-                                PaddingBottom: =7
-                                PaddingTop: =7
-                                Width: =40
-                                ZIndex: =1
-
                 Container8_9 As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.None
                     Height: =36
@@ -2831,14 +2813,6 @@ scr_banco As screen:
                         X: =990
                         Y: =475
                         ZIndex: =9
-
-                    Container8 As groupContainer.manualLayoutContainer:
-                        DropShadow: =DropShadow.None
-                        FillPortions: =0
-                        LayoutMinHeight: =10
-                        LayoutMinWidth: =250
-                        Width: =50
-                        ZIndex: =10
 
                 Iconline_70 As rectangle:
                     BorderColor: =RGBA(255, 255, 255, 1)
