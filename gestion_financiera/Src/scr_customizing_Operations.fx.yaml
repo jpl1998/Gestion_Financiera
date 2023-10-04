@@ -1106,8 +1106,8 @@ scr_customizing_Operations As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =ThisItem.id_system_value
-                Width: =90
+                Text: =LookUp('GF_DEV.System_Value', id_system_value = ThisItem.id_system_value).value
+                Width: =200
                 X: =368
                 ZIndex: =12
 

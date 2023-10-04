@@ -3923,6 +3923,7 @@ scr_banco As screen:
                     Fill: =RGBA(217, 217, 217, 1)
                     Height: =ErrorMovementsContainer.Y+ErrorMovementsContainer.Height
                     Text: =""
+                    Visible: =MenuMovementsGallery.Selected.Value = "Error"
                     Width: =1
                     X: =773
                     Y: =70
@@ -3933,6 +3934,7 @@ scr_banco As screen:
                     FontWeight: =FontWeight.Semibold
                     Size: =20
                     Text: ="Bank Statement Data"
+                    Visible: =MenuMovementsGallery.Selected.Value = "Error"
                     Width: =441
                     X: =801
                     Y: =75
