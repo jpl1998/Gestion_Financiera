@@ -3919,6 +3919,25 @@ scr_banco As screen:
                     Y: =70
                     ZIndex: =13
 
+                Label8 As label:
+                    Fill: =RGBA(217, 217, 217, 1)
+                    Height: =ErrorMovementsContainer.Y+ErrorMovementsContainer.Height
+                    Text: =""
+                    Width: =1
+                    X: =773
+                    Y: =70
+                    ZIndex: =14
+
+                Label9 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Size: =20
+                    Text: ="Bank Statement Data"
+                    Width: =441
+                    X: =801
+                    Y: =75
+                    ZIndex: =15
+
     Screen_Download_10 As group:
         Height: =5
         Width: =5
