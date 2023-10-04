@@ -2450,11 +2450,11 @@ scr_banco As screen:
                         ZIndex: =24
 
                 Button1_5 As button:
-                    BorderColor: =RGBA(255, 255, 255, 1)
-                    BorderThickness: =0
+                    BorderColor: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), RGBA(255, 255, 255, 1), ColorValue(varprimaryColor))
+                    BorderThickness: =1
+                    Color: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), RGBA(255, 255, 255, 1), ColorValue(varprimaryColor))
                     DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                    Fill: |
-                        =ColorValue(varprimaryColor)
+                    Fill: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)),ColorValue(varprimaryColor),Color.White)
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Normal
                     Height: =44
@@ -2472,7 +2472,7 @@ scr_banco As screen:
                     RadiusTopLeft: =2
                     RadiusTopRight: =2
                     Size: =12
-                    Text: ="Upload Bank Statement"
+                    Text: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), "Upload Bank Statement", "New Bank Statement")
                     Width: =260
                     X: =980
                     Y: =390
@@ -2489,7 +2489,7 @@ scr_banco As screen:
                     ZIndex: =7
 
                 Icon3 As icon.Download:
-                    Color: =RGBA(255, 255, 255, 1)
+                    Color: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), RGBA(255, 255, 255, 1), ColorValue(varprimaryColor))
                     Height: =15
                     Icon: =Icon.Download
                     OnSelect: |-
@@ -3065,7 +3065,7 @@ scr_banco As screen:
                         Height: =1
                         Width: =700
                         X: =7
-                        Y: =51
+                        Y: =53
                         ZIndex: =2
 
                     Container8_4 As groupContainer.horizontalAutoLayoutContainer:
@@ -3332,7 +3332,7 @@ scr_banco As screen:
                         Height: =1
                         Width: =434
                         X: =778
-                        Y: =51
+                        Y: =53
                         ZIndex: =5
 
                     Container8_7 As groupContainer.horizontalAutoLayoutContainer:
@@ -3520,32 +3520,40 @@ scr_banco As screen:
                         DelayItemLoading: =true
                         Height: =(Self.AllItemsCount*(Self.TemplateHeight+Self.TemplatePadding))+Self.TemplatePadding
                         Items: |-
-                            =With(
-                                        {
-                                            temp: With(
-                                                {
-                                                    tempImported: Filter(
-                                                        'GF_DEV.Bank_Movement_Imported',
-                                                        id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                        id_period = varCurrentPeriod.id_month
-                                                    ),
-                                                    tempBank: 
-                                                        Filter(
-                                                            'GF_DEV.Bank_Movement',
-                                                            id_period = varCurrentPeriod.id_month,
-                                                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
-                                                        )
-                                                },
-                                                ForAll(
-                                                    tempImported As x,
-                                                    LookUp(
-                                                        tempBank,
-                                                        x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
-                                                    )
+                            =Search(
+                                With(
+                                    {
+                                        temp: With(
+                                            {
+                                                tempImported: Filter(
+                                                    'GF_DEV.Bank_Movement_Imported',
+                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                    id_period = varCurrentPeriod.id_month
+                                                ),
+                                                tempBank: Filter(
+                                                    'GF_DEV.Bank_Movement',
+                                                    id_period = varCurrentPeriod.id_month,
+                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                )
+                                            },
+                                            ForAll(
+                                                tempImported As x,
+                                                LookUp(
+                                                    tempBank,
+                                                    x.movement_amount = movement_amount && x.movement_amount = movement_amount && x.cusip = cusip
                                                 )
                                             )
-                                        },
-                                        Filter(temp,movement_type<>Blank())
+                                        )
+                                    },
+                                    Filter(
+                                        temp,
+                                        movement_type <> Blank()
+                                    )
+                                ),
+                                SearchMovementCorrectTextInput.Text,
+                                "cusip",
+                                "description",
+                                "movement_type"
                             )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
