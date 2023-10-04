@@ -52704,6 +52704,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_banco",
+                "type": "scr_banco.Container3.Canvas1.DataCard4.ErrorMovementsContainer.BankStatementDataGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.bordeabajo"
                 }
               ],

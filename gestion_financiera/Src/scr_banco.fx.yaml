@@ -2952,14 +2952,12 @@ scr_banco As screen:
                                 {
                                     temp1: With(
                                         {
-                                            temp: Filter(
+                                            tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
                                                 id_period = varCurrentPeriod.id_period
-                                            )
-                                        },
-                                        ForAll(
-                                            Search(
+                                            ),
+                                            tempBank: Search(
                                                 Filter(
                                                     'GF_DEV.Bank_Movement',
                                                     id_period = varCurrentPeriod.id_month,
@@ -2969,9 +2967,12 @@ scr_banco As screen:
                                                 "description",
                                                 "movement_type",
                                                 "cusip"
-                                            ) As x,
+                                            )
+                                        },
+                                        ForAll(
+                                            tempImported As x,
                                             LookUp(
-                                                temp,
+                                                tempBank,
                                                 x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
                                             )
                                         )
@@ -3348,7 +3349,7 @@ scr_banco As screen:
 
                 ErrorMovementsContainer As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.None
-                    Height: =ErrorMovementsGallery.Y+ErrorMovementsGallery.Height+20
+                    Height: =Max(ErrorMovementsGallery.Y+ErrorMovementsGallery.Height+20, BankStatementDataGallery.Y + BankStatementDataGallery.Height+20)
                     Visible: =MenuMovementsGallery.Selected.Value="Error"
                     Width: =1217
                     X: =25
@@ -3362,16 +3363,14 @@ scr_banco As screen:
                         Items: |-
                             =With(
                                 {
-                                    temp1: With(
+                                    temp: With(
                                         {
-                                            temp: Filter(
+                                            tempImported: Filter(
                                                 'GF_DEV.Bank_Movement_Imported',
                                                 id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
                                                 id_period = varCurrentPeriod.id_period
-                                            )
-                                        },
-                                        ForAll(
-                                            Search(
+                                            ),
+                                            tempBank: Search(
                                                 Filter(
                                                     'GF_DEV.Bank_Movement',
                                                     id_period = varCurrentPeriod.id_month,
@@ -3381,22 +3380,20 @@ scr_banco As screen:
                                                 "description",
                                                 "movement_type",
                                                 "cusip"
-                                            ) As x,
-                                            LookUp(
-                                                temp,
-                                                x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
-                                            )
-                                        )
+                                            ),
+                                            tempCorrect: CorrectMovementsGallery.AllItems
+                                        },
+                                        Filter(tempBank, Not(id_movement in ShowColumns(tempCorrect,"id_movement")))
                                     )
                                 },
-                                Filter(temp1, movement_type<>Blank())
+                                Filter(temp, movement_type<>Blank())
                             )
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
                         TemplatePadding: =10
                         TemplateSize: =36
-                        Width: =700
+                        Width: =709
                         Y: =52
                         ZIndex: =1
 
@@ -3643,6 +3640,217 @@ scr_banco As screen:
                             X: =990
                             Y: =475
                             ZIndex: =9
+
+                    BankStatementDataGallery As gallery.galleryVertical:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        DelayItemLoading: =true
+                        Height: =Min((Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)+Self.TemplatePadding),600)
+                        Items: |-
+                            =With(
+                                {
+                                    temp: With(
+                                        {
+                                            tempImported: Filter(
+                                                'GF_DEV.Bank_Movement_Imported',
+                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                id_period = varCurrentPeriod.id_period
+                                            ),
+                                            tempBank: Search(
+                                                Filter(
+                                                    'GF_DEV.Bank_Movement',
+                                                    id_period = varCurrentPeriod.id_month,
+                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship
+                                                ),
+                                                SearchMovementCorrectTextInput.Text,
+                                                "description",
+                                                "movement_type",
+                                                "cusip"
+                                            )
+                                        },
+                                        ForAll(
+                                            tempBank As x,
+                                            LookUp(
+                                                tempImported,
+                                                x.movement_amount = movement_amount && x.movement_amount = movement_amount  && x.cusip = cusip
+                                            )
+                                        )
+                                    ),
+                                    tempImported: Filter(
+                                                'GF_DEV.Bank_Movement_Imported',
+                                                id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                                                id_period = varCurrentPeriod.id_period
+                                            )
+                                },
+                                Filter(tempImported, Not(id_movement_imported in ShowColumns(temp,"id_movement_imported")))
+                            )
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        ShowScrollbar: =false
+                        TemplatePadding: =10
+                        TemplateSize: =36
+                        Width: =440
+                        X: =771
+                        Y: =52
+                        ZIndex: =4
+
+                        Rectangle3_34 As rectangle:
+                            BorderColor: =RGBA(147, 147, 147, 1)
+                            Fill: =RGBA(147, 147, 147, 1)
+                            Height: =1
+                            OnSelect: =Select(Parent)
+                            Width: =689
+                            Y: =35
+                            ZIndex: =9
+
+                        Container8_6 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            Height: =35
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =440
+                            ZIndex: =18
+
+                            Label4_114 As label:
+                                Height: =36
+                                LayoutMinHeight: =15
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =ThisItem.movement_type
+                                Width: =135
+                                ZIndex: =1
+
+                            Label4_116 As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 255, 255, 0)
+                                Height: =36
+                                LayoutMinHeight: =15
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =ThisItem.adquisition_date
+                                Width: =135
+                                X: =201
+                                ZIndex: =2
+
+                            Label4_119 As label:
+                                Align: =Align.Center
+                                Fill: =RGBA(255, 255, 255, 0)
+                                Height: =35
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =160
+                                OnSelect: =
+                                PaddingTop: =8
+                                Size: =12
+                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                X: =811
+                                Y: =1
+                                ZIndex: =5
+
+                    Iconline_69 As rectangle:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: |
+                            =
+                        Fill: =RGBA(51, 51, 51, 1)
+                        Height: =1
+                        Width: =434
+                        X: =778
+                        Y: =51
+                        ZIndex: =5
+
+                    Container8_7 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =36
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =434
+                        X: =780
+                        Y: =6
+                        ZIndex: =6
+
+                        Button2_381 As button:
+                            Align: =Align.Left
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Movement Type"
+                            Width: =135
+                            X: =42
+                            Y: =475
+                            ZIndex: =1
+
+                        Button2_383 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Adquisition Date"
+                            Width: =135
+                            X: =180
+                            Y: =475
+                            ZIndex: =2
+
+                        Button2_386 As button:
+                            BorderColor: =RGBA(255, 255, 255, 1)
+                            BorderThickness: =0
+                            Color: =RGBA(26, 26, 26, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            Font: =Font.Arial
+                            Height: =36
+                            HoverBorderColor: =RGBA(255, 255, 255, 1)
+                            HoverColor: =RGBA(166, 166, 166, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            LayoutMinHeight: =15
+                            LayoutMinWidth: =150
+                            PressedBorderColor: =RGBA(255, 255, 255, 1)
+                            PressedColor: =RGBA(166, 166, 166, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =1
+                            RadiusBottomRight: =1
+                            RadiusTopLeft: =1
+                            RadiusTopRight: =1
+                            Size: =11
+                            Text: ="Movement Amount"
+                            Width: =131
+                            X: =803
+                            Y: =475
+                            ZIndex: =5
 
                 Button1_341 As button:
                     BorderColor: =ColorValue(varprimaryColor)
