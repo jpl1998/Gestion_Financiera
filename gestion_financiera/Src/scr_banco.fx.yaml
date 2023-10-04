@@ -186,7 +186,10 @@ scr_banco As screen:
                             ZIndex: =8
 
                             Button2 As button:
+                                Color: =varYellowColor
                                 DisplayMode: =DisplayMode.View
+                                Fill: |-
+                                    =ColorValue("#FAFAFA")
                                 Height: =25
                                 Size: =9
                                 Text: ="Pending"
@@ -2937,7 +2940,6 @@ scr_banco As screen:
                 CorrectMovementsContainer As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.None
                     Height: =CorrectMovementsGallery.Y+CorrectMovementsGallery.Height+20
-                    Visible: =MenuMovementsGallery.Selected.Value="Correct"
                     Width: =1217
                     X: =25
                     Y: =115
