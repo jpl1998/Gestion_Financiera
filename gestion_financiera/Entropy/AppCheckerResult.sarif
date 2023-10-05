@@ -28404,19 +28404,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1"
+                "type": "scr_security.UserRolesGallery"
               }
             }
           ],
@@ -28434,19 +28434,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.TabIndex"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.TabIndex",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1"
+                "type": "scr_security.UserRolesGallery"
               }
             }
           ],
@@ -28464,19 +28464,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_29.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_29.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_29.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_29.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1.Image1_29"
+                "type": "scr_security.UserRolesGallery.Image1_29"
               }
             }
           ],
@@ -28494,19 +28494,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_29.TabIndex"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_29.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_29.TabIndex",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_29.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1.Image1_29"
+                "type": "scr_security.UserRolesGallery.Image1_29"
               }
             }
           ],
@@ -28524,19 +28524,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_28.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_28.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_28.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_28.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1.Image1_28"
+                "type": "scr_security.UserRolesGallery.Image1_28"
               }
             }
           ],
@@ -28554,19 +28554,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_28.TabIndex"
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_28.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.Gallery1.Image1_28.TabIndex",
+                  "fullyQualifiedName": "scr_security.UserRolesGallery.Image1_28.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_security",
-                "type": "scr_security.Gallery1.Image1_28"
+                "type": "scr_security.UserRolesGallery.Image1_28"
               }
             }
           ],
@@ -28638,36 +28638,6 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_4.UserNameTextInput.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_4.UserNameTextInput.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_security",
-                "type": "scr_security.grpCrearOrdenDeCompra_4.UserNameTextInput"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
         },
         {
           "locations": [
@@ -28794,19 +28764,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.TextInput2_5.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.UserNameEditComboBox.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.TextInput2_5.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.UserNameEditComboBox.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.grpCrearOrdenDeCompra_5.TextInput2_5"
+                "type": "scr_security.grpCrearOrdenDeCompra_5.UserNameEditComboBox"
               }
             }
           ],
@@ -28824,19 +28794,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_2.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.RoleEditDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_2.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.RoleEditDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_2"
+                "type": "scr_security.grpCrearOrdenDeCompra_5.RoleEditDropdown"
               }
             }
           ],
@@ -28854,19 +28824,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_3.AccessibleLabel"
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.UserStatusEditDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_3.AccessibleLabel",
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_5.UserStatusEditDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_security",
-                "type": "scr_security.grpCrearOrdenDeCompra_5.Dropdown1_3"
+                "type": "scr_security.grpCrearOrdenDeCompra_5.UserStatusEditDropdown"
               }
             }
           ],
@@ -52704,6 +52674,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_4.UserNameComboBox.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_security.grpCrearOrdenDeCompra_4.UserNameComboBox.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_security",
+                "type": "scr_security.grpCrearOrdenDeCompra_4.UserNameComboBox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.bordeabajo"
                 }
               ],
@@ -53196,36 +53196,6 @@
                 "member": "varshowPopUpProveedores",
                 "module": "scr_reports",
                 "type": "scr_reports"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_security.varshowPopUpProveedores"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_security.varshowPopUpProveedores",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varshowPopUpProveedores",
-                "module": "scr_security",
-                "type": "scr_security"
               }
             }
           ],

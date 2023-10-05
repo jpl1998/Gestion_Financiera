@@ -72,7 +72,7 @@ scr_security As screen:
             Y: =32
             ZIndex: =8
 
-        Gallery1 As gallery.galleryVertical:
+        UserRolesGallery As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
             Items: ='GF_DEV.User_Role'
@@ -97,7 +97,7 @@ scr_security As screen:
             Label2_21 As label:
                 Height: =36
                 Size: =12
-                Text: ="mauricio.martins@enterprise.com"
+                Text: =ThisItem.email
                 Width: =279
                 X: =181
                 ZIndex: =2
@@ -115,8 +115,8 @@ scr_security As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
-                Text: =If(ThisItem.status, "Active","Inactivo")
-                Width: =81
+                Text: =If(ThisItem.status="1", "Active","Inactivo")
+                Width: =91
                 X: =694
                 ZIndex: =4
 
@@ -330,22 +330,6 @@ scr_security As screen:
                 Y: =288
                 ZIndex: =18
 
-            UserNameTextInput As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
             Button1_3 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
@@ -362,9 +346,10 @@ scr_security As screen:
                         Defaults('GF_DEV.User_Role'),
                         {
                             id_user: First(SortByColumns('GF_DEV.User_Role',"id_user",SortOrder.Descending)).id_role+1,
-                            username: UserNameTextInput.Text,
+                            username: UserNameComboBox.Selected.DisplayName,
+                            email: UserNameComboBox.Selected.Mail,
                             id_role: UserRoleDropdown.Selected.id_role,
-                            status: UserStatusDropdown.Selected.Value = "Activo"
+                            status: If(UserStatusDropdown.Selected.Value = "Activo", "1", "0")
                         }
                     );
                     UpdateContext({varpopupAddUser:false})
@@ -405,6 +390,25 @@ scr_security As screen:
                 X: =38
                 Y: =335
                 ZIndex: =33
+
+            UserNameComboBox As combobox:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =ColorValue(varlineColor)
+                DisplayFields: =["DisplayName","Mail"]
+                Height: =44
+                InputTextPlaceholder: ="Search User"
+                Items: |-
+                    =Office365Users.SearchUser({searchTerm:Self.SearchText})
+                SearchFields: =["DisplayName"]
+                SearchItems: |-
+                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameComboBox.SearchText,"DisplayName")
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =344
+                X: =38
+                Y: =115
+                ZIndex: =34
 
     thr_Screen As group:
         Height: =5
@@ -494,22 +498,6 @@ scr_security As screen:
                 Y: =288
                 ZIndex: =18
 
-            TextInput2_5 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
             Button1_4 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
@@ -521,7 +509,17 @@ scr_security As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'GF_DEV.User_Role',
+                        LookUp('GF_DEV.User_Role', UserRolesGallery.Selected.id_user = id_user),
+                        {
+                            username: UserNameEditComboBox.Selected.DisplayName,
+                            email: UserNameEditComboBox.Selected.Mail,
+                            id_role: RoleEditDropdown.Selected.id_role,
+                            status: If(UserStatusEditDropdown.Selected.Value = "Activo", "1", "0")
+                        }
+                    );
+                    UpdateContext({varpopupEditUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -536,29 +534,52 @@ scr_security As screen:
                 Y: =404
                 ZIndex: =29
 
-            Dropdown1_2 As dropdown:
+            RoleEditDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
+                Default: =LookUp('GF_DEV.Roles', id_role = UserRolesGallery.Selected.id_role).role
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Roles'
                 Width: =344
                 X: =38
                 Y: =227
                 ZIndex: =32
 
-            Dropdown1_3 As dropdown:
+            UserStatusEditDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
+                Default: =If(UserRolesGallery.Selected.status = "1","Activo","Inactivo")
                 Height: =44
-                Items: =DropDownSample
+                Items: =["Activo","Inactivo"]
                 Width: =344
                 X: =38
                 Y: =335
                 ZIndex: =33
+
+            UserNameEditComboBox As combobox:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =ColorValue(varlineColor)
+                DefaultSelectedItems: |-
+                    =Office365Users.SearchUser({searchTerm:UserRolesGallery.Selected.username})
+                DisplayFields: =["DisplayName","Mail"]
+                Height: =44
+                InputTextPlaceholder: ="Search User"
+                Items: |-
+                    =Office365Users.SearchUser({searchTerm:Self.SearchText})
+                SearchFields: =["DisplayName"]
+                SearchItems: |-
+                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameEditComboBox.SearchText,"DisplayName")
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =344
+                X: =33
+                Y: =113
+                ZIndex: =34
 
     four_Screen As group:
         Height: =5
@@ -607,32 +628,8 @@ scr_security As screen:
                     =UpdateContext({varpopupEliminateUser:false})
                 Width: =20
                 X: =376
-                Y: =35
+                Y: =20
                 ZIndex: =2
-
-            TxtOrdendeCompra_42 As label:
-                Align: =Align.Center
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                Height: =50
-                Size: =12
-                Text: ="The user                                          will be permantly deleted. Are you sure to delete the user? "
-                Width: =350
-                X: =43
-                Y: =80
-                ZIndex: =3
-
-            TxtOrdendeCompra_41 As label:
-                Color: =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =51
-                Size: =12
-                Text: ="""Mauricio Martins"""
-                Width: =167
-                X: =148
-                Y: =60
-                ZIndex: =4
 
             Button1_11 As button:
                 BorderColor: =ColorValue(varprimaryColor)
@@ -673,7 +670,8 @@ scr_security As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Remove('GF_DEV.User_Role',UserRolesGallery.Selected);
+                    UpdateContext({varpopupEliminateUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
@@ -687,4 +685,15 @@ scr_security As screen:
                 X: =216
                 Y: =156
                 ZIndex: =6
+
+            HtmlText1_77 As htmlViewer:
+                Font: =Font.Arial
+                Height: =59
+                HtmlText: |-
+                    ="<center> It's not possible to delete the <b><font color=""#4280c2"">" & UserRolesGallery.Selected.username &"</font></b> item as there are 8 associated bank accounts.
+                    "
+                Width: =372
+                X: =26
+                Y: =70
+                ZIndex: =7
 
