@@ -5612,7 +5612,7 @@ scr_banco As screen:
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =ColorValue(varprimaryColor)
                     OnSelect: |-
-                        =UpdateContext({varInitialBalance: LookUp('GF_DEV.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act).final_balance});
+                        =UpdateContext({varInitialBalance: LookUp('GF_DEV.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act="1").final_balance});
                         
                         Patch(
                             'GF_DEV.Bank_Movement',
@@ -5901,7 +5901,7 @@ scr_banco As screen:
                     Y: =432
                     ZIndex: =6
 
-                TextInput2_39 As text:
+                MovementAmountEditTextInput As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
                     Default: =varSelectedMovement.movement_amount
@@ -5972,7 +5972,7 @@ scr_banco As screen:
                     Y: =133
                     ZIndex: =20
 
-                TextInput2_45 As text:
+                MovementDescriptionEditTextInput As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
                     Default: =varSelectedMovement.description
@@ -5984,7 +5984,7 @@ scr_banco As screen:
                     Y: =580
                     ZIndex: =21
 
-                TextInput2_46 As text:
+                CusipEditTextInput As text:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
                     Default: =varSelectedMovement.cusip
@@ -6003,6 +6003,44 @@ scr_banco As screen:
                     Height: =56
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =UpdateContext({varInitialBalance: LookUp('GF_DEV.Bank_Balance', id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship && ind_act="1").final_balance});
+                        
+                        Patch(
+                            'GF_DEV.Bank_Movement',
+                            LookUp('GF_DEV.Bank_Movement',id_movement = varSelectedMovement.id_movement),
+                            {
+                                movement_type: MovementTypeEditDropdown.Selected.value,
+                                adquisition_date: AdquisitionDateEditDatePicker.SelectedDate,
+                                movement_amount: Value(MovementAmountEditTextInput.Text) * If(MovementTypeEditDropdown.Selected.type = "O", -1, 1),
+                                final_balance: varInitialBalance + (Value(MovementAmountEditTextInput.Text) * If(MovementTypeEditDropdown.Selected.type = "O", -1, 1)) - varSelectedMovement.movement_amount,
+                                description: MovementDescriptionEditTextInput.Text,
+                                cusip: CusipEditTextInput.Text
+                            }
+                        );
+                        
+                        UpdateIf(
+                            'GF_DEV.Bank_Balance',
+                            id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
+                            {
+                                ind_act: 0
+                            }
+                        );
+                        
+                        Patch(
+                            'GF_DEV.Bank_Balance',
+                            Defaults('GF_DEV.Bank_Balance'),
+                            {
+                                id_balance: First(SortByColumns('GF_DEV.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance+1,
+                                id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
+                                id_period: varCurrentPeriod.id_month,
+                                balance_date: Today(),
+                                initial_balance: varInitialBalance - varSelectedMovement.movement_amount,
+                                final_balance: varInitialBalance + (Value(MovementAmountEditTextInput.Text) * If(MovementTypeEditDropdown.Selected.type = "O", -1, 1)) - varSelectedMovement.movement_amount,
+                                ind_act: 1
+                            }
+                        );
+                        UpdateContext({varshowPopUpEditMovement:false})
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =ColorValue(varprimaryColor)
                     RadiusBottomLeft: =2
@@ -6015,7 +6053,7 @@ scr_banco As screen:
                     Y: =780
                     ZIndex: =23
 
-                DatePicker1_1 As datepicker:
+                AdquisitionDateEditDatePicker As datepicker:
                     BorderColor: =ColorValue(varlineColor)
                     DefaultDate: =varSelectedMovement.adquisition_date
                     Height: =49
@@ -6026,13 +6064,13 @@ scr_banco As screen:
                     Y: =358
                     ZIndex: =24
 
-                Dropdown2_6 As dropdown:
+                MovementTypeEditDropdown As dropdown:
                     BorderColor: =ColorValue(varlineColor)
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(51, 51, 51, 1)
                     Default: =varSelectedMovement.movement_type
                     Height: =45
-                    Items: =Distinct('GF_DEV.System_Value',value)
+                    Items: =Filter('GF_DEV.System_Value',value<>"Purchase",value<>"Sale")
                     Width: =428
                     X: =28
                     Y: =244
