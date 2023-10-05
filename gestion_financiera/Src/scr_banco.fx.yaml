@@ -2162,7 +2162,7 @@ scr_banco As screen:
                     Color: =ColorValue(varprimaryColor)
                     Font: =Font.Arial
                     Size: =24
-                    Text: ="JP MORGAN(111-222-333)"
+                    Text: =varSelectedAccount.bank_name & "(" & varSelectedAccount.account_num & ")"
                     Width: =402
                     X: =88
                     Y: =31
@@ -5551,7 +5551,7 @@ scr_banco As screen:
                     Height: =26
                     Size: =12
                     Text: =LookUp('GF_DEV.Bank', id_bank = varSelectedAccount.id_bank).bank
-                    Width: =94
+                    Width: =250
                     X: =91
                     Y: =102
                     ZIndex: =18
@@ -5575,6 +5575,7 @@ scr_banco As screen:
                     Height: =24
                     Size: =12
                     Text: =varSelectedAccount.account_num
+                    Width: =250
                     X: =155
                     Y: =133
                     ZIndex: =20
