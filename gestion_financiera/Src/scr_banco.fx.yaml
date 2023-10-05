@@ -1,4 +1,6 @@
 scr_banco As screen:
+    OnVisible: |-
+        =UpdateContext({varshowPopUpIconDetalle:false})
 
     Label2 As label:
         Color: =RGBA(77, 77, 77, 1)
