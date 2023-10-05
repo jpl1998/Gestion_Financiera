@@ -536,7 +536,7 @@ scr_customizing_country As screen:
             TextInput2_21 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Gallery1_7.Selected.country
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -808,7 +808,7 @@ scr_customizing_country As screen:
                 PaddingTop: =8
                 Size: =12
                 Text: =ThisItem.country
-                Width: =152
+                Width: =500
                 ZIndex: =1
 
             Image1_43 As image:

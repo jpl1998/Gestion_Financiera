@@ -904,7 +904,7 @@ scr_customizing_Class As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =ThisItem.subclass
-                    Width: =152
+                    Width: =500
                     X: =15
                     ZIndex: =1
 
