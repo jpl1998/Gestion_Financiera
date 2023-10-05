@@ -2521,6 +2521,7 @@ scr_banco As screen:
                             ZIndex: =5
 
                             HtmlText1_89 As htmlViewer:
+                                AlignInContainer: =AlignInContainer.Stretch
                                 Font: =Font.Arial
                                 Height: =32
                                 HtmlText: |-
@@ -5627,6 +5628,7 @@ scr_banco As screen:
                     BorderColor: =ColorValue(varlineColor)
                     BorderThickness: =1
                     Default: =""
+                    Format: =TextFormat.Number
                     Height: =46
                     HoverBorderColor: =ColorValue(varprimaryColor)
                     HoverFill: =RGBA(255, 255, 255, 1)
