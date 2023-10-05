@@ -80,7 +80,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =Min((Self.AllItemsCount*(Self.TemplateHeight+Self.TemplatePadding))+Self.TemplatePadding,500)
-                    Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_bank in Search('GF_DEV.Bank', SearchBankTextInput.Text,"bank").id_bank, SearchBankTextInput.Text in account_num, SearchBankTextInput.Text in account_identifier, SearchBankTextInput.Text in c_bank)
+                    Items: =Search(AddColumns('GF_DEV.Bank_Entity_Relationship' As x,"bank_name",LookUp('GF_DEV.Bank', id_bank = x.id_bank).bank), SearchBankTextInput.Text, "account_num", "account_identifier", "c_bank","bank_name")
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
