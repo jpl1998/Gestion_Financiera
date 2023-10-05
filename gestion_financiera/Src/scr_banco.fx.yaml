@@ -2181,225 +2181,13 @@ scr_banco As screen:
                     Y: =23
                     ZIndex: =3
 
-                Container13 As groupContainer.manualLayoutContainer:
+                BankAccountDataContainer As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.None
-                    Height: =233
-                    Width: =1172
-                    X: =49
-                    Y: =118
+                    Height: =282
+                    Width: =1181
+                    X: =40
+                    Y: =91
                     ZIndex: =4
-
-                    HtmlText1_53 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: ="Initial Balance"
-                        Size: =12
-                        Width: =110
-                        X: =13
-                        Y: =10
-                        ZIndex: =1
-
-                    HtmlText1_54 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: ="Income"
-                        Size: =12
-                        Width: =77
-                        X: =221
-                        Y: =10
-                        ZIndex: =2
-
-                    HtmlText1_56 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: |-
-                            ="Sales<b><font color=""#008000""> (3)</font></b>"
-                        Size: =12
-                        Width: =98
-                        X: =396
-                        Y: =10
-                        ZIndex: =3
-
-                    HtmlText1_57 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: ="Transfers"
-                        Size: =12
-                        Width: =110
-                        X: =595
-                        Y: =10
-                        ZIndex: =4
-
-                    HtmlText1_58 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: ="Dividents"
-                        Size: =12
-                        Width: =85
-                        X: =786
-                        Y: =10
-                        ZIndex: =5
-
-                    HtmlText1_60 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =29
-                        HtmlText: |
-                            ="Interests"
-                        Size: =12
-                        Width: =110
-                        X: =979
-                        Y: =10
-                        ZIndex: =6
-
-                    HtmlText1_61 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: ="Final Balance"
-                        Size: =12
-                        Width: =110
-                        X: =11
-                        Y: =132
-                        ZIndex: =7
-
-                    HtmlText1_65 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: ="Tax Withholding"
-                        Size: =12
-                        Width: =124
-                        X: =593
-                        Y: =132
-                        ZIndex: =8
-
-                    HtmlText1_66 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: ="Record Balance"
-                        Size: =12
-                        Width: =129
-                        X: =979
-                        Y: =131
-                        ZIndex: =9
-
-                    HtmlText1_67 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: |-
-                            ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
-                        Size: =12
-                        Width: =151
-                        X: =221
-                        Y: =132
-                        ZIndex: =10
-
-                    HtmlText1_68 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: |-
-                            ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
-                        Size: =12
-                        Width: =151
-                        X: =394
-                        Y: =132
-                        ZIndex: =11
-
-                    HtmlText1_69 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =32
-                        HtmlText: |-
-                            ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
-                        Size: =12
-                        Width: =219
-                        X: =779
-                        Y: =132
-                        ZIndex: =12
-
-                    HtmlText1_62 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: =First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_month),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance
-                        Size: =20
-                        X: =11
-                        Y: =52
-                        ZIndex: =13
-
-                    HtmlText1_70 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =43
-                        HtmlText: ="$8.326.249,874"
-                        Size: =20
-                        X: =11
-                        Y: =172
-                        ZIndex: =14
-
-                    HtmlText1_71 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: ="$8,00"
-                        Size: =20
-                        Width: =114
-                        X: =218
-                        Y: =52
-                        ZIndex: =15
-
-                    HtmlText1_72 As htmlViewer:
-                        Color: =RGBA(0, 128, 0, 1)
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: |-
-                            =Text(Sum(
-                                ForAll(
-                                    Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
-                                    movement_amount
-                                ),
-                                Value
-                            ),"$0,000.00")
-                        Size: =20
-                        Width: =169
-                        X: =396
-                        Y: =52
-                        ZIndex: =16
-
-                    HtmlText1_73 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: ="$0,00"
-                        Size: =20
-                        Width: =114
-                        X: =595
-                        Y: =52
-                        ZIndex: =17
-
-                    HtmlText1_74 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: ="$0,00"
-                        Size: =20
-                        Width: =114
-                        X: =784
-                        Y: =52
-                        ZIndex: =18
-
-                    HtmlText1_75 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: ="$0,00"
-                        Size: =20
-                        Width: =114
-                        X: =978
-                        Y: =52
-                        ZIndex: =19
-
-                    HtmlText1_78 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: |-
-                            ="<b><font color=""#CC0000"">$150.000,00</font>"
-                        Size: =20
-                        Width: =169
-                        X: =396
-                        Y: =172
-                        ZIndex: =20
 
                     HtmlText1_79 As htmlViewer:
                         Font: =Font.Arial
@@ -2418,38 +2206,362 @@ scr_banco As screen:
                         Y: =172
                         ZIndex: =21
 
-                    HtmlText1_82 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: |-
-                            ="<b><font color=""#CC0000"">$150.000,00</font>"
-                        Size: =20
-                        Width: =169
-                        X: =221
-                        Y: =172
-                        ZIndex: =22
+                    Container14 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =varBackgroundColor
+                        Height: =125
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1181
+                        ZIndex: =25
 
-                    HtmlText1_83 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: |-
-                            ="<b><font color=""#CC0000"">-$150.000,00</font>"
-                        Size: =20
-                        Width: =169
-                        X: =779
-                        Y: =172
-                        ZIndex: =23
+                        Container15 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =1
 
-                    HtmlText1_80 As htmlViewer:
-                        Font: =Font.Arial
-                        Height: =46
-                        HtmlText: |-
-                            ="<b><font color=""#CC0000"">$8.326.249,87</font>"
-                        Size: =20
-                        Width: =193
-                        X: =979
-                        Y: =172
-                        ZIndex: =24
+                            Label10 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Initial Balance"
+                                ZIndex: =1
+
+                            Label10_1 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_month),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance,"$0,0.00")
+                                ZIndex: =2
+
+                        Container15_1 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =2
+
+                            Label10_2 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Income"
+                                ZIndex: =1
+
+                            Label10_3 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: ="$8,00"
+                                ZIndex: =2
+
+                        Container15_2 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =3
+
+                            HtmlText1_81 As htmlViewer:
+                                Font: =Font.Arial
+                                Height: =29
+                                HtmlText: |-
+                                    =With(
+                                        {
+                                            temp: Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale")
+                                        },
+                                        "Sales<b><font color=""#008000""> (" & CountRows(temp) &")</font></b>"
+                                    )
+                                Size: =12
+                                Width: =98
+                                X: =396
+                                Y: =10
+                                ZIndex: =1
+
+                            Label10_5 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Sale"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,0.00")
+                                ZIndex: =2
+
+                        Container15_3 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =4
+
+                            Label10_6 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Transfers"
+                                ZIndex: =1
+
+                            Label10_7 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Transfers"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,000.00")
+                                ZIndex: =2
+
+                        Container15_4 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =5
+
+                            Label10_8 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Dividents"
+                                ZIndex: =1
+
+                            Label10_9 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Dividend"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,000.00")
+                                ZIndex: =2
+
+                        Container15_5 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =6
+
+                            Label10_10 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Interests"
+                                ZIndex: =1
+
+                            Label10_11 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Interest"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,000.00")
+                                ZIndex: =2
+
+                    Container14_1 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =varBackgroundColor
+                        Height: =125
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =1181
+                        Y: =157
+                        ZIndex: =26
+
+                        Container15_6 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =1
+
+                            Label10_4 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Final Balance"
+                                ZIndex: =1
+
+                            Label10_12 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =18
+                                Text: ="$8.326.249,874"
+                                ZIndex: =2
+
+                        Container15_7 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =2
+
+                            HtmlText1_88 As htmlViewer:
+                                Font: =Font.Arial
+                                Height: =32
+                                HtmlText: |-
+                                    ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
+                                Size: =12
+                                Width: =151
+                                X: =221
+                                Y: =132
+                                ZIndex: =1
+
+                            Label10_14 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varRedColor
+                                FontWeight: =FontWeight.Semibold
+                                Size: =18
+                                Text: ="$150.000,00"
+                                ZIndex: =2
+
+                        Container15_8 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =3
+
+                            HtmlText1_87 As htmlViewer:
+                                Font: =Font.Arial
+                                Height: =32
+                                HtmlText: |-
+                                    ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
+                                Size: =12
+                                Width: =151
+                                X: =394
+                                Y: =132
+                                ZIndex: =1
+
+                            Label10_15 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varRedColor
+                                FontWeight: =FontWeight.Semibold
+                                Size: =18
+                                Text: ="$150.000,00"
+                                ZIndex: =2
+
+                        Container15_9 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =4
+
+                            Label10_16 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Tax Withholding"
+                                ZIndex: =1
+
+                            Label10_17 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Tax Withholding"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,0.00")
+                                ZIndex: =2
+
+                        Container15_10 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =5
+
+                            HtmlText1_89 As htmlViewer:
+                                Font: =Font.Arial
+                                Height: =32
+                                HtmlText: |-
+                                    ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
+                                Size: =12
+                                Width: =219
+                                X: =779
+                                Y: =132
+                                ZIndex: =1
+
+                            Label10_19 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varRedColor
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: ="-$150.000,00"
+                                ZIndex: =2
+
+                        Container15_11 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingTop: =10
+                            ZIndex: =6
+
+                            Label10_20 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Size: =12
+                                Text: ="Record Balance"
+                                ZIndex: =1
+
+                            Label10_21 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Color: =varRedColor
+                                FontWeight: =FontWeight.Semibold
+                                Size: =20
+                                Text: ="$8.326.249,87"
+                                ZIndex: =2
 
                 Button1_5 As button:
                     BorderColor: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), RGBA(255, 255, 255, 1), ColorValue(varprimaryColor))
@@ -2904,7 +3016,7 @@ scr_banco As screen:
                     DisabledBorderColor: =RGBA(212, 212, 212, 1)
                     DisabledColor: =RGBA(147, 147, 147, 1)
                     DisabledFill: =RGBA(0, 0, 0, 0)
-                    Fill: =RGBA(147, 147, 147, 0)
+                    Fill: =varBackgroundColor
                     Height: =44
                     HintText: ="Search movement"
                     HoverBorderColor: =RGBA(212, 212, 212, 1)
