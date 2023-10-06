@@ -3456,7 +3456,7 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =DateAdd(ThisItem.adquisition_date, TimeZoneOffset(ThisItem.adquisition_date), TimeUnit.Minutes)
+                                Text: =ThisItem.adquisition_date
                                 Width: =135
                                 X: =201
                                 ZIndex: =2
