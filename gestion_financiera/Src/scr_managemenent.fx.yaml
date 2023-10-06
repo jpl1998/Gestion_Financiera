@@ -5881,7 +5881,7 @@ scr_managemenent As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
                 Height: =185
-                Items: =CustomGallerySample
+                Items: =colBankParticipation
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -6253,7 +6253,8 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =//colBankParticipation
+                    UpdateContext({varshowPopUpProveedores:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -6281,12 +6282,12 @@ scr_managemenent As screen:
                 Y: =408
                 ZIndex: =39
 
-            Dropdown2_30 As dropdown:
+            AddBankEntityDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Entity'
                 Width: =400
                 X: =39
                 Y: =122
@@ -6333,7 +6334,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_entity = AddBankEntityDropdown.Selected.id_entity)
                 Width: =400
                 X: =39
                 Y: =232

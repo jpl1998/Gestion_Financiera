@@ -862,7 +862,7 @@ scr_customizing_Entities As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='GF_DEV.Currency' id_currency = ThisItem.id_currency
+                Items: ='GF_DEV.Currency'
                 Width: =344
                 X: =37
                 Y: =452
