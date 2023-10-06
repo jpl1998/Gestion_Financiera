@@ -12,7 +12,12 @@ scr_customizing_Entities As screen:
         HoverBorderColor: =
         HoverFill: =ColorValue(varprimaryColor)
         OnSelect: |-
-            =UpdateContext({varpopupconfgAddEntity:true})
+            =Reset(EntityNameTextInput);
+            Reset(BusinessNameTextInput);
+            Reset(TinTextInput);
+            Reset(CurrencyEntityDropdown);
+            Reset(StatusEntityDropdown);
+            UpdateContext({varpopupconfgAddEntity:true})
         PressedBorderColor: =
         PressedFill: =ColorValue(varprimaryColor)
         RadiusBottomLeft: =2
@@ -811,8 +816,19 @@ scr_customizing_Entities As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |+
-                    =
+                    =Patch(
+                        'GF_DEV.Entity',
+                        LookUp('GF_DEV.Entity', id_entity = Gallery1_1.Selected.id_entity),
+                        {
+                            id_currency: Dropdown2_16.Selected.id_currency,
+                            entity: TextInput2_60.Text,
+                            tin: TextInput2_58.Text,
+                            business_name: TextInput2_59.Text,
+                            status: If(Dropdown2_17.Selected.Value = "Active", 1, 0)
+                        }
+                    );
                     UpdateContext({varpopupCnfEditEntity: false})
+                    
                     
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -846,7 +862,7 @@ scr_customizing_Entities As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: ='GF_DEV.Currency'
+                Items: ='GF_DEV.Currency' id_currency = ThisItem.id_currency
                 Width: =344
                 X: =37
                 Y: =452
@@ -867,7 +883,7 @@ scr_customizing_Entities As screen:
             TextInput2_58 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Gallery1_1.Selected.tin
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -895,7 +911,7 @@ scr_customizing_Entities As screen:
             TextInput2_59 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Gallery1_1.Selected.business_name
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -934,7 +950,7 @@ scr_customizing_Entities As screen:
             TextInput2_60 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Gallery1_1.Selected.entity
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -2998,7 +3014,7 @@ scr_customizing_Entities As screen:
                 PaddingTop: =8
                 Size: =12
                 Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
-                Width: =50
+                Width: =70
                 X: =672
                 ZIndex: =14
 

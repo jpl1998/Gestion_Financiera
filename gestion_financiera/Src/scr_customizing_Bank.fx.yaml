@@ -12,7 +12,8 @@ scr_customizing_Bank As screen:
         HoverBorderColor: =
         HoverFill: =ColorValue(varprimaryColor)
         OnSelect: |-
-            =UpdateContext({varpopupconfgAddBank:true})
+            =Reset(NewBankTextInput);
+            UpdateContext({varpopupconfgAddBank:true})
         PressedBorderColor: =
         PressedFill: =ColorValue(varprimaryColor)
         RadiusBottomLeft: =2
@@ -972,7 +973,7 @@ scr_customizing_Bank As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =ThisItem.account_identifier
-                    Width: =145
+                    Width: =175
                     X: =353
                     ZIndex: =12
 
@@ -1316,7 +1317,7 @@ scr_customizing_Bank As screen:
             TextInput2_62 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =BankAccountGallery.Selected.c_bank
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -1343,7 +1344,7 @@ scr_customizing_Bank As screen:
             TextInput2_63 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =BankAccountGallery.Selected.account_identifier
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -1382,7 +1383,7 @@ scr_customizing_Bank As screen:
             TextInput2_64 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =BankAccountGallery.Selected.account_num
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
