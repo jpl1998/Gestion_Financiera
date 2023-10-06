@@ -459,7 +459,7 @@ scr_customizing_Bank As screen:
             TextInput2_53 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =BanksGallery.Selected.bank
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -485,7 +485,14 @@ scr_customizing_Bank As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'GF_DEV.Bank',
+                        BanksGallery.Selected,
+                        {
+                            bank:TextInput2_53.Text
+                        }
+                    );
+                    UpdateContext({varpopupCnfEditBank:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1052,8 +1059,8 @@ scr_customizing_Bank As screen:
                 RadiusTopLeft: =1
                 RadiusTopRight: =1
                 Size: =20
-                Text: ="JP Morgan"
-                Width: =177
+                Text: =varSelectedBank.bank
+                Width: =350
                 X: =25
                 Y: =69
                 ZIndex: =8

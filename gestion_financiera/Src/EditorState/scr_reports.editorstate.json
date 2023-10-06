@@ -15975,14 +15975,7 @@
         "Image",
         "ImagePosition",
         "ImageRotation",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "X",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "X",
         "Y",
         "Width",
         "Height",
@@ -25419,7 +25412,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Screen_Download_9",
-      "ParentIndex": 28,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25470,7 +25463,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Screen_reports1",
-      "ParentIndex": 29,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
