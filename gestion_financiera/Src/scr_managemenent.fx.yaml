@@ -5317,7 +5317,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Currency'
                 Width: =194
                 X: =506
                 Y: =475
@@ -5475,7 +5475,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Risk_Scale'
                 Width: =414
                 X: =38
                 Y: =366
@@ -5486,7 +5486,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Currency'
                 Width: =195
                 X: =722
                 Y: =475
@@ -5521,7 +5521,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Country'
                 Width: =414
                 X: =37
                 Y: =584
@@ -5555,7 +5555,7 @@ scr_managemenent As screen:
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Sector'
                 Width: =414
                 X: =506
                 Y: =584
