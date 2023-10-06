@@ -5897,7 +5897,7 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="Family Office"
+                    Text: =LookUp('GF_DEV.Entity', id_entity = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity).id_entity).entity
                     Width: =152
                     ZIndex: =1
 
@@ -5935,7 +5935,7 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="JP Morgan"
+                    Text: =LookUp('GF_DEV.Bank', id_bank = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity).id_bank).bank
                     Width: =120
                     X: =172
                     ZIndex: =11
@@ -5945,7 +5945,7 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="111-222-323"
+                    Text: =LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity).account_num
                     Width: =110
                     X: =340
                     ZIndex: =12
@@ -5955,7 +5955,7 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: ="25"
+                    Text: =ThisItem.quantity
                     Width: =40
                     X: =510
                     ZIndex: =13
@@ -5979,17 +5979,6 @@ scr_managemenent As screen:
                     Width: =100
                     X: =705
                     ZIndex: =15
-
-            Iconline_64 As rectangle:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: |
-                    =
-                Fill: =RGBA(51, 51, 51, 1)
-                Height: =0
-                Width: =857
-                X: =30
-                Y: =291
-                ZIndex: =68
 
             Button2_170 As button:
                 Align: =Align.Left
@@ -6247,14 +6236,19 @@ scr_managemenent As screen:
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
+                FontWeight: =FontWeight.Lighter
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =//colBankParticipation
-                    UpdateContext({varshowPopUpProveedores:false})
+                    =Collect(colBankParticipation,{
+                        id_bank_entity: AddBankEntityBankDropdown.Selected.id_bank_entity_relationship,
+                        quantity: AddBankQuantityTextInput.Text,
+                        unit_cost: AddBankUnitcostTextInput.Text,
+                        total_value: AddBankTotalValueTextInput.Text
+                    });
+                    UpdateContext({varpopupaddbankaccount:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -6329,32 +6323,35 @@ scr_managemenent As screen:
                 Y: =516
                 ZIndex: =45
 
-            Dropdown2_36 As dropdown:
+            AddBankBankDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_entity = AddBankEntityDropdown.Selected.id_entity)
+                Items: |-
+                    =//Filter('GF_DEV.Bank_Entity_Relationship', id_entity = AddBankEntityDropdown.Selected.id_entity)
+                    'GF_DEV.Bank'
                 Width: =400
                 X: =39
                 Y: =232
                 ZIndex: =47
 
-            Dropdown2_37 As dropdown:
+            AddBankEntityBankDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =44
-                Items: =DropDownSample
+                Items: =Filter('GF_DEV.Bank_Entity_Relationship', id_entity = AddBankEntityDropdown.Selected.id_entity, id_bank = AddBankBankDropdown.Selected.id_bank)
                 Width: =400
                 X: =39
                 Y: =342
                 ZIndex: =48
 
-            TextInput2_79 As text:
+            AddBankQuantityTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6379,10 +6376,11 @@ scr_managemenent As screen:
                 Y: =408
                 ZIndex: =50
 
-            TextInput2_80 As text:
+            AddBankUnitcostTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6395,7 +6393,7 @@ scr_managemenent As screen:
                 Y: =452
                 ZIndex: =51
 
-            TextInput2_81 As text:
+            AddBankTotalValueTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
