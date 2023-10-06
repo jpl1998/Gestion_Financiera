@@ -1470,12 +1470,15 @@ scr_banco As screen:
                                             "groupType"
                                         ),
                                         "sumAmount",
-                                        Sum(
-                                            ForAll(
-                                                groupType As x,
-                                                x.movement_amount
+                                        Round(
+                                            Sum(
+                                                ForAll(
+                                                    groupType As x,
+                                                    x.movement_amount
+                                                ),
+                                                Value
                                             ),
-                                            Value
+                                            2
                                         ),
                                         "label",
                                         movement_type
@@ -2165,7 +2168,7 @@ scr_banco As screen:
                     Font: =Font.Arial
                     Size: =24
                     Text: =varSelectedAccount.bank_name & "(" & varSelectedAccount.account_num & ")"
-                    Width: =402
+                    Width: =648
                     X: =88
                     Y: =31
                     ZIndex: =2
@@ -2271,8 +2274,8 @@ scr_banco As screen:
                             ZIndex: =3
 
                             HtmlText1_81 As htmlViewer:
+                                AlignInContainer: =AlignInContainer.Stretch
                                 Font: =Font.Arial
-                                Height: =29
                                 HtmlText: |-
                                     =With(
                                         {
@@ -2357,7 +2360,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,000.00")
+                                    ),"$0,0.00")
                                 ZIndex: =2
 
                         Container15_5 As groupContainer.verticalAutoLayoutContainer:
@@ -2387,7 +2390,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,000.00")
+                                    ),"$0,0.00")
                                 ZIndex: =2
 
                     Container14_1 As groupContainer.horizontalAutoLayoutContainer:
@@ -2434,9 +2437,13 @@ scr_banco As screen:
 
                             HtmlText1_88 As htmlViewer:
                                 Font: =Font.Arial
-                                Height: =32
                                 HtmlText: |-
-                                    ="Whithdrawalls<b><font color=""#CC0000""> (3)</font></b>"
+                                    =With(
+                                        {
+                                            temp:  Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Withdrawalls")
+                                        },
+                                        "Whithdrawalls<b><font color=""#CC0000""> (" & CountRows(temp) &")</font></b>"
+                                    )
                                 Size: =12
                                 Width: =151
                                 X: =221
@@ -2448,7 +2455,14 @@ scr_banco As screen:
                                 Color: =varRedColor
                                 FontWeight: =FontWeight.Semibold
                                 Size: =18
-                                Text: ="$150.000,00"
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Withdrawalls"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,0.00")
                                 ZIndex: =2
 
                         Container15_8 As groupContainer.verticalAutoLayoutContainer:
@@ -2463,9 +2477,13 @@ scr_banco As screen:
 
                             HtmlText1_87 As htmlViewer:
                                 Font: =Font.Arial
-                                Height: =32
                                 HtmlText: |-
-                                    ="Purchases<b><font color=""#CC0000""> (1)</font></b>"
+                                    =With(
+                                        {
+                                            temp:  Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Purchase")
+                                        },
+                                        "Purchases<b><font color=""#CC0000""> (" & CountRows(temp) &")</font></b>"
+                                    )
                                 Size: =12
                                 Width: =151
                                 X: =394
@@ -2477,7 +2495,14 @@ scr_banco As screen:
                                 Color: =varRedColor
                                 FontWeight: =FontWeight.Semibold
                                 Size: =18
-                                Text: ="$150.000,00"
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,0.00")
                                 ZIndex: =2
 
                         Container15_9 As groupContainer.verticalAutoLayoutContainer:
@@ -2523,9 +2548,13 @@ scr_banco As screen:
                             HtmlText1_89 As htmlViewer:
                                 AlignInContainer: =AlignInContainer.Stretch
                                 Font: =Font.Arial
-                                Height: =32
                                 HtmlText: |-
-                                    ="Fees & Commissions<b><font color=""#CC0000""> (4)</font></b>"
+                                    =With(
+                                        {
+                                            temp:  Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Fees & Commissions")
+                                        },
+                                        "Fees & Commissions<b><font color=""#CC0000""> (" & CountRows(temp) &")</font></b>"
+                                    )
                                 Size: =12
                                 Width: =219
                                 X: =779
@@ -2537,7 +2566,14 @@ scr_banco As screen:
                                 Color: =varRedColor
                                 FontWeight: =FontWeight.Semibold
                                 Size: =20
-                                Text: ="-$150.000,00"
+                                Text: |-
+                                    =Text(Sum(
+                                        ForAll(
+                                            Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Fees & Commissions"),
+                                            movement_amount
+                                        ),
+                                        Value
+                                    ),"$0,0.00")
                                 ZIndex: =2
 
                         Container15_11 As groupContainer.verticalAutoLayoutContainer:
@@ -2636,7 +2672,7 @@ scr_banco As screen:
                     DisabledBorderColor: =RGBA(212, 212, 212, 1)
                     DisabledColor: =RGBA(147, 147, 147, 1)
                     DisabledFill: =RGBA(0, 0, 0, 0)
-                    Fill: =RGBA(147, 147, 147, 0)
+                    Fill: =varBackgroundColor
                     Height: =44
                     HintText: ="Search movement"
                     HoverBorderColor: =RGBA(212, 212, 212, 1)
@@ -3420,7 +3456,7 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =ThisItem.adquisition_date
+                                Text: =DateAdd(ThisItem.adquisition_date, TimeZoneOffset(ThisItem.adquisition_date), TimeUnit.Minutes)
                                 Width: =135
                                 X: =201
                                 ZIndex: =2
