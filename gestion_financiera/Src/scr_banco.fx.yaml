@@ -2555,6 +2555,7 @@ scr_banco As screen:
                                         },
                                         "Fees & Commissions<b><font color=""#CC0000""> (" & CountRows(temp) &")</font></b>"
                                     )
+                                PaddingLeft: =0
                                 Size: =12
                                 Width: =219
                                 X: =779
