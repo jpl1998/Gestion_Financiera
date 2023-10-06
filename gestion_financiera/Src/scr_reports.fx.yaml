@@ -35,7 +35,7 @@ scr_reports As screen:
             Height: =240
             Image: =board
             Width: =382
-            X: =110
+            X: =310
             Y: =418
             ZIndex: =4
 
@@ -43,17 +43,9 @@ scr_reports As screen:
             Height: =240
             Image: =legal
             Width: =382
-            X: =520
+            X: =720
             Y: =418
             ZIndex: =5
-
-        Image22 As image:
-            Height: =240
-            Image: =tbd
-            Width: =382
-            X: =930
-            Y: =418
-            ZIndex: =6
 
         Label1 As label:
             Color: =RGBA(77, 77, 77, 1)
