@@ -3476,6 +3476,10 @@ scr_banco As screen:
                                 Y: =1
                                 ZIndex: =5
 
+                            Label15 As label:
+                                Text: =ThisItem.cusip
+                                ZIndex: =6
+
                     Iconline_69 As rectangle:
                         BorderColor: =RGBA(255, 255, 255, 1)
                         DisabledFill: |

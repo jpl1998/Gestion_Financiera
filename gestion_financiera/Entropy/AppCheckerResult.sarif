@@ -3744,19 +3744,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery"
               }
             }
           ],
@@ -3774,19 +3774,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery"
               }
             }
           ],
@@ -3804,19 +3804,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63"
               }
             }
           ],
@@ -3834,19 +3834,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_63"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63"
               }
             }
           ],
@@ -3864,19 +3864,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68"
               }
             }
           ],
@@ -3894,19 +3894,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Gallery1_19.Image1_68"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68"
               }
             }
           ],

@@ -55,7 +55,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
         "appVer": "3.23093.15",
-        "modifiedOn": "2023-10-06 21:07:41",
+        "modifiedOn": "2023-10-06 22:20:52",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[gf_dev].[accounting_period]\":[\"post\",\"patch\",\"get\"],\"[gf_dev].[accounting_period_month]\":[\"post\",\"patch\",\"get\"],\"[gf_dev].[asset_class]\":[\"get\"],\"[gf_dev].[asset_subclass]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[balance_structure]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[bank]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[bank_balance]\":[\"post\",\"patch\",\"get\"],\"[gf_dev].[bank_entity_relationship]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[bank_movement]\":[\"post\",\"patch\",\"get\"],\"[gf_dev].[bank_movement_imported]\":[\"get\",\"delete\"],\"[gf_dev].[country]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[currency]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[document_type]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[entity]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[investment]\":[\"get\"],\"[gf_dev].[investment_data]\":[\"get\"],\"[gf_dev].[operation_table]\":[\"post\",\"patch\",\"get\"],\"[gf_dev].[risk_scale]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[roles]\":[\"get\"],\"[gf_dev].[sector]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[system_value]\":[\"get\"],\"[gf_dev].[terms]\":[\"post\",\"patch\",\"get\",\"delete\"],\"[gf_dev].[user_role]\":[\"post\",\"patch\",\"get\",\"delete\"]}}",
         "version": 1
       },
@@ -271,7 +271,7 @@
       "executionRestrictions": {
         "apiId": "unknown",
         "appVer": "3.23093.15",
-        "modifiedOn": "2023-10-06 21:07:41",
+        "modifiedOn": "2023-10-06 22:20:52",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
