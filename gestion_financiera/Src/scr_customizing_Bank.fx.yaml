@@ -1000,7 +1000,7 @@ scr_customizing_Bank As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
-                    Width: =60
+                    Width: =90
                     X: =740
                     ZIndex: =14
 
