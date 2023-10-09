@@ -530,6 +530,7 @@ scr_customizing_Operations As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(TextInput2_24.Text),DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
@@ -999,8 +1000,10 @@ scr_customizing_Operations As screen:
             Height: =44
             HoverBorderColor: =
             HoverFill: =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =Reset(TextInput2_24);
+            OnSelect: |
+                =
+                Reset(TextInput2_24);
+                
                 UpdateContext({varpopupconfgAddOperation:true})
             PressedBorderColor: =
             PressedFill: =ColorValue(varprimaryColor)

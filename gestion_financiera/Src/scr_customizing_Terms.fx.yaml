@@ -446,6 +446,7 @@ scr_customizing_Terms As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(TextInput2_22.Text),DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial

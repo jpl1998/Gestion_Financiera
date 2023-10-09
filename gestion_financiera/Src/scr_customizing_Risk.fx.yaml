@@ -469,8 +469,8 @@ scr_customizing_Risk As screen:
                 Size: =12
                 Text: ="Save"
                 Width: =344
-                X: =38
-                Y: =202
+                X: =32
+                Y: =203
                 ZIndex: =38
 
     thr_Screen_5 As group:

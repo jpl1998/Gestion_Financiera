@@ -663,6 +663,7 @@ scr_customizing_accounting As screen:
             ZIndex: =37
 
         grpCrearOrdenDeCompra_68 As groupContainer.manualLayoutContainer:
+            ContentLanguage: =If(IsBlank(TextInput2_28.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =276
             RadiusBottomLeft: =5
@@ -711,7 +712,9 @@ scr_customizing_accounting As screen:
             TextInput2_40 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: |-
+                    =If(IsBlank(TextInput2_28.Text),
+                    DisplayMode.Disabled,DisplayMode.Edit)
                 Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
