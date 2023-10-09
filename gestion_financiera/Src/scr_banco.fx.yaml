@@ -82,7 +82,7 @@ scr_banco As screen:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     DelayItemLoading: =true
                     Height: =Min((Self.AllItemsCount*(Self.TemplateHeight+Self.TemplatePadding))+Self.TemplatePadding,500)
-                    Items: =Search(AddColumns('GF_DEV.Bank_Entity_Relationship' As x,"bank_name",LookUp('GF_DEV.Bank', id_bank = x.id_bank).bank), SearchBankTextInput.Text, "account_num", "account_identifier", "c_bank","bank_name")
+                    Items: =Search(AddColumns('GF_DEV.Bank_Entity_Relationship' As x,"bank_name",LookUp('GF_DEV.Bank', id_bank = x.id_bank).bank,"status_conciliation",LookUp('GF_DEV.Consiliation_Period',id_bank_entity_relationship = x.id_bank_entity_relationship && id_period = Value(varCurrentPeriod.month)).status), SearchBankTextInput.Text, "account_num", "account_identifier", "c_bank","bank_name")
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -194,7 +194,7 @@ scr_banco As screen:
                                     =ColorValue("#FAFAFA")
                                 Height: =25
                                 Size: =9
-                                Text: ="Pending"
+                                Text: =ThisItem.status_conciliation
                                 Width: =75
                                 X: =(Parent.Width-Self.Width)/2
                                 Y: =(Parent.Height-Self.Height)/2
@@ -3067,7 +3067,7 @@ scr_banco As screen:
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
-                    Width: =If(MenuMovementsGallery.Selected.Value="Correct", 1138, 620)
+                    Width: =442
                     X: =40
                     Y: =70
                     ZIndex: =2
@@ -3091,11 +3091,6 @@ scr_banco As screen:
                                     {
                                         temp: With(
                                             {
-                                                tempImported: Filter(
-                                                    'GF_DEV.Bank_Movement_Imported',
-                                                    id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,
-                                                    id_period = varCurrentPeriod.id_month
-                                                ),
                                                 tempBank: Search(
                                                     Filter(
                                                         'GF_DEV.Bank_Movement',
@@ -4095,6 +4090,71 @@ scr_banco As screen:
                     X: =801
                     Y: =75
                     ZIndex: =15
+
+                Button1_6 As button:
+                    BorderColor: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), RGBA(255, 255, 255, 1), ColorValue(varprimaryColor))
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                    Fill: =ColorValue(varprimaryColor)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Normal
+                    Height: =44
+                    HoverBorderColor: =
+                    HoverFill: =ColorValue(varprimaryColor)
+                    OnSelect: |-
+                        =UpdateContext({varpopupdowloadGif:true});
+                        ForAll(
+                            ErrorMovementsGallery.AllItems As temp,
+                            Remove('GF_DEV.Bank_Movement',temp)
+                        );
+                        ForAll(
+                            BankStatementDataGallery.AllItems As temp,
+                            Concurrent(
+                                Patch(
+                                    'GF_DEV.Bank_Movement',
+                                    Defaults('GF_DEV.Bank_Movement'),
+                                    {
+                                        id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
+                                        id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
+                                        id_period: Value(varCurrentPeriod.month),
+                                        movement_type: temp.movement_type,
+                                        adquisition_date: temp.adquisition_date,
+                                        movement_amount: temp.movement_amount,
+                                        description: temp.description,
+                                        cusip: temp.cusip
+                                    }
+                                ),
+                                Remove(
+                                    'GF_DEV.Bank_Movement_Imported',temp
+                                )
+                            )
+                        );
+                        Patch(
+                            'GF_DEV.Consiliation_Period',
+                            Defaults('GF_DEV.Consiliation_Period'),
+                            {
+                                id_consiliation_period: First(SortByColumns('GF_DEV.Consiliation_Period',"id_consiliation_period",SortOrder.Descending)).id_consiliation_period+1,
+                                id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
+                                id_period: varCurrentPeriod.id_month,
+                                date: Today(),
+                                status: "Checked"
+                            }
+                        );
+                        UpdateContext({varpopupdowloadGif:false});
+                    PressedBorderColor: =
+                    PressedColor: =Self.Color
+                    PressedFill: =ColorValue(varprimaryColor)
+                    RadiusBottomLeft: =2
+                    RadiusBottomRight: =2
+                    RadiusTopLeft: =2
+                    RadiusTopRight: =2
+                    Size: =12
+                    Text: ="Correct All"
+                    Visible: =MenuMovementsGallery.Selected.Value="Error"
+                    Width: =175
+                    X: =497
+                    Y: =71
+                    ZIndex: =16
 
     Screen_Download_10 As group:
         Height: =5
@@ -5409,15 +5469,17 @@ scr_banco As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupdowloadAccountxls2:true});
+                    =UpdateContext({varpopupdowloadGif:true});
                     UpdateContext({varpopupdowloadAccountxls1:false});
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
                     IfError(RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,id_period=varCurrentPeriod.id_month),true);
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank);
                     //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    UpdateContext({varpopupdowloadGif:false});
+                    UpdateContext({varpopupdowloadAccountxls2:true});
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -6478,4 +6540,56 @@ scr_banco As screen:
         X: =1266
         Y: =668
         ZIndex: =38
+
+    rctdegradado_277 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: =
+        Visible: =varpopupdowloadGif
+        Width: =1366
+        ZIndex: =39
+
+    grpdownloadxls2_60 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =367
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupdowloadGif
+        Width: =450
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =40
+
+        TxtOrdendeCompra_602 As label:
+            Align: =Align.Center
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =16
+            Text: ="Upload Bank Statement"
+            Width: =284
+            X: =(Parent.Width-Self.Width)/2
+            Y: =30
+            ZIndex: =1
+
+        TxtOrdendeCompra_603 As label:
+            Align: =Align.Center
+            Font: =Font.Arial
+            Height: =22
+            Size: =16
+            Text: ="Charging Data"
+            Width: =284
+            X: =(Parent.Width-Self.Width)/2
+            Y: =288
+            ZIndex: =3
+
+        Image16 As image:
+            Height: =182
+            Image: ='loading gif'
+            Width: =182
+            X: =134
+            Y: =79
+            ZIndex: =4
 
