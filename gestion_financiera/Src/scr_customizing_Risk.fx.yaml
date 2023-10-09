@@ -454,9 +454,17 @@ scr_customizing_Risk As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: |
                     =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =Patch('GF_DEV.Risk_Scale',Defaults('GF_DEV.Risk_Scale'),{id_risk:First(SortByColumns('GF_DEV.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
-                    UpdateContext({varpopupconfgAddRisk:false})
+                OnSelect: |+
+                    =
+                    Patch('GF_DEV.Risk_Scale',Defaults('GF_DEV.Risk_Scale'),
+                            {
+                                id_risk: First(SortByColumns('GF_DEV.Risk_Scale', "id_risk", SortOrder.Descending)).id_risk + 1.
+                                risk: TextInput2_13.Text
+                            }),
+                        UpdateContext({varpopupconfgAddRisk:false}),
+                        Error("Por favor, completa el campo 'risk'")
+                    )
+                    
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
