@@ -1298,17 +1298,6 @@ scr_customizing_Bank As screen:
                 Y: =400
                 ZIndex: =16
 
-            Dropdown2_18 As dropdown:
-                BorderColor: =ColorValue(varlineColor)
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =RGBA(51, 51, 51, 1)
-                Height: =44
-                Items: =DropDownSample
-                Width: =344
-                X: =37
-                Y: =444
-                ZIndex: =17
-
             TxtOrdendeCompra_496 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
@@ -1376,17 +1365,6 @@ scr_customizing_Bank As screen:
                 Y: =514
                 ZIndex: =22
 
-            Dropdown2_19 As dropdown:
-                BorderColor: =ColorValue(varlineColor)
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =RGBA(51, 51, 51, 1)
-                Height: =44
-                Items: =DropDownSample
-                Width: =344
-                X: =37
-                Y: =558
-                ZIndex: =23
-
             TextInput2_64 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
@@ -1402,6 +1380,28 @@ scr_customizing_Bank As screen:
                 X: =37
                 Y: =118
                 ZIndex: =24
+
+            EntityAccountDropdown_1 As dropdown:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =RGBA(51, 51, 51, 1)
+                Height: =44
+                Items: ='GF_DEV.Entity'
+                Width: =344
+                X: =38
+                Y: =444
+                ZIndex: =25
+
+            CurrencyAccountDropdown_1 As dropdown:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =RGBA(51, 51, 51, 1)
+                Height: =44
+                Items: ='GF_DEV.Currency'
+                Width: =344
+                X: =37
+                Y: =558
+                ZIndex: =26
 
         rctdegradado_242 As rectangle:
             Fill: =RGBA(0, 0, 0, 0.2)
@@ -1450,6 +1450,11 @@ scr_customizing_Bank As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: |-
+                    =If(IsBlank(AccountNumberTextInput.Text),
+                    If(IsBlank(CBankTextInput.Text),
+                    If(IsBlank(AccountIdentifierTextInput.Text),
+                    DisplayMode.Disabled,DisplayMode.Edit)))
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
@@ -2135,6 +2140,7 @@ scr_customizing_Bank As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(NewBankTextInput.Text),DisplayMode.Disabled,DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial

@@ -602,6 +602,11 @@ scr_customizing_Entities As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: |-
+                    =If(IsBlank(EntityNameTextInput.Text),
+                    If(IsBlank(TinTextInput.Text),
+                    If(IsBlank(BusinessNameTextInput.Text),
+                    DisplayMode.Disabled,DisplayMode.Edit)))
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
