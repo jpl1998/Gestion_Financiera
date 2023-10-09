@@ -1407,7 +1407,8 @@ scr_managemenent As screen:
                     HoverBorderColor: =
                     HoverFill: =ColorValue(varprimaryColor)
                     OnSelect: |-
-                        =UpdateContext({varpopupManagementNewInvestment:true})
+                        =Clear(colBankParticipation);
+                        UpdateContext({varpopupManagementNewInvestment:true})
                     PressedBorderColor: =
                     PressedFill: =ColorValue(varprimaryColor)
                     RadiusBottomLeft: =2
@@ -5048,142 +5049,6 @@ scr_managemenent As screen:
             Y: =85
             ZIndex: =45
 
-        btn_customizing_1 As button:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Color: =RGBA(102, 102, 102, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =80
-            HoverBorderColor: =ColorValue(varprimaryColor)
-            HoverColor: =RGBA(102, 102, 102, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            OnSelect: |-
-                =UpdateContext({varpopupnewinvestment:true})
-            PaddingRight: =200
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Size: =16
-            Text: ="Equity"
-            Width: =440
-            X: =180
-            Y: =141
-            ZIndex: =46
-
-        btn_customizing_2 As button:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Color: =RGBA(102, 102, 102, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =80
-            HoverBorderColor: =ColorValue(varprimaryColor)
-            HoverColor: =RGBA(102, 102, 102, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(scr_customizing_Entities)
-            PaddingRight: =132
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Size: =16
-            Text: ="Fixed Income"
-            Width: =440
-            X: =180
-            Y: =233
-            ZIndex: =47
-
-        btn_customizing_3 As button:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Color: =RGBA(102, 102, 102, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =80
-            HoverBorderColor: =ColorValue(varprimaryColor)
-            HoverColor: =RGBA(102, 102, 102, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(scr_customizing_Entities)
-            PaddingRight: =212
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Size: =16
-            Text: ="Cash"
-            Width: =440
-            X: =180
-            Y: =327
-            ZIndex: =48
-
-        btn_customizing_4 As button:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Color: =RGBA(102, 102, 102, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =80
-            HoverBorderColor: =ColorValue(varprimaryColor)
-            HoverColor: =RGBA(102, 102, 102, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            OnSelect: =Navigate(scr_customizing_Entities)
-            PaddingRight: =153
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Size: =16
-            Text: ="Alternatives"
-            Width: =440
-            X: =180
-            Y: =422
-            ZIndex: =49
-
-        Image28 As image:
-            Height: =48
-            Image: =newinvestment1
-            Width: =48
-            X: =202
-            Y: =157
-            ZIndex: =50
-
-        Image28_1 As image:
-            Height: =48
-            Image: |
-                =newinvestment2
-            Width: =48
-            X: =202
-            Y: =245
-            ZIndex: =51
-
-        Image28_2 As image:
-            Height: =48
-            Image: |
-                =newinvestment3
-            Width: =48
-            X: =202
-            Y: =341
-            ZIndex: =52
-
-        Image28_3 As image:
-            Height: =48
-            Image: |
-                =newinvestment4
-            Width: =48
-            X: =202
-            Y: =438
-            ZIndex: =53
-
         Image29 As image:
             Height: =14
             Image: =puntoazul
@@ -5233,13 +5098,14 @@ scr_managemenent As screen:
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =84
+            TemplateSize: =90
             Width: =554
-            X: =136
+            X: =123
             Y: =131
             ZIndex: =57
 
             btn_customizing_5 As button:
+                Align: =Align.Left
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Color: =RGBA(102, 102, 102, 1)
@@ -5251,8 +5117,8 @@ scr_managemenent As screen:
                 HoverColor: =RGBA(102, 102, 102, 1)
                 HoverFill: =RGBA(255, 255, 255, 1)
                 OnSelect: |-
-                    =UpdateContext({varpopupnewinvestment:true})
-                PaddingRight: =200
+                    =UpdateContext({varSelectedAssetType: ThisItem, varpopupnewinvestment:true})
+                PaddingLeft: =80
                 PressedFill: =ColorValue(varprimaryColor)
                 RadiusBottomLeft: =5
                 RadiusBottomRight: =5
@@ -5261,17 +5127,44 @@ scr_managemenent As screen:
                 Size: =16
                 Text: =ThisItem.label
                 Width: =440
-                X: =40
-                Y: =8
+                X: =55
+                Y: =3
                 ZIndex: =1
 
             Image28_4 As image:
                 Height: =48
                 Image: =ThisItem.img
                 Width: =48
-                X: =60
-                Y: =24
+                X: =70
+                Y: =19
                 ZIndex: =2
+
+            btn_customizing_6 As button:
+                Align: =Align.Left
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Color: =RGBA(102, 102, 102, 1)
+                Fill: =RGBA(255, 255, 255, 0)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =80
+                HoverBorderColor: =ColorValue(varprimaryColor)
+                HoverColor: =RGBA(102, 102, 102, 1)
+                HoverFill: =
+                OnSelect: |-
+                    =UpdateContext({varSelectedAssetType: ThisItem, varpopupnewinvestment:true})
+                PaddingLeft: =80
+                PressedFill: =RGBA(65, 128, 194, 0.2)
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =16
+                Text: =
+                Width: =440
+                X: =55
+                Y: =3
+                ZIndex: =3
 
     Scn_Screen_11 As group:
         Height: =5
@@ -5377,7 +5270,7 @@ scr_managemenent As screen:
                 Y: =431
                 ZIndex: =39
 
-            Dropdown2_29 As dropdown:
+            NewIn_CurrencyDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -5400,7 +5293,7 @@ scr_managemenent As screen:
                 Y: =206
                 ZIndex: =41
 
-            TextInput2_69 As text:
+            NewIn_CodeTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -5428,7 +5321,7 @@ scr_managemenent As screen:
                 Y: =316
                 ZIndex: =43
 
-            TextInput2_70 As text:
+            NewIn_IsinTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -5468,28 +5361,12 @@ scr_managemenent As screen:
                 Y: =96
                 ZIndex: =47
 
-            TextInput2_71 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =414
-                X: =506
-                Y: =140
-                ZIndex: =48
-
             TxtOrdendeCompra_515 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 Height: =30
                 Size: =12
-                Text: ="Equity"
+                Text: =varSelectedAssetType.label
                 Width: =143
                 X: =38
                 Y: =147
@@ -5507,7 +5384,7 @@ scr_managemenent As screen:
                 Y: =206
                 ZIndex: =50
 
-            TextInput2_72 As text:
+            NewIn_DescriptionTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -5535,7 +5412,7 @@ scr_managemenent As screen:
                 Y: =316
                 ZIndex: =52
 
-            Dropdown2_31 As dropdown:
+            NewIn_RiskDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -5546,7 +5423,7 @@ scr_managemenent As screen:
                 Y: =366
                 ZIndex: =53
 
-            Dropdown2_32 As dropdown:
+            NewIn_LocalCurrencyDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -5581,7 +5458,7 @@ scr_managemenent As screen:
                 Y: =540
                 ZIndex: =56
 
-            Dropdown2_33 As dropdown:
+            NewIn_CountryDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -5615,7 +5492,7 @@ scr_managemenent As screen:
                 Y: =540
                 ZIndex: =59
 
-            Dropdown2_34 As dropdown:
+            NewIn_SectorDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -5661,7 +5538,7 @@ scr_managemenent As screen:
                 Y: =644
                 ZIndex: =62
 
-            TextInput2_75 As text:
+            NewIn_CusipTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
@@ -5692,6 +5569,17 @@ scr_managemenent As screen:
                 X: =532
                 Y: =659
                 ZIndex: =65
+
+            NewIn_SubClassDropdown As dropdown:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =RGBA(51, 51, 51, 1)
+                Height: =44
+                Items: =Filter('GF_DEV.Asset_Subclass',id_class = LookUp('GF_DEV.Asset_Class',class=varSelectedAssetType.label).id_class)
+                Width: =414
+                X: =506
+                Y: =135
+                ZIndex: =66
 
     Scn_Screen_12 As group:
         Height: =5
@@ -5770,7 +5658,32 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupAddInvestment:true})
+                    =
+                    Patch(
+                        'GF_DEV.Investment',
+                        Defaults('GF_DEV.Investment');
+                        {
+                            id_investment: First(SortByColumns('GF_DEV.Investment',"id_investment",SortOrder.Descending)).id_investment+1,
+                            id_class: NewIn_SubClassDropdown.Selected.id_class,
+                            id_subclass: NewIn_SubClassDropdown.Selected.id_subclass,
+                            id_risk: NewIn_RiskDropdown.Selected.id_risk,
+                            id_currency: NewIn_CurrencyDropdown.Selected.id_currency,
+                            id_currency_local: NewIn_LocalCurrencyDropdown.Selected.id_currency,
+                            id_term: NewIn_TermsDropdown.Selected.id_term,
+                            id_country: NewIn_CountryDropdown.Selected.id_country,
+                            id_sector: NewIn_SectorDropdown.Selected.id_sector,
+                            description: NewIn_DescriptionTextInput.Text,
+                            fund_management: "",
+                            isin: NewIn_IsinTextInput.Text,
+                            cusip: NewIn_CusipTextInput.Text,
+                            code: NewIn_CodeTextInput.Text,
+                            adquisition_date: NewIn_AdquisitionDateDatePicker.SelectedDate,
+                            exchange_rate: Value(NewIn_ExchangeRateTextInput.Text),
+                            comision: Value(NewIn_ComisionTextInput.Text)
+                        }
+                    );
+                    
+                    UpdateContext({varpopupAddInvestment:true})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -5798,10 +5711,11 @@ scr_managemenent As screen:
                 Y: =210
                 ZIndex: =42
 
-            TextInput2_74 As text:
+            NewIn_ComisionTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -5896,10 +5810,11 @@ scr_managemenent As screen:
                 Y: =644
                 ZIndex: =62
 
-            TextInput2_78 As text:
+            NewIn_ExchangeRateTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -5923,7 +5838,7 @@ scr_managemenent As screen:
                 Y: =140
                 ZIndex: =64
 
-            DatePicker1_5 As datepicker:
+            NewIn_AdquisitionDateDatePicker As datepicker:
                 BorderColor: =ColorValue(varlineColor)
                 Height: =44
                 IconBackground: =Color.White
@@ -5933,7 +5848,7 @@ scr_managemenent As screen:
                 Y: =140
                 ZIndex: =65
 
-            Dropdown2_39 As dropdown:
+            NewIn_TermsDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6208,16 +6123,6 @@ scr_managemenent As screen:
                 Y: =255
                 ZIndex: =75
 
-            Image26 As image:
-                Height: =24
-                Image: =addbankaccount
-                OnSelect: |-
-                    =UpdateContext({varpopupaddbankaccount:true})
-                Width: =148
-                X: =771
-                Y: =210
-                ZIndex: =76
-
             Image31 As image:
                 Height: =14
                 Image: =circuloblanco
@@ -6233,6 +6138,25 @@ scr_managemenent As screen:
                 X: =398
                 Y: =659
                 ZIndex: =78
+
+            Button5 As button:
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(Self.Color, -20%)
+                OnSelect: |-
+                    =Reset(AddBankEntityDropdown);
+                    Reset(AddBankBankDropdown);
+                    Reset(AddBankEntityBankDropdown);
+                    Reset(AddBankQuantityTextInput);
+                    Reset(AddBankUnitcostTextInput);
+                    Reset(AddBankTotalValueTextInput);
+                    UpdateContext({varpopupaddbankaccount:true})
+                Size: =11
+                Text: ="+ Add Bank Account"
+                X: =759
+                Y: =205
+                ZIndex: =79
 
     Scn_Screen_13 As group:
         Height: =5
@@ -6885,7 +6809,7 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupAddInvestment:false})
+                    =UpdateContext({varpopupAddInvestment:false, varpopupnewinvestmentnext:false, varpopupnewinvestment:false, varpopupManagementNewInvestment:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |

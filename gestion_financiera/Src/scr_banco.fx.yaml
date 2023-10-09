@@ -2633,6 +2633,7 @@ scr_banco As screen:
                     RadiusTopRight: =2
                     Size: =12
                     Text: =If(IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)), "Upload Bank Statement", "New Bank Statement")
+                    Visible: =varSelectedAccount.status_conciliation<>"Checked"
                     Width: =260
                     X: =980
                     Y: =390
@@ -2656,6 +2657,7 @@ scr_banco As screen:
                         =Reset(CargaEstadoCuentaAdjunto);
                         UpdateContext({varpopupdowloadAccountxls:true});
                     Rotation: =180
+                    Visible: =varSelectedAccount.status_conciliation<>"Checked"
                     Width: =15
                     X: =996
                     Y: =404
@@ -2667,7 +2669,7 @@ scr_banco As screen:
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =MovementsGallery.Y+MovementsGallery.Height+20
-                Visible: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month))
+                Visible: =IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)) || (varSelectedAccount.status_conciliation = "Checked" || varSelectedAccount.status_conciliation = "Pending")
                 Width: =1293
                 X: =0
                 Y: =1
@@ -2840,6 +2842,7 @@ scr_banco As screen:
                                     =UpdateContext({varSelectedMovement:ThisItem, varshowPopUpEditMovement:true})
                                 PaddingBottom: =7
                                 PaddingTop: =7
+                                Visible: =varSelectedAccount.status_conciliation <> "Checked"
                                 Width: =40
                                 ZIndex: =1
 
@@ -3037,6 +3040,7 @@ scr_banco As screen:
                     RadiusTopRight: =2
                     Size: =28
                     Text: ="+"
+                    Visible: =varSelectedAccount.status_conciliation<>"Checked"
                     Width: =44
                     X: =1200
                     Y: =12
@@ -3048,7 +3052,7 @@ scr_banco As screen:
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =315
-                Visible: =!IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month))
+                Visible: =!IsEmpty(Filter('GF_DEV.Bank_Movement_Imported', id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month)) && varSelectedAccount.status_conciliation <> "Checked"
                 Width: =1293
                 X: =0
                 Y: =2
@@ -4124,7 +4128,7 @@ scr_banco As screen:
                                     {
                                         id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
                                         id_bank_entity_relationship: varSelectedAccount.id_bank_entity_relationship,
-                                        id_period: Value(varCurrentPeriod.month),
+                                        id_period: varCurrentPeriod.id_month,
                                         movement_type: temp.movement_type,
                                         adquisition_date: temp.adquisition_date,
                                         movement_amount: temp.movement_amount,
