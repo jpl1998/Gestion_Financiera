@@ -53123,6 +53123,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_managemenent.varSelectedInvestment"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.varSelectedInvestment",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSelectedInvestment",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scr_managemenent.varshowPopUpProveedores"
                 }
               ],
