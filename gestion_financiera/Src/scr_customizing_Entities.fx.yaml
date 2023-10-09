@@ -734,6 +734,7 @@ scr_customizing_Entities As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =If(Gallery1_1.Selected.status = "1", "Active", "Inactive")
                 Height: =44
                 Items: =["Active","Inactive"]
                 Width: =344
@@ -861,6 +862,7 @@ scr_customizing_Entities As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Currency',id_currency=Gallery1_1.Selected.id_currency).currency
                 Height: =44
                 Items: ='GF_DEV.Currency'
                 Width: =344
@@ -3020,7 +3022,7 @@ scr_customizing_Entities As screen:
 
             Label4_12 As label:
                 Align: =Align.Center
-                Color: =RGBA(54, 176, 75, 1)
+                Color: =If(ThisItem.status = "1", varGreenColor, varRedColor)
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 OnSelect: =Select(Parent)

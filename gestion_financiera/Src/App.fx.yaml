@@ -7,6 +7,7 @@ App As appinfo:
         Set(varYellowColor, ColorValue("#D9B600"));
         Set(varBackgroundColor, ColorValue("#FAFAFA"));
         Set(varRedColor, ColorValue("#CC0000"));
+        Set(varGreenColor, RGBA(54, 176, 75, 1));
         Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"))
     Theme: =PowerAppsTheme
 
