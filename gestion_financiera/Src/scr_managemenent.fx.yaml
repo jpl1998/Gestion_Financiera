@@ -5208,6 +5208,71 @@ scr_managemenent As screen:
             Y: =545
             ZIndex: =56
 
+        Gallery1 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =393
+            Items: |-
+                =//["Equity","Fixed Income","Cash","Alternatives"]
+                Table(
+                    {
+                        label: "Equity",
+                        img: newinvestment1
+                    },
+                    {
+                        label: "Fixed Income",
+                        img: newinvestment2
+                    },
+                    {
+                        label: "Cash",
+                        img: newinvestment3
+                    },
+                    {
+                        label: "Alternatives",
+                        img: newinvestment4
+                    }
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =84
+            Width: =554
+            X: =136
+            Y: =131
+            ZIndex: =57
+
+            btn_customizing_5 As button:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Color: =RGBA(102, 102, 102, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =80
+                HoverBorderColor: =ColorValue(varprimaryColor)
+                HoverColor: =RGBA(102, 102, 102, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: |-
+                    =UpdateContext({varpopupnewinvestment:true})
+                PaddingRight: =200
+                PressedFill: =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =16
+                Text: =ThisItem.label
+                Width: =440
+                X: =40
+                Y: =8
+                ZIndex: =1
+
+            Image28_4 As image:
+                Height: =48
+                Image: =ThisItem.img
+                Width: =48
+                X: =60
+                Y: =24
+                ZIndex: =2
+
     Scn_Screen_11 As group:
         Height: =5
         Width: =5
