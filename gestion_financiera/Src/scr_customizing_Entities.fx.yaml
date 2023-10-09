@@ -2972,7 +2972,12 @@ scr_customizing_Entities As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupCnfEditEntity:true})
+                    =Reset(TextInput2_60);
+                    Reset(TextInput2_58);
+                    Reset(TextInput2_59);
+                    Reset(Dropdown2_16);
+                    Reset(Dropdown2_17);
+                    UpdateContext({varpopupCnfEditEntity:true})
                 Width: =20
                 X: =902
                 Y: =8
