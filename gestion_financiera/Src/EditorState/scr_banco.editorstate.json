@@ -705,7 +705,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ArchivoImage",
-      "ParentIndex": 35,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24892,7 +24892,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Canvas1_4",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25020,7 +25020,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Canvas1_5",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31188,7 +31188,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Container3",
-      "ParentIndex": 15,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40087,7 +40087,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "CorrectMovementsContainer",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -41796,7 +41796,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Dropdown2",
-      "ParentIndex": 18,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -42113,7 +42113,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Dropdown2_2",
-      "ParentIndex": 19,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -42430,7 +42430,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Dropdown2_3",
-      "ParentIndex": 20,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43025,7 +43025,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ErrorMovementsContainer",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43781,7 +43781,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group1",
-      "ParentIndex": 37,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43832,7 +43832,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group1_1",
-      "ParentIndex": 38,
+      "ParentIndex": 36,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43964,7 +43964,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpCrearOrdenDeCompra_49",
-      "ParentIndex": 22,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -44186,7 +44186,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpCrearOrdenDeCompra_53",
-      "ParentIndex": 23,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -44415,7 +44415,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls_40",
-      "ParentIndex": 30,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -44644,7 +44644,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls_41",
-      "ParentIndex": 28,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -45102,7 +45102,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls_43",
-      "ParentIndex": 29,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -45331,7 +45331,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls_56",
-      "ParentIndex": 31,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -45560,7 +45560,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls1_40",
-      "ParentIndex": 34,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -45789,7 +45789,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls1_41",
-      "ParentIndex": 32,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46247,7 +46247,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls1_43",
-      "ParentIndex": 33,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46476,7 +46476,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls2_40",
-      "ParentIndex": 27,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46705,7 +46705,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls2_41",
-      "ParentIndex": 25,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -47163,7 +47163,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grpdownloadxls2_43",
-      "ParentIndex": 26,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -71506,7 +71506,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label2",
-      "ParentIndex": 21,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -110135,7 +110135,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label9",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -119271,7 +119271,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Screen_Download_10",
-      "ParentIndex": 36,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
