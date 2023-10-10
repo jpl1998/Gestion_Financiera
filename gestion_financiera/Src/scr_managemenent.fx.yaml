@@ -1647,20 +1647,6 @@ scr_managemenent As screen:
             Y: =69
             ZIndex: =5
 
-            Label5_2 As label:
-                Color: =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                OnSelect: |-
-                    =UpdateContext({varpopupviewdetails:true})
-                Size: =12
-                Text: ="View Details"
-                Width: =120
-                X: =400
-                Y: =385
-                ZIndex: =32
-
             Container18 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.None
                 Height: =596
@@ -1689,7 +1675,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Asset_Class', id_class = varSelectedInvestment.id_class).class
                         ZIndex: =2
 
                 Container19_1 As groupContainer.horizontalAutoLayoutContainer:
@@ -1712,7 +1698,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Asset_Subclass', id_subclass = varSelectedInvestment.id_subclass).subclass
                         ZIndex: =2
 
                 Container19_2 As groupContainer.horizontalAutoLayoutContainer:
@@ -1735,7 +1721,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.code
                         ZIndex: =2
 
                 Container19_3 As groupContainer.horizontalAutoLayoutContainer:
@@ -1758,7 +1744,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.description
                         ZIndex: =2
 
                 Container19_4 As groupContainer.horizontalAutoLayoutContainer:
@@ -1781,7 +1767,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Risk_Scale', id_risk = varSelectedInvestment.id_risk).risk
                         ZIndex: =2
 
                 Container19_5 As groupContainer.horizontalAutoLayoutContainer:
@@ -1804,7 +1790,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.isin
                         ZIndex: =2
 
                 Container19_6 As groupContainer.horizontalAutoLayoutContainer:
@@ -1827,7 +1813,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.cusip
                         ZIndex: =2
 
                 Container19_7 As groupContainer.horizontalAutoLayoutContainer:
@@ -1850,7 +1836,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Currency', id_currency = varSelectedInvestment.id_currency).currency
                         ZIndex: =2
 
                 Container19_8 As groupContainer.horizontalAutoLayoutContainer:
@@ -1873,7 +1859,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Currency', id_currency = varSelectedInvestment.id_currency_local).currency
                         ZIndex: =2
 
                 Container19_9 As groupContainer.horizontalAutoLayoutContainer:
@@ -1896,7 +1882,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Country', id_country = varSelectedInvestment.id_country).country
                         ZIndex: =2
 
                 Container19_10 As groupContainer.horizontalAutoLayoutContainer:
@@ -1919,7 +1905,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =LookUp('GF_DEV.Sector', id_sector = varSelectedInvestment.id_sector).sector
                         ZIndex: =2
 
                 Container19_11 As groupContainer.horizontalAutoLayoutContainer:
@@ -1942,7 +1928,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.adquisition_date
                         ZIndex: =2
 
                 Container19_12 As groupContainer.horizontalAutoLayoutContainer:
@@ -1965,8 +1951,36 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =With(
+                                {
+                                    temp: Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment)
+                                },
+                                CountRows(temp) & " bank accounts"
+                            )
                         ZIndex: =2
+
+                    Container20 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =11
+                        LayoutMinWidth: =11
+                        ZIndex: =3
+
+                        Button6 As button:
+                            BorderThickness: =0
+                            Color: =ColorValue(varprimaryColor)
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FocusedBorderThickness: =1
+                            FontWeight: =FontWeight.Normal
+                            Height: =26
+                            OnSelect: |-
+                                =UpdateContext({varpopupviewdetails:true})
+                            Size: =12
+                            Text: ="View Details"
+                            Width: =116
+                            X: =28
+                            Y: =4
+                            ZIndex: =1
 
                 Container19_13 As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.None
