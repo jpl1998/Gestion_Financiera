@@ -1645,7 +1645,19 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.System_Value',type = "I") As temp,
+                                                    Sum(
+                                                        ForAll(
+                                                            Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = temp.value),
+                                                            movement_amount
+                                                        ),
+                                                    Value)
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_53 As label:
@@ -1688,7 +1700,19 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.System_Value',type = "O") As temp,
+                                                    Sum(
+                                                        ForAll(
+                                                            Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = temp.value),
+                                                            movement_amount
+                                                        ),
+                                                    Value)
+                                            ),
+                                            Value
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_56 As label:
@@ -1739,7 +1763,9 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(Label6_52.Text,Label6_55.Text
+                                        ),"$0,000.00")
                                     ZIndex: =2
 
                                 Label6_59 As label:
