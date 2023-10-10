@@ -1597,9 +1597,10 @@ scr_managemenent As screen:
             Color: =ColorValue(varprimaryColor)
             Font: =Font.Arial
             FontWeight: =FontWeight.Semibold
-            Size: =24
-            Text: ="VTV Vanguard Value ETF"
-            Width: =390
+            Height: =50
+            Size: =18
+            Text: =varSelectedInvestment.description
+            Width: =434
             X: =75
             Y: =15
             ZIndex: =2
@@ -2646,11 +2647,11 @@ scr_managemenent As screen:
                 ZIndex: =29
 
         Button2_363 As button:
-            Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             Color: =RGBA(26, 26, 26, 1)
             DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
             Fill: =RGBA(255, 255, 255, 1)
             Font: =Font.Arial
             HoverBorderColor: =RGBA(255, 255, 255, 1)
@@ -2663,8 +2664,8 @@ scr_managemenent As screen:
             RadiusBottomRight: =1
             RadiusTopLeft: =1
             RadiusTopRight: =1
-            Size: =28
-            Text: ="IE00BXYA915"
+            Size: =25
+            Text: =varSelectedInvestment.isin
             Width: =250
             X: =1007
             Y: =15
@@ -2708,8 +2709,8 @@ scr_managemenent As screen:
         Image33 As image:
             Height: =18
             Image: ='bordearriba - Copy'
-            Width: =530
-            X: =477
+            Width: =480
+            X: =522
             Y: =26
             ZIndex: =10
 
