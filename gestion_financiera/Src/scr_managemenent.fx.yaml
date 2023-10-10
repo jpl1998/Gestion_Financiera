@@ -5585,8 +5585,8 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =ThisItem.quantity
-                    Width: =40
-                    X: =510
+                    Width: =77
+                    X: =490
                     ZIndex: =13
 
                 Label4_42 As label:
@@ -5595,8 +5595,8 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =Text(Value(ThisItem.unit_cost),"$0,0.00")
-                    Width: =80
-                    X: =611
+                    Width: =89
+                    X: =601
                     ZIndex: =14
 
                 Label4_43 As label:
@@ -5605,8 +5605,8 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =Text(Value(ThisItem.total_value),"$0,0.00")
-                    Width: =100
-                    X: =705
+                    Width: =115
+                    X: =690
                     ZIndex: =15
 
             Button2_170 As button:
