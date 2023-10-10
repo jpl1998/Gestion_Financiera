@@ -52164,19 +52164,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery"
               }
             }
           ],
@@ -52194,19 +52194,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_92.Gallery1_2"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_92.ParticipationDetailsGallery"
               }
             }
           ],
