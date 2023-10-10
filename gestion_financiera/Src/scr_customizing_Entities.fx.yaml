@@ -2936,14 +2936,14 @@ scr_customizing_Entities As screen:
 
         Gallery1_1 As gallery.galleryVertical:
             DelayItemLoading: =true
-            Height: =359
+            Height: =605
             Items: ='GF_DEV.Entity'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
             TemplateSize: =36
-            Width: =991
-            X: =343
+            Width: =1002
+            X: =332
             Y: =136
             ZIndex: =11
 
@@ -3002,7 +3002,7 @@ scr_customizing_Entities As screen:
                 Size: =12
                 Text: =ThisItem.business_name
                 Width: =120
-                X: =345
+                X: =361
                 ZIndex: =12
 
             Label4_8 As label:

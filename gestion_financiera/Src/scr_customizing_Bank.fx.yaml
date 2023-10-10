@@ -913,7 +913,7 @@ scr_customizing_Bank As screen:
             BankAccountGallery As gallery.galleryVertical:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DelayItemLoading: =true
-                Height: =223
+                Height: =559
                 Items: =Filter('GF_DEV.Bank_Entity_Relationship',varSelectedBank.id_bank = id_bank)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -1270,7 +1270,18 @@ scr_customizing_Bank As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Patch(
+                        'GF_DEV.Bank_Entity_Relationship',
+                        LookUp('GF_DEV.Bank_Entity_Relationship', BankAccountGallery.Selected.id_bank_entity_relationship = id_bank_entity_relationship),
+                        {
+                            id_entity: EntityAccountDropdown_1.Selected.id_entity,
+                            id_currency: CurrencyAccountDropdown_1.Selected.id_currency,
+                            account_num: TextInput2_64.Text,
+                            c_bank: TextInput2_62.Text,
+                            account_identifier: TextInput2_63.Text
+                        }
+                    );
+                    UpdateContext({varpopupCnfEditBank1:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -2268,7 +2279,7 @@ scr_customizing_Bank As screen:
 
         BanksGallery As gallery.galleryVertical:
             DelayItemLoading: =true
-            Height: =223
+            Height: =605
             Items: ='GF_DEV.Bank'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
