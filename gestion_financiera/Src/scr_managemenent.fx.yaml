@@ -123,7 +123,7 @@ scr_managemenent As screen:
                             LayoutMinHeight: =20
                             OnSelect: =
                             Size: =10
-                            Text: =If(Len(ThisItem.description)>40,Left(ThisItem.description,40)&"...",ThisItem.description)
+                            Text: =If(Len(ThisItem.description)>38,Left(ThisItem.description,38)&"...",ThisItem.description)
                             Width: =180
                             ZIndex: =1
 
@@ -134,7 +134,6 @@ scr_managemenent As screen:
                             LayoutMinHeight: =20
                             LayoutMinWidth: =30
                             OnSelect: =
-                            PaddingTop: =8
                             Size: =12
                             Text: =LookUp('GF_DEV.Asset_Class', id_class = ThisItem.id_class).class
                             Width: =80
@@ -1645,7 +1644,7 @@ scr_managemenent As screen:
             Height: =596
             Width: =525
             X: =100
-            Y: =69
+            Y: =89
             ZIndex: =5
 
             Container18 As groupContainer.verticalAutoLayoutContainer:
@@ -2062,556 +2061,6 @@ scr_managemenent As screen:
             Y: =105
             ZIndex: =6
 
-            Button2_352 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Acquisition Value:"
-                Width: =143
-                X: =40
-                Y: =32
-                ZIndex: =1
-
-            Button2_353 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Market Value:"
-                Width: =143
-                X: =40
-                Y: =67
-                ZIndex: =2
-
-            Button2_354 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Margin:"
-                Width: =143
-                X: =40
-                Y: =102
-                ZIndex: =3
-
-            Button2_355 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Profitability:"
-                Width: =143
-                X: =40
-                Y: =137
-                ZIndex: =4
-
-            Button2_356 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Acquisition Unit Cost:"
-                Width: =170
-                X: =40
-                Y: =172
-                ZIndex: =5
-
-            Button2_357 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Market Unit Price:"
-                Width: =170
-                X: =40
-                Y: =207
-                ZIndex: =6
-
-            Button2_358 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Units:"
-                Width: =170
-                X: =40
-                Y: =242
-                ZIndex: =7
-
-            Button2_359 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="YTM:"
-                Width: =170
-                X: =40
-                Y: =277
-                ZIndex: =8
-
-            Button2_360 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Dividends:"
-                Width: =170
-                X: =40
-                Y: =312
-                ZIndex: =9
-
-            Button2_361 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: |-
-                    ="Effective Duration:"
-                Width: =170
-                X: =40
-                Y: =347
-                ZIndex: =10
-
-            Button2_367 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="$360,400.00"
-                Width: =180
-                X: =300
-                Y: =32
-                ZIndex: =16
-
-            Button2_368 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="$390,680.00"
-                Width: =180
-                X: =300
-                Y: =67
-                ZIndex: =17
-
-            Button2_369 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="+ $30,680.00"
-                Width: =180
-                X: =300
-                Y: =102
-                ZIndex: =18
-
-            Button2_370 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="%8.5"
-                Width: =180
-                X: =300
-                Y: =137
-                ZIndex: =19
-
-            Button2_371 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="$360.00"
-                Width: =180
-                X: =300
-                Y: =172
-                ZIndex: =20
-
-            Button2_372 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="$390.45"
-                Width: =180
-                X: =300
-                Y: =207
-                ZIndex: =21
-
-            Button2_373 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="1,000.00"
-                Width: =180
-                X: =300
-                Y: =242
-                ZIndex: =22
-
-            Button2_374 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="%6.77"
-                Width: =180
-                X: =300
-                Y: =277
-                ZIndex: =23
-
-            Button2_375 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="0.00"
-                Width: =180
-                X: =300
-                Y: =312
-                ZIndex: =24
-
-            Button2_376 As button:
-                Align: =Align.Right
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Bold
-                Height: =30
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="---"
-                Width: =180
-                X: =300
-                Y: =347
-                ZIndex: =25
-
             Button1_425 As button:
                 BorderColor: =ColorValue(varprimaryColor)
                 BorderThickness: =1
@@ -2645,6 +2094,256 @@ scr_managemenent As screen:
                 X: =172
                 Y: =420
                 ZIndex: =29
+
+            Container22 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =345
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =466
+                X: =26
+                Y: =32
+                ZIndex: =30
+
+                Container23 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Label16 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Acquisition Value:"
+                        ZIndex: =1
+
+                    Label16_1 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    Label16_2 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Market Value:"
+                        ZIndex: =1
+
+                    Label16_3 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =3
+
+                    Label16_4 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Margin:"
+                        ZIndex: =1
+
+                    Label16_5 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_3 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =4
+
+                    Label16_6 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Profitability:"
+                        ZIndex: =1
+
+                    Label16_7 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_4 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =5
+
+                    Label16_8 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Acquisition Unit Cost:"
+                        ZIndex: =1
+
+                    Label16_9 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_5 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =6
+
+                    Label16_10 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Market Unit Price:"
+                        ZIndex: =1
+
+                    Label16_11 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_6 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =7
+
+                    Label16_12 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Units:"
+                        ZIndex: =1
+
+                    Label16_13 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_7 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =8
+
+                    Label16_14 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="YTM:"
+                        ZIndex: =1
+
+                    Label16_15 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_8 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =9
+
+                    Label16_16 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Dividends:"
+                        ZIndex: =1
+
+                    Label16_17 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
+
+                Container23_9 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =10
+
+                    Label16_18 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        LayoutMinHeight: =20
+                        Text: |-
+                            ="Effective Duration:"
+                        ZIndex: =1
+
+                    Label16_19 As label:
+                        Align: =Align.Right
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Semibold
+                        LayoutMinHeight: =20
+                        Text: ="Text"
+                        ZIndex: =2
 
         Button2_363 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
