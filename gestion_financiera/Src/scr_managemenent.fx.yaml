@@ -8503,7 +8503,8 @@ scr_managemenent As screen:
             TextInput2_96 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =Sum(ParticipationDetailsGallery_1.AllItems,unit_trade*market_unit_price)
+                Default: |-
+                    =Text(Sum(ParticipationDetailsGallery_1.AllItems,unit_trade*market_unit_price),"$#,0.00")
                 DisabledBorderColor: =ColorValue(varlineColor)
                 DisabledColor: =RGBA(0, 0, 0, 1)
                 DisabledFill: =RGBA(255, 255, 255, 1)
