@@ -8546,16 +8546,6 @@ scr_managemenent As screen:
                     Y: =8
                     ZIndex: =16
 
-            Iconline_12 As rectangle:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: |
-                    =
-                Fill: =RGBA(51, 51, 51, 1)
-                Height: =0
-                Width: =823
-                Y: =53
-                ZIndex: =38
-
             Iconline_16 As rectangle:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DisabledFill: |
