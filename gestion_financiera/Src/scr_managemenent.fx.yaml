@@ -8546,8 +8546,8 @@ scr_managemenent As screen:
                 Size: =12
                 Text: ="Save Trade"
                 Width: =408
-                X: =281
-                Y: =430
+                X: =514
+                Y: =431
                 ZIndex: =49
 
             ParticipationDetailsGallery_1 As gallery.galleryVertical:
