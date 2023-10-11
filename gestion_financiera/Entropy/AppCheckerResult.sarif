@@ -23754,19 +23754,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TextInput2_96.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TotalTradeAmountTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TextInput2_96.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TotalTradeAmountTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.TextInput2_96"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.TotalTradeAmountTextInput"
               }
             }
           ],

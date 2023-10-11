@@ -5776,7 +5776,12 @@ scr_managemenent As screen:
             AddBankTotalValueTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: |-
+                    =Text(Value(AddBankQuantityTextInput.Text) * Value(AddBankUnitcostTextInput.Text),"$"&"#,0.00")
+                DisabledBorderColor: =ColorValue(varlineColor)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -7975,7 +7980,7 @@ scr_managemenent As screen:
                         PaddingTop: =8
                         Size: =12
                         Text: |-
-                            =Text(ThisItem.total_value,"$"&"#,0.00")
+                            =Text(ThisItem.quantity * ThisItem.unit_cost,"$"&"#,0.00")
                         Width: =90
                         X: =780
                         ZIndex: =6
@@ -8502,7 +8507,7 @@ scr_managemenent As screen:
                 Y: =325
                 ZIndex: =47
 
-            TextInput2_96 As text:
+            TotalTradeAmountTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: |-
@@ -8527,6 +8532,7 @@ scr_managemenent As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(Value(TotalTradeAmountTextInput.Text) = 0, DisplayMode.Disabled, DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
@@ -8538,24 +8544,47 @@ scr_managemenent As screen:
                 OnSelect: |-
                     =ForAll(
                         ParticipationDetailsGallery_1.AllItems As temp,
-                        Patch(
-                            'GF_DEV.Investment_Entity',
-                            LookUp('GF_DEV.Investment_Entity', id_investment_entity = temp.id_investment_entity);
-                            {
-                                quantity: temp.quantity - temp.unit_trade
-                            }
-                        );
-                        Patch(
-                            'GF_DEV.Bank_Movement',
-                            Defaults('GF_DEV.Bank_Movement'),
-                            {
-                                id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
-                                id_bank_entity_relationship: temp.id_bank_entity_relationship,
-                                id_period: varCurrentPeriod.id_month,
-                                movement_type: "Sale",
-                                adquisition_date: TradeDatePicker.SelectedDate,
-                                movement_amount: temp.unit_trade * temp.market_unit_price
-                            }
+                        Concurrent(
+                            Patch(
+                                'GF_DEV.Investment_Entity',
+                                LookUp('GF_DEV.Investment_Entity', id_investment_entity = temp.id_investment_entity),
+                                {
+                                    quantity: temp.quantity - temp.unit_trade
+                                }
+                            ),
+                            Patch(
+                                'GF_DEV.Bank_Movement',
+                                Defaults('GF_DEV.Bank_Movement'),
+                                {
+                                    id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
+                                    id_bank_entity_relationship: temp.id_bank_entity_relationship,
+                                    id_period: varCurrentPeriod.id_month,
+                                    movement_type: "Sale",
+                                    adquisition_date: TradeDatePicker.SelectedDate,
+                                    movement_amount: temp.unit_trade * temp.market_unit_price,
+                                    final_balance: First(SortByColumns(Filter('GF_DEV.Bank_Movement', id_bank_entity_relationship=temp.id_bank_entity_relationship),"id_movement",SortOrder.Descending)).final_balance + (temp.unit_trade * temp.market_unit_price)
+                                }
+                            ),
+                            UpdateIf(
+                                'GF_DEV.Bank_Balance',
+                                id_bank_entity_relationship=temp.id_bank_entity_relationship,
+                                {
+                                    ind_act: 0
+                                }
+                            );
+                            Patch(
+                                'GF_DEV.Bank_Balance',
+                                Defaults('GF_DEV.Bank_Balance'),
+                                {
+                                    id_balance: First(SortByColumns('GF_DEV.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance+1,
+                                    id_bank_entity_relationship: temp.id_bank_entity_relationship,
+                                    id_period: varCurrentPeriod.id_month,
+                                    balance_date: TradeDatePicker.SelectedDate,
+                                    initial_balance: First(SortByColumns(Filter('GF_DEV.Bank_Balance', id_bank_entity_relationship=temp.id_bank_entity_relationship),"id_balance",SortOrder.Descending)).final_balance,
+                                    final_balance: First(SortByColumns(Filter('GF_DEV.Bank_Balance', id_bank_entity_relationship=temp.id_bank_entity_relationship),"id_balance",SortOrder.Descending)).final_balance + (temp.unit_trade * temp.market_unit_price),
+                                    ind_act: 1
+                                }
+                            )
                         )
                     );
                     
