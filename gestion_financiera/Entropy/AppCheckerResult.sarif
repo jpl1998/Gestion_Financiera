@@ -38994,49 +38994,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1"
               }
             }
           ],
@@ -39054,19 +39024,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1"
               }
             }
           ],
@@ -39078,36 +39048,6 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.Gallery1_5.Image1_71"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
         },
         {
           "locations": [

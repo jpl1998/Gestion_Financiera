@@ -8383,232 +8383,16 @@ scr_managemenent As screen:
                 Y: =31
                 ZIndex: =35
 
-            Button2_70 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Entity"
-                Width: =120
-                X: =51
-                Y: =76
-                ZIndex: =36
-
-            Gallery1_5 As gallery.galleryVertical:
-                DelayItemLoading: =true
-                Height: =209
-                Items: =CustomGallerySample
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                TemplatePadding: =10
-                TemplateSize: =36
-                Width: =890
-                X: =40
-                Y: =124
-                ZIndex: =37
-
-                Label4_78 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="Family Office"
-                    Width: =170
-                    ZIndex: =1
-
-                Rectangle3_5 As rectangle:
-                    BorderColor: =RGBA(147, 147, 147, 1)
-                    Fill: =RGBA(147, 147, 147, 1)
-                    Height: =1
-                    OnSelect: =Select(Parent)
-                    Width: =870
-                    Y: =35
-                    ZIndex: =9
-
-                Label4_79 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="JP Morgan"
-                    Width: =115
-                    X: =159
-                    ZIndex: =11
-
-                Label4_80 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="111-222-333"
-                    Width: =120
-                    X: =322
-                    ZIndex: =12
-
-                Label4_81 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="52"
-                    Width: =50
-                    X: =502
-                    ZIndex: =13
-
-                Label4_82 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="20"
-                    Width: =40
-                    X: =615
-                    ZIndex: =14
-
-                Label4_92 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: ="$750.00"
-                    Width: =90
-                    X: =730
-                    ZIndex: =15
-
-                Image1_71 As image:
-                    Height: =20
-                    Image: =editar
-                    OnSelect: |-
-                        =UpdateContext({varshowPopUpEditTrade:true})
-                    Width: =20
-                    X: =840
-                    Y: =8
-                    ZIndex: =16
-
             Iconline_16 As rectangle:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 DisabledFill: |
                     =
                 Fill: =RGBA(51, 51, 51, 1)
                 Height: =1
-                Width: =880
-                X: =42
+                Width: =905
+                X: =32
                 Y: =123
                 ZIndex: =39
-
-            Button2_64 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Bank Name"
-                Width: =120
-                X: =202
-                Y: =76
-                ZIndex: =40
-
-            Button2_65 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Bank Account"
-                Width: =140
-                X: =368
-                Y: =76
-                ZIndex: =41
-
-            Button2_66 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Quantity"
-                Width: =100
-                X: =529
-                Y: =76
-                ZIndex: =42
-
-            Button2_71 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Unit Trade"
-                Width: =100
-                X: =640
-                Y: =76
-                ZIndex: =43
 
             TxtOrdendeCompra_589 As label:
                 Align: =Align.Center
@@ -8686,29 +8470,198 @@ scr_managemenent As screen:
                 Y: =430
                 ZIndex: =49
 
-            Button2_362 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =35
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Market Unit Price"
-                Width: =131
-                X: =750
-                Y: =76
-                ZIndex: =51
+            ParticipationDetailsGallery_1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Fill: =varBackgroundColor
+                Height: =Min((Self.AllItemsCount * (Self.TemplateHeight + Self.TemplatePadding))+ Self.TemplatePadding,150)
+                Items: =Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment)
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =10
+                TemplateSize: =36
+                Width: =922
+                X: =24
+                Y: =124
+                ZIndex: =52
+
+                Rectangle3_5 As rectangle:
+                    BorderColor: =RGBA(147, 147, 147, 1)
+                    Fill: =RGBA(147, 147, 147, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Visible: =Last(Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment)).id_investment_entity <> ThisItem.id_investment_entity
+                    Width: =902
+                    Y: =35
+                    ZIndex: =9
+
+                Container21_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =36
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =902
+                    ZIndex: =16
+
+                    Label4_23 As label:
+                        Height: =36
+                        LayoutMinHeight: =20
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =11
+                        Text: =LookUp('GF_DEV.Entity', id_entity = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity_relationship).id_entity).entity
+                        Width: =220
+                        ZIndex: =1
+
+                    Label4_78 As label:
+                        Height: =36
+                        LayoutMinHeight: =20
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =11
+                        Text: =LookUp('GF_DEV.Bank', id_bank = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity_relationship).id_bank).bank
+                        Width: =180
+                        X: =186
+                        ZIndex: =2
+
+                    Label4_79 As label:
+                        Align: =Align.Center
+                        Height: =36
+                        LayoutMinHeight: =20
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =12
+                        Text: =LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = ThisItem.id_bank_entity_relationship).account_num
+                        X: =355
+                        ZIndex: =3
+
+                    Label4_80 As label:
+                        Align: =Align.Center
+                        Height: =36
+                        LayoutMinHeight: =20
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =12
+                        Text: =ThisItem.quantity
+                        Width: =100
+                        X: =529
+                        ZIndex: =4
+
+                    Label4_81 As label:
+                        Align: =Align.Center
+                        FillPortions: =1
+                        Height: =36
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =10
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =12
+                        Text: =Text(ThisItem.unit_cost,"$0,0.00")
+                        Width: =90
+                        X: =640
+                        ZIndex: =5
+
+                    Label4_82 As label:
+                        Align: =Align.Center
+                        FillPortions: =1
+                        Height: =36
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =10
+                        OnSelect: =
+                        PaddingTop: =8
+                        Size: =12
+                        Text: =Text(ThisItem.total_value,"$0,0.00")
+                        Width: =90
+                        X: =780
+                        ZIndex: =6
+
+            Container21_3 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =varBackgroundColor
+                Height: =36
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutMode: =LayoutMode.Auto
+                Width: =ParticipationDetailsGallery.Width
+                X: =24
+                Y: =87
+                ZIndex: =53
+
+                Label4_24 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =11
+                    Text: ="Entity"
+                    Width: =220
+                    ZIndex: =1
+
+                Label4_92 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =11
+                    Text: ="Bank Name"
+                    Width: =180
+                    X: =186
+                    ZIndex: =2
+
+                Label4_93 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="Bank Account"
+                    X: =355
+                    ZIndex: =3
+
+                Label4_138 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="Quantity"
+                    Width: =100
+                    X: =529
+                    ZIndex: =4
+
+                Label4_139 As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =10
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="Unit Trade"
+                    Width: =90
+                    X: =640
+                    ZIndex: =5
+
+                Label4_140 As label:
+                    Align: =Align.Center
+                    FillPortions: =1
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =10
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: ="Market Unit Price"
+                    Width: =90
+                    X: =780
+                    ZIndex: =6
 
     Container2_22 As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(255, 255, 255, 1)
