@@ -433,7 +433,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_2 As label:
@@ -455,7 +455,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_1 As groupContainer.horizontalAutoLayoutContainer:
@@ -493,7 +493,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_5 As label:
@@ -515,7 +515,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_2 As groupContainer.horizontalAutoLayoutContainer:
@@ -552,7 +552,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_8 As label:
@@ -574,7 +574,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_3 As groupContainer.horizontalAutoLayoutContainer:
@@ -612,7 +612,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_11 As label:
@@ -634,7 +634,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Label7 As label:
@@ -703,13 +703,13 @@ scr_banco As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Text(Sum(
+                                        ="$"&Text(Sum(
                                             ForAll(
                                                 Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Dividend"),
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"0,0.00")
                                     ZIndex: =2
 
                                 Label6_17 As label:
@@ -738,7 +738,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_6 As groupContainer.horizontalAutoLayoutContainer:
@@ -770,7 +770,7 @@ scr_banco As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_20 As label:
@@ -799,7 +799,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Label7_1 As label:
@@ -1011,7 +1011,8 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance,"$0,000.00")
+                                    Text: |-
+                                        =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_period = varCurrentPeriod.id_month),"id_balance", SortOrder.Ascending)).initial_balance,"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_26 As label:
@@ -1052,7 +1053,7 @@ scr_banco As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 PurchaseThisYearLabel As label:
@@ -1081,7 +1082,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_10 As groupContainer.horizontalAutoLayoutContainer:
@@ -1113,7 +1114,7 @@ scr_banco As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 SalesThisYearLabel As label:
@@ -1142,7 +1143,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_11 As groupContainer.horizontalAutoLayoutContainer:
@@ -1234,7 +1235,7 @@ scr_banco As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 TaxThisYearLabel As label:
@@ -1263,7 +1264,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Label7_2 As label:
@@ -1296,7 +1297,8 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Text(Sum(PurchaseCurrentPeriodLabel.Text,SalesCurrentPeriodLabel.Text,IncomeCurrentPeriodLabel.Text,TaxCurrentPeriodLabel.Text),"$0,000.00")
+                                    Text: |-
+                                        =Text(Sum(PurchaseCurrentPeriodLabel.Text,SalesCurrentPeriodLabel.Text,IncomeCurrentPeriodLabel.Text,TaxCurrentPeriodLabel.Text),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_41 As label:
@@ -1306,7 +1308,8 @@ scr_banco As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Text(Sum(PurchaseThisYearLabel.Text,SalesThisYearLabel.Text,IncomeThisYearLabel.Text,TaxThisYearLabel.Text),"$0,000.00")
+                                    Text: |-
+                                        =Text(Sum(PurchaseThisYearLabel.Text,SalesThisYearLabel.Text,IncomeThisYearLabel.Text,TaxThisYearLabel.Text),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Container7_14 As groupContainer.horizontalAutoLayoutContainer:
@@ -1338,7 +1341,7 @@ scr_banco As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_44 As label:
@@ -1367,7 +1370,7 @@ scr_banco As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =3
 
                             Label7_3 As label:
@@ -1657,7 +1660,7 @@ scr_banco As screen:
                                                     Value)
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_53 As label:
@@ -1712,7 +1715,7 @@ scr_banco As screen:
                                                     Value)
                                             ),
                                             Value
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_56 As label:
@@ -1765,7 +1768,7 @@ scr_banco As screen:
                                     Size: =12
                                     Text: |-
                                         =Text(Sum(Label6_52.Text,Label6_55.Text
-                                        ),"$0,000.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                                 Label6_59 As label:
@@ -2271,7 +2274,8 @@ scr_banco As screen:
                                 AlignInContainer: =AlignInContainer.Stretch
                                 FontWeight: =FontWeight.Semibold
                                 Size: =20
-                                Text: =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_month),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance,"$0,0.00")
+                                Text: |-
+                                    =Text(First(SortByColumns(Filter('GF_DEV.Bank_Balance',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = First(SortByColumns(Filter('GF_DEV.Accounting_Period_Month', id_period = varCurrentPeriod.id_month),"id_period",SortOrder.Ascending)).id_period),"id_balance", SortOrder.Ascending)).initial_balance,"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_1 As groupContainer.verticalAutoLayoutContainer:
@@ -2334,7 +2338,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_3 As groupContainer.verticalAutoLayoutContainer:
@@ -2364,7 +2368,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,000.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_4 As groupContainer.verticalAutoLayoutContainer:
@@ -2394,7 +2398,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_5 As groupContainer.verticalAutoLayoutContainer:
@@ -2424,7 +2428,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                     Container14_1 As groupContainer.horizontalAutoLayoutContainer:
@@ -2490,13 +2494,13 @@ scr_banco As screen:
                                 FontWeight: =FontWeight.Semibold
                                 Size: =18
                                 Text: |-
-                                    =Text(Sum(
+                                    ="$"&Text(Sum(
                                         ForAll(
                                             Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Withdrawalls"),
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"#,0.00")
                                 ZIndex: =2
 
                         Container15_8 As groupContainer.verticalAutoLayoutContainer:
@@ -2530,13 +2534,13 @@ scr_banco As screen:
                                 FontWeight: =FontWeight.Semibold
                                 Size: =18
                                 Text: |-
-                                    =Text(Sum(
+                                    ="$"&Text(Sum(
                                         ForAll(
                                             Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=varSelectedAccount.id_bank_entity_relationship, id_period = varCurrentPeriod.id_month, movement_type = "Purchase"),
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"#,0.00")
                                 ZIndex: =2
 
                         Container15_9 As groupContainer.verticalAutoLayoutContainer:
@@ -2566,7 +2570,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_10 As groupContainer.verticalAutoLayoutContainer:
@@ -2608,7 +2612,7 @@ scr_banco As screen:
                                             movement_amount
                                         ),
                                         Value
-                                    ),"$0,0.00")
+                                    ),"$"&"#,0.00")
                                 ZIndex: =2
 
                         Container15_11 As groupContainer.verticalAutoLayoutContainer:
@@ -2818,7 +2822,8 @@ scr_banco As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                            Text: |-
+                                ="$"&Text(ThisItem.movement_amount,"#,0.00")
                             Width: =180
                             X: =811
                             Y: =1
@@ -3208,7 +3213,8 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Text: |-
+                                    ="$"&Text(ThisItem.movement_amount,"#,0.00")
                                 X: =811
                                 Y: =1
                                 ZIndex: =5
@@ -3503,7 +3509,8 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Text: |-
+                                    ="$"&Text(ThisItem.movement_amount,"#,0.00")
                                 X: =811
                                 Y: =1
                                 ZIndex: =5
@@ -3863,7 +3870,8 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =0
                                 Size: =12
-                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Text: |-
+                                    ="$"&Text(ThisItem.movement_amount,"#,0.00")
                                 Width: =160
                                 X: =990
                                 Y: =1
@@ -3879,7 +3887,8 @@ scr_banco As screen:
                                 OnSelect: =
                                 PaddingTop: =8
                                 Size: =12
-                                Text: =Text(ThisItem.movement_amount,"$0,0.00")
+                                Text: |-
+                                    ="$"&Text(ThisItem.movement_amount,"#,0.00")
                                 Width: =160
                                 X: =990
                                 Y: =1

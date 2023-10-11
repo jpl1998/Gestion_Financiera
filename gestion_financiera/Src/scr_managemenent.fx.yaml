@@ -198,7 +198,7 @@ scr_managemenent As screen:
                                         ),
                                         Value
                                     ),
-                                    "$#,0.00"
+                                    "$"&"#,0.00"
                                 )
                             Width: =60
                             X: =698
@@ -455,7 +455,7 @@ scr_managemenent As screen:
                                                 ),
                                                 Value
                                             ),
-                                            "$#,0.00"
+                                            "$"&"#,0.00"
                                         )
                                     ZIndex: =2
 
@@ -494,7 +494,7 @@ scr_managemenent As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                             Container7_24 As groupContainer.horizontalAutoLayoutContainer:
@@ -521,7 +521,7 @@ scr_managemenent As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Text(Value(Label6_34.Text) - Value(Label6_29.Text),"$#,0.00")
+                                        =Text(Value(Label6_34.Text) - Value(Label6_29.Text),"$"&"#,0.00")
                                     ZIndex: =2
 
                             Container7_25 As groupContainer.horizontalAutoLayoutContainer:
@@ -559,7 +559,7 @@ scr_managemenent As screen:
                                                 )
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                             Container7_26 As groupContainer.horizontalAutoLayoutContainer:
@@ -638,7 +638,7 @@ scr_managemenent As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$#,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                             Container7_30 As groupContainer.horizontalAutoLayoutContainer:
@@ -669,7 +669,7 @@ scr_managemenent As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$#,0.00")
+                                        ),"$"&"#,0.00")
                                     ZIndex: =2
 
                     CompositeColumnChart1_4 As group:
@@ -5335,7 +5335,7 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: |-
-                        =Text(Value(ThisItem.unit_cost),"$#,0.00")
+                        =Text(Value(ThisItem.unit_cost),"$"&"#,0.00")
                     Width: =89
                     X: =601
                     ZIndex: =14
@@ -5346,7 +5346,7 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: |-
-                        =Text(Value(ThisItem.total_value),"$#,0.00")
+                        =Text(Value(ThisItem.total_value),"$"&"#,0.00")
                     Width: =115
                     X: =690
                     ZIndex: =15
@@ -7959,7 +7959,8 @@ scr_managemenent As screen:
                         OnSelect: =
                         PaddingTop: =8
                         Size: =12
-                        Text: =Text(ThisItem.unit_cost,"$0,0.00")
+                        Text: |-
+                            =Text(ThisItem.unit_cost,"$"&"#,0.00")
                         Width: =90
                         X: =640
                         ZIndex: =5
@@ -7973,7 +7974,8 @@ scr_managemenent As screen:
                         OnSelect: =
                         PaddingTop: =8
                         Size: =12
-                        Text: =Text(ThisItem.total_value,"$0,0.00")
+                        Text: |-
+                            =Text(ThisItem.total_value,"$"&"#,0.00")
                         Width: =90
                         X: =780
                         ZIndex: =6
@@ -8504,7 +8506,7 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: |-
-                    =Text(Sum(ParticipationDetailsGallery_1.AllItems,unit_trade*market_unit_price),"$#,0.00")
+                    =Text(Sum(ParticipationDetailsGallery_1.AllItems,unit_trade*market_unit_price),"$"&"#,0.00")
                 DisabledBorderColor: =ColorValue(varlineColor)
                 DisabledColor: =RGBA(0, 0, 0, 1)
                 DisabledFill: =RGBA(255, 255, 255, 1)
@@ -8661,7 +8663,7 @@ scr_managemenent As screen:
                         PaddingTop: =8
                         Size: =12
                         Text: |-
-                            =Text(ThisItem.market_unit_price,"$#,0.00")
+                            =Text(ThisItem.market_unit_price,"$"&"#,0.00")
                         Width: =90
                         X: =780
                         ZIndex: =6
@@ -9172,7 +9174,7 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: |-
-                    =Text( MarketUnitTextInput.Text * UnitTradeTextInput.Text, "$#,0.00")
+                    =Text( MarketUnitTextInput.Text * UnitTradeTextInput.Text, "$"&"#,0.00")
                 DisabledBorderColor: =ColorValue(varlineColor)
                 DisabledColor: =RGBA(0, 0, 0, 1)
                 DisabledFill: =RGBA(255, 255, 255, 1)
