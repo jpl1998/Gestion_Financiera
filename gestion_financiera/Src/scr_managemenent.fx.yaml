@@ -8534,7 +8534,18 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupTrade:false})
+                    =ForAll(
+                        ParticipationDetailsGallery_1.AllItems As temp,
+                        Patch(
+                            'GF_DEV.Investment_Entity',
+                            LookUp('GF_DEV.Investment_Entity', id_investment_entity = temp.id_investment_entity);
+                            {
+                                quantity: temp.quantity - temp.unit_trade
+                            }
+                        )
+                    );
+                    
+                    UpdateContext({varpopupTrade:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
