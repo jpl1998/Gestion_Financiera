@@ -8230,6 +8230,7 @@ scr_managemenent As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(Inv_MovementAmountTextInput.Text), DisplayMode.Disabled, DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
@@ -8365,6 +8366,7 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =48
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
