@@ -23724,19 +23724,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.DatePicker1_9.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TradeDatePicker.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.DatePicker1_9.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.TradeDatePicker.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.DatePicker1_9"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.TradeDatePicker"
               }
             }
           ],

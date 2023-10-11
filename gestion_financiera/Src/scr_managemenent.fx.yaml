@@ -8482,7 +8482,7 @@ scr_managemenent As screen:
                 Y: =325
                 ZIndex: =45
 
-            DatePicker1_9 As datepicker:
+            TradeDatePicker As datepicker:
                 BorderColor: =ColorValue(varlineColor)
                 Height: =44
                 IconBackground: =Color.White
@@ -8543,6 +8543,18 @@ scr_managemenent As screen:
                             LookUp('GF_DEV.Investment_Entity', id_investment_entity = temp.id_investment_entity);
                             {
                                 quantity: temp.quantity - temp.unit_trade
+                            }
+                        );
+                        Patch(
+                            'GF_DEV.Bank_Movement',
+                            Defaults('GF_DEV.Bank_Movement'),
+                            {
+                                id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement+1,
+                                id_bank_entity_relationship: temp.id_bank_entity_relationship,
+                                id_period: varCurrentPeriod.id_month,
+                                movement_type: "Sale",
+                                adquisition_date: TradeDatePicker.SelectedDate,
+                                movement_amount: temp.unit_trade * temp.market_unit_price
                             }
                         )
                     );
