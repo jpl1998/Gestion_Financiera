@@ -8666,7 +8666,9 @@ scr_managemenent As screen:
                             Height: =36
                             Image: =editar
                             OnSelect: |-
-                                =UpdateContext({varSelectedTradeItem: ThisItem, varshowPopUpEditTrade:true})
+                                =Reset(UnitTradeTextInput);
+                                Reset(MarketUnitTextInput);
+                                UpdateContext({varSelectedTradeItem: ThisItem, varshowPopUpEditTrade:true})
                             PaddingBottom: =9
                             PaddingTop: =9
                             Width: =30
@@ -8691,7 +8693,7 @@ scr_managemenent As screen:
                     PaddingTop: =8
                     Size: =11
                     Text: ="Entity"
-                    Width: =220
+                    Width: =230
                     ZIndex: =1
 
                 Label4_92 As label:
@@ -9092,6 +9094,17 @@ scr_managemenent As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: |
                     =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =Patch(
+                        colTradeData,
+                        varSelectedTradeItem,
+                        {
+                            unit_trade: Value(UnitTradeTextInput.Text),
+                            market_unit_price: Value(MarketUnitTextInput.Text)
+                        }
+                    );
+                    
+                    UpdateContext({varshowPopUpEditTrade:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
