@@ -198,7 +198,7 @@ scr_managemenent As screen:
                                         ),
                                         Value
                                     ),
-                                    "$0,0.00"
+                                    "$#,0.00"
                                 )
                             Width: =60
                             X: =698
@@ -455,7 +455,7 @@ scr_managemenent As screen:
                                                 ),
                                                 Value
                                             ),
-                                            "$0,0.00"
+                                            "$#,0.00"
                                         )
                                     ZIndex: =2
 
@@ -520,7 +520,8 @@ scr_managemenent As screen:
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: =Text(Value(Label6_34.Text) - Value(Label6_29.Text),"$0,0.00")
+                                    Text: |-
+                                        =Text(Value(Label6_34.Text) - Value(Label6_29.Text),"$#,0.00")
                                     ZIndex: =2
 
                             Container7_25 As groupContainer.horizontalAutoLayoutContainer:
@@ -637,7 +638,7 @@ scr_managemenent As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$#,0.00")
                                     ZIndex: =2
 
                             Container7_30 As groupContainer.horizontalAutoLayoutContainer:
@@ -668,7 +669,7 @@ scr_managemenent As screen:
                                                 movement_amount
                                             ),
                                             Value
-                                        ),"$0,0.00")
+                                        ),"$#,0.00")
                                     ZIndex: =2
 
                     CompositeColumnChart1_4 As group:
@@ -2389,6 +2390,78 @@ scr_managemenent As screen:
             X: =33
             Y: =742
             ZIndex: =13
+
+        Button1_429 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =96
+            HoverBorderColor: =
+            HoverFill: =RGBA(255, 255, 255, 0.1)
+            OnSelect: |-
+                =Clear(colTradeData);
+                ForAll(
+                    Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment) As temp,
+                    Collect(
+                        colTradeData,
+                        {
+                            id_investment_entity: temp.id_investment_entity,
+                            id_investment: temp.id_investment,
+                            id_bank_entity_relationship: temp.id_bank_entity_relationship,
+                            quantity: temp.quantity,
+                            unit_cost: temp.unit_cost,
+                            total_value: temp.total_value,
+                            adquisition_value: temp.adquisition_value,
+                            unit_trade: 0,
+                            market_unit_price: 0
+                        }
+                    )
+                );
+                //AddColumns(ClearCollect(colTradeData,),"unit_trade",0,"market_unit_price",0);
+                
+                UpdateContext({varpopupTrade:true})
+            PaddingTop: =40
+            PressedBorderColor: =
+            PressedFill: =RGBA(255, 255, 255, 0.15)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: =""
+            Width: =250
+            X: =946
+            Y: =619
+            ZIndex: =14
+
+        Button1_430 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 0)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =96
+            HoverBorderColor: =
+            HoverFill: =RGBA(255, 255, 255, 0.1)
+            OnSelect: |-
+                =UpdateContext({varpopupaddmovement:true})
+            PaddingTop: =40
+            PressedBorderColor: =
+            PressedFill: =RGBA(255, 255, 255, 0.15)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: =""
+            Width: =250
+            X: =676
+            Y: =620
+            ZIndex: =15
 
     Screen_Download_14 As group:
         Height: =5
@@ -5261,7 +5334,8 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: =Text(Value(ThisItem.unit_cost),"$0,0.00")
+                    Text: |-
+                        =Text(Value(ThisItem.unit_cost),"$#,0.00")
                     Width: =89
                     X: =601
                     ZIndex: =14
@@ -5271,7 +5345,8 @@ scr_managemenent As screen:
                     OnSelect: =Select(Parent)
                     PaddingTop: =8
                     Size: =12
-                    Text: =Text(Value(ThisItem.total_value),"$0,0.00")
+                    Text: |-
+                        =Text(Value(ThisItem.total_value),"$#,0.00")
                     Width: =115
                     X: =690
                     ZIndex: =15
@@ -8428,7 +8503,11 @@ scr_managemenent As screen:
             TextInput2_96 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =Sum(ParticipationDetailsGallery_1.AllItems,unit_trade*market_unit_price)
+                DisabledBorderColor: =ColorValue(varlineColor)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -8473,8 +8552,8 @@ scr_managemenent As screen:
             ParticipationDetailsGallery_1 As gallery.galleryVertical:
                 DelayItemLoading: =true
                 Fill: =varBackgroundColor
-                Height: =Min((Self.AllItemsCount * (Self.TemplateHeight + Self.TemplatePadding))+ Self.TemplatePadding,150)
-                Items: =Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment)
+                Height: =Min((Self.AllItemsCount * (Self.TemplateHeight + Self.TemplatePadding))+ Self.TemplatePadding,200)
+                Items: =colTradeData
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 TemplatePadding: =10
@@ -8555,7 +8634,7 @@ scr_managemenent As screen:
                         OnSelect: =
                         PaddingTop: =8
                         Size: =12
-                        Text: =Text(ThisItem.unit_cost,"$0,0.00")
+                        Text: =ThisItem.unit_trade
                         Width: =90
                         X: =640
                         ZIndex: =5
@@ -8569,10 +8648,29 @@ scr_managemenent As screen:
                         OnSelect: =
                         PaddingTop: =8
                         Size: =12
-                        Text: =Text(ThisItem.total_value,"$0,0.00")
+                        Text: |-
+                            =Text(ThisItem.market_unit_price,"$#,0.00")
                         Width: =90
                         X: =780
                         ZIndex: =6
+
+                    Container24 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        LayoutMinHeight: =10
+                        LayoutMinWidth: =30
+                        Width: =30
+                        ZIndex: =7
+
+                        Image22 As image:
+                            Height: =36
+                            Image: =editar
+                            OnSelect: |-
+                                =UpdateContext({varSelectedTradeItem: ThisItem, varshowPopUpEditTrade:true})
+                            PaddingBottom: =9
+                            PaddingTop: =9
+                            Width: =30
+                            ZIndex: =1
 
             Container21_3 As groupContainer.horizontalAutoLayoutContainer:
                 DropShadow: =DropShadow.None
@@ -8662,6 +8760,14 @@ scr_managemenent As screen:
                     Width: =90
                     X: =780
                     ZIndex: =6
+
+                Container24_1 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    LayoutMinHeight: =10
+                    LayoutMinWidth: =30
+                    Width: =40
+                    ZIndex: =7
 
     Container2_22 As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(255, 255, 255, 1)
@@ -8977,6 +9083,7 @@ scr_managemenent As screen:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(UnitTradeTextInput.Text) || UnitTradeTextInput.BorderColor = varRedColor || IsBlank(MarketUnitTextInput.Text), DisplayMode.Disabled, DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Font: =Font.Arial
@@ -9039,7 +9146,12 @@ scr_managemenent As screen:
             TextInput2_97 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: |-
+                    =Text( MarketUnitTextInput.Text * UnitTradeTextInput.Text, "$#,0.00")
+                DisabledBorderColor: =ColorValue(varlineColor)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
                 Height: =48
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -9064,13 +9176,15 @@ scr_managemenent As screen:
                 Y: =298
                 ZIndex: =49
 
-            TextInput2_98 As text:
-                BorderColor: =ColorValue(varlineColor)
+            UnitTradeTextInput As text:
+                BorderColor: =If(Value(Self.Text)>Value(QuantityAvailableTextInput.Text),varRedColor, ColorValue(varlineColor))
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =48
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
+                OnChange: =
                 RadiusBottomLeft: =2
                 RadiusBottomRight: =2
                 RadiusTopLeft: =2
@@ -9080,10 +9194,11 @@ scr_managemenent As screen:
                 Y: =342
                 ZIndex: =50
 
-            TextInput2_99 As text:
+            MarketUnitTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""
+                Format: =TextFormat.Number
                 Height: =48
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -9096,10 +9211,14 @@ scr_managemenent As screen:
                 Y: =342
                 ZIndex: =51
 
-            TextInput2_100 As text:
+            QuantityAvailableTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedTradeItem.quantity
+                DisabledBorderColor: =ColorValue(varlineColor)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
                 Height: =48
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -9117,8 +9236,8 @@ scr_managemenent As screen:
                 Font: =Font.Arial
                 Height: =30
                 Size: =12
-                Text: ="Family Office"
-                Width: =192
+                Text: =LookUp('GF_DEV.Entity', id_entity = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = varSelectedTradeItem.id_bank_entity_relationship).id_bank).entity
+                Width: =350
                 X: =161
                 Y: =75
                 ZIndex: =53
@@ -9152,8 +9271,8 @@ scr_managemenent As screen:
                 Font: =Font.Arial
                 Height: =30
                 Size: =12
-                Text: ="JP Morgan"
-                Width: =192
+                Text: =LookUp('GF_DEV.Bank', id_bank = LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = varSelectedTradeItem.id_bank_entity_relationship).id_bank).bank
+                Width: =350
                 X: =161
                 Y: =110
                 ZIndex: =56
@@ -9163,8 +9282,8 @@ scr_managemenent As screen:
                 Font: =Font.Arial
                 Height: =30
                 Size: =12
-                Text: ="111-222-333"
-                Width: =192
+                Text: =LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = varSelectedTradeItem.id_bank_entity_relationship).account_num
+                Width: =350
                 X: =161
                 Y: =145
                 ZIndex: =57

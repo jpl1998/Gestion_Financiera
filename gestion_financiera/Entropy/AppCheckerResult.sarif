@@ -38034,19 +38034,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_100.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.QuantityAvailableTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_100.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.QuantityAvailableTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_100"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.QuantityAvailableTextInput"
               }
             }
           ],
@@ -38064,19 +38064,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_98.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.UnitTradeTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_98.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.UnitTradeTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_98"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.UnitTradeTextInput"
               }
             }
           ],
@@ -38094,19 +38094,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_99.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.MarketUnitTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_99.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_96.MarketUnitTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.TextInput2_99"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_96.MarketUnitTextInput"
               }
             }
           ],
@@ -39037,6 +39037,66 @@
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
                 "type": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_95.ParticipationDetailsGallery_1.Container21_2.Container24.Image22"
               }
             }
           ],
