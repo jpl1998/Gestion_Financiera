@@ -8238,6 +8238,42 @@ scr_managemenent As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: |
                     =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varLastBalance: First(SortByColumns(Filter('GF_DEV.Bank_Movement',id_bank_entity_relationship=Inv_BankAccountDropdown.Selected.id_bank_entity_relationship),"id_movement",SortOrder.Descending)).final_balance});
+                    Patch(
+                        'GF_DEV.Bank_Movement',
+                        Defaults('GF_DEV.Bank_Movement'),
+                        {
+                            id_movement: First(SortByColumns('GF_DEV.Bank_Movement',"id_movement",SortOrder.Descending)).id_movement + 1,
+                            id_bank_entity_relationship: Inv_BankAccountDropdown.Selected.id_bank_entity_relationship,
+                            id_period: varCurrentPeriod.id_month,
+                            movement_type: Inv_MovementTypeDropdown.Selected.value,
+                            adquisition_date: Inv_AdquisitionTimeDatePicker,
+                            final_balance: varLastBalance + Value(Inv_MovementAmountTextInput.Text)
+                        }
+                    );
+                    
+                    UpdateIf(
+                        'GF_DEV.Bank_Balance',
+                        id_bank_entity_relationship=Inv_BankAccountDropdown.Selected.id_bank_entity_relationship,
+                        {
+                            ind_act: 0
+                        }
+                    );
+                    
+                    Patch(
+                        'GF_DEV.Bank_Balance',
+                        Defaults('GF_DEV.Bank_Balance'),
+                        {
+                            id_balance: First(SortByColumns('GF_DEV.Bank_Balance',"id_balance",SortOrder.Descending)).id_balance +1,
+                            id_bank_entity_relationship: Inv_BankAccountDropdown.Selected.id_bank_entity_relationship,
+                            id_period: varCurrentPeriod.id_month,
+                            balance_date: Today(),
+                            initial_balance: varLastBalance,
+                            final_balance: varLastBalance + Value(Inv_MovementAmountTextInput.Text),
+                            ind_act: 1
+                        }
+                    )
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -8283,13 +8319,13 @@ scr_managemenent As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =12
-                Text: ="Adquisition Type"
+                Text: ="Adquisition Date"
                 Width: =175
                 X: =34
                 Y: =298
                 ZIndex: =43
 
-            DatePicker1_8 As datepicker:
+            Inv_AdquisitionTimeDatePicker As datepicker:
                 BorderColor: =ColorValue(varlineColor)
                 Height: =48
                 IconBackground: =Color.White
@@ -8299,29 +8335,33 @@ scr_managemenent As screen:
                 Y: =342
                 ZIndex: =45
 
-            Dropdown2_53 As dropdown:
+            Inv_BankAccountDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =48
-                Items: =DropDownSample
+                Items: |
+                    =ForAll(
+                        Filter('GF_DEV.Investment_Entity', varSelectedInvestment.id_investment = id_investment) As temp,
+                        LookUp('GF_DEV.Bank_Entity_Relationship', id_bank_entity_relationship = temp.id_bank_entity_relationship)
+                    )
                 Width: =464
                 X: =38
                 Y: =122
                 ZIndex: =46
 
-            Dropdown2_54 As dropdown:
+            Inv_MovementTypeDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
                 Height: =48
-                Items: =DropDownSample
+                Items: =Filter('GF_DEV.System_Value', value = "Interest" || value = "Dividend")
                 Width: =464
                 X: =38
                 Y: =232
                 ZIndex: =47
 
-            TextInput2_95 As text:
+            Inv_MovementAmountTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =""

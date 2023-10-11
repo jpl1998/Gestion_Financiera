@@ -37854,19 +37854,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_53.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_BankAccountDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_53.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_BankAccountDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_53"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_BankAccountDropdown"
               }
             }
           ],
@@ -37884,19 +37884,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_54.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementTypeDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_54.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementTypeDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Dropdown2_54"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementTypeDropdown"
               }
             }
           ],
@@ -37914,19 +37914,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.DatePicker1_8.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_AdquisitionTimeDatePicker.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.DatePicker1_8.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_AdquisitionTimeDatePicker.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.DatePicker1_8"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_AdquisitionTimeDatePicker"
               }
             }
           ],
@@ -37944,19 +37944,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.TextInput2_95.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementAmountTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.TextInput2_95.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementAmountTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.TextInput2_95"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_94.Inv_MovementAmountTextInput"
               }
             }
           ],
