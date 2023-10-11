@@ -447,19 +447,16 @@ scr_managemenent As screen:
                                     LayoutMinWidth: =100
                                     Size: =12
                                     Text: |-
-                                        =Text(Sum(
-                                            ForAll(
-                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Cash").id_class) As x,
-                                                Sum(
-                                                    ForAll(
-                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
-                                                        profitability
-                                                    ),
-                                                    Value
-                                                )
+                                        =Text(
+                                            Sum(
+                                                ForAll(
+                                                    'GF_DEV.Investment_Entity' As temp,
+                                                    temp.total_value
+                                                ),
+                                                Value
                                             ),
-                                            Value
-                                        ),"$0,0.00")
+                                            "$0,0.00"
+                                        )
                                     ZIndex: =2
 
                             Container7_23 As groupContainer.horizontalAutoLayoutContainer:
@@ -501,6 +498,7 @@ scr_managemenent As screen:
                                     ZIndex: =2
 
                             Container7_24 As groupContainer.horizontalAutoLayoutContainer:
+                                ContentLanguage: =
                                 DropShadow: =DropShadow.None
                                 LayoutMinHeight: =20
                                 LayoutMinWidth: =250
@@ -517,24 +515,12 @@ scr_managemenent As screen:
 
                                 Label6_38 As label:
                                     Align: =Align.Center
+                                    Color: =If(Value(Self.Text)>=0, varGreenColor, varRedColor)
                                     FillPortions: =1
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: |-
-                                        =Text(Sum(
-                                            ForAll(
-                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Fixed Income").id_class) As x,
-                                                Sum(
-                                                    ForAll(
-                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
-                                                        profitability
-                                                    ),
-                                                    Value
-                                                )
-                                            ),
-                                            Value
-                                        ),"$0,0.00")
+                                    Text: =Text(Value(Label6_34.Text) - Value(Label6_29.Text),"$0,0.00")
                                     ZIndex: =2
 
                             Container7_25 As groupContainer.horizontalAutoLayoutContainer:
@@ -590,15 +576,6 @@ scr_managemenent As screen:
                                     Text: ="Withdrawals"
                                     ZIndex: =1
 
-                                Label6_76 As label:
-                                    Align: =Align.Center
-                                    FillPortions: =1
-                                    Height: =30
-                                    LayoutMinWidth: =100
-                                    Size: =12
-                                    Text: ="$118,536.11"
-                                    ZIndex: =2
-
                             Container7_27 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 Fill: =ColorValue(varTableBackground)
@@ -615,22 +592,6 @@ scr_managemenent As screen:
                                     Text: ="Monthly Return (%)"
                                     ZIndex: =1
 
-                                Label6_79 As label:
-                                    Align: =Align.Center
-                                    FillPortions: =1
-                                    Height: =30
-                                    LayoutMinWidth: =100
-                                    Size: =12
-                                    Text: |-
-                                        =Text(Sum(
-                                            ForAll(
-                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Dividend"),
-                                                movement_amount
-                                            ),
-                                            Value
-                                        ),"$0,0.00")
-                                    ZIndex: =2
-
                             Container7_28 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 LayoutMinHeight: =20
@@ -645,22 +606,6 @@ scr_managemenent As screen:
                                     Size: =12
                                     Text: ="Accumulated Return (%)"
                                     ZIndex: =1
-
-                                Label6_82 As label:
-                                    Align: =Align.Center
-                                    FillPortions: =1
-                                    Height: =30
-                                    LayoutMinWidth: =100
-                                    Size: =12
-                                    Text: |-
-                                        =Text(Sum(
-                                            ForAll(
-                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Interest"),
-                                                movement_amount
-                                            ),
-                                            Value
-                                        ),"$0,0.00")
-                                    ZIndex: =2
 
                             Container7_29 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
@@ -680,11 +625,19 @@ scr_managemenent As screen:
 
                                 Label6_85 As label:
                                     Align: =Align.Center
+                                    Color: =varGreenColor
                                     FillPortions: =1
                                     Height: =30
                                     LayoutMinWidth: =100
                                     Size: =12
-                                    Text: ="$118,536.11"
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.Bank_Movement',/*id_period = varCurrentPeriod.id_month,*/ movement_type = "Dividend"),
+                                                movement_amount
+                                            ),
+                                            Value
+                                        ),"$0,0.00")
                                     ZIndex: =2
 
                             Container7_30 As groupContainer.horizontalAutoLayoutContainer:
@@ -711,7 +664,7 @@ scr_managemenent As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('GF_DEV.Bank_Movement',id_period = varCurrentPeriod.id_month, movement_type = "Interest"),
+                                                Filter('GF_DEV.Bank_Movement',/*id_period = varCurrentPeriod.id_month,*/ movement_type = "Fees & Commissions"),
                                                 movement_amount
                                             ),
                                             Value
