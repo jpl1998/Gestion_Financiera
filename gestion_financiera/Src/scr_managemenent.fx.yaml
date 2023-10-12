@@ -228,7 +228,17 @@ scr_managemenent As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="360,400.00"
+                            Text: |-
+                                =Label4_102.Text * Sum(
+                                    ForAll(
+                                        Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = ThisItem.id_investment
+                                        ) As temp,
+                                        temp.quantity
+                                    ),
+                                    Value
+                                )
                             Width: =99
                             X: =548
                             ZIndex: =7
