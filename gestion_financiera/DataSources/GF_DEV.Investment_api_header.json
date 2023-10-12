@@ -1,0 +1,43 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2023-09-27T16:28:12.8130000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "57dfb1b5-7d79-4046-a4da-fd831d5befe1-KeyId": "KeyId",
+      "COUNTRY": "COUNTRY",
+      "COUPON_ACCRUAL_DATE": "COUPON_ACCRUAL_DATE",
+      "COUPON_CLASSIFICATION": "COUPON_CLASSIFICATION",
+      "COUPON_DAY_COUNT": "COUPON_DAY_COUNT",
+      "COUPON_EXPIRY_DATE": "COUPON_EXPIRY_DATE",
+      "COUPON_FIRST_PAY_DATE": "COUPON_FIRST_PAY_DATE",
+      "COUPON_FREQ": "COUPON_FREQ",
+      "COUPON_LAST_PAY_DATE": "COUPON_LAST_PAY_DATE",
+      "CUPON_CPN_AMOUNT": "CUPON_CPN_AMOUNT",
+      "CUPON_CPN_TYPE": "CUPON_CPN_TYPE",
+      "CURRENCY": "CURRENCY",
+      "DAYS_TO_SETTLE": "DAYS_TO_SETTLE",
+      "DESCRIPTION": "DESCRIPTION",
+      "DESCRIPTION_SHORT": "DESCRIPTION_SHORT",
+      "DISTRIBUTION_TYPE": "DISTRIBUTION_TYPE",
+      "DIV_PER_SHARE_LC": "DIV_PER_SHARE_LC",
+      "DIV_PER_SHARE_USD": "DIV_PER_SHARE_USD",
+      "FACTSET_TICKER": "FACTSET_TICKER",
+      "FEC_INGRESO": "FEC_INGRESO",
+      "FEC_MODIFICACION": "FEC_MODIFICACION",
+      "ISIN": "ISIN",
+      "LAST_DIVIDEND_DATE": "LAST_DIVIDEND_DATE",
+      "USR_INGRESO": "USR_INGRESO",
+      "USR_MODIFICACION": "USR_MODIFICACION"
+    },
+    "DatasetName": "bicroslandfodbserv.database.windows.net,BICROSLANDFO",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "GF_DEV.Investment_api_header",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

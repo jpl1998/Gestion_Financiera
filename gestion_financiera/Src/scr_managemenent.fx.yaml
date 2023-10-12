@@ -213,7 +213,8 @@ scr_managemenent As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="390,400.00"
+                            Text: |-
+                                =Text(Value(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=ThisItem.isin),"DATE",SortOrder.Descending)).IND_PRICE_USD), "[$-en-US]#,0.00")
                             Width: =101
                             X: =803
                             ZIndex: =6
