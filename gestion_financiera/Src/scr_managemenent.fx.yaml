@@ -252,7 +252,42 @@ scr_managemenent As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="7.75%"
+                            Text: |-
+                                =With(
+                                    {
+                                        tempMarketPrice: First(
+                                            SortByColumns(
+                                                Filter(
+                                                    'GF_DEV.Investment_api_detail',
+                                                    ISIN = ThisItem.isin
+                                                ),
+                                                "DATE",
+                                                SortOrder.Descending
+                                            )
+                                        ).IND_PRICE_USD,
+                                        tempQuantity: Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'GF_DEV.Investment_Entity',
+                                                    id_investment = ThisItem.id_investment
+                                                ) As temp,
+                                                temp.quantity
+                                            ),
+                                            Value
+                                        ),
+                                        tempAdquisitionValue: Sum(
+                                            ForAll(
+                                                Filter(
+                                                    'GF_DEV.Investment_Entity',
+                                                    id_investment = ThisItem.id_investment
+                                                ) As temp,
+                                                temp.total_value
+                                            ),
+                                            Value
+                                        )
+                                    },
+                                    Text(IfError(((tempMarketPrice * tempQuantity) - tempAdquisitionValue)/tempAdquisitionValue,0),"0.00%")
+                                )
                             Width: =55
                             X: =930
                             ZIndex: =8
@@ -266,7 +301,7 @@ scr_managemenent As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="6.75%"
+                            Text: =Coalesce(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=ThisItem.isin),"DATE",SortOrder.Descending)).IND_YTM,"-")
                             Width: =55
                             X: =1023
                             ZIndex: =9
@@ -280,7 +315,7 @@ scr_managemenent As screen:
                             OnSelect: =
                             PaddingTop: =8
                             Size: =12
-                            Text: ="6.75%"
+                            Text: =Coalesce(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=ThisItem.isin),"DATE",SortOrder.Descending)).IND_EFF_DURATION,"-")
                             Width: =55
                             X: =1095
                             ZIndex: =10
