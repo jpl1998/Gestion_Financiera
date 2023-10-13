@@ -6918,15 +6918,3 @@ scr_banco As screen:
             Y: =79
             ZIndex: =4
 
-    TotalSumBalanceOfAllBanks As label:
-        Text: =Sum(Banks_BankGallery.AllItems,TotalBankBalanceLabel.Text)
-        Width: =198
-        X: =271
-        ZIndex: =41
-
-    TotalSumBalanceOfAllBanks2 As label:
-        Text: =TotalSumBalanceOfAllBanks.Text
-        Width: =198
-        X: =458
-        ZIndex: =42
-

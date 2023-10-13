@@ -39,29 +39,6 @@ scr_security As screen:
             Y: =32
             ZIndex: =5
 
-        Iconline_4 As rectangle:
-            DisabledFill: |
-                =
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Height: =36
-            Width: =5
-            X: =273
-            Y: =96
-            ZIndex: =6
-
-        Label2_2 As label:
-            Color: =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =36
-            Size: =12
-            Text: ="Roles"
-            Width: =241
-            X: =32
-            Y: =96
-            ZIndex: =7
-
         Label2_3 As label:
             Font: =Font.Arial
             Height: =36
@@ -580,6 +557,394 @@ scr_security As screen:
                 X: =33
                 Y: =113
                 ZIndex: =34
+
+    Container4_19 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =692
+        Width: =237
+        X: =40
+        Y: =76
+        ZIndex: =19
+
+        Button2_108 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Risk);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Risk / Reward Scale"
+            Width: =177
+            X: =25
+            Y: =265
+            ZIndex: =1
+
+        Button2_109 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_country);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: |-
+                ="Country
+                "
+            Width: =177
+            X: =25
+            Y: =415
+            ZIndex: =2
+
+        Button2_170 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_sector);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Sector"
+            Width: =177
+            X: =25
+            Y: =465
+            ZIndex: =3
+
+        Button2_2 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Entity"
+            Width: =177
+            X: =25
+            Y: =115
+            ZIndex: =4
+
+        Button2_50 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |
+                =Navigate(scr_customizing_accounting);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Accounting Period"
+            Width: =177
+            X: =25
+            Y: =613
+            ZIndex: =5
+
+        Button2_48 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Operations);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Operations Table"
+            Width: =177
+            X: =25
+            Y: =515
+            ZIndex: =6
+
+        Button2_42 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Class);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Class"
+            Width: =177
+            X: =25
+            Y: =215
+            ZIndex: =7
+
+        Button2_46 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Terms);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Terms"
+            Width: =177
+            X: =25
+            Y: =365
+            ZIndex: =8
+
+        Button2_43 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Currency);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Currency"
+            Width: =177
+            X: =25
+            Y: =315
+            ZIndex: =9
+
+        Button2_49 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate('scr_customizing_Document Type');
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Document Type"
+            Width: =177
+            X: =25
+            Y: =565
+            ZIndex: =10
+
+        Button2_41 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Bank);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Bank"
+            Width: =177
+            X: =25
+            Y: =165
+            ZIndex: =13
+
+        Button2_3 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =ColorValue(varprimaryColor)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: =Navigate(scr_security)
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Users"
+            Width: =177
+            X: =25
+            Y: =17
+            ZIndex: =14
+
+        Iconline_47 As rectangle:
+            DisabledFill: |
+                =
+            Fill: =ColorValue(varprimaryColor)
+            Height: =36
+            Width: =5
+            X: =205
+            Y: =17
+            ZIndex: =15
+
+        Button2_4 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(77, 77, 77, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Roles"
+            Width: =177
+            X: =25
+            Y: =66
+            ZIndex: =16
 
     four_Screen As group:
         Height: =5
