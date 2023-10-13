@@ -8299,28 +8299,21 @@ scr_managemenent As screen:
 
                 Title1 As label:
                     Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
                     Height: =30
-                    Text: ="Título del gráfico"
+                    Text: ="Valor de " & varSelectedInvestment.isin
                     Width: =974
                     Y: =21
                     ZIndex: =2
 
                 LineChart1 As lineChart:
-                    Height: =306
-                    Items: =LineChartSample
-                    Width: =856
-                    X: =117
+                    Height: =287
+                    Items: =SortByColumns(FirstN(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=varSelectedInvestment.isin),"DATE",SortOrder.Descending),12),"DATE",SortOrder.Ascending)
+                    Width: =958
+                    X: =15
+                    XLabelAngle: =30
                     Y: =51
                     ZIndex: =3
-
-                Legend1 As legend:
-                    Height: =65
-                    ItemColorSet: =LineChart1.ItemColorSet
-                    Items: =LineChart1.SeriesLabels
-                    Width: =95
-                    X: =22
-                    Y: =78
-                    ZIndex: =4
 
     Scn_Screen_21 As group:
         Height: =5
