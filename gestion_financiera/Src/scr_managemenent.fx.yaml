@@ -530,17 +530,22 @@ scr_managemenent As screen:
                                     Text: |-
                                         =Text(Sum(
                                             ForAll(
-                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Equity").id_class) As x,
+                                                'GF_DEV.Investment' As x,
+                                                Value(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=x.isin),"DATE",SortOrder.Descending)).IND_PRICE_USD) *
                                                 Sum(
                                                     ForAll(
-                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
-                                                        profitability
+                                                        Filter(
+                                                            'GF_DEV.Investment_Entity',
+                                                            id_investment = x.id_investment
+                                                        ) As temp,
+                                                        temp.quantity
                                                     ),
                                                     Value
                                                 )
                                             ),
                                             Value
-                                        ),"$"&"#,0.00")
+                                        ),"$"&"#,0.00"
+                                        )
                                     ZIndex: =2
 
                             Container7_24 As groupContainer.horizontalAutoLayoutContainer:
