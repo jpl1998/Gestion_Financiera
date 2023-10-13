@@ -6146,7 +6146,9 @@ scr_managemenent As screen:
                 Height: =44
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
+                OnSelect: |-
+                    =Remove(colBankParticipation, varSelectedBankInvestment);
+                    UpdateContext({varpopupEliminateBankAccount:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(255, 0, 0, 1)
