@@ -2191,6 +2191,7 @@ scr_managemenent As screen:
                     Label16_3 As label:
                         Align: =Align.Right
                         AlignInContainer: =AlignInContainer.Stretch
+                        Color: =If(Value(Self.Text) > Value(Label16_1.Text), varGreenColor, varRedColor)
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
@@ -2225,10 +2226,12 @@ scr_managemenent As screen:
                     Label16_5 As label:
                         Align: =Align.Right
                         AlignInContainer: =AlignInContainer.Stretch
+                        Color: =If(Value(Self.Text) > 0, varGreenColor, varRedColor)
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =Text(Value(Label16_3.Text) - Value(Label16_1.Text), "$#,0.00")
                         ZIndex: =2
 
                 Container23_3 As groupContainer.horizontalAutoLayoutContainer:
@@ -2249,10 +2252,11 @@ scr_managemenent As screen:
                     Label16_7 As label:
                         Align: =Align.Right
                         AlignInContainer: =AlignInContainer.Stretch
+                        Color: =If(Value(Self.Text) > 0, varGreenColor, varRedColor)
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =Text((Value(Label16_3.Text) - Value(Label16_1.Text))/Value(Label16_3.Text), "0.00%")
                         ZIndex: =2
 
                 Container23_4 As groupContainer.horizontalAutoLayoutContainer:
