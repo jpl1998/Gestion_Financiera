@@ -7309,7 +7309,13 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
+                    =Collect(colBankParticipation,{
+                        id_bank_entity: Dropdown2_49.Selected.id_bank_entity_relationship,
+                        quantity: QuantityTextInput.Text,
+                        unit_cost: UnitCostTextInput.Text,
+                        total_value: TextInput2_91.Text
+                    });
+                    UpdateContext({varpopupaddbankaccountedit:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -7455,7 +7461,8 @@ scr_managemenent As screen:
             TextInput2_91 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: |-
+                    =Text( QuantityTextInput.Text * UnitCostTextInput.Text, "$#,0.00")
                 DisabledBorderColor: =ColorValue(varlineColor)
                 DisabledColor: =RGBA(0, 0, 0, 1)
                 DisabledFill: =RGBA(255, 255, 255, 1)
