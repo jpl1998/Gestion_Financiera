@@ -7,8 +7,18 @@
       "RevisionNumber": 2
     },
     "ConnectedDataSourceInfoNameMapping": {
+      "bank": "bank",
+      "customizing": "customizing",
       "id_role": "id_role",
-      "role": "role"
+      "operations": "operations",
+      "report": "report",
+      "role": "role",
+      "tax": "tax",
+      "tax_board": "tax_board",
+      "tax_detail": "tax_detail",
+      "tax_legal": "tax_legal",
+      "tax_profitability": "tax_profitability",
+      "tax_summary": "tax_summary"
     },
     "DatasetName": "bicroslandfodbserv.database.windows.net,BICROSLANDFO",
     "EncodeDataset": false,

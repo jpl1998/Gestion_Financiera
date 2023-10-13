@@ -11364,19 +11364,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery"
               }
             }
           ],
@@ -11394,19 +11394,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2.TabIndex"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_banco",
-                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Gallery2"
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.MenuBanksGallery"
               }
             }
           ],
@@ -36864,49 +36864,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery"
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery"
               }
             }
           ],
@@ -36924,19 +36894,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery"
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery"
               }
             }
           ],
@@ -36954,19 +36924,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.TabIndex"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.TabIndex",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery"
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery"
               }
             }
           ],
@@ -36984,19 +36954,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.ColumnChart1_2.AccessibleLabel"
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.ColumnChart1_2.AccessibleLabel",
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_57.Canvas1_8.DataCard1_6.Containercashflow_5.ColumnChart1_2"
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Banks_BankAccountGallery"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.ColumnChart1_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.ColumnChart1_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.ColumnChart1_2"
               }
             }
           ],
@@ -53964,6 +53964,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1.ShowLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1.ShowLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ShowLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-HelpfulControlSettingNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_banco",
+                "type": "scr_banco.grpCrearOrdenDeCompra_49.Canvas1_3.DataCard1_1.Containercashflow_5.Container4_8.Banks_BankGallery.Toggle1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.addbankaccount"
                 }
               ],
@@ -53987,7 +54047,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54017,7 +54077,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54047,7 +54107,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54077,7 +54137,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54107,7 +54167,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54137,7 +54197,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54167,7 +54227,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54197,7 +54257,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54227,7 +54287,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54257,7 +54317,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -54286,7 +54346,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -54316,7 +54376,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54346,7 +54406,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54376,7 +54436,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54406,7 +54466,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54436,7 +54496,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54466,7 +54526,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54496,7 +54556,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54526,7 +54586,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54556,7 +54616,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54586,7 +54646,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54616,7 +54676,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -54646,7 +54706,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -54675,7 +54735,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -54705,7 +54765,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54734,7 +54794,7 @@
             "level": "Low"
           },
           "ruleId": "app-NumericPropertySizeWarning",
-          "ruleIndex": 8
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -54764,7 +54824,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54794,7 +54854,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54824,7 +54884,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54854,7 +54914,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54884,7 +54944,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54914,7 +54974,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -54943,7 +55003,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -54973,7 +55033,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55003,7 +55063,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55033,7 +55093,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55063,7 +55123,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55093,7 +55153,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55123,7 +55183,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55153,7 +55213,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55183,7 +55243,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55213,7 +55273,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -55243,7 +55303,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 6
+          "ruleIndex": 7
         }
       ],
       "tool": {
@@ -55319,6 +55379,23 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "If the focus isn't visible, people who don't use a mouse won't be able to see it when they're interacting with the app."
+              }
+            },
+            {
+              "id": "acc-HelpfulControlSettingNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing helpful control settings"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Select the warning and set the item property to true to enable control setting."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "Changing this property setting will give the user better information about the function of the controls in your app."
               }
             },
             {
