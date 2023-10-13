@@ -47814,49 +47814,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_63"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39"
               }
             }
           ],
@@ -47874,19 +47844,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
+                "member": "FocusedBorderThickness",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39"
               }
             }
           ],
@@ -47896,27 +47866,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Image1_68"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38"
               }
             }
           ],
@@ -47928,6 +47898,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -48204,49 +48204,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1"
               }
             }
           ],
@@ -48264,19 +48234,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1"
               }
             }
           ],
@@ -48294,19 +48264,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_70"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45"
               }
             }
           ],
@@ -48324,19 +48294,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
+                "member": "FocusedBorderThickness",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_45"
               }
             }
           ],
@@ -48346,27 +48316,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Gallery1_20.Image1_69"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44"
               }
             }
           ],
@@ -48378,6 +48348,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_44"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -49824,19 +49824,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_47.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankEntityDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_47.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankEntityDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_47"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankEntityDropdown"
               }
             }
           ],
@@ -49854,19 +49854,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_48.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankDropdown.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_48.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankDropdown.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.Dropdown2_48"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.EditAddBankDropdown"
               }
             }
           ],
@@ -49914,19 +49914,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_89.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.QuantityTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_89.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.QuantityTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_89"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.QuantityTextInput"
               }
             }
           ],
@@ -49944,19 +49944,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_90.AccessibleLabel"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.UnitCostTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_90.AccessibleLabel",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_89.UnitCostTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.TextInput2_90"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_89.UnitCostTextInput"
               }
             }
           ],
@@ -52567,6 +52567,1446 @@
                 "member": "TabIndex",
                 "module": "scr_managemenent",
                 "type": "scr_managemenent.grpdownloadxls1_59.Icon2_188"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_41"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_42"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_43"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26.Image1_63"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Container26_1.Image1_68"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_55"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_56"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_57"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_58"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_59"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.Container25_1.Label4_60"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_46"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_47"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_48"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Label4_61"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_4.Image1_64"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.BankAccountParticipationGallery_1.Container25_2.Container26_5.Image1_69"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_62"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_63"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_64"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_65"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_66"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_managemenent",
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_87.Container25_3.Label4_67"
               }
             }
           ],
