@@ -2157,7 +2157,20 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =Text(
+                                Sum(
+                                    ForAll(
+                                        Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = varSelectedInvestment.id_investment
+                                        ) As temp,
+                                        temp.total_value
+                                    ),
+                                    Value
+                                ),
+                                "$"&"#,0.00"
+                            )
                         ZIndex: =2
 
                 Container23_1 As groupContainer.horizontalAutoLayoutContainer:
