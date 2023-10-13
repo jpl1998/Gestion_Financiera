@@ -2348,7 +2348,17 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =Text(Sum(
+                                ForAll(
+                                    Filter(
+                                        'GF_DEV.Investment_Entity',
+                                        id_investment = varSelectedInvestment.id_investment
+                                    ) As temp,
+                                    temp.quantity
+                                ),
+                                Value
+                            ),"#,0.00")
                         ZIndex: =2
 
                 Container23_7 As groupContainer.horizontalAutoLayoutContainer:
@@ -2372,7 +2382,7 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =Coalesce(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=varSelectedInvestment.isin),"DATE",SortOrder.Descending)).IND_YTM,"-")
                         ZIndex: =2
 
                 Container23_8 As groupContainer.horizontalAutoLayoutContainer:
@@ -2420,7 +2430,7 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =Coalesce(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=varSelectedInvestment.isin),"DATE",SortOrder.Descending)).IND_EFF_DURATION,"-")
                         ZIndex: =2
 
         Button2_363 As button:
