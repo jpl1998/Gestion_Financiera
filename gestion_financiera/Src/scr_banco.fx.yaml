@@ -2300,7 +2300,7 @@ scr_banco As screen:
                                 Width: =30
                                 ZIndex: =2
 
-                            Label12 As label:
+                            TotalBankBalanceLabel As label:
                                 Align: =Align.Center
                                 Height: =32
                                 OnSelect: =Select(Parent)
@@ -2313,7 +2313,7 @@ scr_banco As screen:
                                 Align: =Align.Right
                                 Height: =32
                                 OnSelect: =Select(Parent)
-                                Text: =ThisItem.bank
+                                Text: =
                                 X: =397
                                 ZIndex: =4
 
@@ -6917,4 +6917,16 @@ scr_banco As screen:
             X: =134
             Y: =79
             ZIndex: =4
+
+    TotalSumBalanceOfAllBanks As label:
+        Text: =Sum(Banks_BankGallery.AllItems,TotalBankBalanceLabel.Text)
+        Width: =198
+        X: =271
+        ZIndex: =41
+
+    TotalSumBalanceOfAllBanks2 As label:
+        Text: =TotalSumBalanceOfAllBanks.Text
+        Width: =198
+        X: =458
+        ZIndex: =42
 
