@@ -332,7 +332,20 @@ scr_managemenent As screen:
                                 Height: =20
                                 Image: =editar
                                 OnSelect: |-
-                                    =UpdateContext({varSelectedInvestment: ThisItem, varshowPopUpEditInvestment:true})
+                                    =Clear(colBankParticipation);
+                                    ForAll(
+                                        Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = ThisItem.id_investment
+                                        ) As temp,
+                                        Collect(colBankParticipation,{
+                                            id_bank_entity: temp.id_bank_entity_relationship,
+                                            quantity: Text(temp.quantity),
+                                            unit_cost: Text(temp.unit_cost),
+                                            total_value: Text(temp.total_value)
+                                        });
+                                    );
+                                    UpdateContext({varSelectedInvestment: ThisItem, varshowPopUpEditInvestment:true})
                                 Width: =20
                                 X: =(Parent.Width-Self.Width)/2
                                 Y: =(Parent.Height-Self.Height)/2
@@ -6370,7 +6383,7 @@ scr_managemenent As screen:
                 Y: =431
                 ZIndex: =39
 
-            Dropdown2_42 As dropdown:
+            EditInv_CurrencyDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6394,7 +6407,7 @@ scr_managemenent As screen:
                 Y: =206
                 ZIndex: =41
 
-            TextInput2_76 As text:
+            EditInv_CodeTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =varSelectedInvestment.code
@@ -6422,7 +6435,7 @@ scr_managemenent As screen:
                 Y: =316
                 ZIndex: =43
 
-            TextInput2_85 As text:
+            EditInv_IsinTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =varSelectedInvestment.isin
@@ -6485,7 +6498,7 @@ scr_managemenent As screen:
                 Y: =206
                 ZIndex: =50
 
-            TextInput2_77 As text:
+            EditInv_DescriptionTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =varSelectedInvestment.description
@@ -6513,7 +6526,7 @@ scr_managemenent As screen:
                 Y: =316
                 ZIndex: =52
 
-            Dropdown2_41 As dropdown:
+            EditInv_RiskDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6525,7 +6538,7 @@ scr_managemenent As screen:
                 Y: =366
                 ZIndex: =53
 
-            Dropdown2_43 As dropdown:
+            EditInv_CurrencyLocalDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6561,7 +6574,7 @@ scr_managemenent As screen:
                 Y: =540
                 ZIndex: =56
 
-            Dropdown2_44 As dropdown:
+            EditInv_CountryDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6596,7 +6609,7 @@ scr_managemenent As screen:
                 Y: =540
                 ZIndex: =59
 
-            Dropdown2_45 As dropdown:
+            EditInv_SectorDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6616,7 +6629,7 @@ scr_managemenent As screen:
                 Y: =659
                 ZIndex: =61
 
-            TextInput2_86 As text:
+            EditInv_CusipTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =varSelectedInvestment.cusip
@@ -6640,7 +6653,7 @@ scr_managemenent As screen:
                 Y: =659
                 ZIndex: =65
 
-            Dropdown2_53 As dropdown:
+            EditInv_SubclassDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
@@ -6727,7 +6740,54 @@ scr_managemenent As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =UpdateContext({varpopupEditInvestmentSave:true})
+                    =UpdateContext({varpopupdowloadGif:true});
+                    UpdateContext({varNewInvestment:
+                        Patch(
+                            'GF_DEV.Investment',
+                            LookUp('GF_DEV.Investment', id_investment = varSelectedInvestment.id_investment),
+                            {
+                                id_class: EditInv_SubclassDropdown.Selected.id_class,
+                                id_subclass: EditInv_SubclassDropdown.Selected.id_subclass,
+                                id_risk: EditInv_RiskDropdown.Selected.id_risk,
+                                id_currency: EditInv_CurrencyDropdown.Selected.id_currency,
+                                id_currency_local: EditInv_CurrencyLocalDropdown.Selected.id_currency,
+                                id_term: EditInv_TermDropdown.Selected.id_term,
+                                id_country: EditInv_CountryDropdown.Selected.id_country,
+                                id_sector: EditInv_SectorDropdown.Selected.id_sector,
+                                description: EditInv_DescriptionTextInput.Text,
+                                fund_management: "",
+                                isin: EditInv_IsinTextInput.Text,
+                                cusip: EditInv_CusipTextInput.Text,
+                                code: EditInv_CodeTextInput.Text,
+                                adquisition_date: EditInv_AcquisitionDateDatePicker.SelectedDate,
+                                exchange_rate: Value(EditInv_ExchangeRateTextInput.Text),
+                                comision: Value(EditInv_CommisionTextInput.Text)
+                            }
+                        )
+                    });
+                    
+                    RemoveIf(
+                        'GF_DEV.Investment_Entity',
+                        varNewInvestment.id_investment = id_investment
+                    );
+                    
+                    ForAll(
+                        colBankParticipation As temp,
+                        Patch(
+                            'GF_DEV.Investment_Entity',
+                            Defaults('GF_DEV.Investment_Entity'),
+                            {
+                                id_investment_entity: First(SortByColumns('GF_DEV.Investment_Entity',"id_investment_entity",SortOrder.Descending)).id_investment_entity+1,
+                                id_investment: varNewInvestment.id_investment,
+                                id_bank_entity_relationship: temp.id_bank_entity,
+                                quantity: Value(temp.quantity),
+                                unit_cost: Value(temp.unit_cost),
+                                total_value: Value(temp.total_value)
+                            }
+                        )
+                    );
+                    UpdateContext({varpopupdowloadGif:false});
+                    UpdateContext({varpopupEditInvestmentSave:true})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -6755,10 +6815,10 @@ scr_managemenent As screen:
                 Y: =210
                 ZIndex: =42
 
-            TextInput2_87 As text:
+            EditInv_CommisionTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.comision
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6853,10 +6913,10 @@ scr_managemenent As screen:
                 Y: =644
                 ZIndex: =62
 
-            TextInput2_88 As text:
+            EditInv_ExchangeRateTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.exchange_rate
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6880,7 +6940,7 @@ scr_managemenent As screen:
                 Y: =140
                 ZIndex: =64
 
-            DatePicker1_6 As datepicker:
+            EditInv_AcquisitionDateDatePicker As datepicker:
                 BorderColor: =ColorValue(varlineColor)
                 DefaultDate: =varSelectedInvestment.adquisition_date
                 Height: =44
@@ -6891,7 +6951,7 @@ scr_managemenent As screen:
                 Y: =140
                 ZIndex: =65
 
-            Dropdown2_46 As dropdown:
+            EditInv_TermDropdown As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
