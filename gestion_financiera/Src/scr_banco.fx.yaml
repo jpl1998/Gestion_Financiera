@@ -2304,7 +2304,8 @@ scr_banco As screen:
                                 Align: =Align.Center
                                 Height: =32
                                 OnSelect: =Select(Parent)
-                                Text: =ThisItem.bank
+                                Text: |-
+                                    =Text(Sum(Banks_BankAccountGallery.AllItems,TotalBalanceLabel.Text),"$#,0.00")
                                 X: =247
                                 ZIndex: =3
 
@@ -2327,37 +2328,26 @@ scr_banco As screen:
                                 Y: =35
                                 ZIndex: =6
 
-                                Container13 As groupContainer.horizontalAutoLayoutContainer:
-                                    DropShadow: =DropShadow.None
+                                AccountNumberLabel As label:
                                     Height: =30
-                                    LayoutAlignItems: =LayoutAlignItems.Stretch
-                                    LayoutMode: =LayoutMode.Auto
-                                    Width: =537
+                                    Text: =ThisItem.account_num
+                                    X: =28
                                     ZIndex: =1
 
-                                    Label14 As label:
-                                        AlignInContainer: =AlignInContainer.Stretch
-                                        FillPortions: =1
-                                        LayoutMinHeight: =10
-                                        LayoutMinWidth: =250
-                                        Text: =ThisItem.account_num
-                                        ZIndex: =1
+                                TotalBalanceLabel As label:
+                                    Align: =Align.Center
+                                    Height: =30
+                                    Text: |-
+                                        =Text(LookUp('GF_DEV.Bank_Balance', ThisItem.id_bank_entity_relationship = id_bank_entity_relationship && ind_act = "1").final_balance,"$#,0.00")
+                                    X: =259
+                                    ZIndex: =2
 
-                                    Label14_1 As label:
-                                        Align: =Align.Center
-                                        AlignInContainer: =AlignInContainer.Stretch
-                                        FillPortions: =1
-                                        LayoutMinHeight: =10
-                                        Text: =ThisItem.account_num
-                                        ZIndex: =2
-
-                                    Label14_2 As label:
-                                        Align: =Align.Right
-                                        AlignInContainer: =AlignInContainer.Stretch
-                                        FillPortions: =1
-                                        LayoutMinHeight: =10
-                                        Text: =ThisItem.account_num
-                                        ZIndex: =3
+                                WeightLabel As label:
+                                    Align: =Align.Right
+                                    Height: =30
+                                    Text: =ThisItem.account_num
+                                    X: =409
+                                    ZIndex: =3
 
                             Toggle1 As toggleSwitch:
                                 Default: =ThisItem.showAccounts
