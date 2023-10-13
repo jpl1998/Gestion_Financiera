@@ -6909,16 +6909,6 @@ scr_managemenent As screen:
                 Y: =293
                 ZIndex: =74
 
-            Image26_1 As image:
-                Height: =24
-                Image: =addbankaccount
-                OnSelect: |-
-                    =UpdateContext({varpopupaddbankaccountedit:true})
-                Width: =148
-                X: =771
-                Y: =210
-                ZIndex: =76
-
             Image31_3 As image:
                 Height: =14
                 Image: =circuloblanco
@@ -7146,6 +7136,19 @@ scr_managemenent As screen:
                     LayoutMinWidth: =250
                     Width: =30
                     ZIndex: =8
+
+            Button5_1 As button:
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(Self.Color, -20%)
+                OnSelect: |-
+                    =UpdateContext({varpopupaddbankaccountedit:true})
+                Size: =11
+                Text: ="+ Add Bank Account"
+                X: =759
+                Y: =200
+                ZIndex: =80
 
     Scn_Screen_18 As group:
         Height: =5
