@@ -47814,19 +47814,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel"
               }
             }
           ],
@@ -47844,19 +47844,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_39"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankNameLabel"
               }
             }
           ],
@@ -47874,19 +47874,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel"
               }
             }
           ],
@@ -47904,19 +47904,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_38"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.EntityNameLabel"
               }
             }
           ],
@@ -52584,19 +52584,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel"
               }
             }
           ],
@@ -52614,19 +52614,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.TabIndex"
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40.TabIndex",
+                  "fullyQualifiedName": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "scr_managemenent",
-                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.Label4_40"
+                "type": "scr_managemenent.grpCrearOrdenDeCompra_81.BankAccountParticipationGallery.Container25.BankAccountLabel"
               }
             }
           ],
