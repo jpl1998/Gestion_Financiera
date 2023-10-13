@@ -1,13 +1,13 @@
-scr_security As screen:
+scr_roles As screen:
 
-    First_Screen As group:
+    First_Screen_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =14
 
-        Label2_1 As label:
+        Label2_2 As label:
             Font: =Font.Arial
             FontWeight: =FontWeight.Semibold
             Height: =32
@@ -19,7 +19,7 @@ scr_security As screen:
             Y: =32
             ZIndex: =2
 
-        Image1 As image:
+        Image1_1 As image:
             Height: =32
             Image: =flechaizquierda
             OnSelect: =Navigate(scr_home)
@@ -28,7 +28,7 @@ scr_security As screen:
             Y: =32
             ZIndex: =4
 
-        Iconline_3 As rectangle:
+        Iconline_4 As rectangle:
             DisabledFill: |
                 =
             Fill: |
@@ -39,17 +39,17 @@ scr_security As screen:
             Y: =32
             ZIndex: =5
 
-        Label2_3 As label:
+        Label2_6 As label:
             Font: =Font.Arial
             Height: =36
             Size: =28
-            Text: ="Users"
+            Text: ="Roles"
             Width: =209
             X: =343
             Y: =32
             ZIndex: =8
 
-        UserRolesGallery As gallery.galleryVertical:
+        UserRolesGallery_1 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
             Items: ='GF_DEV.User_Role'
@@ -62,7 +62,7 @@ scr_security As screen:
             Y: =138
             ZIndex: =9
 
-            Label4 As label:
+            Label4_38 As label:
                 Height: =36
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
@@ -71,7 +71,7 @@ scr_security As screen:
                 Width: =152
                 ZIndex: =1
 
-            Label2_21 As label:
+            Label2_24 As label:
                 Height: =36
                 Size: =12
                 Text: =ThisItem.email
@@ -79,7 +79,7 @@ scr_security As screen:
                 X: =181
                 ZIndex: =2
 
-            Label2_22 As label:
+            Label2_25 As label:
                 Height: =36
                 Size: =12
                 Text: =LookUp('GF_DEV.Roles', id_role = ThisItem.id_role).role
@@ -87,7 +87,7 @@ scr_security As screen:
                 X: =501
                 ZIndex: =3
 
-            Label2_23 As label:
+            Label2_26 As label:
                 Color: =RGBA(54, 176, 75, 1)
                 FontWeight: =FontWeight.Semibold
                 Height: =36
@@ -97,7 +97,7 @@ scr_security As screen:
                 X: =694
                 ZIndex: =4
 
-            Image1_28 As image:
+            Image1_33 As image:
                 Height: =20
                 Image: =borrar
                 OnSelect: |-
@@ -107,16 +107,16 @@ scr_security As screen:
                 Y: =8
                 ZIndex: =8
 
-            Rectangle3 As rectangle:
+            Rectangle3_13 As rectangle:
                 BorderColor: =RGBA(147, 147, 147, 1)
                 Fill: =RGBA(147, 147, 147, 1)
                 Height: =1
                 OnSelect: =Select(Parent)
-                Width: =Parent.Width
+                Width: =971
                 Y: =35
                 ZIndex: =9
 
-            Image1_29 As image:
+            Image1_32 As image:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
@@ -126,7 +126,7 @@ scr_security As screen:
                 Y: =8
                 ZIndex: =10
 
-        Container1_1 As groupContainer.manualLayoutContainer:
+        Container1_2 As groupContainer.manualLayoutContainer:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DropShadow: =DropShadow.None
@@ -139,7 +139,7 @@ scr_security As screen:
             Y: =96
             ZIndex: =10
 
-            Label1_7 As label:
+            Label1_11 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
@@ -147,7 +147,7 @@ scr_security As screen:
                 Width: =48
                 ZIndex: =1
 
-            Label1_8 As label:
+            Label1_12 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
@@ -156,7 +156,7 @@ scr_security As screen:
                 X: =188
                 ZIndex: =2
 
-            Label1_9 As label:
+            Label1_14 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
@@ -165,7 +165,7 @@ scr_security As screen:
                 X: =506
                 ZIndex: =3
 
-            Label1_10 As label:
+            Label1_15 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
@@ -174,7 +174,7 @@ scr_security As screen:
                 X: =692
                 ZIndex: =4
 
-            Label1_13 As label:
+            Label1_16 As label:
                 FontWeight: =FontWeight.Bold
                 Height: =36
                 Text: ="Hitos"
@@ -182,7 +182,7 @@ scr_security As screen:
                 X: =747
                 ZIndex: =7
 
-        Iconline_5 As rectangle:
+        Iconline_7 As rectangle:
             BorderColor: =RGBA(255, 255, 255, 1)
             DisabledFill: |
                 =
@@ -193,7 +193,7 @@ scr_security As screen:
             Y: =136
             ZIndex: =11
 
-        Button1 As button:
+        Button1_1 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
             DisabledBorderColor: =RGBA(255, 255, 255, 1)
@@ -218,14 +218,14 @@ scr_security As screen:
             Y: =32
             ZIndex: =12
 
-    Scn_Screen As group:
+    Scn_Screen_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =15
 
-        rctdegradado As rectangle:
+        rctdegradado_279 As rectangle:
             Fill: =RGBA(0, 0, 0, 0.2)
             Height: =768
             OnSelect: |-
@@ -235,7 +235,7 @@ scr_security As screen:
             Width: =1366
             ZIndex: =13
 
-        grpCrearOrdenDeCompra_4 As groupContainer.manualLayoutContainer:
+        grpCrearOrdenDeCompra_97 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =477
             RadiusBottomLeft: =5
@@ -250,7 +250,7 @@ scr_security As screen:
             Y: =145
             ZIndex: =14
 
-            TxtOrdendeCompra_21 As label:
+            TxtOrdendeCompra_29 As label:
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
                 Height: =30
@@ -261,7 +261,7 @@ scr_security As screen:
                 Y: =19
                 ZIndex: =1
 
-            Icon2_1 As icon.Cancel:
+            Icon2_3 As icon.Cancel:
                 Height: =20
                 Icon: =Icon.Cancel
                 OnSelect: |-
@@ -271,7 +271,7 @@ scr_security As screen:
                 Y: =24
                 ZIndex: =13
 
-            TxtOrdendeCompra_22 As label:
+            TxtOrdendeCompra_30 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -283,7 +283,7 @@ scr_security As screen:
                 Y: =72
                 ZIndex: =14
 
-            TxtOrdendeCompra_23 As label:
+            TxtOrdendeCompra_31 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -295,7 +295,7 @@ scr_security As screen:
                 Y: =180
                 ZIndex: =16
 
-            TxtOrdendeCompra_24 As label:
+            TxtOrdendeCompra_32 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -307,7 +307,7 @@ scr_security As screen:
                 Y: =288
                 ZIndex: =18
 
-            Button1_3 As button:
+            Button1_339 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
@@ -323,10 +323,10 @@ scr_security As screen:
                         Defaults('GF_DEV.User_Role'),
                         {
                             id_user: First(SortByColumns('GF_DEV.User_Role',"id_user",SortOrder.Descending)).id_role+1,
-                            username: UserNameComboBox.Selected.DisplayName,
-                            email: UserNameComboBox.Selected.Mail,
-                            id_role: UserRoleDropdown.Selected.id_role,
-                            status: If(UserStatusDropdown.Selected.Value = "Activo", "1", "0")
+                            username: UserNameComboBox_1.Selected.DisplayName,
+                            email: UserNameComboBox_1.Selected.Mail,
+                            id_role: UserRoleDropdown_1.Selected.id_role,
+                            status: If(UserStatusDropdown_1.Selected.Value = "Activo", "1", "0")
                         }
                     );
                     UpdateContext({varpopupAddUser:false})
@@ -344,7 +344,7 @@ scr_security As screen:
                 Y: =404
                 ZIndex: =29
 
-            UserRoleDropdown As dropdown:
+            UserRoleDropdown_1 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -356,7 +356,7 @@ scr_security As screen:
                 Y: =227
                 ZIndex: =32
 
-            UserStatusDropdown As dropdown:
+            UserStatusDropdown_1 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -368,7 +368,7 @@ scr_security As screen:
                 Y: =335
                 ZIndex: =33
 
-            UserNameComboBox As combobox:
+            UserNameComboBox_1 As combobox:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
@@ -379,7 +379,7 @@ scr_security As screen:
                     =Office365Users.SearchUser({searchTerm:Self.SearchText})
                 SearchFields: =["DisplayName"]
                 SearchItems: |-
-                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameComboBox.SearchText,"DisplayName")
+                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameComboBox_1.SearchText,"DisplayName")
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
                 Width: =344
@@ -387,14 +387,14 @@ scr_security As screen:
                 Y: =115
                 ZIndex: =34
 
-    thr_Screen As group:
+    thr_Screen_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =17
 
-        rctdegradado_1 As rectangle:
+        rctdegradado_280 As rectangle:
             Fill: =RGBA(0, 0, 0, 0.2)
             Height: =768
             OnSelect: |-
@@ -404,7 +404,7 @@ scr_security As screen:
             Width: =1366
             ZIndex: =15
 
-        grpCrearOrdenDeCompra_5 As groupContainer.manualLayoutContainer:
+        grpCrearOrdenDeCompra_98 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =477
             RadiusBottomLeft: =5
@@ -418,7 +418,7 @@ scr_security As screen:
             Y: =145
             ZIndex: =16
 
-            TxtOrdendeCompra_28 As label:
+            TxtOrdendeCompra_33 As label:
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
                 Height: =30
@@ -429,7 +429,7 @@ scr_security As screen:
                 Y: =19
                 ZIndex: =1
 
-            Icon2_2 As icon.Cancel:
+            Icon2_165 As icon.Cancel:
                 Height: =20
                 Icon: =Icon.Cancel
                 OnSelect: |-
@@ -439,7 +439,7 @@ scr_security As screen:
                 Y: =24
                 ZIndex: =13
 
-            TxtOrdendeCompra_27 As label:
+            TxtOrdendeCompra_34 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -451,7 +451,7 @@ scr_security As screen:
                 Y: =72
                 ZIndex: =14
 
-            TxtOrdendeCompra_26 As label:
+            TxtOrdendeCompra_41 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -463,7 +463,7 @@ scr_security As screen:
                 Y: =180
                 ZIndex: =16
 
-            TxtOrdendeCompra_25 As label:
+            TxtOrdendeCompra_42 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
@@ -475,7 +475,7 @@ scr_security As screen:
                 Y: =288
                 ZIndex: =18
 
-            Button1_4 As button:
+            Button1_431 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
@@ -488,12 +488,12 @@ scr_security As screen:
                 OnSelect: |-
                     =Patch(
                         'GF_DEV.User_Role',
-                        LookUp('GF_DEV.User_Role', UserRolesGallery.Selected.id_user = id_user),
+                        LookUp('GF_DEV.User_Role', UserRolesGallery_1.Selected.id_user = id_user),
                         {
-                            username: UserNameEditComboBox.Selected.DisplayName,
-                            email: UserNameEditComboBox.Selected.Mail,
-                            id_role: RoleEditDropdown.Selected.id_role,
-                            status: If(UserStatusEditDropdown.Selected.Value = "Activo", "1", "0")
+                            username: UserNameEditComboBox_1.Selected.DisplayName,
+                            email: UserNameEditComboBox_1.Selected.Mail,
+                            id_role: RoleEditDropdown_1.Selected.id_role,
+                            status: If(UserStatusEditDropdown_1.Selected.Value = "Activo", "1", "0")
                         }
                     );
                     UpdateContext({varpopupEditUser:false})
@@ -511,12 +511,12 @@ scr_security As screen:
                 Y: =404
                 ZIndex: =29
 
-            RoleEditDropdown As dropdown:
+            RoleEditDropdown_1 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
-                Default: =LookUp('GF_DEV.Roles', id_role = UserRolesGallery.Selected.id_role).role
+                Default: =LookUp('GF_DEV.Roles', id_role = UserRolesGallery_1.Selected.id_role).role
                 Height: =44
                 Items: ='GF_DEV.Roles'
                 Width: =344
@@ -524,12 +524,12 @@ scr_security As screen:
                 Y: =227
                 ZIndex: =32
 
-            UserStatusEditDropdown As dropdown:
+            UserStatusEditDropdown_1 As dropdown:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
-                Default: =If(UserRolesGallery.Selected.status = "1","Activo","Inactivo")
+                Default: =If(UserRolesGallery_1.Selected.status = "1","Activo","Inactivo")
                 Height: =44
                 Items: =["Activo","Inactivo"]
                 Width: =344
@@ -537,12 +537,12 @@ scr_security As screen:
                 Y: =335
                 ZIndex: =33
 
-            UserNameEditComboBox As combobox:
+            UserNameEditComboBox_1 As combobox:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =ColorValue(varlineColor)
                 DefaultSelectedItems: |-
-                    =Office365Users.SearchUser({searchTerm:UserRolesGallery.Selected.username})
+                    =Office365Users.SearchUser({searchTerm:UserRolesGallery_1.Selected.username})
                 DisplayFields: =["DisplayName","Mail"]
                 Height: =44
                 InputTextPlaceholder: ="Search User"
@@ -550,7 +550,7 @@ scr_security As screen:
                     =Office365Users.SearchUser({searchTerm:Self.SearchText})
                 SearchFields: =["DisplayName"]
                 SearchItems: |-
-                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameEditComboBox.SearchText,"DisplayName")
+                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameEditComboBox_1.SearchText,"DisplayName")
                 SelectMultiple: =false
                 Template: =ListItemTemplate.Person
                 Width: =344
@@ -558,7 +558,7 @@ scr_security As screen:
                 Y: =113
                 ZIndex: =34
 
-    Container4_19 As groupContainer.manualLayoutContainer:
+    Container4_20 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =692
         Width: =237
@@ -566,7 +566,7 @@ scr_security As screen:
         Y: =76
         ZIndex: =19
 
-        Button2_108 As button:
+        Button2_114 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -595,7 +595,7 @@ scr_security As screen:
             Y: =265
             ZIndex: =1
 
-        Button2_109 As button:
+        Button2_115 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -626,7 +626,7 @@ scr_security As screen:
             Y: =415
             ZIndex: =2
 
-        Button2_170 As button:
+        Button2_172 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -655,7 +655,7 @@ scr_security As screen:
             Y: =465
             ZIndex: =3
 
-        Button2_2 As button:
+        Button2_5 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -667,9 +667,6 @@ scr_security As screen:
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverColor: =ColorValue(varprimaryColor)
             HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
-            OnSelect: |-
-                =Navigate(scr_customizing_Entities);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(166, 166, 166, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
@@ -684,7 +681,7 @@ scr_security As screen:
             Y: =115
             ZIndex: =4
 
-        Button2_50 As button:
+        Button2_61 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -713,7 +710,7 @@ scr_security As screen:
             Y: =613
             ZIndex: =5
 
-        Button2_48 As button:
+        Button2_55 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -742,7 +739,7 @@ scr_security As screen:
             Y: =515
             ZIndex: =6
 
-        Button2_42 As button:
+        Button2_52 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -771,7 +768,7 @@ scr_security As screen:
             Y: =215
             ZIndex: =7
 
-        Button2_46 As button:
+        Button2_54 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -800,7 +797,7 @@ scr_security As screen:
             Y: =365
             ZIndex: =8
 
-        Button2_43 As button:
+        Button2_53 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -829,7 +826,7 @@ scr_security As screen:
             Y: =315
             ZIndex: =9
 
-        Button2_49 As button:
+        Button2_57 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -858,7 +855,7 @@ scr_security As screen:
             Y: =565
             ZIndex: =10
 
-        Button2_41 As button:
+        Button2_51 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
@@ -887,13 +884,24 @@ scr_security As screen:
             Y: =165
             ZIndex: =13
 
-        Button2_3 As button:
+        Iconline_64 As rectangle:
+            DisabledFill: |
+                =
+            Fill: =ColorValue(varprimaryColor)
+            Height: =36
+            Width: =5
+            X: =205
+            Y: =66
+            ZIndex: =15
+
+        Button2_6 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
-            Color: =ColorValue(varprimaryColor)
+            Color: =RGBA(77, 77, 77, 1)
             DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =ColorFade(ColorValue(varprimaryColor),90%)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Normal
             Height: =36
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverColor: =ColorValue(varprimaryColor)
@@ -911,26 +919,15 @@ scr_security As screen:
             Width: =177
             X: =25
             Y: =17
-            ZIndex: =14
+            ZIndex: =16
 
-        Iconline_47 As rectangle:
-            DisabledFill: |
-                =
-            Fill: =ColorValue(varprimaryColor)
-            Height: =36
-            Width: =5
-            X: =205
-            Y: =17
-            ZIndex: =15
-
-        Button2_4 As button:
+        Button2_8 As button:
             Align: =Align.Left
             BorderColor: =RGBA(255, 255, 255, 1)
             BorderThickness: =0
-            Color: =RGBA(77, 77, 77, 1)
+            Color: =ColorValue(varprimaryColor)
             DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            FontWeight: =FontWeight.Normal
+            Fill: =ColorFade(ColorValue(varprimaryColor),90%)
             Height: =36
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverColor: =ColorValue(varprimaryColor)
@@ -948,16 +945,16 @@ scr_security As screen:
             Width: =177
             X: =25
             Y: =66
-            ZIndex: =16
+            ZIndex: =17
 
-    four_Screen As group:
+    four_Screen_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =19
 
-        rctdegradado_5 As rectangle:
+        rctdegradado_281 As rectangle:
             Fill: =RGBA(0, 0, 0, 0.2)
             Height: =768
             OnSelect: |-
@@ -966,7 +963,7 @@ scr_security As screen:
             Width: =1366
             ZIndex: =17
 
-        grpCrearOrdenDeCompra_9 As groupContainer.manualLayoutContainer:
+        grpCrearOrdenDeCompra_99 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =222
             RadiusBottomLeft: =5
@@ -979,7 +976,7 @@ scr_security As screen:
             Y: =246
             ZIndex: =18
 
-            TxtOrdendeCompra_40 As label:
+            TxtOrdendeCompra_606 As label:
                 Font: =Font.Arial
                 FontWeight: =FontWeight.Semibold
                 Height: =39
@@ -990,7 +987,7 @@ scr_security As screen:
                 Y: =21
                 ZIndex: =1
 
-            Icon2_7 As icon.Cancel:
+            Icon2_221 As icon.Cancel:
                 Height: =20
                 Icon: =Icon.Cancel
                 OnSelect: |-
@@ -1000,7 +997,7 @@ scr_security As screen:
                 Y: =20
                 ZIndex: =2
 
-            Button1_11 As button:
+            Button1_432 As button:
                 BorderColor: =ColorValue(varprimaryColor)
                 BorderThickness: =1
                 Color: =ColorValue(varprimaryColor)
@@ -1028,7 +1025,7 @@ scr_security As screen:
                 Y: =156
                 ZIndex: =5
 
-            Button1_10 As button:
+            Button1_433 As button:
                 BorderColor: =RGBA(255, 0, 0, 1)
                 BorderThickness: =1
                 Color: =RGBA(255, 0, 0, 1)
@@ -1039,7 +1036,7 @@ scr_security As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('GF_DEV.User_Role',UserRolesGallery.Selected);
+                    =Remove('GF_DEV.User_Role',UserRolesGallery_1.Selected);
                     UpdateContext({varpopupEliminateUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -1055,11 +1052,11 @@ scr_security As screen:
                 Y: =156
                 ZIndex: =6
 
-            HtmlText1_77 As htmlViewer:
+            HtmlText1_78 As htmlViewer:
                 Font: =Font.Arial
                 Height: =59
                 HtmlText: |-
-                    ="<center> It's not possible to delete the <b><font color=""#4280c2"">" & UserRolesGallery.Selected.username &"</font></b> item as there are 8 associated bank accounts.
+                    ="<center> It's not possible to delete the <b><font color=""#4280c2"">" & UserRolesGallery_1.Selected.username &"</font></b> item as there are 8 associated bank accounts.
                     "
                 Width: =372
                 X: =26

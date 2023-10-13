@@ -134,6 +134,7 @@
   "ScreenOrder": [
     "scr_home",
     "scr_security",
+    "scr_roles",
     "scr_customizing_Entities",
     "scr_customizing_Currency",
     "scr_customizing_Class",
