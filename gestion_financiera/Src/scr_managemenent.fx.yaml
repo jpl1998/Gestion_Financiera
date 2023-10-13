@@ -214,7 +214,7 @@ scr_managemenent As screen:
                             PaddingTop: =8
                             Size: =12
                             Text: |-
-                                =Text(Value(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=ThisItem.isin),"DATE",SortOrder.Descending)).IND_PRICE_USD), "[$-en-US]#,0.00")
+                                =Text(Value(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=ThisItem.isin),"DATE",SortOrder.Descending)).IND_PRICE_USD), "$#,0.00")
                             Width: =101
                             X: =803
                             ZIndex: =6
@@ -229,7 +229,7 @@ scr_managemenent As screen:
                             PaddingTop: =8
                             Size: =12
                             Text: |-
-                                =Label4_102.Text * Sum(
+                                =Text(Label4_102.Text * Sum(
                                     ForAll(
                                         Filter(
                                             'GF_DEV.Investment_Entity',
@@ -238,7 +238,7 @@ scr_managemenent As screen:
                                         temp.quantity
                                     ),
                                     Value
-                                )
+                                ), "$#,0.00")
                             Width: =99
                             X: =548
                             ZIndex: =7
@@ -2002,7 +2002,20 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =Text(
+                                Sum(
+                                    ForAll(
+                                        Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = varSelectedInvestment.id_investment
+                                        ) As temp,
+                                        temp.total_value
+                                    ),
+                                    Value
+                                ),
+                                "$"&"#,0.00"
+                            )
                         ZIndex: =2
 
                 Container19_14 As groupContainer.horizontalAutoLayoutContainer:
@@ -2025,7 +2038,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.exchange_rate
                         ZIndex: =2
 
                 Container19_15 As groupContainer.horizontalAutoLayoutContainer:
@@ -2048,7 +2061,7 @@ scr_managemenent As screen:
                         AlignInContainer: =AlignInContainer.Stretch
                         FillPortions: =1
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: =varSelectedInvestment.comision
                         ZIndex: =2
 
         Container5_1 As groupContainer.manualLayoutContainer:
@@ -6389,8 +6402,9 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Currency', id_currency = varSelectedInvestment.id_currency).currency
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Currency'
                 Width: =194
                 X: =506
                 Y: =475
@@ -6411,7 +6425,7 @@ scr_managemenent As screen:
             TextInput2_76 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.code
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6439,7 +6453,7 @@ scr_managemenent As screen:
             TextInput2_85 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.isin
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6476,29 +6490,13 @@ scr_managemenent As screen:
                 Y: =96
                 ZIndex: =47
 
-            TextInput2_73 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =414
-                X: =506
-                Y: =140
-                ZIndex: =48
-
             TxtOrdendeCompra_549 As label:
                 Color: =RGBA(99, 99, 99, 1)
                 Font: =Font.Arial
                 Height: =30
                 Size: =12
-                Text: ="Equity"
-                Width: =143
+                Text: =LookUp('GF_DEV.Asset_Class', varSelectedInvestment.id_class = id_class).class
+                Width: =414
                 X: =38
                 Y: =147
                 ZIndex: =49
@@ -6518,7 +6516,7 @@ scr_managemenent As screen:
             TextInput2_77 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.description
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6547,8 +6545,9 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Risk_Scale', varSelectedInvestment.id_risk = id_risk).risk
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Risk_Scale'
                 Width: =414
                 X: =38
                 Y: =366
@@ -6558,8 +6557,9 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Currency', id_currency = varSelectedInvestment.id_currency_local).currency
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Currency'
                 Width: =195
                 X: =722
                 Y: =475
@@ -6593,8 +6593,9 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Country', id_country = varSelectedInvestment.id_country).country
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Country'
                 Width: =414
                 X: =37
                 Y: =584
@@ -6627,8 +6628,9 @@ scr_managemenent As screen:
                 BorderColor: =ColorValue(varlineColor)
                 ChevronBackground: =RGBA(255, 255, 255, 1)
                 ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Sector', id_sector = varSelectedInvestment.id_sector).sector
                 Height: =44
-                Items: =DropDownSample
+                Items: ='GF_DEV.Sector'
                 Width: =414
                 X: =506
                 Y: =584
@@ -6645,7 +6647,7 @@ scr_managemenent As screen:
             TextInput2_86 As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                Default: =""
+                Default: =varSelectedInvestment.cusip
                 Height: =44
                 HoverBorderColor: =ColorValue(varlineColor)
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -6665,6 +6667,18 @@ scr_managemenent As screen:
                 X: =499
                 Y: =659
                 ZIndex: =65
+
+            Dropdown2_53 As dropdown:
+                BorderColor: =ColorValue(varlineColor)
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronFill: =RGBA(51, 51, 51, 1)
+                Default: =LookUp('GF_DEV.Asset_Subclass', id_subclass = varSelectedInvestment.id_subclass).subclass
+                Height: =44
+                Items: =Filter('GF_DEV.Asset_Subclass',id_class = varSelectedInvestment.id_class)
+                Width: =414
+                X: =506
+                Y: =140
+                ZIndex: =66
 
     Scn_Screen_17 As group:
         Height: =5
