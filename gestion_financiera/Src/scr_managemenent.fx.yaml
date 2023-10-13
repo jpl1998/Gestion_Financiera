@@ -163,7 +163,7 @@ scr_managemenent As screen:
                             PaddingTop: =8
                             Size: =12
                             Text: |-
-                                =Sum(
+                                =Text(Sum(
                                     ForAll(
                                         Filter(
                                             'GF_DEV.Investment_Entity',
@@ -172,7 +172,7 @@ scr_managemenent As screen:
                                         temp.quantity
                                     ),
                                     Value
-                                )
+                                ),"#,0.00")
                             Width: =80
                             X: =425
                             ZIndex: =4
@@ -2256,7 +2256,7 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: =Text((Value(Label16_3.Text) - Value(Label16_1.Text))/Value(Label16_3.Text), "0.00%")
+                        Text: =Text(IfError((Value(Label16_3.Text) - Value(Label16_1.Text))/Value(Label16_3.Text),0), "0.00%")
                         ZIndex: =2
 
                 Container23_4 As groupContainer.horizontalAutoLayoutContainer:
@@ -2280,7 +2280,25 @@ scr_managemenent As screen:
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =With(
+                                {
+                                    temp: Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = varSelectedInvestment.id_investment
+                                        )
+                                },
+                                Text(IfError(Sum(
+                                    ForAll(
+                                        Filter(
+                                            'GF_DEV.Investment_Entity',
+                                            id_investment = varSelectedInvestment.id_investment
+                                        ),
+                                        unit_cost
+                                    ),
+                                    Value
+                                )/CountRows(temp),0),"$#,0.00")
+                            )
                         ZIndex: =2
 
                 Container23_5 As groupContainer.horizontalAutoLayoutContainer:
@@ -2301,10 +2319,12 @@ scr_managemenent As screen:
                     Label16_11 As label:
                         Align: =Align.Right
                         AlignInContainer: =AlignInContainer.Stretch
+                        Color: =If(Value(Self.Text) > Value(Label16_9.Text), varGreenColor, varRedColor)
                         FillPortions: =1
                         FontWeight: =FontWeight.Semibold
                         LayoutMinHeight: =20
-                        Text: ="Text"
+                        Text: |-
+                            =Text(Value(First(SortByColumns(Filter('GF_DEV.Investment_api_detail',ISIN=varSelectedInvestment.isin),"DATE",SortOrder.Descending)).IND_PRICE_USD), "$#,0.00")
                         ZIndex: =2
 
                 Container23_6 As groupContainer.horizontalAutoLayoutContainer:
