@@ -2,6 +2,24 @@ scr_banco As screen:
     OnVisible: |-
         =UpdateContext({varshowPopUpIconDetalle:false})
 
+    BankFilterComboBox As combobox:
+        BorderColor: =ColorValue(varlineColor)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =ColorValue(varlineColor)
+        DisplayFields: =["Value","Mail"]
+        Height: =44
+        InputTextPlaceholder: ="Search " & Dropdown.SelectedText.Value
+        Items: =If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank))
+        OnChange: =Reset(OperationsFilterBankAccountComboBox)
+        SearchFields: =["Value"]
+        SearchItems: =Search(If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank)),BankFilterComboBox.SearchText,"Value")
+        SelectMultiple: =false
+        Size: =10
+        Width: =200
+        X: =916
+        Y: =26
+        ZIndex: =1
+
     Label2 As label:
         Color: =RGBA(77, 77, 77, 1)
         Font: =Font.Arial
@@ -11,7 +29,7 @@ scr_banco As screen:
         Width: =166
         X: =105
         Y: =30
-        ZIndex: =1
+        ZIndex: =2
 
     Dropdown As dropdown:
         BorderColor: =ColorValue(varlineColor)
@@ -24,7 +42,7 @@ scr_banco As screen:
         Width: =200
         X: =694
         Y: =26
-        ZIndex: =2
+        ZIndex: =3
 
     Dropdown2_3 As dropdown:
         BorderColor: =ColorValue(varlineColor)
@@ -37,7 +55,7 @@ scr_banco As screen:
         Width: =200
         X: =1138
         Y: =26
-        ZIndex: =3
+        ZIndex: =4
 
     grpCrearOrdenDeCompra_49 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -52,7 +70,7 @@ scr_banco As screen:
         Width: =1256
         X: =95
         Y: =101
-        ZIndex: =4
+        ZIndex: =5
 
         Canvas1_3 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -2420,7 +2438,7 @@ scr_banco As screen:
         Visible: =varshowPopUpIconDetalle
         Width: =1293
         X: =73
-        ZIndex: =5
+        ZIndex: =6
 
         Canvas1 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -4502,7 +4520,7 @@ scr_banco As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Width: =If(varshowPopUphitosdecompra,182,73)
-        ZIndex: =6
+        ZIndex: =7
 
         img_familyoffice_30 As image:
             Image: |
@@ -4830,7 +4848,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =7
+            ZIndex: =8
 
         grpCrearOrdenDeCompra_53 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -4843,7 +4861,7 @@ scr_banco As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =8
+            ZIndex: =9
 
             TxtOrdendeCompra_319 As label:
                 Font: =Font.Arial
@@ -5033,7 +5051,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =9
+            ZIndex: =10
 
         grpdownloadxls_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5046,7 +5064,7 @@ scr_banco As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =10
+            ZIndex: =11
 
             TxtOrdendeCompra_321 As label:
                 Align: =Align.Center
@@ -5140,7 +5158,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =11
+            ZIndex: =12
 
         grpdownloadxls1_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5153,7 +5171,7 @@ scr_banco As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =12
+            ZIndex: =13
 
             TxtOrdendeCompra_317 As label:
                 Align: =Align.Center
@@ -5249,7 +5267,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =13
+            ZIndex: =14
 
         grpdownloadxls2_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5262,7 +5280,7 @@ scr_banco As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =14
+            ZIndex: =15
 
             TxtOrdendeCompra_326 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -5640,7 +5658,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =15
+            ZIndex: =16
 
         grpdownloadxls_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5653,7 +5671,7 @@ scr_banco As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =16
+            ZIndex: =17
 
             TxtOrdendeCompra_329 As label:
                 Font: =Font.Arial
@@ -5746,7 +5764,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =17
+            ZIndex: =18
 
         grpdownloadxls1_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5759,7 +5777,7 @@ scr_banco As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =18
+            ZIndex: =19
 
             TxtOrdendeCompra_330 As label:
                 Align: =Align.Center
@@ -5855,7 +5873,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =19
+            ZIndex: =20
 
         grpdownloadxls2_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5868,7 +5886,7 @@ scr_banco As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =20
+            ZIndex: =21
 
             TxtOrdendeCompra_332 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -5938,7 +5956,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowloadAccountxls:false});
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =21
+            ZIndex: =22
 
         grpdownloadxls_40 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5951,7 +5969,7 @@ scr_banco As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =22
+            ZIndex: =23
 
             TxtOrdendeCompra_316 As label:
                 Align: =Align.Center
@@ -6080,7 +6098,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowloadAccountxls:false})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =23
+            ZIndex: =24
 
         grpdownloadxls1_40 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -6093,7 +6111,7 @@ scr_banco As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =24
+            ZIndex: =25
 
             TxtOrdendeCompra_314 As label:
                 Align: =Align.Center
@@ -6134,9 +6152,16 @@ scr_banco As screen:
                     UpdateContext({varFormatAttachment: JSON(ArchivoImage.Image,JSONFormat.IncludeBinaryData)});
                     UpdateContext({varBase64Only: Mid(varFormatAttachment, Find(",", varFormatAttachment)+1, Len(varFormatAttachment) - Find(",", varFormatAttachment) -1)});
                     IfError(RemoveIf('GF_DEV.Bank_Movement_Imported',id_bank_entity_relationship = varSelectedAccount.id_bank_entity_relationship,id_period=varCurrentPeriod.id_month),true);
+                    Switch(
+                        LookUp('GF_DEV.Bank', id_bank = varSelectedAccount.id_bank).bank,
+                        "JP MORGAN USA",
+                        'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank),
+                        "MORGAN STANLEY",
+                        'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
+                    );
+                    
+                    
                     //CargadeEstadodeCuenta.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
-                    'CargadeEstadodeCuenta-JPMorgan'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank);
-                    //'CargadeEstadodeCuenta-MorganStanley'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     //'CargadeEstadodeCuenta-CreditSuisse'.Run(varSelectedAccount.id_bank_entity_relationship,varCurrentPeriod.id_month,First(CargaEstadoCuentaAdjunto.Attachments).Name,varBase64Only,varSelectedAccount.id_bank)
                     UpdateContext({varpopupdowloadGif:false});
                     UpdateContext({varpopupdowloadAccountxls2:true});
@@ -6203,7 +6228,7 @@ scr_banco As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =25
+            ZIndex: =26
 
         grpdownloadxls2_40 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -6218,7 +6243,7 @@ scr_banco As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =26
+            ZIndex: =27
 
             TxtOrdendeCompra_313 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -6295,7 +6320,7 @@ scr_banco As screen:
                 =UpdateContext({varshowPopUpAddMovement:false})
             Visible: =varshowPopUpAddMovement
             Width: =1366
-            ZIndex: =27
+            ZIndex: =28
 
         Canvas1_4 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -6303,7 +6328,7 @@ scr_banco As screen:
             Visible: =varshowPopUpAddMovement
             Width: =498
             X: =434
-            ZIndex: =28
+            ZIndex: =29
 
             DataCard1_2 As dataCard.blankCard:
                 BorderColor: =RGBA(0, 0, 0, 1)
@@ -6571,7 +6596,7 @@ scr_banco As screen:
             =UpdateContext({varpopupBankReconcilation:false});
         Visible: =varpopupBankReconcilation
         Width: =1366
-        ZIndex: =31
+        ZIndex: =32
 
     grpdownloadxls_56 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -6584,7 +6609,7 @@ scr_banco As screen:
         Width: =504
         X: =430
         Y: =219
-        ZIndex: =32
+        ZIndex: =33
 
         TxtOrdendeCompra_404 As label:
             Align: =Align.Center
@@ -6674,13 +6699,6 @@ scr_banco As screen:
             Y: =177
             ZIndex: =43
 
-    ArchivoImage As image:
-        Image: =First(CargaEstadoCuentaAdjunto.Attachments).Value
-        Visible: =false
-        X: =1266
-        Y: =668
-        ZIndex: =33
-
     Group1_1 As group:
         Height: =5
         Width: =5
@@ -6695,7 +6713,7 @@ scr_banco As screen:
                 =UpdateContext({varshowPopUpEditMovement:false})
             Visible: =varshowPopUpEditMovement
             Width: =1366
-            ZIndex: =29
+            ZIndex: =30
 
         Canvas1_5 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -6703,7 +6721,7 @@ scr_banco As screen:
             Visible: =varshowPopUpEditMovement
             Width: =498
             X: =434
-            ZIndex: =30
+            ZIndex: =31
 
             DataCard1_3 As dataCard.blankCard:
                 BorderColor: =RGBA(0, 0, 0, 1)
@@ -6962,13 +6980,20 @@ scr_banco As screen:
                     Y: =244
                     ZIndex: =25
 
+    ArchivoImage As image:
+        Image: =First(CargaEstadoCuentaAdjunto.Attachments).Value
+        Visible: =false
+        X: =1266
+        Y: =668
+        ZIndex: =34
+
     rctdegradado_277 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.2)
         Height: =768
         OnSelect: =
         Visible: =varpopupdowloadGif
         Width: =1366
-        ZIndex: =34
+        ZIndex: =35
 
     grpdownloadxls2_60 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -6981,7 +7006,7 @@ scr_banco As screen:
         Width: =450
         X: =(Parent.Width-Self.Width)/2
         Y: =(Parent.Height-Self.Height)/2
-        ZIndex: =35
+        ZIndex: =36
 
         TxtOrdendeCompra_602 As label:
             Align: =Align.Center
@@ -7013,22 +7038,4 @@ scr_banco As screen:
             X: =134
             Y: =79
             ZIndex: =4
-
-    BankFilterComboBox As combobox:
-        BorderColor: =ColorValue(varlineColor)
-        ChevronBackground: =RGBA(255, 255, 255, 1)
-        ChevronFill: =ColorValue(varlineColor)
-        DisplayFields: =["Value","Mail"]
-        Height: =44
-        InputTextPlaceholder: ="Search " & Dropdown.SelectedText.Value
-        Items: =If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank))
-        OnChange: =Reset(OperationsFilterBankAccountComboBox)
-        SearchFields: =["Value"]
-        SearchItems: =Search(If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank)),BankFilterComboBox.SearchText,"Value")
-        SelectMultiple: =false
-        Size: =10
-        Width: =200
-        X: =916
-        Y: =26
-        ZIndex: =36
 

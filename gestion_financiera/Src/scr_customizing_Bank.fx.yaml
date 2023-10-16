@@ -2112,7 +2112,7 @@ scr_customizing_Bank As screen:
                 PaddingTop: =8
                 Size: =12
                 Text: =ThisItem.bank
-                Width: =152
+                Width: =250
                 ZIndex: =1
 
             Image1_57 As image:
