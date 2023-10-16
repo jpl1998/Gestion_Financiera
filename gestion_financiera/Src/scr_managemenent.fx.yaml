@@ -8554,6 +8554,95 @@ scr_managemenent As screen:
             Y: =696
             ZIndex: =25
 
+        Gallery5 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =280
+            Items: |-
+                =Filter(
+                    Table(
+                        {
+                            item: "Operations",
+                            screen: scr_managemenent,
+                            image: InvestmentManagement
+                        },
+                        {
+                            item: "Banks",
+                            screen: scr_banco,
+                            image: Banks
+                        },
+                        {
+                            item: "Reports",
+                            screen: scr_reports,
+                            image: 'Analize Reports'
+                        },
+                        {
+                            item: "Tax Tracker",
+                            screen: scr_banco,
+                            image: 'tax tracker'
+                        }
+                    ),
+                    If(
+                        varUserRole.operations = "1",
+                        item = "Operations"
+                    ) || If(
+                        varUserRole.bank = "1",
+                        item = "Banks"
+                    ) || If(
+                        varUserRole.report = "1",
+                        item = "Reports"
+                    ) || If(
+                        varUserRole.tax = "1",
+                        item = "Tax Tracker"
+                    )
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =58
+            Width: =175
+            Y: =481
+            ZIndex: =26
+
+            Button8 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =ColorFade(ColorValue(varprimaryColor),90%)
+                FocusedBorderThickness: =0
+                Height: =48
+                OnSelect: =Select(Parent)
+                PaddingLeft: =45
+                Size: =12
+                Text: =ThisItem.item
+                Width: =156
+                Y: =5
+                ZIndex: =1
+
+            Image8 As image:
+                Height: =24
+                Image: =ThisItem.image
+                OnSelect: =Select(Parent)
+                Width: =24
+                X: =15
+                Y: =17
+                ZIndex: =2
+
+            Button8_1 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderThickness: =0
+                Height: =48
+                OnSelect: |-
+                    =Navigate(ThisItem.screen);
+                    UpdateContext({varshowPopUphitosdecompra: false}
+                PaddingLeft: =45
+                Size: =12
+                Text: =
+                Width: =156
+                Y: =5
+                ZIndex: =3
+
     Group3_2 As group:
         Height: =5
         Width: =5

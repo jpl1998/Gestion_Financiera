@@ -97,12 +97,12 @@ scr_home As screen:
                     {
                         item: "Reports",
                         screen: scr_reports,
-                        image: InvestmentManagement
+                        image: 'Analize Reports'
                     },
                     {
                         item: "Tax Tracker",
                         screen: scr_banco,
-                        image: InvestmentManagement
+                        image: 'tax tracker'
                     }
                 ),
                 If(
