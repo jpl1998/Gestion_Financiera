@@ -1145,12 +1145,12 @@ scr_managemenent As screen:
                 Gallery2_1 As gallery.galleryHorizontal:
                     DelayItemLoading: =true
                     Height: =48
-                    Items: =["Portfolio", "Class","Taxes"]
+                    Items: =["Portfolio", "Class","Taxes","Detail"]
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplateSize: =160
-                    Width: =680
-                    X: =5
-                    Y: =12
+                    Width: =796
+                    X: =15
+                    Y: =10
                     ZIndex: =27
 
                     Label3_1 As label:
