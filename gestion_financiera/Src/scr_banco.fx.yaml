@@ -2299,15 +2299,22 @@ scr_banco As screen:
                                 OnSelect: =Select(Parent)
                                 Text: |-
                                     =Text(Sum(Banks_BankAccountGallery.AllItems,TotalBalanceLabel.Text),"$#,0.00")
-                                X: =247
+                                X: =270
                                 ZIndex: =3
 
                             Label12_1 As label:
                                 Align: =Align.Right
                                 Height: =32
                                 OnSelect: =Select(Parent)
-                                Text: =
-                                X: =397
+                                Text: |-
+                                    =With(
+                                        {
+                                            active_balance: Filter('GF_DEV.Bank_Balance', ind_act = "1"),
+                                            bank_accounts: Filter('GF_DEV.Bank_Entity_Relationship', id_bank = ThisItem.id_bank)
+                                        },
+                                        CountRows(bank_accounts)
+                                    )
+                                X: =419
                                 ZIndex: =4
 
                             Banks_BankAccountGallery As gallery.galleryVertical:
@@ -2318,12 +2325,13 @@ scr_banco As screen:
                                 LoadingSpinner: =LoadingSpinner.Data
                                 TemplateSize: =30
                                 Width: =569
-                                Y: =35
+                                Y: =32
                                 ZIndex: =6
 
                                 AccountNumberLabel As label:
                                     Height: =30
                                     Text: =ThisItem.account_num
+                                    Width: =218
                                     X: =28
                                     ZIndex: =1
 
@@ -2332,7 +2340,7 @@ scr_banco As screen:
                                     Height: =30
                                     Text: |-
                                         =Text(LookUp('GF_DEV.Bank_Balance', ThisItem.id_bank_entity_relationship = id_bank_entity_relationship && ind_act = "1").final_balance,"$#,0.00")
-                                    X: =259
+                                    X: =265
                                     ZIndex: =2
 
                                 WeightLabel As label:
