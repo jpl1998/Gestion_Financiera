@@ -1,804 +1,12 @@
 scr_customizing_Currency As screen:
 
-    Scn_Screen_3 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =22
-
-        rctdegradado_6 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupconfgAddBank:false})
-            Visible: =varpopupconfgAddBank
-            Width: =1366
-            ZIndex: =23
-
-        grpCrearOrdenDeCompra_10 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =280
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupconfgAddBank
-            Width: =415
-            X: =477
-            Y: =215
-            ZIndex: =24
-
-            TxtOrdendeCompra_43 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="New Item"
-                Width: =105
-                X: =159
-                Y: =31
-                ZIndex: =34
-
-            Icon2_8 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupconfgAddBank:false})
-                Width: =20
-                X: =362
-                Y: =37
-                ZIndex: =35
-
-            TxtOrdendeCompra_44 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: |-
-                    ="Currency
-                    "
-                Width: =143
-                X: =32
-                Y: =78
-                ZIndex: =36
-
-            TextInput2_9 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =122
-                ZIndex: =37
-
-            Button1_17 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save"
-                Width: =344
-                X: =39
-                Y: =212
-                ZIndex: =38
-
-    thr_Screen_3 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        rctdegradado_7 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupCnfEditBank:false})
-            Visible: =varpopupCnfEditBank
-            Width: =1366
-            ZIndex: =25
-
-        grpCrearOrdenDeCompra_11 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =293
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupCnfEditBank
-            Width: =415
-            X: =477
-            Y: =210
-            ZIndex: =26
-
-            TxtOrdendeCompra_45 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="Edit Item"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_9 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupCnfEditBank:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_46 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Currency"
-                Width: =143
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TextInput2_10 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =122
-                ZIndex: =21
-
-            Button1_14 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save Changes"
-                Width: =344
-                X: =38
-                Y: =212
-                ZIndex: =29
-
-    four_Screen_3 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        rctdegradado_8 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateBank:false})
-            Visible: =varpopupEliminateBank
-            Width: =1366
-            ZIndex: =27
-
-        grpCrearOrdenDeCompra_12 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =222
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupEliminateBank
-            Width: =420
-            X: =475
-            Y: =246
-            ZIndex: =28
-
-            TxtOrdendeCompra_47 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =16
-                Text: ="Delete Item"
-                Width: =125
-                X: =144
-                Y: =30
-                ZIndex: =1
-
-            Icon2_10 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateBank:false})
-                Width: =20
-                X: =376
-                Y: =35
-                ZIndex: =2
-
-            Button1_15 As button:
-                BorderColor: =ColorValue(varprimaryColor)
-                BorderThickness: =1
-                Color: =ColorValue(varprimaryColor)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateBank:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="No, Cancel"
-                Width: =180
-                X: =24
-                Y: =156
-                ZIndex: =5
-
-            Button1_16 As button:
-                BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =1
-                Color: =RGBA(255, 0, 0, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(255, 0, 0, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Yes, Delete"
-                Width: =180
-                X: =216
-                Y: =156
-                ZIndex: =6
-
-            HtmlText1_4 As htmlViewer:
-                Font: =Font.Arial
-                Height: =51
-                HtmlText: |-
-                    ="<center> The <b><font color=""#4280c2"">""EUR""</font></b> item will be permantly deleted. Are you sure you want delete it?
-                    "
-                Width: =372
-                X: =24
-                Y: =80
-                ZIndex: =7
-
-    Iconline_50 As rectangle:
-        DisabledFill: |
-            =
-        Fill: =ColorValue(varlineColor)
-        Height: =718
-        Width: =1
-        X: =310
-        Y: =32
-        ZIndex: =29
-
-    Button2_112 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(51, 51, 51, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =44
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =20
-        Text: ="Currency"
-        Width: =275
-        X: =343
-        Y: =32
-        ZIndex: =30
-
-    Button1_391 As button:
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: |
-            =ColorValue(varprimaryColor)
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Normal
-        Height: =44
-        HoverBorderColor: =
-        HoverFill: =ColorValue(varprimaryColor)
-        OnSelect: |-
-            =Reset(TextInput2_56);
-            UpdateContext({varpopupconfgAddTerms:true})
-        PressedBorderColor: =
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =2
-        RadiusBottomRight: =2
-        RadiusTopLeft: =2
-        RadiusTopRight: =2
-        Size: =12
-        Text: ="Add Currency"
-        Width: =320
-        X: =1002
-        Y: =32
-        ZIndex: =31
-
-    Button2_113 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =36
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="Currency"
-        Width: =177
-        X: =350
-        Y: =100
-        ZIndex: =32
-
-    Gallery1_18 As gallery.galleryVertical:
-        DelayItemLoading: =true
-        Height: =223
-        Items: ='GF_DEV.Currency'
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =10
-        TemplateSize: =36
-        Width: =991
-        X: =343
-        Y: =136
-        ZIndex: =33
-
-        Label4_29 As label:
-            Height: =36
-            OnSelect: =Select(Parent)
-            PaddingTop: =8
-            Size: =12
-            Text: =ThisItem.currency
-            Width: =152
-            ZIndex: =1
-
-        Image1_59 As image:
-            Height: =20
-            Image: =borrar
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateTerms:true})
-            Width: =20
-            X: =949
-            Y: =8
-            ZIndex: =2
-
-        Rectangle3_18 As rectangle:
-            BorderColor: =RGBA(147, 147, 147, 1)
-            Fill: =RGBA(147, 147, 147, 1)
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =971
-            Y: =35
-            ZIndex: =3
-
-        Image1_58 As image:
-            Height: =20
-            Image: =editar
-            OnSelect: |-
-                =Reset(TextInput2_57);
-                UpdateContext({varpopupCnfEditTerms:true})
-            Width: =20
-            X: =911
-            Y: =8
-            ZIndex: =4
-
-    Iconline_56 As rectangle:
-        BorderColor: =RGBA(255, 255, 255, 1)
-        DisabledFill: |
-            =
-        Fill: =RGBA(51, 51, 51, 1)
-        Height: =1
-        Width: =977
-        X: =350
-        Y: =136
-        ZIndex: =34
-
-    rctdegradado_253 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.2)
-        Height: =768
-        OnSelect: |-
-            =UpdateContext({varpopupconfgAddTerms:false})
-        Visible: =varpopupconfgAddTerms
-        Width: =1366
-        ZIndex: =35
-
-    grpCrearOrdenDeCompra_76 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =276
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupconfgAddTerms
-        Width: =415
-        X: =475
-        Y: =246
-        ZIndex: =36
-
-        TxtOrdendeCompra_477 As label:
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =16
-            Text: ="New Item"
-            Width: =105
-            X: =159
-            Y: =31
-            ZIndex: =34
-
-        Icon2_203 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupconfgAddTerms:false})
-            Width: =20
-            X: =362
-            Y: =37
-            ZIndex: =35
-
-        TxtOrdendeCompra_478 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =29
-            Size: =12
-            Text: ="Currency"
-            Width: =169
-            X: =32
-            Y: =78
-            ZIndex: =36
-
-        TextInput2_56 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =38
-            Y: =122
-            ZIndex: =37
-
-        Button1_392 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            DisplayMode: =If(IsBlank(TextInput2_56.Text),DisplayMode.Disabled,DisplayMode.Edit)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |
-                =Patch('GF_DEV.Currency',Defaults('GF_DEV.Currency'),{id_currency:First(SortByColumns('GF_DEV.Currency',"id_currency",SortOrder.Descending)).id_currency+1,currency:TextInput2_56.Text});
-                UpdateContext({varpopupconfgAddTerms:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Save"
-            Width: =344
-            X: =38
-            Y: =202
-            ZIndex: =38
-
-    rctdegradado_254 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.2)
-        Height: =768
-        OnSelect: |-
-            =UpdateContext({varpopupCnfEditTerms:false})
-        Visible: =varpopupCnfEditTerms
-        Width: =1366
-        ZIndex: =37
-
-    grpCrearOrdenDeCompra_77 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =276
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupCnfEditTerms
-        Width: =415
-        X: =475
-        Y: =246
-        ZIndex: =38
-
-        TxtOrdendeCompra_479 As label:
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =16
-            Text: ="Edit Item"
-            Width: =105
-            X: =159
-            Y: =25
-            ZIndex: =1
-
-        Icon2_204 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupCnfEditTerms:false})
-            Width: =20
-            X: =362
-            Y: =31
-            ZIndex: =13
-
-        TxtOrdendeCompra_480 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =12
-            Text: ="Currency"
-            Width: =169
-            X: =32
-            Y: =72
-            ZIndex: =14
-
-        TextInput2_57 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            FontWeight: =FontWeight.Lighter
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =38
-            Y: =116
-            ZIndex: =21
-
-        Button1_393 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Lighter
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =Patch('GF_DEV.Currency',LookUp('GF_DEV.Currency', id_currency = Gallery1_18.Selected.id_currency),{currency:TextInput2_57.Text});
-                UpdateContext({varpopupCnfEditTerms:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Save Changes"
-            Width: =344
-            X: =38
-            Y: =196
-            ZIndex: =29
-
-    rctdegradado_255 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.2)
-        Height: =768
-        OnSelect: |-
-            =UpdateContext({varpopupEliminateTerms:false})
-        Visible: =varpopupEliminateTerms
-        Width: =1366
-        ZIndex: =39
-
-    grpCrearOrdenDeCompra_78 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =222
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupEliminateTerms
-        Width: =420
-        X: =475
-        Y: =246
-        ZIndex: =40
-
-        TxtOrdendeCompra_481 As label:
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =16
-            Text: ="Delete Item"
-            Width: =125
-            X: =145
-            Y: =30
-            ZIndex: =1
-
-        Icon2_205 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateTerms:false})
-            Width: =20
-            X: =376
-            Y: =35
-            ZIndex: =2
-
-        Button1_394 As button:
-            BorderColor: =ColorValue(varprimaryColor)
-            BorderThickness: =1
-            Color: =ColorValue(varprimaryColor)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateTerms:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="No, Cancel"
-            Width: =180
-            X: =24
-            Y: =156
-            ZIndex: =5
-
-        Button1_395 As button:
-            BorderColor: =RGBA(255, 0, 0, 1)
-            BorderThickness: =1
-            Color: =RGBA(255, 0, 0, 1)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(255, 0, 0, 1)
-            OnSelect: |-
-                =Remove('GF_DEV.Currency',Gallery1_18.Selected); UpdateContext({varpopupEliminateTerms:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(255, 0, 0, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Yes, Delete"
-            Width: =180
-            X: =216
-            Y: =156
-            ZIndex: =6
-
-        HtmlText1_117 As htmlViewer:
-            Font: =Font.Arial
-            Height: =46
-            HtmlText: |-
-                ="<center> The <b><font color=""#4280c2"">""Long Term""</font></b> item will be permantly deleted. 
-                Are you sure you want delete it? "
-            Width: =372
-            X: =24
-            Y: =82
-            ZIndex: =7
-
     Container4_25 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =692
         Width: =237
         X: =40
         Y: =76
-        ZIndex: =41
+        ZIndex: =1
 
         Button2_140 As button:
             Align: =Align.Left
@@ -1194,7 +402,7 @@ scr_customizing_Currency As screen:
         Width: =183
         X: =67
         Y: =32
-        ZIndex: =42
+        ZIndex: =2
 
     Image1_6 As image:
         Height: =32
@@ -1203,7 +411,799 @@ scr_customizing_Currency As screen:
         Width: =32
         X: =32
         Y: =32
-        ZIndex: =43
+        ZIndex: =3
+
+    Scn_Screen_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        rctdegradado_6 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupconfgAddBank:false})
+            Visible: =varpopupconfgAddBank
+            Width: =1366
+            ZIndex: =24
+
+        grpCrearOrdenDeCompra_10 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =280
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupconfgAddBank
+            Width: =415
+            X: =477
+            Y: =215
+            ZIndex: =25
+
+            TxtOrdendeCompra_43 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="New Item"
+                Width: =105
+                X: =159
+                Y: =31
+                ZIndex: =34
+
+            Icon2_8 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupconfgAddBank:false})
+                Width: =20
+                X: =362
+                Y: =37
+                ZIndex: =35
+
+            TxtOrdendeCompra_44 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: |-
+                    ="Currency
+                    "
+                Width: =143
+                X: =32
+                Y: =78
+                ZIndex: =36
+
+            TextInput2_9 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =122
+                ZIndex: =37
+
+            Button1_17 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save"
+                Width: =344
+                X: =39
+                Y: =212
+                ZIndex: =38
+
+    thr_Screen_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        rctdegradado_7 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupCnfEditBank:false})
+            Visible: =varpopupCnfEditBank
+            Width: =1366
+            ZIndex: =26
+
+        grpCrearOrdenDeCompra_11 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =293
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupCnfEditBank
+            Width: =415
+            X: =477
+            Y: =210
+            ZIndex: =27
+
+            TxtOrdendeCompra_45 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Edit Item"
+                Width: =105
+                X: =159
+                Y: =25
+                ZIndex: =1
+
+            Icon2_9 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupCnfEditBank:false})
+                Width: =20
+                X: =362
+                Y: =31
+                ZIndex: =13
+
+            TxtOrdendeCompra_46 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Currency"
+                Width: =143
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TextInput2_10 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =122
+                ZIndex: =21
+
+            Button1_14 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save Changes"
+                Width: =344
+                X: =38
+                Y: =212
+                ZIndex: =29
+
+    four_Screen_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        rctdegradado_8 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateBank:false})
+            Visible: =varpopupEliminateBank
+            Width: =1366
+            ZIndex: =28
+
+        grpCrearOrdenDeCompra_12 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =222
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupEliminateBank
+            Width: =420
+            X: =475
+            Y: =246
+            ZIndex: =29
+
+            TxtOrdendeCompra_47 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =16
+                Text: ="Delete Item"
+                Width: =125
+                X: =144
+                Y: =30
+                ZIndex: =1
+
+            Icon2_10 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateBank:false})
+                Width: =20
+                X: =376
+                Y: =35
+                ZIndex: =2
+
+            Button1_15 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderThickness: =1
+                Color: =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateBank:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="No, Cancel"
+                Width: =180
+                X: =24
+                Y: =156
+                ZIndex: =5
+
+            Button1_16 As button:
+                BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: =
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(255, 0, 0, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Yes, Delete"
+                Width: =180
+                X: =216
+                Y: =156
+                ZIndex: =6
+
+            HtmlText1_4 As htmlViewer:
+                Font: =Font.Arial
+                Height: =51
+                HtmlText: |-
+                    ="<center> The <b><font color=""#4280c2"">""EUR""</font></b> item will be permantly deleted. Are you sure you want delete it?
+                    "
+                Width: =372
+                X: =24
+                Y: =80
+                ZIndex: =7
+
+    Iconline_50 As rectangle:
+        DisabledFill: |
+            =
+        Fill: =ColorValue(varlineColor)
+        Height: =718
+        Width: =1
+        X: =310
+        Y: =32
+        ZIndex: =30
+
+    Button2_112 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =44
+        HoverBorderColor: =RGBA(255, 255, 255, 1)
+        HoverColor: =RGBA(166, 166, 166, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =RGBA(255, 255, 255, 1)
+        PressedColor: =RGBA(166, 166, 166, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =1
+        RadiusBottomRight: =1
+        RadiusTopLeft: =1
+        RadiusTopRight: =1
+        Size: =20
+        Text: ="Currency"
+        Width: =275
+        X: =343
+        Y: =32
+        ZIndex: =31
+
+    Button1_391 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Fill: |
+            =ColorValue(varprimaryColor)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Normal
+        Height: =44
+        HoverBorderColor: =
+        HoverFill: =ColorValue(varprimaryColor)
+        OnSelect: |-
+            =Reset(TextInput2_56);
+            UpdateContext({varpopupconfgAddTerms:true})
+        PressedBorderColor: =
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =2
+        RadiusBottomRight: =2
+        RadiusTopLeft: =2
+        RadiusTopRight: =2
+        Size: =12
+        Text: ="Add Currency"
+        Width: =320
+        X: =1002
+        Y: =32
+        ZIndex: =32
+
+    Button2_113 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        Color: =RGBA(26, 26, 26, 1)
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =36
+        HoverBorderColor: =RGBA(255, 255, 255, 1)
+        HoverColor: =RGBA(166, 166, 166, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedBorderColor: =RGBA(255, 255, 255, 1)
+        PressedColor: =RGBA(166, 166, 166, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =1
+        RadiusBottomRight: =1
+        RadiusTopLeft: =1
+        RadiusTopRight: =1
+        Size: =12
+        Text: ="Currency"
+        Width: =177
+        X: =350
+        Y: =100
+        ZIndex: =33
+
+    Gallery1_18 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =223
+        Items: ='GF_DEV.Currency'
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =10
+        TemplateSize: =36
+        Width: =991
+        X: =343
+        Y: =136
+        ZIndex: =34
+
+        Label4_29 As label:
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingTop: =8
+            Size: =12
+            Text: =ThisItem.currency
+            Width: =152
+            ZIndex: =1
+
+        Image1_59 As image:
+            Height: =20
+            Image: =borrar
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateTerms:true})
+            Width: =20
+            X: =949
+            Y: =8
+            ZIndex: =2
+
+        Rectangle3_18 As rectangle:
+            BorderColor: =RGBA(147, 147, 147, 1)
+            Fill: =RGBA(147, 147, 147, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =971
+            Y: =35
+            ZIndex: =3
+
+        Image1_58 As image:
+            Height: =20
+            Image: =editar
+            OnSelect: |-
+                =Reset(TextInput2_57);
+                UpdateContext({varpopupCnfEditTerms:true})
+            Width: =20
+            X: =911
+            Y: =8
+            ZIndex: =4
+
+    Iconline_56 As rectangle:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: |
+            =
+        Fill: =RGBA(51, 51, 51, 1)
+        Height: =1
+        Width: =977
+        X: =350
+        Y: =136
+        ZIndex: =35
+
+    rctdegradado_253 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: |-
+            =UpdateContext({varpopupconfgAddTerms:false})
+        Visible: =varpopupconfgAddTerms
+        Width: =1366
+        ZIndex: =36
+
+    grpCrearOrdenDeCompra_76 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =276
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupconfgAddTerms
+        Width: =415
+        X: =475
+        Y: =246
+        ZIndex: =37
+
+        TxtOrdendeCompra_477 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            Size: =16
+            Text: ="New Item"
+            Width: =105
+            X: =159
+            Y: =31
+            ZIndex: =34
+
+        Icon2_203 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupconfgAddTerms:false})
+            Width: =20
+            X: =362
+            Y: =37
+            ZIndex: =35
+
+        TxtOrdendeCompra_478 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =29
+            Size: =12
+            Text: ="Currency"
+            Width: =169
+            X: =32
+            Y: =78
+            ZIndex: =36
+
+        TextInput2_56 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =38
+            Y: =122
+            ZIndex: =37
+
+        Button1_392 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =If(IsBlank(TextInput2_56.Text),DisplayMode.Disabled,DisplayMode.Edit)
+            Fill: |
+                =ColorValue(varprimaryColor)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |
+                =Patch('GF_DEV.Currency',Defaults('GF_DEV.Currency'),{id_currency:First(SortByColumns('GF_DEV.Currency',"id_currency",SortOrder.Descending)).id_currency+1,currency:TextInput2_56.Text});
+                UpdateContext({varpopupconfgAddTerms:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Save"
+            Width: =344
+            X: =38
+            Y: =202
+            ZIndex: =38
+
+    rctdegradado_254 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: |-
+            =UpdateContext({varpopupCnfEditTerms:false})
+        Visible: =varpopupCnfEditTerms
+        Width: =1366
+        ZIndex: =38
+
+    grpCrearOrdenDeCompra_77 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =276
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupCnfEditTerms
+        Width: =415
+        X: =475
+        Y: =246
+        ZIndex: =39
+
+        TxtOrdendeCompra_479 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            Size: =16
+            Text: ="Edit Item"
+            Width: =105
+            X: =159
+            Y: =25
+            ZIndex: =1
+
+        Icon2_204 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupCnfEditTerms:false})
+            Width: =20
+            X: =362
+            Y: =31
+            ZIndex: =13
+
+        TxtOrdendeCompra_480 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12
+            Text: ="Currency"
+            Width: =169
+            X: =32
+            Y: =72
+            ZIndex: =14
+
+        TextInput2_57 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            FontWeight: =FontWeight.Lighter
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =38
+            Y: =116
+            ZIndex: =21
+
+        Button1_393 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =ColorValue(varprimaryColor)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Lighter
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =Patch('GF_DEV.Currency',LookUp('GF_DEV.Currency', id_currency = Gallery1_18.Selected.id_currency),{currency:TextInput2_57.Text});
+                UpdateContext({varpopupCnfEditTerms:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Save Changes"
+            Width: =344
+            X: =38
+            Y: =196
+            ZIndex: =29
+
+    rctdegradado_255 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: |-
+            =UpdateContext({varpopupEliminateTerms:false})
+        Visible: =varpopupEliminateTerms
+        Width: =1366
+        ZIndex: =40
+
+    grpCrearOrdenDeCompra_78 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =222
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupEliminateTerms
+        Width: =420
+        X: =475
+        Y: =246
+        ZIndex: =41
+
+        TxtOrdendeCompra_481 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =16
+            Text: ="Delete Item"
+            Width: =125
+            X: =145
+            Y: =30
+            ZIndex: =1
+
+        Icon2_205 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateTerms:false})
+            Width: =20
+            X: =376
+            Y: =35
+            ZIndex: =2
+
+        Button1_394 As button:
+            BorderColor: =ColorValue(varprimaryColor)
+            BorderThickness: =1
+            Color: =ColorValue(varprimaryColor)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateTerms:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="No, Cancel"
+            Width: =180
+            X: =24
+            Y: =156
+            ZIndex: =5
+
+        Button1_395 As button:
+            BorderColor: =RGBA(255, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(255, 0, 0, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Remove('GF_DEV.Currency',Gallery1_18.Selected); UpdateContext({varpopupEliminateTerms:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 0, 0, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Yes, Delete"
+            Width: =180
+            X: =216
+            Y: =156
+            ZIndex: =6
+
+        HtmlText1_117 As htmlViewer:
+            Font: =Font.Arial
+            Height: =46
+            HtmlText: |-
+                ="<center> The <b><font color=""#4280c2"">""Long Term""</font></b> item will be permantly deleted. 
+                Are you sure you want delete it? "
+            Width: =372
+            X: =24
+            Y: =82
+            ZIndex: =7
 
     Screen_Download_1 As group:
         Height: =5
@@ -1219,7 +1219,7 @@ scr_customizing_Currency As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =2
+            ZIndex: =4
 
         grpCrearOrdenDeCompra_40 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1232,7 +1232,7 @@ scr_customizing_Currency As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =3
+            ZIndex: =5
 
             TxtOrdendeCompra_139 As label:
                 Font: =Font.Arial
@@ -1422,7 +1422,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =4
+            ZIndex: =6
 
         grpdownloadxls_5 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1435,7 +1435,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =5
+            ZIndex: =7
 
             TxtOrdendeCompra_141 As label:
                 Align: =Align.Center
@@ -1529,7 +1529,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =6
+            ZIndex: =8
 
         grpdownloadxls1_5 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1542,7 +1542,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =7
+            ZIndex: =9
 
             TxtOrdendeCompra_137 As label:
                 Align: =Align.Center
@@ -1638,7 +1638,7 @@ scr_customizing_Currency As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =8
+            ZIndex: =10
 
         grpdownloadxls2_5 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1651,7 +1651,7 @@ scr_customizing_Currency As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =9
+            ZIndex: =11
 
             TxtOrdendeCompra_146 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2029,7 +2029,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =10
+            ZIndex: =12
 
         grpdownloadxls_4 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2042,7 +2042,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =11
+            ZIndex: =13
 
             TxtOrdendeCompra_136 As label:
                 Align: =Align.Center
@@ -2136,7 +2136,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =12
+            ZIndex: =14
 
         grpdownloadxls1_4 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2149,7 +2149,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =13
+            ZIndex: =15
 
             TxtOrdendeCompra_134 As label:
                 Align: =Align.Center
@@ -2247,7 +2247,7 @@ scr_customizing_Currency As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =14
+            ZIndex: =16
 
         grpdownloadxls2_4 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2262,7 +2262,7 @@ scr_customizing_Currency As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =15
+            ZIndex: =17
 
             TxtOrdendeCompra_133 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2333,7 +2333,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =16
+            ZIndex: =18
 
         grpdownloadxls_7 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2346,7 +2346,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =17
+            ZIndex: =19
 
             TxtOrdendeCompra_149 As label:
                 Font: =Font.Arial
@@ -2439,7 +2439,7 @@ scr_customizing_Currency As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =18
+            ZIndex: =20
 
         grpdownloadxls1_7 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2452,7 +2452,7 @@ scr_customizing_Currency As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =19
+            ZIndex: =21
 
             TxtOrdendeCompra_150 As label:
                 Align: =Align.Center
@@ -2548,7 +2548,7 @@ scr_customizing_Currency As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =20
+            ZIndex: =22
 
         grpdownloadxls2_7 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2561,7 +2561,7 @@ scr_customizing_Currency As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =21
+            ZIndex: =23
 
             TxtOrdendeCompra_152 As label:
                 Color: =ColorValue(varprimaryColor)

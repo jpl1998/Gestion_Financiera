@@ -1,502 +1,12 @@
 scr_customizing_Risk As screen:
 
-    Scn_Screen_4 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =22
-
-        rctdegradado_9 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupconfgAddRisk:false})
-            Visible: =varpopupconfgAddRisk
-            Width: =1366
-            ZIndex: =29
-
-        grpCrearOrdenDeCompra_13 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =276
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupconfgAddRisk
-            Width: =415
-            X: =475
-            Y: =246
-            ZIndex: =30
-
-            TxtOrdendeCompra_52 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="New Item"
-                Width: =105
-                X: =159
-                Y: =31
-                ZIndex: =34
-
-            Icon2_11 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupconfgAddRisk:false})
-                Width: =20
-                X: =362
-                Y: =37
-                ZIndex: =35
-
-            TxtOrdendeCompra_53 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =29
-                Size: =12
-                Text: ="Risk / Reward Scale"
-                Width: =169
-                X: =32
-                Y: =78
-                ZIndex: =36
-
-            TextInput2_13 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =122
-                ZIndex: =37
-
-            Button1_30 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =If(IsBlank(TextInput2_13.Text),DisplayMode.Disabled,DisplayMode.Edit)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =Patch('GF_DEV.Risk_Scale',Defaults('GF_DEV.Risk_Scale'),{id_risk:First(SortByColumns('GF_DEV.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
-                    UpdateContext({varpopupconfgAddRisk:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save"
-                Width: =344
-                X: =32
-                Y: =203
-                ZIndex: =38
-
-    thr_Screen_5 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        rctdegradado_18 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupCnfEditRisk:false})
-            Visible: =varpopupCnfEditRisk
-            Width: =1366
-            ZIndex: =31
-
-        grpCrearOrdenDeCompra_22 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =276
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupCnfEditRisk
-            Width: =415
-            X: =475
-            Y: =246
-            ZIndex: =32
-
-            TxtOrdendeCompra_73 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="Edit Item"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_20 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupCnfEditRisk:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_74 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Risk / Reward Scale"
-                Width: =169
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TextInput2_19 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
-            Button1_32 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =Patch('GF_DEV.Risk_Scale',LookUp('GF_DEV.Risk_Scale', id_risk = Gallery1_6.Selected.id_risk),{risk:TextInput2_19.Text});
-                    UpdateContext({varpopupCnfEditRisk:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save Changes"
-                Width: =344
-                X: =38
-                Y: =196
-                ZIndex: =29
-
-    four_Screen_5 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =26
-
-        rctdegradado_19 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateRisk:false})
-            Visible: =varpopupEliminateRisk
-            Width: =1366
-            ZIndex: =33
-
-        grpCrearOrdenDeCompra_23 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =222
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupEliminateRisk
-            Width: =420
-            X: =475
-            Y: =246
-            ZIndex: =34
-
-            TxtOrdendeCompra_75 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =16
-                Text: ="Delete Item"
-                Width: =125
-                X: =145
-                Y: =30
-                ZIndex: =1
-
-            Icon2_21 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateRisk:false})
-                Width: =20
-                X: =376
-                Y: =35
-                ZIndex: =2
-
-            Button1_33 As button:
-                BorderColor: =ColorValue(varprimaryColor)
-                BorderThickness: =1
-                Color: =ColorValue(varprimaryColor)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateRisk:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="No, Cancel"
-                Width: =180
-                X: =24
-                Y: =156
-                ZIndex: =5
-
-            Button1_34 As button:
-                BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =1
-                Color: =RGBA(255, 0, 0, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: |-
-                    =Remove('GF_DEV.Risk_Scale',Gallery1_6.Selected);
-                    UpdateContext({varpopupEliminateRisk:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(255, 0, 0, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Yes, Delete"
-                Width: =180
-                X: =216
-                Y: =156
-                ZIndex: =6
-
-            HtmlText1_7 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<center> The <b><font color=""#4280c2"">""Moderate Risk""</font></b> item will be permantly deleted. 
-                    Are you sure you want delete it? "
-                Width: =372
-                X: =24
-                Y: =82
-                ZIndex: =7
-
-    first_Screen_3 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =26
-
-        Iconline_18 As rectangle:
-            DisabledFill: |
-                =
-            Fill: =ColorValue(varlineColor)
-            Height: =718
-            Width: =1
-            X: =310
-            Y: =32
-            ZIndex: =2
-
-        Button2_44 As button:
-            Align: =Align.Left
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            Color: =RGBA(51, 51, 51, 1)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverColor: =RGBA(166, 166, 166, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(166, 166, 166, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =1
-            RadiusBottomRight: =1
-            RadiusTopLeft: =1
-            RadiusTopRight: =1
-            Size: =20
-            Text: ="Risk / Reward Scale"
-            Width: =275
-            X: =343
-            Y: =32
-            ZIndex: =3
-
-        Button1_18 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =44
-            HoverBorderColor: =
-            HoverFill: =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =Reset(TextInput2_13);
-                UpdateContext({varpopupconfgAddRisk:true})
-            PressedBorderColor: =
-            PressedFill: =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Add Risk"
-            Width: =320
-            X: =1002
-            Y: =32
-            ZIndex: =4
-
-        Button2_47 As button:
-            Align: =Align.Left
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            Color: =RGBA(26, 26, 26, 1)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =36
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverColor: =RGBA(166, 166, 166, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(166, 166, 166, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =1
-            RadiusBottomRight: =1
-            RadiusTopLeft: =1
-            RadiusTopRight: =1
-            Size: =12
-            Text: ="Risk"
-            Width: =177
-            X: =350
-            Y: =100
-            ZIndex: =5
-
-        Gallery1_6 As gallery.galleryVertical:
-            DelayItemLoading: =true
-            Height: =223
-            Items: ='GF_DEV.Risk_Scale'
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =10
-            TemplateSize: =36
-            Width: =991
-            X: =343
-            Y: =136
-            ZIndex: =6
-
-            Label4_11 As label:
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =ThisItem.risk
-                Width: =152
-                ZIndex: =1
-
-            Image1_41 As image:
-                Height: =20
-                Image: =borrar
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateRisk:true})
-                Width: =20
-                X: =949
-                Y: =8
-                ZIndex: =8
-
-            Rectangle3_6 As rectangle:
-                BorderColor: =RGBA(147, 147, 147, 1)
-                Fill: =RGBA(147, 147, 147, 1)
-                Height: =1
-                OnSelect: =Select(Parent)
-                Width: =971
-                Y: =35
-                ZIndex: =9
-
-            Image1_40 As image:
-                Height: =20
-                Image: =editar
-                OnSelect: |-
-                    =Reset(TextInput2_19);
-                    UpdateContext({varpopupCnfEditRisk:true})
-                Width: =20
-                X: =911
-                Y: =8
-                ZIndex: =10
-
-        Iconline_19 As rectangle:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: |
-                =
-            Fill: =RGBA(51, 51, 51, 1)
-            Height: =1
-            Width: =977
-            X: =350
-            Y: =136
-            ZIndex: =7
-
     Container4_24 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =692
         Width: =237
         X: =40
         Y: =76
-        ZIndex: =35
+        ZIndex: =1
 
         Button2_125 As button:
             Align: =Align.Left
@@ -892,7 +402,7 @@ scr_customizing_Risk As screen:
         Width: =183
         X: =67
         Y: =32
-        ZIndex: =36
+        ZIndex: =2
 
     Image1_5 As image:
         Height: =32
@@ -901,7 +411,497 @@ scr_customizing_Risk As screen:
         Width: =32
         X: =32
         Y: =32
-        ZIndex: =37
+        ZIndex: =3
+
+    Scn_Screen_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        rctdegradado_9 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupconfgAddRisk:false})
+            Visible: =varpopupconfgAddRisk
+            Width: =1366
+            ZIndex: =30
+
+        grpCrearOrdenDeCompra_13 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupconfgAddRisk
+            Width: =415
+            X: =475
+            Y: =246
+            ZIndex: =31
+
+            TxtOrdendeCompra_52 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="New Item"
+                Width: =105
+                X: =159
+                Y: =31
+                ZIndex: =34
+
+            Icon2_11 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupconfgAddRisk:false})
+                Width: =20
+                X: =362
+                Y: =37
+                ZIndex: =35
+
+            TxtOrdendeCompra_53 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =29
+                Size: =12
+                Text: ="Risk / Reward Scale"
+                Width: =169
+                X: =32
+                Y: =78
+                ZIndex: =36
+
+            TextInput2_13 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =122
+                ZIndex: =37
+
+            Button1_30 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(TextInput2_13.Text),DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =Patch('GF_DEV.Risk_Scale',Defaults('GF_DEV.Risk_Scale'),{id_risk:First(SortByColumns('GF_DEV.Risk_Scale',"id_risk",SortOrder.Descending)).id_risk+1,risk:TextInput2_13.Text});
+                    UpdateContext({varpopupconfgAddRisk:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save"
+                Width: =344
+                X: =32
+                Y: =203
+                ZIndex: =38
+
+    thr_Screen_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        rctdegradado_18 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupCnfEditRisk:false})
+            Visible: =varpopupCnfEditRisk
+            Width: =1366
+            ZIndex: =32
+
+        grpCrearOrdenDeCompra_22 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupCnfEditRisk
+            Width: =415
+            X: =475
+            Y: =246
+            ZIndex: =33
+
+            TxtOrdendeCompra_73 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Edit Item"
+                Width: =105
+                X: =159
+                Y: =25
+                ZIndex: =1
+
+            Icon2_20 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupCnfEditRisk:false})
+                Width: =20
+                X: =362
+                Y: =31
+                ZIndex: =13
+
+            TxtOrdendeCompra_74 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Risk / Reward Scale"
+                Width: =169
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TextInput2_19 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =116
+                ZIndex: =21
+
+            Button1_32 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =Patch('GF_DEV.Risk_Scale',LookUp('GF_DEV.Risk_Scale', id_risk = Gallery1_6.Selected.id_risk),{risk:TextInput2_19.Text});
+                    UpdateContext({varpopupCnfEditRisk:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save Changes"
+                Width: =344
+                X: =38
+                Y: =196
+                ZIndex: =29
+
+    four_Screen_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        rctdegradado_19 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateRisk:false})
+            Visible: =varpopupEliminateRisk
+            Width: =1366
+            ZIndex: =34
+
+        grpCrearOrdenDeCompra_23 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =222
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupEliminateRisk
+            Width: =420
+            X: =475
+            Y: =246
+            ZIndex: =35
+
+            TxtOrdendeCompra_75 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =16
+                Text: ="Delete Item"
+                Width: =125
+                X: =145
+                Y: =30
+                ZIndex: =1
+
+            Icon2_21 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateRisk:false})
+                Width: =20
+                X: =376
+                Y: =35
+                ZIndex: =2
+
+            Button1_33 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderThickness: =1
+                Color: =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateRisk:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="No, Cancel"
+                Width: =180
+                X: =24
+                Y: =156
+                ZIndex: =5
+
+            Button1_34 As button:
+                BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: |-
+                    =Remove('GF_DEV.Risk_Scale',Gallery1_6.Selected);
+                    UpdateContext({varpopupEliminateRisk:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(255, 0, 0, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Yes, Delete"
+                Width: =180
+                X: =216
+                Y: =156
+                ZIndex: =6
+
+            HtmlText1_7 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<center> The <b><font color=""#4280c2"">""Moderate Risk""</font></b> item will be permantly deleted. 
+                    Are you sure you want delete it? "
+                Width: =372
+                X: =24
+                Y: =82
+                ZIndex: =7
+
+    first_Screen_3 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =26
+
+        Iconline_18 As rectangle:
+            DisabledFill: |
+                =
+            Fill: =ColorValue(varlineColor)
+            Height: =718
+            Width: =1
+            X: =310
+            Y: =32
+            ZIndex: =4
+
+        Button2_44 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =RGBA(166, 166, 166, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =20
+            Text: ="Risk / Reward Scale"
+            Width: =275
+            X: =343
+            Y: =32
+            ZIndex: =5
+
+        Button1_18 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =ColorValue(varprimaryColor)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =44
+            HoverBorderColor: =
+            HoverFill: =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =Reset(TextInput2_13);
+                UpdateContext({varpopupconfgAddRisk:true})
+            PressedBorderColor: =
+            PressedFill: =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Add Risk"
+            Width: =320
+            X: =1002
+            Y: =32
+            ZIndex: =6
+
+        Button2_47 As button:
+            Align: =Align.Left
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            Color: =RGBA(26, 26, 26, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =36
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =RGBA(166, 166, 166, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(166, 166, 166, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Size: =12
+            Text: ="Risk"
+            Width: =177
+            X: =350
+            Y: =100
+            ZIndex: =7
+
+        Gallery1_6 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =223
+            Items: ='GF_DEV.Risk_Scale'
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =10
+            TemplateSize: =36
+            Width: =991
+            X: =343
+            Y: =136
+            ZIndex: =8
+
+            Label4_11 As label:
+                Height: =36
+                OnSelect: =Select(Parent)
+                PaddingTop: =8
+                Size: =12
+                Text: =ThisItem.risk
+                Width: =152
+                ZIndex: =1
+
+            Image1_41 As image:
+                Height: =20
+                Image: =borrar
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateRisk:true})
+                Width: =20
+                X: =949
+                Y: =8
+                ZIndex: =8
+
+            Rectangle3_6 As rectangle:
+                BorderColor: =RGBA(147, 147, 147, 1)
+                Fill: =RGBA(147, 147, 147, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =971
+                Y: =35
+                ZIndex: =9
+
+            Image1_40 As image:
+                Height: =20
+                Image: =editar
+                OnSelect: |-
+                    =Reset(TextInput2_19);
+                    UpdateContext({varpopupCnfEditRisk:true})
+                Width: =20
+                X: =911
+                Y: =8
+                ZIndex: =10
+
+        Iconline_19 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: |
+                =
+            Fill: =RGBA(51, 51, 51, 1)
+            Height: =1
+            Width: =977
+            X: =350
+            Y: =136
+            ZIndex: =9
 
     Screen_Download_3 As group:
         Height: =5
@@ -917,7 +917,7 @@ scr_customizing_Risk As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =8
+            ZIndex: =10
 
         grpCrearOrdenDeCompra_42 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -930,7 +930,7 @@ scr_customizing_Risk As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =9
+            ZIndex: =11
 
             TxtOrdendeCompra_179 As label:
                 Font: =Font.Arial
@@ -1120,7 +1120,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =10
+            ZIndex: =12
 
         grpdownloadxls_13 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1133,7 +1133,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =11
+            ZIndex: =13
 
             TxtOrdendeCompra_181 As label:
                 Align: =Align.Center
@@ -1227,7 +1227,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =12
+            ZIndex: =14
 
         grpdownloadxls1_13 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1240,7 +1240,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =13
+            ZIndex: =15
 
             TxtOrdendeCompra_177 As label:
                 Align: =Align.Center
@@ -1336,7 +1336,7 @@ scr_customizing_Risk As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =14
+            ZIndex: =16
 
         grpdownloadxls2_13 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1349,7 +1349,7 @@ scr_customizing_Risk As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =15
+            ZIndex: =17
 
             TxtOrdendeCompra_186 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -1727,7 +1727,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =16
+            ZIndex: =18
 
         grpdownloadxls_12 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1740,7 +1740,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =17
+            ZIndex: =19
 
             TxtOrdendeCompra_176 As label:
                 Align: =Align.Center
@@ -1834,7 +1834,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =18
+            ZIndex: =20
 
         grpdownloadxls1_12 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1847,7 +1847,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =19
+            ZIndex: =21
 
             TxtOrdendeCompra_174 As label:
                 Align: =Align.Center
@@ -1945,7 +1945,7 @@ scr_customizing_Risk As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =20
+            ZIndex: =22
 
         grpdownloadxls2_12 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1960,7 +1960,7 @@ scr_customizing_Risk As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =21
+            ZIndex: =23
 
             TxtOrdendeCompra_173 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2031,7 +2031,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =22
+            ZIndex: =24
 
         grpdownloadxls_15 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2044,7 +2044,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =23
+            ZIndex: =25
 
             TxtOrdendeCompra_189 As label:
                 Font: =Font.Arial
@@ -2137,7 +2137,7 @@ scr_customizing_Risk As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =24
+            ZIndex: =26
 
         grpdownloadxls1_15 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2150,7 +2150,7 @@ scr_customizing_Risk As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =25
+            ZIndex: =27
 
             TxtOrdendeCompra_190 As label:
                 Align: =Align.Center
@@ -2246,7 +2246,7 @@ scr_customizing_Risk As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =26
+            ZIndex: =28
 
         grpdownloadxls2_15 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2259,7 +2259,7 @@ scr_customizing_Risk As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =27
+            ZIndex: =29
 
             TxtOrdendeCompra_192 As label:
                 Color: =ColorValue(varprimaryColor)
