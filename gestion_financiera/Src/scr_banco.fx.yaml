@@ -44,7 +44,7 @@ scr_banco As screen:
         ChevronFill: =RGBA(51, 51, 51, 1)
         Default: =LookUp('GF_DEV.Accounting_Period_Month', id_month = varCurrentPeriod.id_month).month & " " & LookUp('GF_DEV.Accounting_Period', id_period = varCurrentPeriod.id_period).period
         Height: =44
-        Items: =AddColumns('GF_DEV.Accounting_Period_Month' As temp,"month_year", temp.month & " " & LookUp('GF_DEV.Accounting_Period', id_period = temp.id_period).period)
+        Items: =AddColumns(Filter('GF_DEV.Accounting_Period_Month', status = "Open" || status = "Closed") As temp,"month_year", temp.month & " " & LookUp('GF_DEV.Accounting_Period', id_period = temp.id_period).period)
         Width: =200
         X: =1138
         Y: =26
