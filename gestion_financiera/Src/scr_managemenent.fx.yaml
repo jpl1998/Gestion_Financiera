@@ -8365,47 +8365,6 @@ scr_managemenent As screen:
             Y: =696
             ZIndex: =3
 
-        img_customizing_32 As image:
-            Height: =48
-            Image: =management1
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =265
-            ZIndex: =4
-
-        img_customizing_31 As image:
-            Height: =48
-            Image: =grafico
-            OnSelect: |-
-                =Navigate(scr_reports);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =402
-            ZIndex: =6
-
-        img_customizing_82 As image:
-            Height: =48
-            Image: =arriba
-            OnSelect: |-
-                =UpdateContext({varpopupdowload:true});
-                UpdateContext({varpopupdowloadDailyxls:false});
-                UpdateContext({varpopupdowloadDailyxls1:false});
-                UpdateContext({varpopupdowloadDailyxls2:false});
-                UpdateContext({varpopupdowloadAccountxls:false});
-                UpdateContext({varpopupdowloadAccountxls1:false});
-                UpdateContext({varpopupdowloadAccountxls2:false});
-                UpdateContext({varpopupdowloadAccountpdf:false});
-                UpdateContext({varpopupdowloadAccountpdf1:false});
-                UpdateContext({varpopupdowloadAccountpdf2:false});
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =469
-            ZIndex: =7
-
         Image2_14 As image:
             Height: =32
             Image: =desplegar
@@ -8416,95 +8375,6 @@ scr_managemenent As screen:
             X: =20
             Y: =143
             ZIndex: =8
-
-        Image8_14 As image:
-            Height: =48
-            Image: ='guardar 1'
-            OnSelect: |-
-                =Navigate(scr_customizing_Entities);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =537
-            ZIndex: =10
-
-        Image13_14 As image:
-            Height: =48
-            Image: =banco
-            OnSelect: |-
-                =Navigate(scr_banco);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =333
-            ZIndex: =16
-
-        Image7_11 As image:
-            Height: =48
-            Image: =guardar2
-            OnSelect: |-
-                =Navigate(scr_customizing_Entities);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =varshowPopUphitosdecompra
-            Width: =156
-            X: =12
-            Y: =537
-            ZIndex: =17
-
-        Image9_11 As image:
-            Height: =48
-            Image: =upload2
-            OnSelect: |-
-                =UpdateContext({varpopupdowload:true});
-                UpdateContext({varpopupdowloadDailyxls:false});
-                UpdateContext({varpopupdowloadDailyxls1:false});
-                UpdateContext({varpopupdowloadDailyxls2:false});
-                UpdateContext({varpopupdowloadAccountxls:false});
-                UpdateContext({varpopupdowloadAccountxls1:false});
-                UpdateContext({varpopupdowloadAccountxls2:false});
-                UpdateContext({varpopupdowloadAccountpdf:false});
-                UpdateContext({varpopupdowloadAccountpdf1:false});
-                UpdateContext({varpopupdowloadAccountpdf2:false});
-            Visible: =varshowPopUphitosdecompra
-            Width: =156
-            X: =12
-            Y: =469
-            ZIndex: =18
-
-        Image10_11 As image:
-            Height: =48
-            Image: =reports2
-            OnSelect: |-
-                =Navigate(scr_reports);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =varshowPopUphitosdecompra
-            Width: =156
-            X: =12
-            Y: =402
-            ZIndex: =19
-
-        Image11_11 As image:
-            Height: =48
-            Image: =banks2
-            Visible: =varshowPopUphitosdecompra
-            Width: =156
-            X: =12
-            Y: =333
-            ZIndex: =20
-
-        Image12_11 As image:
-            Height: =48
-            Image: =management2
-            OnSelect: |-
-                =Navigate(scr_managemenent);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =varshowPopUphitosdecompra
-            Width: =156
-            X: =12
-            Y: =265
-            ZIndex: =21
 
         txtusuario_11 As label:
             Color: =RGBA(77, 77, 77, 1)
@@ -8556,14 +8426,14 @@ scr_managemenent As screen:
 
         Gallery5 As gallery.galleryVertical:
             DelayItemLoading: =true
-            Height: =280
+            Height: =340
             Items: |-
                 =Filter(
                     Table(
                         {
                             item: "Operations",
                             screen: scr_managemenent,
-                            image: InvestmentManagement
+                            image: operations_white
                         },
                         {
                             item: "Banks",
@@ -8579,6 +8449,11 @@ scr_managemenent As screen:
                             item: "Tax Tracker",
                             screen: scr_banco,
                             image: 'tax tracker'
+                        },
+                        {
+                            item: "Upload",
+                            //screen: scr_banco,
+                            image: upload
                         }
                     ),
                     If(
@@ -8593,24 +8468,30 @@ scr_managemenent As screen:
                     ) || If(
                         varUserRole.tax = "1",
                         item = "Tax Tracker"
-                    )
+                    ) || item = "Upload"
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplateSize: =58
+            Visible: =varshowPopUphitosdecompra
             Width: =175
-            Y: =481
+            X: =3
+            Y: =256
             ZIndex: =26
 
             Button8 As button:
                 Align: =Align.Left
                 BorderThickness: =0
-                Color: =ColorValue(varprimaryColor)
-                Fill: =ColorFade(ColorValue(varprimaryColor),90%)
+                Color: =If(ThisItem.item = "Operations", Color.White, ColorValue(varprimaryColor))
+                Fill: =If(ThisItem.item = "Operations", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
                 FocusedBorderThickness: =0
                 Height: =48
                 OnSelect: =Select(Parent)
                 PaddingLeft: =45
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
                 Size: =12
                 Text: =ThisItem.item
                 Width: =156
@@ -8633,13 +8514,128 @@ scr_managemenent As screen:
                 Fill: =RGBA(255, 255, 255, 0)
                 FocusedBorderThickness: =0
                 Height: =48
+                HoverFill: =RGBA(65, 128, 194, 0.1)
                 OnSelect: |-
-                    =Navigate(ThisItem.screen);
-                    UpdateContext({varshowPopUphitosdecompra: false}
+                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
+                    Navigate(ThisItem.screen);
+                    UpdateContext({varshowPopUphitosdecompra: false}))
                 PaddingLeft: =45
+                PressedFill: =RGBA(65, 128, 194, 0.15)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
                 Size: =12
                 Text: =
                 Width: =156
+                Y: =5
+                ZIndex: =3
+
+        Gallery5_1 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =340
+            Items: |-
+                =Filter(
+                    Table(
+                        {
+                            item: "Operations",
+                            screen: scr_managemenent,
+                            image: operations_white
+                        },
+                        {
+                            item: "Banks",
+                            screen: scr_banco,
+                            image: Banks
+                        },
+                        {
+                            item: "Reports",
+                            screen: scr_reports,
+                            image: 'Analize Reports'
+                        },
+                        {
+                            item: "Tax Tracker",
+                            screen: scr_banco,
+                            image: 'tax tracker'
+                        },
+                        {
+                            item: "Upload",
+                            //screen: scr_banco,
+                            image: upload
+                        }
+                    ),
+                    If(
+                        varUserRole.operations = "1",
+                        item = "Operations"
+                    ) || If(
+                        varUserRole.bank = "1",
+                        item = "Banks"
+                    ) || If(
+                        varUserRole.report = "1",
+                        item = "Reports"
+                    ) || If(
+                        varUserRole.tax = "1",
+                        item = "Tax Tracker"
+                    ) || item = "Upload"
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =58
+            Visible: =!varshowPopUphitosdecompra
+            Width: =73
+            Y: =256
+            ZIndex: =27
+
+            Button8_2 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =If(ThisItem.item = "Operations", Color.White, ColorValue(varprimaryColor))
+                Fill: =If(ThisItem.item = "Operations", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
+                FocusedBorderThickness: =0
+                Height: =48
+                OnSelect: =Select(Parent)
+                PaddingLeft: =45
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =
+                Width: =48
+                X: =5
+                Y: =5
+                ZIndex: =1
+
+            Image8_1 As image:
+                Height: =30
+                Image: =ThisItem.image
+                OnSelect: =Select(Parent)
+                Width: =30
+                X: =14
+                Y: =14
+                ZIndex: =2
+
+            Button8_3 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderThickness: =0
+                Height: =48
+                HoverFill: =RGBA(65, 128, 194, 0.1)
+                OnSelect: |-
+                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
+                    Navigate(ThisItem.screen);
+                    UpdateContext({varshowPopUphitosdecompra: false}))
+                PaddingLeft: =45
+                PressedFill: =RGBA(65, 128, 194, 0.15)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =
+                Width: =48
+                X: =5
                 Y: =5
                 ZIndex: =3
 
