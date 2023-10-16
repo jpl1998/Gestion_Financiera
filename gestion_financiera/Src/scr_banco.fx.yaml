@@ -18,18 +18,21 @@ scr_banco As screen:
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
         Height: =44
-        Items: =DropDownSample
+        Items: =["Entity","Bank"]
+        OnChange: =Reset(Dropdown2_2)
         Width: =200
         X: =694
         Y: =26
         ZIndex: =2
 
     Dropdown2_2 As dropdown:
+        AllowEmptySelection: =true
         BorderColor: =ColorValue(varlineColor)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
+        Default: =Blank()
         Height: =44
-        Items: =DropDownSample
+        Items: =If(Dropdown2.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank))
         Width: =200
         X: =916
         Y: =26
@@ -39,8 +42,9 @@ scr_banco As screen:
         BorderColor: =ColorValue(varlineColor)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
+        Default: =LookUp('GF_DEV.Accounting_Period_Month', id_month = varCurrentPeriod.id_month).month & " " & LookUp('GF_DEV.Accounting_Period', id_period = varCurrentPeriod.id_period).period
         Height: =44
-        Items: =DropDownSample
+        Items: =AddColumns('GF_DEV.Accounting_Period_Month' As temp,"month_year", temp.month & " " & LookUp('GF_DEV.Accounting_Period', id_period = temp.id_period).period)
         Width: =200
         X: =1138
         Y: =26
