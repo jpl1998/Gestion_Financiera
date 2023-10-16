@@ -1,16 +1,5 @@
 scr_managemenent As screen:
 
-    Dropdown2_13 As dropdown:
-        BorderColor: =ColorValue(varlineColor)
-        ChevronBackground: =RGBA(255, 255, 255, 1)
-        ChevronFill: =RGBA(51, 51, 51, 1)
-        Height: =44
-        Items: =DropDownSample
-        Width: =200
-        X: =1139
-        Y: =26
-        ZIndex: =1
-
     Label2_4 As label:
         Color: =RGBA(77, 77, 77, 1)
         Font: =Font.Arial
@@ -27,33 +16,12 @@ scr_managemenent As screen:
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
         Height: =44
-        Items: =DropDownSample
+        Items: =AddColumns(Filter('GF_DEV.Accounting_Period_Month', status = "Open" || status = "Closed") As temp,"month_year", temp.month & " " & LookUp('GF_DEV.Accounting_Period', id_period = temp.id_period).period)
+        Size: =10
         Width: =200
         X: =474
         Y: =26
         ZIndex: =3
-
-    Dropdown2_11 As dropdown:
-        BorderColor: =ColorValue(varlineColor)
-        ChevronBackground: =RGBA(255, 255, 255, 1)
-        ChevronFill: =RGBA(51, 51, 51, 1)
-        Height: =44
-        Items: =DropDownSample
-        Width: =200
-        X: =696
-        Y: =26
-        ZIndex: =4
-
-    Dropdown2_12 As dropdown:
-        BorderColor: =ColorValue(varlineColor)
-        ChevronBackground: =RGBA(255, 255, 255, 1)
-        ChevronFill: =RGBA(51, 51, 51, 1)
-        Height: =44
-        Items: =DropDownSample
-        Width: =200
-        X: =918
-        Y: =26
-        ZIndex: =5
 
     grpCrearOrdenDeCompra_57 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -1181,8 +1149,8 @@ scr_managemenent As screen:
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplateSize: =160
                     Width: =680
-                    X: =20
-                    Y: =7
+                    X: =5
+                    Y: =12
                     ZIndex: =27
 
                     Label3_1 As label:
@@ -9385,4 +9353,67 @@ scr_managemenent As screen:
                 X: =161
                 Y: =145
                 ZIndex: =57
+
+    OperationsFilterEntityComboBox As combobox:
+        BorderColor: =ColorValue(varlineColor)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =ColorValue(varlineColor)
+        DisplayFields: =["entity","business_name"]
+        Height: =44
+        InputTextPlaceholder: ="Search Entity"
+        Items: ='GF_DEV.Entity'
+        OnChange: =Reset(OperationsFilterBankAccountComboBox)
+        SearchFields: =["entity"]
+        SearchItems: =Search('GF_DEV.Entity',OperationsFilterEntityComboBox.SearchText,"entity")
+        SelectMultiple: =false
+        Size: =10
+        Width: =200
+        X: =698
+        Y: =26
+        ZIndex: =71
+
+    OperationsFilterBankComboBox As combobox:
+        BorderColor: =ColorValue(varlineColor)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =ColorValue(varlineColor)
+        DisplayFields: =["bank","Mail"]
+        Height: =44
+        InputTextPlaceholder: ="Search Bank"
+        Items: ='GF_DEV.Bank'
+        OnChange: =Reset(OperationsFilterBankAccountComboBox)
+        SearchFields: =["bank"]
+        SearchItems: =Search('GF_DEV.Bank',OperationsFilterBankComboBox.SearchText,"bank")
+        SelectMultiple: =false
+        Size: =10
+        Width: =200
+        X: =917
+        Y: =26
+        ZIndex: =72
+
+    OperationsFilterBankAccountComboBox As combobox:
+        BorderColor: =ColorValue(varlineColor)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =ColorValue(varlineColor)
+        DisplayFields: =["account_num","Mail"]
+        Height: =44
+        InputTextPlaceholder: ="Search Bank Account"
+        Items: |-
+            =Filter(
+                'GF_DEV.Bank_Entity_Relationship',
+                IsBlank(OperationsFilterEntityComboBox.Selected.id_entity) || id_entity = OperationsFilterEntityComboBox.Selected.id_entity,
+                IsBlank(OperationsFilterBankComboBox.Selected.id_bank) || id_bank = OperationsFilterBankComboBox.Selected.id_bank
+            )
+        SearchFields: =["account_num"]
+        SearchItems: |-
+            =Search(Filter(
+                'GF_DEV.Bank_Entity_Relationship',
+                IsBlank(OperationsFilterEntityComboBox.Selected.id_entity) || id_entity = OperationsFilterEntityComboBox.Selected.id_entity,
+                IsBlank(OperationsFilterBankComboBox.Selected.id_bank) || id_bank = OperationsFilterBankComboBox.Selected.id_bank
+            ),OperationsFilterBankAccountComboBox.SearchText,"account_num")
+        SelectMultiple: =false
+        Size: =10
+        Width: =200
+        X: =1138
+        Y: =26
+        ZIndex: =73
 

@@ -13,30 +13,18 @@ scr_banco As screen:
         Y: =30
         ZIndex: =1
 
-    Dropdown2 As dropdown:
+    Dropdown As dropdown:
         BorderColor: =ColorValue(varlineColor)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(51, 51, 51, 1)
         Height: =44
         Items: =["Entity","Bank"]
-        OnChange: =Reset(Dropdown2_2)
+        OnChange: =Reset(BankFilterComboBox)
+        Size: =10
         Width: =200
         X: =694
         Y: =26
         ZIndex: =2
-
-    Dropdown2_2 As dropdown:
-        AllowEmptySelection: =true
-        BorderColor: =ColorValue(varlineColor)
-        ChevronBackground: =RGBA(255, 255, 255, 1)
-        ChevronFill: =RGBA(51, 51, 51, 1)
-        Default: =Blank()
-        Height: =44
-        Items: =If(Dropdown2.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank))
-        Width: =200
-        X: =916
-        Y: =26
-        ZIndex: =3
 
     Dropdown2_3 As dropdown:
         BorderColor: =ColorValue(varlineColor)
@@ -45,6 +33,7 @@ scr_banco As screen:
         Default: =LookUp('GF_DEV.Accounting_Period_Month', id_month = varCurrentPeriod.id_month).month & " " & LookUp('GF_DEV.Accounting_Period', id_period = varCurrentPeriod.id_period).period
         Height: =44
         Items: =AddColumns(Filter('GF_DEV.Accounting_Period_Month', status = "Open" || status = "Closed") As temp,"month_year", temp.month & " " & LookUp('GF_DEV.Accounting_Period', id_period = temp.id_period).period)
+        Size: =10
         Width: =200
         X: =1138
         Y: =26
@@ -7006,4 +6995,22 @@ scr_banco As screen:
             X: =134
             Y: =79
             ZIndex: =4
+
+    BankFilterComboBox As combobox:
+        BorderColor: =ColorValue(varlineColor)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =ColorValue(varlineColor)
+        DisplayFields: =["Value","Mail"]
+        Height: =44
+        InputTextPlaceholder: ="Search " & Dropdown.SelectedText.Value
+        Items: =If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank))
+        OnChange: =Reset(OperationsFilterBankAccountComboBox)
+        SearchFields: =["Value"]
+        SearchItems: =Search(If(Dropdown.SelectedText.Value="Entity",AddColumns(Distinct('GF_DEV.Entity',entity) As temp,"id",LookUp('GF_DEV.Entity', entity = temp.Value).id_entity) ,AddColumns(Distinct('GF_DEV.Bank',bank) As temp,"id",LookUp('GF_DEV.Bank', bank = temp.Value).id_bank)),BankFilterComboBox.SearchText,"Value")
+        SelectMultiple: =false
+        Size: =10
+        Width: =200
+        X: =916
+        Y: =26
+        ZIndex: =41
 

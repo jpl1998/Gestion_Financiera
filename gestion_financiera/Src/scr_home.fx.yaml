@@ -70,11 +70,13 @@ scr_home As screen:
 
         Button4 As button:
             Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Bold
             Height: =44
             HoverFill: =RGBA(65, 128, 194, 0.1)
             OnSelect: =Navigate(scr_security)
             PressedFill: =RGBA(65, 128, 194, 0.15)
             Text: =""
+            Visible: =varUserRole.customizing = "1"
             Width: =200
             ZIndex: =3
 
