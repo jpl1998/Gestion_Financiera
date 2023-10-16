@@ -1357,6 +1357,125 @@ scr_customizing_Entities As screen:
         Width: =1366
         ZIndex: =43
 
+    grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =384
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupAddBank
+        Width: =415
+        X: =477
+        Y: =192
+        ZIndex: =44
+
+        TxtOrdendeCompra_77 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            Size: =16
+            Text: ="New Item"
+            Width: =105
+            X: =159
+            Y: =25
+            ZIndex: =1
+
+        Icon2_174 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupAddBank:false})
+            Width: =20
+            X: =362
+            Y: =31
+            ZIndex: =13
+
+        TxtOrdendeCompra_83 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12
+            Text: ="Bank"
+            Width: =143
+            X: =32
+            Y: =72
+            ZIndex: =14
+
+        TextInput2_31 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =38
+            Y: =116
+            ZIndex: =21
+
+        Button1_362 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =ColorValue(varprimaryColor)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =UpdateContext({varshowPopUpProveedores:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Save"
+            Width: =344
+            X: =39
+            Y: =309
+            ZIndex: =29
+
+        TxtOrdendeCompra_84 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12
+            Text: ="Bank Account"
+            Width: =143
+            X: =33
+            Y: =185
+            ZIndex: =30
+
+        TextInput2_32 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =39
+            Y: =229
+            ZIndex: =31
+
     Screen_Download As group:
         Height: =5
         Width: =5
@@ -2775,125 +2894,6 @@ scr_customizing_Entities As screen:
                 X: =38
                 Y: =182
                 ZIndex: =6
-
-    grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =384
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupAddBank
-        Width: =415
-        X: =477
-        Y: =192
-        ZIndex: =44
-
-        TxtOrdendeCompra_77 As label:
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =16
-            Text: ="New Item"
-            Width: =105
-            X: =159
-            Y: =25
-            ZIndex: =1
-
-        Icon2_174 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupAddBank:false})
-            Width: =20
-            X: =362
-            Y: =31
-            ZIndex: =13
-
-        TxtOrdendeCompra_83 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =12
-            Text: ="Bank"
-            Width: =143
-            X: =32
-            Y: =72
-            ZIndex: =14
-
-        TextInput2_31 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =38
-            Y: =116
-            ZIndex: =21
-
-        Button1_362 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =UpdateContext({varshowPopUpProveedores:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Save"
-            Width: =344
-            X: =39
-            Y: =309
-            ZIndex: =29
-
-        TxtOrdendeCompra_84 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =12
-            Text: ="Bank Account"
-            Width: =143
-            X: =33
-            Y: =185
-            ZIndex: =30
-
-        TextInput2_32 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =39
-            Y: =229
-            ZIndex: =31
 
     Label2_7 As label:
         Font: =Font.Arial
