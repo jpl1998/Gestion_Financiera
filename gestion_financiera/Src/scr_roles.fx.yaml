@@ -467,7 +467,7 @@ scr_roles As screen:
                 Align: =Align.Center
                 Height: =36
                 Size: =12
-                Text: =Sum(ThisItem.operations, ThisItem.bank, ThisItem.report, ThisItem.tax)
+                Text: =Sum(ThisItem.operations, ThisItem.bank, ThisItem.report, ThisItem.tax) & " Modules"
                 Width: =279
                 X: =230
                 ZIndex: =2
@@ -476,7 +476,7 @@ scr_roles As screen:
                 Align: =Align.Center
                 Height: =36
                 Size: =12
-                Text: =Sum(Value(ThisItem.tax_detail), Value(ThisItem.tax_summary), Value(ThisItem.tax_profitability), Value(ThisItem.tax_board), Value(ThisItem.tax_legal))
+                Text: =Sum(Value(ThisItem.tax_detail), Value(ThisItem.tax_summary), Value(ThisItem.tax_profitability), Value(ThisItem.tax_board), Value(ThisItem.tax_legal)) & " Reports"
                 Width: =169
                 X: =588
                 ZIndex: =3
@@ -792,6 +792,18 @@ scr_roles As screen:
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
+                        OnCheck: |-
+                            =Reset(NewRoleDetailCheckbox);
+                            Reset(NewRoleSummaryCheckbox);
+                            Reset(NewRoleProfitCheckbox);
+                            Reset(NewRoleBoardCheckbox);
+                            Reset(NewRoleLegalCheckbox);
+                        OnUncheck: |-
+                            =Reset(NewRoleDetailCheckbox);
+                            Reset(NewRoleSummaryCheckbox);
+                            Reset(NewRoleProfitCheckbox);
+                            Reset(NewRoleBoardCheckbox);
+                            Reset(NewRoleLegalCheckbox);
                         Size: =8
                         Text: ="Report"
                         ZIndex: =1
@@ -1012,8 +1024,24 @@ scr_roles As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =
-                    UpdateContext({varpopupAddUser:false})
+                    =Patch(
+                        'GF_DEV.Roles',
+                        LookUp('GF_DEV.Roles', varSelectedRole.id_role = id_role),
+                        {
+                            role: EditRoleNameTextInput.Text,
+                            operations: If(EditRoleOperationsCheckbox.Value,"1","0"),
+                            bank: If(EditRoleBankCheckbox.Value,"1","0"),
+                            report: If(EditRoleReportCheckbox.Value,"1","0"),
+                            tax: If(EditRoleTaxCheckbox.Value,"1","0"),
+                            customizing: If(EditRoleCustomizingCheckbox.Value,"1","0"),
+                            tax_detail: If(EditRoleDetailCheckbox.Value,"1","0"),
+                            tax_summary: If(EditRoleSummaryCheckbox.Value,"1","0"),
+                            tax_profitability: If(EditRoleProfitCheckbox.Value,"1","0"),
+                            tax_board: If(EditRoleBoardCheckbox.Value,"1","0"),
+                            tax_legal: If(EditRoleLegalCheckbox.Value,"1","0")
+                        }
+                    );
+                    UpdateContext({varpopupEditRole:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: |
@@ -1022,13 +1050,13 @@ scr_roles As screen:
                 RadiusBottomRight: =2
                 RadiusTopLeft: =2
                 RadiusTopRight: =2
-                Text: ="Add Role"
+                Text: ="Save Changes"
                 Width: =344
                 X: =37
                 Y: =NewEnabledReportsContainer_1.Y+NewEnabledReportsContainer_1.Height+20
                 ZIndex: =29
 
-            NewRoleNameTextInput_1 As text:
+            EditRoleNameTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
                 Default: =varSelectedRole.role
@@ -1064,6 +1092,7 @@ scr_roles As screen:
 
                     EditRoleOperationsCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.operations = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1073,6 +1102,7 @@ scr_roles As screen:
 
                     EditRoleBankCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.bank = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1089,15 +1119,29 @@ scr_roles As screen:
 
                     EditRoleReportCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.report = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
+                        OnCheck: |-
+                            =Reset(EditRoleDetailCheckbox);
+                            Reset(EditRoleSummaryCheckbox);
+                            Reset(EditRoleProfitCheckbox);
+                            Reset(EditRoleBoardCheckbox);
+                            Reset(EditRoleLegalCheckbox);
+                        OnUncheck: |-
+                            =Reset(EditRoleDetailCheckbox);
+                            Reset(EditRoleSummaryCheckbox);
+                            Reset(EditRoleProfitCheckbox);
+                            Reset(EditRoleBoardCheckbox);
+                            Reset(EditRoleLegalCheckbox);
                         Size: =8
                         Text: ="Report"
                         ZIndex: =1
 
                     EditRoleTaxCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1114,6 +1158,7 @@ scr_roles As screen:
 
                     EditRoleCustomizingCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.customizing = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35

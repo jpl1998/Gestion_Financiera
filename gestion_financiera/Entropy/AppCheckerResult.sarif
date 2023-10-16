@@ -25944,19 +25944,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1.AccessibleLabel"
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.EditRoleNameTextInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1.AccessibleLabel",
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.EditRoleNameTextInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1"
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.EditRoleNameTextInput"
               }
             }
           ],
