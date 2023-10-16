@@ -390,27 +390,6 @@
             Y: =515
             ZIndex: =39
 
-    Label2_16 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_11 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     Button2_94 As button:
         Align: =Align.Left
         BorderColor: =RGBA(255, 255, 255, 1)
@@ -434,7 +413,7 @@
         Width: =140
         X: =676
         Y: =100
-        ZIndex: =4
+        ZIndex: =2
 
     Scn_Screen_8 As group:
         Height: =5
@@ -450,7 +429,7 @@
                 =UpdateContext({varpopupconfgAddDocument:false})
             Visible: =varpopupconfgAddDocument
             Width: =1366
-            ZIndex: =31
+            ZIndex: =29
 
         grpCrearOrdenDeCompra_33 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -463,7 +442,7 @@
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =32
+            ZIndex: =30
 
             TxtOrdendeCompra_99 As label:
                 Font: =Font.Arial
@@ -590,7 +569,7 @@
                 =UpdateContext({varpopupCnfEditDocument:false})
             Visible: =varpopupCnfEditDocument
             Width: =1366
-            ZIndex: =35
+            ZIndex: =33
 
         grpCrearOrdenDeCompra_34 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -603,7 +582,7 @@
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =36
+            ZIndex: =34
 
             TxtOrdendeCompra_101 As label:
                 Font: =Font.Arial
@@ -726,7 +705,7 @@
                 =UpdateContext({varpopupEliminateDocument:false})
             Visible: =varpopupEliminateDocument
             Width: =1366
-            ZIndex: =33
+            ZIndex: =31
 
         grpCrearOrdenDeCompra_35 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -739,7 +718,7 @@
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =34
+            ZIndex: =32
 
             TxtOrdendeCompra_103 As label:
                 Font: =Font.Arial
@@ -994,6 +973,27 @@
             X: =350
             Y: =136
             ZIndex: =10
+
+    Label2_16 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =35
+
+    Image1_11 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =36
 
     Screen_Download_7 As group:
         Height: =5

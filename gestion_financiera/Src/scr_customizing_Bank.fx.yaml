@@ -392,27 +392,6 @@ scr_customizing_Bank As screen:
             Y: =115
             ZIndex: =22
 
-    Label2_8 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_3 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     Button1_396 As button:
         BorderColor: =RGBA(255, 255, 255, 1)
         BorderThickness: =0
@@ -438,7 +417,7 @@ scr_customizing_Bank As screen:
         Width: =320
         X: =995
         Y: =40
-        ZIndex: =4
+        ZIndex: =2
 
     thr_Screen_12 As group:
         Height: =5
@@ -454,7 +433,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupCnfEditBank:false})
             Visible: =varpopupCnfEditBank
             Width: =1366
-            ZIndex: =37
+            ZIndex: =35
 
         grpCrearOrdenDeCompra_71 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -467,7 +446,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =38
+            ZIndex: =36
 
             TxtOrdendeCompra_463 As label:
                 Font: =Font.Arial
@@ -568,7 +547,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupEliminateBank:false})
             Visible: =varpopupEliminateBank
             Width: =1366
-            ZIndex: =39
+            ZIndex: =37
 
         grpCrearOrdenDeCompra_72 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -581,7 +560,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =40
+            ZIndex: =38
 
             TxtOrdendeCompra_465 As label:
                 Font: =Font.Arial
@@ -687,7 +666,7 @@ scr_customizing_Bank As screen:
             Visible: =varpopupAddBank
             Width: =1043
             X: =323
-            ZIndex: =41
+            ZIndex: =39
 
             Button2_45 As button:
                 Align: =Align.Left
@@ -1025,7 +1004,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupCnfEditBank1:false})
             Visible: =varpopupCnfEditBank1
             Width: =1366
-            ZIndex: =42
+            ZIndex: =40
 
         grpCrearOrdenDeCompra_73 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1038,7 +1017,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =28
-            ZIndex: =43
+            ZIndex: =41
 
             TxtOrdendeCompra_466 As label:
                 Font: =Font.Arial
@@ -1237,7 +1216,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupAddBank1:false})
             Visible: =varpopupAddBank1
             Width: =1366
-            ZIndex: =44
+            ZIndex: =42
 
         grpCrearOrdenDeCompra_74 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1250,7 +1229,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =29
-            ZIndex: =45
+            ZIndex: =43
 
             TxtOrdendeCompra_468 As label:
                 Font: =Font.Arial
@@ -1456,7 +1435,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupEliminateBank1:false})
             Visible: =varpopupEliminateBank1
             Width: =1366
-            ZIndex: =46
+            ZIndex: =44
 
         grpCrearOrdenDeCompra_75 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1469,7 +1448,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =47
+            ZIndex: =45
 
             TxtOrdendeCompra_470 As label:
                 Font: =Font.Arial
@@ -1572,7 +1551,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupCnfEditSubClass:false})
             Visible: =
             Width: =1366
-            ZIndex: =31
+            ZIndex: =29
 
         grpCrearOrdenDeCompra_66 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1585,7 +1564,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =32
+            ZIndex: =30
 
             TxtOrdendeCompra_347 As label:
                 Font: =Font.Arial
@@ -1672,7 +1651,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupAddSubClass2:false})
             Visible: =
             Width: =1366
-            ZIndex: =33
+            ZIndex: =31
 
         grpCrearOrdenDeCompra_67 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1685,7 +1664,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =34
+            ZIndex: =32
 
             TxtOrdendeCompra_349 As label:
                 Font: =Font.Arial
@@ -1772,7 +1751,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupEliminateSubClass2:false})
             Visible: =
             Width: =1366
-            ZIndex: =35
+            ZIndex: =33
 
         grpCrearOrdenDeCompra_70 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1785,7 +1764,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =36
+            ZIndex: =34
 
             TxtOrdendeCompra_351 As label:
                 Font: =Font.Arial
@@ -1885,6 +1864,27 @@ scr_customizing_Bank As screen:
                 Y: =156
                 ZIndex: =6
 
+    Label2_8 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =48
+
+    Image1_3 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =49
+
     Group2 As group:
         Height: =5
         Width: =5
@@ -1899,7 +1899,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupconfgAddBank:false})
             Visible: =varpopupconfgAddBank
             Width: =1366
-            ZIndex: =48
+            ZIndex: =46
 
         grpCrearOrdenDeCompra_79 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1912,7 +1912,7 @@ scr_customizing_Bank As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =49
+            ZIndex: =47
 
             TxtOrdendeCompra_492 As label:
                 Font: =Font.Arial
@@ -2031,7 +2031,7 @@ scr_customizing_Bank As screen:
             Width: =130
             X: =626
             Y: =100
-            ZIndex: =5
+            ZIndex: =3
 
         Iconline_49 As rectangle:
             DisabledFill: |

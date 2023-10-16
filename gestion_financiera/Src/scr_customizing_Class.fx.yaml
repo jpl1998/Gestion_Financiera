@@ -392,27 +392,6 @@ scr_customizing_Class As screen:
             Y: =115
             ZIndex: =26
 
-    Label2_9 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_4 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     thr_Screen_4 As group:
         Height: =5
         Width: =5
@@ -427,7 +406,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupCnfEditAsset:false})
             Visible: =varpopupCnfEditAsset
             Width: =1366
-            ZIndex: =36
+            ZIndex: =34
 
         grpCrearOrdenDeCompra_14 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -440,7 +419,7 @@ scr_customizing_Class As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =37
+            ZIndex: =35
 
             TxtOrdendeCompra_54 As label:
                 Font: =Font.Arial
@@ -534,7 +513,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupEliminateAsset:false})
             Visible: =varpopupEliminateAsset
             Width: =1366
-            ZIndex: =38
+            ZIndex: =36
 
         grpCrearOrdenDeCompra_15 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -547,7 +526,7 @@ scr_customizing_Class As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =39
+            ZIndex: =37
 
             TxtOrdendeCompra_56 As label:
                 Font: =Font.Arial
@@ -652,7 +631,7 @@ scr_customizing_Class As screen:
             Visible: =varpopupAddClass
             Width: =1043
             X: =323
-            ZIndex: =40
+            ZIndex: =38
 
             Button2_36 As button:
                 Align: =Align.Left
@@ -852,7 +831,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupCnfEditClass:false})
             Visible: =varpopupCnfEditClass
             Width: =1366
-            ZIndex: =41
+            ZIndex: =39
 
         grpCrearOrdenDeCompra_16 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -865,7 +844,7 @@ scr_customizing_Class As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =42
+            ZIndex: =40
 
             TxtOrdendeCompra_59 As label:
                 Font: =Font.Arial
@@ -953,7 +932,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupAddClass1:false})
             Visible: =varpopupAddClass1
             Width: =1366
-            ZIndex: =43
+            ZIndex: =41
 
         grpCrearOrdenDeCompra_17 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -966,7 +945,7 @@ scr_customizing_Class As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =44
+            ZIndex: =42
 
             TxtOrdendeCompra_61 As label:
                 Font: =Font.Arial
@@ -1069,7 +1048,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupEliminateClass:false})
             Visible: =varpopupEliminateClass
             Width: =1366
-            ZIndex: =45
+            ZIndex: =43
 
         grpCrearOrdenDeCompra_18 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1082,7 +1061,7 @@ scr_customizing_Class As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =46
+            ZIndex: =44
 
             TxtOrdendeCompra_63 As label:
                 Font: =Font.Arial
@@ -1185,7 +1164,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupCnfEditSubClass:false})
             Visible: =
             Width: =1366
-            ZIndex: =30
+            ZIndex: =28
 
         grpCrearOrdenDeCompra_19 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1198,7 +1177,7 @@ scr_customizing_Class As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =31
+            ZIndex: =29
 
             TxtOrdendeCompra_66 As label:
                 Font: =Font.Arial
@@ -1285,7 +1264,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupAddSubClass2:false})
             Visible: =
             Width: =1366
-            ZIndex: =32
+            ZIndex: =30
 
         grpCrearOrdenDeCompra_20 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1298,7 +1277,7 @@ scr_customizing_Class As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =33
+            ZIndex: =31
 
             TxtOrdendeCompra_68 As label:
                 Font: =Font.Arial
@@ -1385,7 +1364,7 @@ scr_customizing_Class As screen:
                 =UpdateContext({varpopupEliminateSubClass2:false})
             Visible: =
             Width: =1366
-            ZIndex: =34
+            ZIndex: =32
 
         grpCrearOrdenDeCompra_21 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1398,7 +1377,7 @@ scr_customizing_Class As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =35
+            ZIndex: =33
 
             TxtOrdendeCompra_70 As label:
                 Font: =Font.Arial
@@ -1497,6 +1476,27 @@ scr_customizing_Class As screen:
                 X: =216
                 Y: =156
                 ZIndex: =6
+
+    Label2_9 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =45
+
+    Image1_4 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =46
 
     first_Screen_4 As group:
         Height: =5

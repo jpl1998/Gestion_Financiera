@@ -390,27 +390,6 @@ scr_customizing_sector As screen:
             Y: =415
             ZIndex: =35
 
-    Label2_14 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_9 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     Scn_Screen_10 As group:
         Height: =5
         Width: =5
@@ -425,7 +404,7 @@ scr_customizing_sector As screen:
                 =UpdateContext({varpopupconfgAddCurrency:false})
             Visible: =varpopupconfgAddCurrency
             Width: =1366
-            ZIndex: =30
+            ZIndex: =28
 
         grpCrearOrdenDeCompra_58 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -438,7 +417,7 @@ scr_customizing_sector As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =31
+            ZIndex: =29
 
             TxtOrdendeCompra_98 As label:
                 Font: =Font.Arial
@@ -536,7 +515,7 @@ scr_customizing_sector As screen:
                 =UpdateContext({varpopupCnfEditCurrency:false})
             Visible: =varpopupCnfEditCurrency
             Width: =1366
-            ZIndex: =32
+            ZIndex: =30
 
         grpCrearOrdenDeCompra_59 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -549,7 +528,7 @@ scr_customizing_sector As screen:
             Width: =415
             X: =475
             Y: =246
-            ZIndex: =34
+            ZIndex: =32
 
             TxtOrdendeCompra_105 As label:
                 Font: =Font.Arial
@@ -646,7 +625,7 @@ scr_customizing_sector As screen:
                 =UpdateContext({varpopupEliminateCurrency:false})
             Visible: =varpopupEliminateCurrency
             Width: =1366
-            ZIndex: =33
+            ZIndex: =31
 
         grpCrearOrdenDeCompra_60 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -659,7 +638,7 @@ scr_customizing_sector As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =35
+            ZIndex: =33
 
             TxtOrdendeCompra_112 As label:
                 Font: =Font.Arial
@@ -905,6 +884,27 @@ scr_customizing_sector As screen:
             X: =350
             Y: =136
             ZIndex: =9
+
+    Label2_14 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =34
+
+    Image1_9 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =35
 
     Screen_Download_12 As group:
         Height: =5

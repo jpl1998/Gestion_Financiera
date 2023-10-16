@@ -392,27 +392,6 @@ scr_customizing_Entities As screen:
             Y: =66
             ZIndex: =19
 
-    Label2_7 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_2 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     Button1_398 As button:
         BorderColor: =RGBA(255, 255, 255, 1)
         BorderThickness: =0
@@ -442,7 +421,7 @@ scr_customizing_Entities As screen:
         Width: =320
         X: =1002
         Y: =32
-        ZIndex: =4
+        ZIndex: =2
 
     Button2_11 As button:
         Align: =Align.Left
@@ -467,7 +446,7 @@ scr_customizing_Entities As screen:
         Width: =70
         X: =570
         Y: =100
-        ZIndex: =5
+        ZIndex: =3
 
     Button2_12 As button:
         Align: =Align.Left
@@ -492,7 +471,7 @@ scr_customizing_Entities As screen:
         Width: =140
         X: =700
         Y: =100
-        ZIndex: =6
+        ZIndex: =4
 
     Button2_13 As button:
         Align: =Align.Left
@@ -517,7 +496,7 @@ scr_customizing_Entities As screen:
         Width: =140
         X: =862
         Y: =100
-        ZIndex: =7
+        ZIndex: =5
 
     Button2_14 As button:
         Align: =Align.Left
@@ -542,7 +521,7 @@ scr_customizing_Entities As screen:
         Width: =100
         X: =1010
         Y: =100
-        ZIndex: =8
+        ZIndex: =6
 
     Button2_15 As button:
         Align: =Align.Left
@@ -567,7 +546,7 @@ scr_customizing_Entities As screen:
         Width: =100
         X: =1123
         Y: =100
-        ZIndex: =9
+        ZIndex: =7
 
     Scn_Screen_2 As group:
         Height: =5
@@ -583,7 +562,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupconfgAddEntity:false})
             Visible: =varpopupconfgAddEntity
             Width: =1366
-            ZIndex: =35
+            ZIndex: =33
 
         grpCrearOrdenDeCompra_6 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -596,7 +575,7 @@ scr_customizing_Entities As screen:
             Width: =415
             X: =475
             Y: =28
-            ZIndex: =36
+            ZIndex: =34
 
             TxtOrdendeCompra_38 As label:
                 Font: =Font.Arial
@@ -810,7 +789,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupCnfEditEntity:false})
             Visible: =varpopupCnfEditEntity
             Width: =1366
-            ZIndex: =37
+            ZIndex: =35
 
         grpCrearOrdenDeCompra_7 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -823,7 +802,7 @@ scr_customizing_Entities As screen:
             Width: =415
             X: =475
             Y: =29
-            ZIndex: =38
+            ZIndex: =36
 
             Icon2_4 As icon.Cancel:
                 Height: =20
@@ -1033,7 +1012,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupEliminateEntity:false})
             Visible: =varpopupEliminateEntity
             Width: =1366
-            ZIndex: =39
+            ZIndex: =37
 
         grpCrearOrdenDeCompra_8 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1046,7 +1025,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =40
+            ZIndex: =38
 
             TxtOrdendeCompra_35 As label:
                 Font: =Font.Arial
@@ -1141,7 +1120,7 @@ scr_customizing_Entities As screen:
             =UpdateContext({varpopupCnfEditFamilyOffice:false})
         Visible: =varpopupCnfEditFamilyOffice
         Width: =1366
-        ZIndex: =41
+        ZIndex: =39
 
     grpCrearOrdenDeCompra_54 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -1154,7 +1133,7 @@ scr_customizing_Entities As screen:
         Width: =415
         X: =475
         Y: =193
-        ZIndex: =42
+        ZIndex: =40
 
         TxtOrdendeCompra_90 As label:
             Font: =Font.Arial
@@ -1269,7 +1248,7 @@ scr_customizing_Entities As screen:
             =UpdateContext({varpopupEliminateFamilyOffice:false})
         Visible: =varpopupEliminateFamilyOffice
         Width: =1366
-        ZIndex: =43
+        ZIndex: =41
 
     grpCrearOrdenDeCompra_55 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -1282,7 +1261,7 @@ scr_customizing_Entities As screen:
         Width: =420
         X: =475
         Y: =246
-        ZIndex: =44
+        ZIndex: =42
 
         TxtOrdendeCompra_76 As label:
             Font: =Font.Arial
@@ -1368,6 +1347,15 @@ scr_customizing_Entities As screen:
             X: =24
             Y: =85
             ZIndex: =7
+
+    rctdegradado_232 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: |-
+            =UpdateContext({varpopupAddBank:false})
+        Visible: =varpopupAddBank
+        Width: =1366
+        ZIndex: =43
 
     Screen_Download As group:
         Height: =5
@@ -2788,15 +2776,6 @@ scr_customizing_Entities As screen:
                 Y: =182
                 ZIndex: =6
 
-    rctdegradado_232 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.2)
-        Height: =768
-        OnSelect: |-
-            =UpdateContext({varpopupAddBank:false})
-        Visible: =varpopupAddBank
-        Width: =1366
-        ZIndex: =45
-
     grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
         Height: =384
@@ -2808,7 +2787,7 @@ scr_customizing_Entities As screen:
         Width: =415
         X: =477
         Y: =192
-        ZIndex: =46
+        ZIndex: =44
 
         TxtOrdendeCompra_77 As label:
             Font: =Font.Arial
@@ -2915,6 +2894,27 @@ scr_customizing_Entities As screen:
             X: =39
             Y: =229
             ZIndex: =31
+
+    Label2_7 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =45
+
+    Image1_2 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =46
 
     first_Screen_2 As group:
         Height: =5

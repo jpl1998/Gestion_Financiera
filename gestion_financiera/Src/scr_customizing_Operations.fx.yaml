@@ -390,27 +390,6 @@ scr_customizing_Operations As screen:
             Y: =465
             ZIndex: =37
 
-    Label2_15 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =2
-
-    Image1_10 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =3
-
     BankDropdown As dropdown:
         BorderColor: =ColorValue(varlineColor)
         ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -420,7 +399,7 @@ scr_customizing_Operations As screen:
         Width: =344
         X: =350
         Y: =100
-        ZIndex: =4
+        ZIndex: =2
 
     Button2_81 As button:
         Align: =Align.Left
@@ -445,7 +424,7 @@ scr_customizing_Operations As screen:
         Width: =70
         X: =532
         Y: =177
-        ZIndex: =5
+        ZIndex: =3
 
     Button2_82 As button:
         Align: =Align.Left
@@ -470,7 +449,7 @@ scr_customizing_Operations As screen:
         Width: =120
         X: =719
         Y: =177
-        ZIndex: =6
+        ZIndex: =4
 
     Button2_85 As button:
         Align: =Align.Left
@@ -495,7 +474,7 @@ scr_customizing_Operations As screen:
         Width: =120
         X: =958
         Y: =177
-        ZIndex: =7
+        ZIndex: =5
 
     Scn_Screen_7 As group:
         Height: =5
@@ -511,7 +490,7 @@ scr_customizing_Operations As screen:
                 =UpdateContext({varpopupconfgAddOperation:false})
             Visible: =varpopupconfgAddOperation
             Width: =1366
-            ZIndex: =34
+            ZIndex: =32
 
         grpCrearOrdenDeCompra_30 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -524,7 +503,7 @@ scr_customizing_Operations As screen:
             Width: =415
             X: =475
             Y: =76
-            ZIndex: =35
+            ZIndex: =33
 
             TxtOrdendeCompra_92 As label:
                 Font: =Font.Arial
@@ -708,7 +687,7 @@ scr_customizing_Operations As screen:
                 =UpdateContext({varpopupCnfEditOperation:false})
             Visible: =varpopupCnfEditOperation
             Width: =1366
-            ZIndex: =36
+            ZIndex: =34
 
         grpCrearOrdenDeCompra_31 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -721,7 +700,7 @@ scr_customizing_Operations As screen:
             Width: =415
             X: =474
             Y: =75
-            ZIndex: =37
+            ZIndex: =35
 
             Button1_46 As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
@@ -896,7 +875,7 @@ scr_customizing_Operations As screen:
                 =UpdateContext({varpopupEliminateOperation:false})
             Visible: =varpopupEliminateOperation
             Width: =1366
-            ZIndex: =38
+            ZIndex: =36
 
         grpCrearOrdenDeCompra_32 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -909,7 +888,7 @@ scr_customizing_Operations As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =39
+            ZIndex: =37
 
             TxtOrdendeCompra_96 As label:
                 Font: =Font.Arial
@@ -1183,6 +1162,27 @@ scr_customizing_Operations As screen:
             X: =350
             Y: =215
             ZIndex: =13
+
+    Label2_15 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =38
+
+    Image1_10 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =39
 
     Screen_Download_6 As group:
         Height: =5
