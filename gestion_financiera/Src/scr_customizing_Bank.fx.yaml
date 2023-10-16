@@ -785,7 +785,7 @@ scr_customizing_Bank As screen:
                     PaddingTop: =8
                     Size: =12
                     Text: =LookUp('GF_DEV.Entity', id_entity = ThisItem.id_entity).entity
-                    Width: =120
+                    Width: =190
                     X: =550
                     ZIndex: =13
 
