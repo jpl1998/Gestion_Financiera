@@ -667,6 +667,9 @@ scr_roles As screen:
             HoverBorderColor: =RGBA(255, 255, 255, 1)
             HoverColor: =ColorValue(varprimaryColor)
             HoverFill: =ColorFade(ColorValue(varprimaryColor),90%)
+            OnSelect: |-
+                =Navigate(scr_customizing_Entities);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(166, 166, 166, 1)
             PressedFill: =RGBA(255, 255, 255, 1)
