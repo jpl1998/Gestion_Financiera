@@ -1,5 +1,125 @@
 scr_reports As screen:
 
+    Container30 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =768
+        Width: =1293
+        X: =73
+        ZIndex: =1
+
+        Label1 As label:
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Size: =24
+            Text: ="Reports"
+            Width: =132
+            X: =(Parent.Width - Self.Width)/2
+            Y: =40
+            ZIndex: =1
+
+        Label1_1 As label:
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.Arial
+            Size: =12
+            Text: ="What kind of report do you want to see?"
+            Width: =296
+            X: =(Parent.Width - Self.Width)/2
+            Y: =80
+            ZIndex: =2
+
+        ReportsMenuGallery As gallery.galleryHorizontal:
+            DelayItemLoading: =true
+            Height: =(If(Self.AllItemsCount > 3,2,1) * (290 + Self.TemplatePadding)) + Self.TemplatePadding 
+            Items: |-
+                =Filter(Table(
+                        {
+                            item: "Detail",
+                            screen: scr_managemenent,
+                            image: detail
+                        },
+                        {
+                            item: "Summary",
+                            screen: scr_banco,
+                            image: Summary
+                        },
+                        {
+                            item: "Profitability",
+                            screen: scr_managemenent,
+                            image: profitability
+                        },
+                        {
+                            item: "Board",
+                            screen: scr_banco,
+                            image: board
+                        },
+                        {
+                            item: "Legal/Taxes",
+                            screen: scr_banco,
+                            image: legal
+                        }
+                    ),
+                    If(
+                        varUserRole.tax_detail = "1",
+                        item = "Detail"
+                    ) || If(
+                        varUserRole.tax_summary = "1",
+                        item = "Summary"
+                    ) || If(
+                        varUserRole.tax_profitability = "1",
+                        item = "Profitability"
+                    ) || If(
+                        varUserRole.tax_board = "1",
+                        item = "Board"
+                    ) || If(
+                        varUserRole.tax_legal = "1",
+                        item = "Legal/Taxes"
+                    )
+                )
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =365
+            Width: =(If(Self.AllItemsCount = 4,2,Self.AllItemsCount > 3,3,Self.AllItemsCount) * (Self.TemplateWidth + Self.TemplatePadding)) + Self.TemplatePadding
+            WrapCount: =If(Self.AllItemsCount > 3,2,1)
+            X: =(Parent.Width - Self.Width)/2
+            Y: =(Parent.Height - Self.Height)/2 + 50
+            ZIndex: =3
+
+            Button7_1 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(246, 249, 252, 1)
+                Height: =240
+                HoverFill: =RGBA(246, 249, 252, 1)
+                OnSelect: =Select(Parent)
+                PaddingTop: =90
+                Text: =ThisItem.item
+                Width: =320
+                X: =25
+                Y: =15
+                ZIndex: =1
+
+            Image2_1 As image:
+                Height: =80
+                Image: =ThisItem.image
+                OnSelect: =Select(Parent)
+                Width: =80
+                X: =145
+                Y: =61
+                ZIndex: =2
+
+            Button7_2 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =240
+                HoverFill: =RGBA(65, 128, 194, 0.1)
+                OnSelect: =Select(Parent)
+                PaddingTop: =90
+                PressedFill: =RGBA(65, 128, 194, 0.15)
+                Text: =
+                Width: =320
+                X: =25
+                Y: =15
+                ZIndex: =3
+
     Container2_17 As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(255, 255, 255, 1)
         DropShadow: =DropShadow.None
@@ -10,7 +130,7 @@ scr_reports As screen:
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Width: =If(varshowPopUphitosdecompra,182,73)
-        ZIndex: =29
+        ZIndex: =22
 
         img_familyoffice_28 As image:
             Image: |
@@ -241,126 +361,6 @@ scr_reports As screen:
             Y: =696
             ZIndex: =25
 
-    Container30 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.None
-        Height: =768
-        Width: =1293
-        X: =73
-        ZIndex: =32
-
-        Label1 As label:
-            Color: =RGBA(77, 77, 77, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Size: =24
-            Text: ="Reports"
-            Width: =132
-            X: =(Parent.Width - Self.Width)/2
-            Y: =40
-            ZIndex: =1
-
-        Label1_1 As label:
-            Color: =RGBA(77, 77, 77, 1)
-            Font: =Font.Arial
-            Size: =12
-            Text: ="What kind of report do you want to see?"
-            Width: =296
-            X: =(Parent.Width - Self.Width)/2
-            Y: =80
-            ZIndex: =2
-
-        ReportsMenuGallery As gallery.galleryHorizontal:
-            DelayItemLoading: =true
-            Height: =(If(Self.AllItemsCount > 3,2,1) * (290 + Self.TemplatePadding)) + Self.TemplatePadding 
-            Items: |-
-                =Filter(Table(
-                        {
-                            item: "Detail",
-                            screen: scr_managemenent,
-                            image: detail
-                        },
-                        {
-                            item: "Summary",
-                            screen: scr_banco,
-                            image: Summary
-                        },
-                        {
-                            item: "Profitability",
-                            screen: scr_managemenent,
-                            image: profitability
-                        },
-                        {
-                            item: "Board",
-                            screen: scr_banco,
-                            image: board
-                        },
-                        {
-                            item: "Legal/Taxes",
-                            screen: scr_banco,
-                            image: legal
-                        }
-                    ),
-                    If(
-                        varUserRole.tax_detail = "1",
-                        item = "Detail"
-                    ) || If(
-                        varUserRole.tax_summary = "1",
-                        item = "Summary"
-                    ) || If(
-                        varUserRole.tax_profitability = "1",
-                        item = "Profitability"
-                    ) || If(
-                        varUserRole.tax_board = "1",
-                        item = "Board"
-                    ) || If(
-                        varUserRole.tax_legal = "1",
-                        item = "Legal/Taxes"
-                    )
-                )
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =365
-            Width: =(If(Self.AllItemsCount = 4,2,Self.AllItemsCount > 3,3,Self.AllItemsCount) * (Self.TemplateWidth + Self.TemplatePadding)) + Self.TemplatePadding
-            WrapCount: =If(Self.AllItemsCount > 3,2,1)
-            X: =(Parent.Width - Self.Width)/2
-            Y: =(Parent.Height - Self.Height)/2 + 50
-            ZIndex: =3
-
-            Button7_1 As button:
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(246, 249, 252, 1)
-                Height: =240
-                HoverFill: =RGBA(246, 249, 252, 1)
-                OnSelect: =Select(Parent)
-                PaddingTop: =90
-                Text: =ThisItem.item
-                Width: =320
-                X: =25
-                Y: =15
-                ZIndex: =1
-
-            Image2_1 As image:
-                Height: =80
-                Image: =ThisItem.image
-                OnSelect: =Select(Parent)
-                Width: =80
-                X: =145
-                Y: =61
-                ZIndex: =2
-
-            Button7_2 As button:
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =240
-                HoverFill: =RGBA(65, 128, 194, 0.1)
-                OnSelect: =Select(Parent)
-                PaddingTop: =90
-                PressedFill: =RGBA(65, 128, 194, 0.15)
-                Text: =
-                Width: =320
-                X: =25
-                Y: =15
-                ZIndex: =3
-
     Screen_Download_9 As group:
         Height: =5
         Width: =5
@@ -375,7 +375,7 @@ scr_reports As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =9
+            ZIndex: =2
 
         grpCrearOrdenDeCompra_48 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -388,7 +388,7 @@ scr_reports As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =10
+            ZIndex: =3
 
             TxtOrdendeCompra_299 As label:
                 Font: =Font.Arial
@@ -578,7 +578,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =11
+            ZIndex: =4
 
         grpdownloadxls_37 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -591,7 +591,7 @@ scr_reports As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =12
+            ZIndex: =5
 
             TxtOrdendeCompra_301 As label:
                 Align: =Align.Center
@@ -685,7 +685,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =13
+            ZIndex: =6
 
         grpdownloadxls1_37 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -698,7 +698,7 @@ scr_reports As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =14
+            ZIndex: =7
 
             TxtOrdendeCompra_297 As label:
                 Align: =Align.Center
@@ -794,7 +794,7 @@ scr_reports As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =15
+            ZIndex: =8
 
         grpdownloadxls2_37 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -807,7 +807,7 @@ scr_reports As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =16
+            ZIndex: =9
 
             TxtOrdendeCompra_306 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -1185,7 +1185,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =17
+            ZIndex: =10
 
         grpdownloadxls_36 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1198,7 +1198,7 @@ scr_reports As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =18
+            ZIndex: =11
 
             TxtOrdendeCompra_296 As label:
                 Align: =Align.Center
@@ -1292,7 +1292,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =19
+            ZIndex: =12
 
         grpdownloadxls1_36 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1305,7 +1305,7 @@ scr_reports As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =20
+            ZIndex: =13
 
             TxtOrdendeCompra_294 As label:
                 Align: =Align.Center
@@ -1403,7 +1403,7 @@ scr_reports As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =21
+            ZIndex: =14
 
         grpdownloadxls2_36 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1418,7 +1418,7 @@ scr_reports As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =22
+            ZIndex: =15
 
             TxtOrdendeCompra_293 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -1489,7 +1489,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =23
+            ZIndex: =16
 
         grpdownloadxls_39 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1502,7 +1502,7 @@ scr_reports As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =24
+            ZIndex: =17
 
             TxtOrdendeCompra_309 As label:
                 Font: =Font.Arial
@@ -1595,7 +1595,7 @@ scr_reports As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =25
+            ZIndex: =18
 
         grpdownloadxls1_39 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1608,7 +1608,7 @@ scr_reports As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =26
+            ZIndex: =19
 
             TxtOrdendeCompra_310 As label:
                 Align: =Align.Center
@@ -1704,7 +1704,7 @@ scr_reports As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =27
+            ZIndex: =20
 
         grpdownloadxls2_39 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1717,7 +1717,7 @@ scr_reports As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =28
+            ZIndex: =21
 
             TxtOrdendeCompra_312 As label:
                 Color: =ColorValue(varprimaryColor)
