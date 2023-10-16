@@ -610,6 +610,28 @@ scr_managemenent As screen:
                                     Text: ="Withdrawals"
                                     ZIndex: =1
 
+                                Label6_74 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$"&"#,0.00")
+                                    ZIndex: =2
+
                             Container7_27 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 Fill: =ColorValue(varTableBackground)
@@ -626,6 +648,28 @@ scr_managemenent As screen:
                                     Text: ="Monthly Return (%)"
                                     ZIndex: =1
 
+                                Label6_76 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$"&"#,0.00")
+                                    ZIndex: =2
+
                             Container7_28 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
                                 LayoutMinHeight: =20
@@ -640,6 +684,28 @@ scr_managemenent As screen:
                                     Size: =12
                                     Text: ="Accumulated Return (%)"
                                     ZIndex: =1
+
+                                Label6_77 As label:
+                                    Align: =Align.Center
+                                    FillPortions: =1
+                                    Height: =30
+                                    LayoutMinWidth: =100
+                                    Size: =12
+                                    Text: |-
+                                        =Text(Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.Investment', id_class = LookUp('GF_DEV.Asset_Class', class = "Alternatives").id_class) As x,
+                                                Sum(
+                                                    ForAll(
+                                                        Filter('GF_DEV.Investment_Data', id_investment = x.id_investment, id_period = varCurrentPeriod.id_month-1),
+                                                        profitability
+                                                    ),
+                                                    Value
+                                                )
+                                            ),
+                                            Value
+                                        ),"$"&"#,0.00")
+                                    ZIndex: =2
 
                             Container7_29 As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.None
