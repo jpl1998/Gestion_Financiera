@@ -1,1030 +1,12 @@
 scr_customizing_accounting As screen:
 
-    Button1_410 As button:
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: |
-            =ColorValue(varprimaryColor)
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Normal
-        Height: =44
-        HoverBorderColor: =
-        HoverFill: =ColorValue(varprimaryColor)
-        OnSelect: |-
-            =Reset(TextInput2_40);
-            UpdateContext({varpopupAddClass1:true})
-        PressedBorderColor: =
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =2
-        RadiusBottomRight: =2
-        RadiusTopLeft: =2
-        RadiusTopRight: =2
-        Size: =12
-        Text: ="Add Year"
-        Visible: =!varpopupAddClass
-        Width: =320
-        X: =1007
-        Y: =40
-        ZIndex: =2
-
-    Group4_1 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =30
-
-        Container1_3 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.None
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =766
-            RadiusBottomLeft: =1
-            RadiusBottomRight: =1
-            RadiusTopLeft: =1
-            RadiusTopRight: =1
-            Visible: =varpopupAddClass
-            Width: =1043
-            X: =323
-            ZIndex: =36
-
-            Button2_83 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =ColorValue(varprimaryColor)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =19
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                OnSelect: |-
-                    =UpdateContext({varpopupAddClass:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Year"
-                Width: =104
-                X: =25
-                Y: =27
-                ZIndex: =1
-
-            Icon1_4 As icon.ChevronRight:
-                Height: =15
-                Icon: =Icon.ChevronRight
-                OnSelect: |-
-                    =UpdateContext({varpopupAddClass:true})
-                Width: =16
-                X: =80
-                Y: =30
-                ZIndex: =2
-
-            PeriodMonthGallery As gallery.galleryVertical:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DelayItemLoading: =true
-                Height: =324
-                Items: ='GF_DEV.Accounting_Period_Month'
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                ShowScrollbar: =false
-                TemplatePadding: =10
-                TemplateSize: =36
-                Width: =979
-                WrapCount: =2
-                X: =35
-                Y: =238
-                ZIndex: =3
-
-                Label4_20 As label:
-                    Height: =36
-                    OnSelect: =Select(Parent)
-                    PaddingTop: =8
-                    Size: =12
-                    Text: =ThisItem.month
-                    Width: =152
-                    X: =15
-                    ZIndex: =1
-
-                Button3 As button:
-                    Color: |-
-                        =Switch(
-                            ThisItem.status,
-                            "Pending",
-                            ColorValue(varlineColor),
-                            "Closed",
-                            RGBA(54, 176, 75, 1),
-                            Color.White
-                        )
-                    DisplayMode: =If(ThisItem.status="Open", DisplayMode.Edit, DisplayMode.View)
-                    Fill: =If(ThisItem.status="Open", RGBA(56, 96, 178, 1), Color.Transparent)
-                    Height: =24
-                    OnSelect: |-
-                        =UpdateContext({varpopupClosePeriod:true})
-                    Size: =12
-                    Text: =If(ThisItem.status="Open","Close",ThisItem.status)
-                    Width: =97
-                    X: =267
-                    Y: =6
-                    ZIndex: =12
-
-            Iconline_38 As rectangle:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: |
-                    =
-                Fill: =RGBA(51, 51, 51, 1)
-                Height: =1
-                Width: =400
-                X: =35
-                Y: =226
-                ZIndex: =4
-
-            Button2_86 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Month"
-                Width: =78
-                X: =48
-                Y: =189
-                ZIndex: =5
-
-            Button2_84 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =20
-                Text: ="2023"
-                Width: =177
-                X: =25
-                Y: =99
-                ZIndex: =8
-
-            Label4_19 As label:
-                Height: =22
-                OnSelect: =
-                PaddingTop: =8
-                Size: =12
-                Text: ="2023"
-                Width: =152
-                X: =100
-                Y: =24
-                ZIndex: =10
-
-            Button2_103 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Close"
-                Width: =78
-                X: =330
-                Y: =189
-                ZIndex: =11
-
-            Iconline_42 As rectangle:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                DisabledFill: |
-                    =
-                Fill: =RGBA(51, 51, 51, 1)
-                Height: =1
-                Width: =395
-                X: =520
-                Y: =226
-                ZIndex: =13
-
-            Button2_104 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Month"
-                Width: =78
-                X: =534
-                Y: =189
-                ZIndex: =14
-
-            Button2_105 As button:
-                Align: =Align.Left
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                Color: =RGBA(26, 26, 26, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =36
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverColor: =RGBA(166, 166, 166, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(166, 166, 166, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =1
-                RadiusBottomRight: =1
-                RadiusTopLeft: =1
-                RadiusTopRight: =1
-                Size: =12
-                Text: ="Close"
-                Width: =78
-                X: =816
-                Y: =189
-                ZIndex: =15
-
-        rctdegradado_265 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupAddClass1:false})
-            Visible: =varpopupAddClass1
-            Width: =1366
-            ZIndex: =37
-
-        grpCrearOrdenDeCompra_68 As groupContainer.manualLayoutContainer:
-            ContentLanguage: =If(IsBlank(TextInput2_28.Text),DisplayMode.Disabled,DisplayMode.Edit)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =276
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupAddClass1
-            Width: =415
-            X: =475
-            Y: =246
-            ZIndex: =38
-
-            TxtOrdendeCompra_455 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="New Year"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_199 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupAddClass1:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_456 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Year"
-                Width: =143
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TextInput2_40 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: |-
-                    =If(IsBlank(TextInput2_28.Text),
-                    DisplayMode.Disabled,DisplayMode.Edit)
-                Format: =TextFormat.Number
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
-            Button1_414 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                DisplayMode: =If(IsBlank(TextInput2_40.Text),DisplayMode.Disabled,DisplayMode.Edit)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varNewPeriod:
-                        Patch(
-                            'GF_DEV.Accounting_Period',
-                            Defaults('GF_DEV.Accounting_Period'),
-                            {
-                                id_period: First(
-                                    SortByColumns(
-                                        'GF_DEV.Accounting_Period',
-                                        "id_period",
-                                        SortOrder.Descending
-                                    )
-                                ).id_period + 1,
-                                period: TextInput2_40.Text
-                            }
-                        )
-                    });
-                    ForAll(
-                        Sequence(12,1) As x,
-                        Patch(
-                            'GF_DEV.Accounting_Period_Month',
-                            Defaults('GF_DEV.Accounting_Period_Month'),
-                            {
-                                id_month: First(
-                                    SortByColumns(
-                                        'GF_DEV.Accounting_Period_Month',
-                                        "id_month",
-                                        SortOrder.Descending
-                                    )
-                                ).id_month + 1,
-                                id_period: varNewPeriod.id_period,
-                                status:"Pending",
-                                month_num: x.Value,
-                                month: Switch(
-                                    x.Value,
-                                    1,
-                                    "January",
-                                    2,
-                                    "February",
-                                    3,
-                                    "March",
-                                    4,
-                                    "April",
-                                    5,
-                                    "May",
-                                    6,
-                                    "June",
-                                    7,
-                                    "July",
-                                    8,
-                                    "August",
-                                    9,
-                                    "September",
-                                    10,
-                                    "October",
-                                    11,
-                                    "November",
-                                    12,
-                                    "December"
-                                )
-                            }
-                        )
-                    );
-                    UpdateContext({varpopupAddClass1: false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save"
-                Width: =344
-                X: =38
-                Y: =196
-                ZIndex: =29
-
-        rctdegradado_266 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateClass:false})
-            Visible: =varpopupEliminateClass
-            Width: =1366
-            ZIndex: =39
-
-        grpCrearOrdenDeCompra_69 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =222
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =varpopupEliminateClass
-            Width: =420
-            X: =475
-            Y: =246
-            ZIndex: =40
-
-            TxtOrdendeCompra_457 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =16
-                Text: ="Delete Item"
-                Width: =125
-                X: =145
-                Y: =30
-                ZIndex: =1
-
-            Icon2_200 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateClass:false})
-                Width: =20
-                X: =376
-                Y: =35
-                ZIndex: =2
-
-            Button1_415 As button:
-                BorderColor: =ColorValue(varprimaryColor)
-                BorderThickness: =1
-                Color: =ColorValue(varprimaryColor)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateClass:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="No, Cancel"
-                Width: =180
-                X: =24
-                Y: =156
-                ZIndex: =5
-
-            Button1_416 As button:
-                BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =1
-                Color: =RGBA(255, 0, 0, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(255, 0, 0, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Yes, Delete"
-                Width: =180
-                X: =216
-                Y: =156
-                ZIndex: =6
-
-            HtmlText1_64 As htmlViewer:
-                Font: =Font.Arial
-                Height: =46
-                HtmlText: |-
-                    ="<center> The <b><font color=""#4280c2"">""August 2023""</font></b> item will be permantly deleted. 
-                    Are you sure you want delete it? "
-                Width: =372
-                X: =24
-                Y: =85
-                ZIndex: =7
-
-    Group5_1 As group:
-        Height: =5
-        Width: =5
-        X: =60
-        Y: =60
-        ZIndex: =37
-
-        rctdegradado_249 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupCnfEditSubClass:false})
-            Visible: =
-            Width: =1366
-            ZIndex: =29
-
-        grpCrearOrdenDeCompra_62 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =276
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =
-            Width: =415
-            X: =475
-            Y: =246
-            ZIndex: =30
-
-            TxtOrdendeCompra_447 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="Edit Item"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_193 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupCnfEditSubClass:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_448 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="SubClass"
-                Width: =143
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TextInput2_36 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
-            Button1_406 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save Changes"
-                Width: =344
-                X: =38
-                Y: =196
-                ZIndex: =29
-
-        rctdegradado_250 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupAddSubClass2:false})
-            Visible: =
-            Width: =1366
-            ZIndex: =31
-
-        grpCrearOrdenDeCompra_63 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =276
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =
-            Width: =415
-            X: =475
-            Y: =246
-            ZIndex: =32
-
-            TxtOrdendeCompra_449 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                Size: =16
-                Text: ="New Item"
-                Width: =105
-                X: =159
-                Y: =25
-                ZIndex: =1
-
-            Icon2_194 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupAddSubClass2:false})
-                Width: =20
-                X: =362
-                Y: =31
-                ZIndex: =13
-
-            TxtOrdendeCompra_450 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="SubClass"
-                Width: =143
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TextInput2_37 As text:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                Default: =""
-                Height: =44
-                HoverBorderColor: =ColorValue(varlineColor)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Width: =344
-                X: =38
-                Y: =116
-                ZIndex: =21
-
-            Button1_407 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Normal
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varshowPopUpProveedores:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Save"
-                Width: =344
-                X: =38
-                Y: =196
-                ZIndex: =29
-
-        rctdegradado_251 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupEliminateSubClass2:false})
-            Visible: =
-            Width: =1366
-            ZIndex: =33
-
-        grpCrearOrdenDeCompra_64 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =222
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: =
-            Width: =420
-            X: =475
-            Y: =246
-            ZIndex: =34
-
-            TxtOrdendeCompra_451 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =16
-                Text: ="Delete Item"
-                Width: =125
-                X: =145
-                Y: =30
-                ZIndex: =1
-
-            Icon2_195 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateSubClass2:false})
-                Width: =20
-                X: =376
-                Y: =35
-                ZIndex: =2
-
-            TxtOrdendeCompra_453 As label:
-                Align: =Align.Center
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                Height: =60
-                Size: =12
-                Text: ="The                                                             item will be permantly deleted. Are you sure you want delete it? "
-                Width: =350
-                X: =43
-                Y: =80
-                ZIndex: =3
-
-            TxtOrdendeCompra_452 As label:
-                Color: =ColorValue(varprimaryColor)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =24
-                Size: =12
-                Text: ="""Developer Markets High Yiel"""
-                Width: =242
-                X: =86
-                Y: =79
-                ZIndex: =4
-
-            Button1_408 As button:
-                BorderColor: =ColorValue(varprimaryColor)
-                BorderThickness: =1
-                Color: =ColorValue(varprimaryColor)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateSubClass2:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="No, Cancel"
-                Width: =180
-                X: =24
-                Y: =156
-                ZIndex: =5
-
-            Button1_409 As button:
-                BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =1
-                Color: =RGBA(255, 0, 0, 1)
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: =RGBA(255, 255, 255, 1)
-                Font: =Font.Arial
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =RGBA(255, 0, 0, 1)
-                OnSelect: =
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(255, 0, 0, 1)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: ="Yes, Delete"
-                Width: =180
-                X: =216
-                Y: =156
-                ZIndex: =6
-
-    rctdegradado_262 As rectangle:
-        Fill: =RGBA(0, 0, 0, 0.2)
-        Height: =768
-        OnSelect: |-
-            =UpdateContext({varpopupClosePeriod:false})
-        Visible: =varpopupClosePeriod
-        Width: =1366
-        ZIndex: =41
-
-    grpCrearOrdenDeCompra_65 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =222
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupClosePeriod
-        Width: =420
-        X: =475
-        Y: =246
-        ZIndex: =42
-
-        TxtOrdendeCompra_48 As label:
-            Align: =Align.Center
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =16
-            Text: ="Period Closing"
-            Width: =250
-            X: =(Parent.Width-Self.Width)/2
-            Y: =30
-            ZIndex: =1
-
-        Icon2_196 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupClosePeriod:false})
-            Width: =20
-            X: =376
-            Y: =35
-            ZIndex: =2
-
-        Button1_388 As button:
-            BorderColor: =ColorValue(varprimaryColor)
-            BorderThickness: =1
-            Color: =ColorValue(varprimaryColor)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =UpdateContext({varpopupClosePeriod:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="No, Cancel"
-            Width: =180
-            X: =24
-            Y: =156
-            ZIndex: =5
-
-        Button1_411 As button:
-            BorderColor: =RGBA(255, 0, 0, 1)
-            BorderThickness: =1
-            Color: =RGBA(255, 0, 0, 1)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Font: =Font.Arial
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: =RGBA(255, 0, 0, 1)
-            OnSelect: |-
-                =Concurrent(
-                    Patch(
-                        'GF_DEV.Accounting_Period_Month',
-                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
-                        {
-                            status:"Closed"
-                        }
-                    ),
-                    Patch(
-                        'GF_DEV.Accounting_Period_Month',
-                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
-                        {
-                            status:"Open"
-                        }
-                    ),
-                    Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"));
-                );
-                UpdateContext({varpopupClosePeriod:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: =RGBA(255, 0, 0, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Yes, Close Period"
-            Width: =180
-            X: =216
-            Y: =156
-            ZIndex: =6
-
-        HtmlText1_63 As htmlViewer:
-            Font: =Font.Arial
-            Height: =51
-            HtmlText: |-
-                ="<center> Are you sure to close the period <b><font color=""#4280c2"">"& PeriodMonthGallery.Selected.month & " " &  LookUp('GF_DEV.Accounting_Period', id_period = PeriodMonthGallery.Selected.id_period).period & "</font></b> ? No more movements can be registered in this period.
-                "
-            Width: =372
-            X: =24
-            Y: =80
-            ZIndex: =7
-
     Container4_31 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =692
         Width: =237
         X: =40
         Y: =76
-        ZIndex: =43
+        ZIndex: =1
 
         Iconline_81 As rectangle:
             DisabledFill: |
@@ -1408,6 +390,1024 @@ scr_customizing_accounting As screen:
             Y: =565
             ZIndex: =41
 
+    Button1_410 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Fill: |
+            =ColorValue(varprimaryColor)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Normal
+        Height: =44
+        HoverBorderColor: =
+        HoverFill: =ColorValue(varprimaryColor)
+        OnSelect: |-
+            =Reset(TextInput2_40);
+            UpdateContext({varpopupAddClass1:true})
+        PressedBorderColor: =
+        PressedFill: =ColorValue(varprimaryColor)
+        RadiusBottomLeft: =2
+        RadiusBottomRight: =2
+        RadiusTopLeft: =2
+        RadiusTopRight: =2
+        Size: =12
+        Text: ="Add Year"
+        Visible: =!varpopupAddClass
+        Width: =320
+        X: =1007
+        Y: =40
+        ZIndex: =2
+
+    Group4_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =30
+
+        Container1_3 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =766
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Visible: =varpopupAddClass
+            Width: =1043
+            X: =323
+            ZIndex: =34
+
+            Button2_83 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =19
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                OnSelect: |-
+                    =UpdateContext({varpopupAddClass:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Year"
+                Width: =104
+                X: =25
+                Y: =27
+                ZIndex: =1
+
+            Icon1_4 As icon.ChevronRight:
+                Height: =15
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =UpdateContext({varpopupAddClass:true})
+                Width: =16
+                X: =80
+                Y: =30
+                ZIndex: =2
+
+            PeriodMonthGallery As gallery.galleryVertical:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DelayItemLoading: =true
+                Height: =324
+                Items: ='GF_DEV.Accounting_Period_Month'
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =10
+                TemplateSize: =36
+                Width: =979
+                WrapCount: =2
+                X: =35
+                Y: =238
+                ZIndex: =3
+
+                Label4_20 As label:
+                    Height: =36
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =8
+                    Size: =12
+                    Text: =ThisItem.month
+                    Width: =152
+                    X: =15
+                    ZIndex: =1
+
+                Button3 As button:
+                    Color: |-
+                        =Switch(
+                            ThisItem.status,
+                            "Pending",
+                            ColorValue(varlineColor),
+                            "Closed",
+                            RGBA(54, 176, 75, 1),
+                            Color.White
+                        )
+                    DisplayMode: =If(ThisItem.status="Open", DisplayMode.Edit, DisplayMode.View)
+                    Fill: =If(ThisItem.status="Open", RGBA(56, 96, 178, 1), Color.Transparent)
+                    Height: =24
+                    OnSelect: |-
+                        =UpdateContext({varpopupClosePeriod:true})
+                    Size: =12
+                    Text: =If(ThisItem.status="Open","Close",ThisItem.status)
+                    Width: =97
+                    X: =267
+                    Y: =6
+                    ZIndex: =12
+
+            Iconline_38 As rectangle:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: |
+                    =
+                Fill: =RGBA(51, 51, 51, 1)
+                Height: =1
+                Width: =400
+                X: =35
+                Y: =226
+                ZIndex: =4
+
+            Button2_86 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =36
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Month"
+                Width: =78
+                X: =48
+                Y: =189
+                ZIndex: =5
+
+            Button2_84 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =36
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =20
+                Text: ="2023"
+                Width: =177
+                X: =25
+                Y: =99
+                ZIndex: =8
+
+            Label4_19 As label:
+                Height: =22
+                OnSelect: =
+                PaddingTop: =8
+                Size: =12
+                Text: ="2023"
+                Width: =152
+                X: =100
+                Y: =24
+                ZIndex: =10
+
+            Button2_103 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =36
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Close"
+                Width: =78
+                X: =330
+                Y: =189
+                ZIndex: =11
+
+            Iconline_42 As rectangle:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DisabledFill: |
+                    =
+                Fill: =RGBA(51, 51, 51, 1)
+                Height: =1
+                Width: =395
+                X: =520
+                Y: =226
+                ZIndex: =13
+
+            Button2_104 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =36
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Month"
+                Width: =78
+                X: =534
+                Y: =189
+                ZIndex: =14
+
+            Button2_105 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                Color: =RGBA(26, 26, 26, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =36
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =RGBA(166, 166, 166, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(166, 166, 166, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =1
+                RadiusBottomRight: =1
+                RadiusTopLeft: =1
+                RadiusTopRight: =1
+                Size: =12
+                Text: ="Close"
+                Width: =78
+                X: =816
+                Y: =189
+                ZIndex: =15
+
+        rctdegradado_265 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupAddClass1:false})
+            Visible: =varpopupAddClass1
+            Width: =1366
+            ZIndex: =35
+
+        grpCrearOrdenDeCompra_68 As groupContainer.manualLayoutContainer:
+            ContentLanguage: =If(IsBlank(TextInput2_28.Text),DisplayMode.Disabled,DisplayMode.Edit)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupAddClass1
+            Width: =415
+            X: =475
+            Y: =246
+            ZIndex: =36
+
+            TxtOrdendeCompra_455 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="New Year"
+                Width: =105
+                X: =159
+                Y: =25
+                ZIndex: =1
+
+            Icon2_199 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupAddClass1:false})
+                Width: =20
+                X: =362
+                Y: =31
+                ZIndex: =13
+
+            TxtOrdendeCompra_456 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Year"
+                Width: =143
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TextInput2_40 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: |-
+                    =If(IsBlank(TextInput2_28.Text),
+                    DisplayMode.Disabled,DisplayMode.Edit)
+                Format: =TextFormat.Number
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =116
+                ZIndex: =21
+
+            Button1_414 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(TextInput2_40.Text),DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varNewPeriod:
+                        Patch(
+                            'GF_DEV.Accounting_Period',
+                            Defaults('GF_DEV.Accounting_Period'),
+                            {
+                                id_period: First(
+                                    SortByColumns(
+                                        'GF_DEV.Accounting_Period',
+                                        "id_period",
+                                        SortOrder.Descending
+                                    )
+                                ).id_period + 1,
+                                period: TextInput2_40.Text
+                            }
+                        )
+                    });
+                    ForAll(
+                        Sequence(12,1) As x,
+                        Patch(
+                            'GF_DEV.Accounting_Period_Month',
+                            Defaults('GF_DEV.Accounting_Period_Month'),
+                            {
+                                id_month: First(
+                                    SortByColumns(
+                                        'GF_DEV.Accounting_Period_Month',
+                                        "id_month",
+                                        SortOrder.Descending
+                                    )
+                                ).id_month + 1,
+                                id_period: varNewPeriod.id_period,
+                                status:"Pending",
+                                month_num: x.Value,
+                                month: Switch(
+                                    x.Value,
+                                    1,
+                                    "January",
+                                    2,
+                                    "February",
+                                    3,
+                                    "March",
+                                    4,
+                                    "April",
+                                    5,
+                                    "May",
+                                    6,
+                                    "June",
+                                    7,
+                                    "July",
+                                    8,
+                                    "August",
+                                    9,
+                                    "September",
+                                    10,
+                                    "October",
+                                    11,
+                                    "November",
+                                    12,
+                                    "December"
+                                )
+                            }
+                        )
+                    );
+                    UpdateContext({varpopupAddClass1: false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save"
+                Width: =344
+                X: =38
+                Y: =196
+                ZIndex: =29
+
+        rctdegradado_266 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateClass:false})
+            Visible: =varpopupEliminateClass
+            Width: =1366
+            ZIndex: =37
+
+        grpCrearOrdenDeCompra_69 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =222
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupEliminateClass
+            Width: =420
+            X: =475
+            Y: =246
+            ZIndex: =38
+
+            TxtOrdendeCompra_457 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =16
+                Text: ="Delete Item"
+                Width: =125
+                X: =145
+                Y: =30
+                ZIndex: =1
+
+            Icon2_200 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateClass:false})
+                Width: =20
+                X: =376
+                Y: =35
+                ZIndex: =2
+
+            Button1_415 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderThickness: =1
+                Color: =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateClass:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="No, Cancel"
+                Width: =180
+                X: =24
+                Y: =156
+                ZIndex: =5
+
+            Button1_416 As button:
+                BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: =
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(255, 0, 0, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Yes, Delete"
+                Width: =180
+                X: =216
+                Y: =156
+                ZIndex: =6
+
+            HtmlText1_64 As htmlViewer:
+                Font: =Font.Arial
+                Height: =46
+                HtmlText: |-
+                    ="<center> The <b><font color=""#4280c2"">""August 2023""</font></b> item will be permantly deleted. 
+                    Are you sure you want delete it? "
+                Width: =372
+                X: =24
+                Y: =85
+                ZIndex: =7
+
+    Group5_1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =37
+
+        rctdegradado_249 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupCnfEditSubClass:false})
+            Visible: =
+            Width: =1366
+            ZIndex: =28
+
+        grpCrearOrdenDeCompra_62 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =
+            Width: =415
+            X: =475
+            Y: =246
+            ZIndex: =29
+
+            TxtOrdendeCompra_447 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="Edit Item"
+                Width: =105
+                X: =159
+                Y: =25
+                ZIndex: =1
+
+            Icon2_193 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupCnfEditSubClass:false})
+                Width: =20
+                X: =362
+                Y: =31
+                ZIndex: =13
+
+            TxtOrdendeCompra_448 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="SubClass"
+                Width: =143
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TextInput2_36 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =116
+                ZIndex: =21
+
+            Button1_406 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save Changes"
+                Width: =344
+                X: =38
+                Y: =196
+                ZIndex: =29
+
+        rctdegradado_250 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupAddSubClass2:false})
+            Visible: =
+            Width: =1366
+            ZIndex: =30
+
+        grpCrearOrdenDeCompra_63 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =276
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =
+            Width: =415
+            X: =475
+            Y: =246
+            ZIndex: =31
+
+            TxtOrdendeCompra_449 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Size: =16
+                Text: ="New Item"
+                Width: =105
+                X: =159
+                Y: =25
+                ZIndex: =1
+
+            Icon2_194 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupAddSubClass2:false})
+                Width: =20
+                X: =362
+                Y: =31
+                ZIndex: =13
+
+            TxtOrdendeCompra_450 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="SubClass"
+                Width: =143
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TextInput2_37 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =116
+                ZIndex: =21
+
+            Button1_407 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Normal
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varshowPopUpProveedores:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Save"
+                Width: =344
+                X: =38
+                Y: =196
+                ZIndex: =29
+
+        rctdegradado_251 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupEliminateSubClass2:false})
+            Visible: =
+            Width: =1366
+            ZIndex: =32
+
+        grpCrearOrdenDeCompra_64 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =222
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =
+            Width: =420
+            X: =475
+            Y: =246
+            ZIndex: =33
+
+            TxtOrdendeCompra_451 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =16
+                Text: ="Delete Item"
+                Width: =125
+                X: =145
+                Y: =30
+                ZIndex: =1
+
+            Icon2_195 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateSubClass2:false})
+                Width: =20
+                X: =376
+                Y: =35
+                ZIndex: =2
+
+            TxtOrdendeCompra_453 As label:
+                Align: =Align.Center
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                Height: =60
+                Size: =12
+                Text: ="The                                                             item will be permantly deleted. Are you sure you want delete it? "
+                Width: =350
+                X: =43
+                Y: =80
+                ZIndex: =3
+
+            TxtOrdendeCompra_452 As label:
+                Color: =ColorValue(varprimaryColor)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =24
+                Size: =12
+                Text: ="""Developer Markets High Yiel"""
+                Width: =242
+                X: =86
+                Y: =79
+                ZIndex: =4
+
+            Button1_408 As button:
+                BorderColor: =ColorValue(varprimaryColor)
+                BorderThickness: =1
+                Color: =ColorValue(varprimaryColor)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =UpdateContext({varpopupEliminateSubClass2:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="No, Cancel"
+                Width: =180
+                X: =24
+                Y: =156
+                ZIndex: =5
+
+            Button1_409 As button:
+                BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =Font.Arial
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: =
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(255, 0, 0, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: ="Yes, Delete"
+                Width: =180
+                X: =216
+                Y: =156
+                ZIndex: =6
+
+    rctdegradado_262 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.2)
+        Height: =768
+        OnSelect: |-
+            =UpdateContext({varpopupClosePeriod:false})
+        Visible: =varpopupClosePeriod
+        Width: =1366
+        ZIndex: =39
+
+    grpCrearOrdenDeCompra_65 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =222
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupClosePeriod
+        Width: =420
+        X: =475
+        Y: =246
+        ZIndex: =40
+
+        TxtOrdendeCompra_48 As label:
+            Align: =Align.Center
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =16
+            Text: ="Period Closing"
+            Width: =250
+            X: =(Parent.Width-Self.Width)/2
+            Y: =30
+            ZIndex: =1
+
+        Icon2_196 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupClosePeriod:false})
+            Width: =20
+            X: =376
+            Y: =35
+            ZIndex: =2
+
+        Button1_388 As button:
+            BorderColor: =ColorValue(varprimaryColor)
+            BorderThickness: =1
+            Color: =ColorValue(varprimaryColor)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =UpdateContext({varpopupClosePeriod:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="No, Cancel"
+            Width: =180
+            X: =24
+            Y: =156
+            ZIndex: =5
+
+        Button1_411 As button:
+            BorderColor: =RGBA(255, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(255, 0, 0, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Concurrent(
+                    Patch(
+                        'GF_DEV.Accounting_Period_Month',
+                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month),
+                        {
+                            status:"Closed"
+                        }
+                    ),
+                    Patch(
+                        'GF_DEV.Accounting_Period_Month',
+                        LookUp('GF_DEV.Accounting_Period_Month', id_month = PeriodMonthGallery.Selected.id_month+1),
+                        {
+                            status:"Open"
+                        }
+                    ),
+                    Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"));
+                );
+                UpdateContext({varpopupClosePeriod:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(255, 0, 0, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Yes, Close Period"
+            Width: =180
+            X: =216
+            Y: =156
+            ZIndex: =6
+
+        HtmlText1_63 As htmlViewer:
+            Font: =Font.Arial
+            Height: =51
+            HtmlText: |-
+                ="<center> Are you sure to close the period <b><font color=""#4280c2"">"& PeriodMonthGallery.Selected.month & " " &  LookUp('GF_DEV.Accounting_Period', id_period = PeriodMonthGallery.Selected.id_period).period & "</font></b> ? No more movements can be registered in this period.
+                "
+            Width: =372
+            X: =24
+            Y: =80
+            ZIndex: =7
+
     Label2_17 As label:
         Font: =Font.Arial
         FontWeight: =FontWeight.Semibold
@@ -1418,7 +1418,7 @@ scr_customizing_accounting As screen:
         Width: =183
         X: =67
         Y: =32
-        ZIndex: =44
+        ZIndex: =41
 
     Image1_12 As image:
         Height: =32
@@ -1427,7 +1427,7 @@ scr_customizing_accounting As screen:
         Width: =32
         X: =32
         Y: =32
-        ZIndex: =45
+        ZIndex: =42
 
     first_Screen_11 As group:
         Height: =5
@@ -1562,7 +1562,7 @@ scr_customizing_accounting As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =9
+            ZIndex: =8
 
         grpCrearOrdenDeCompra_52 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1575,7 +1575,7 @@ scr_customizing_accounting As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =10
+            ZIndex: =9
 
             TxtOrdendeCompra_379 As label:
                 Font: =Font.Arial
@@ -1765,7 +1765,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =11
+            ZIndex: =10
 
         grpdownloadxls_53 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1778,7 +1778,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =12
+            ZIndex: =11
 
             TxtOrdendeCompra_381 As label:
                 Align: =Align.Center
@@ -1872,7 +1872,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =13
+            ZIndex: =12
 
         grpdownloadxls1_53 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1885,7 +1885,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =14
+            ZIndex: =13
 
             TxtOrdendeCompra_377 As label:
                 Align: =Align.Center
@@ -1981,7 +1981,7 @@ scr_customizing_accounting As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =15
+            ZIndex: =14
 
         grpdownloadxls2_53 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1994,7 +1994,7 @@ scr_customizing_accounting As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =16
+            ZIndex: =15
 
             TxtOrdendeCompra_386 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2372,7 +2372,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =17
+            ZIndex: =16
 
         grpdownloadxls_52 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2385,7 +2385,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =18
+            ZIndex: =17
 
             TxtOrdendeCompra_376 As label:
                 Align: =Align.Center
@@ -2479,7 +2479,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =19
+            ZIndex: =18
 
         grpdownloadxls1_52 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2492,7 +2492,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =20
+            ZIndex: =19
 
             TxtOrdendeCompra_374 As label:
                 Align: =Align.Center
@@ -2590,7 +2590,7 @@ scr_customizing_accounting As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =21
+            ZIndex: =20
 
         grpdownloadxls2_52 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2605,7 +2605,7 @@ scr_customizing_accounting As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =22
+            ZIndex: =21
 
             TxtOrdendeCompra_373 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2676,7 +2676,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =23
+            ZIndex: =22
 
         grpdownloadxls_55 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2689,7 +2689,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =24
+            ZIndex: =23
 
             TxtOrdendeCompra_389 As label:
                 Font: =Font.Arial
@@ -2782,7 +2782,7 @@ scr_customizing_accounting As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =25
+            ZIndex: =24
 
         grpdownloadxls1_55 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2795,7 +2795,7 @@ scr_customizing_accounting As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =26
+            ZIndex: =25
 
             TxtOrdendeCompra_390 As label:
                 Align: =Align.Center
@@ -2891,7 +2891,7 @@ scr_customizing_accounting As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =27
+            ZIndex: =26
 
         grpdownloadxls2_55 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2904,7 +2904,7 @@ scr_customizing_accounting As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =28
+            ZIndex: =27
 
             TxtOrdendeCompra_392 As label:
                 Color: =ColorValue(varprimaryColor)
