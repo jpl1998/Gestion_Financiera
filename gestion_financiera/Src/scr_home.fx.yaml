@@ -103,7 +103,7 @@ scr_home As screen:
                     },
                     {
                         item: "Tax Tracker",
-                        screen: scr_banco,
+                        screen: scr_tax_tracker,
                         image: 'tax tracker'
                     }
                 ),

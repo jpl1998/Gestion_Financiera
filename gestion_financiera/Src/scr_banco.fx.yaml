@@ -2,330 +2,6 @@ scr_banco As screen:
     OnVisible: |-
         =UpdateContext({varshowPopUpIconDetalle:false})
 
-    Container2_18 As groupContainer.manualLayoutContainer:
-        BorderColor: =RGBA(255, 255, 255, 1)
-        DropShadow: =DropShadow.None
-        Fill: =RGBA(242, 242, 242, 1)
-        Height: =768
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Width: =If(varshowPopUphitosdecompra,182,73)
-        ZIndex: =1
-
-        img_familyoffice_30 As image:
-            Image: |
-                =logo
-            Visible: =!varshowPopUphitosdecompra
-            Width: =60
-            X: =7
-            Y: =10
-            ZIndex: =1
-
-        imgusuario_22 As image:
-            Height: =48
-            Image: |
-                =User().Image
-            RadiusBottomLeft: |
-                =60
-            RadiusBottomRight: =60
-            RadiusTopLeft: |
-                =60
-            RadiusTopRight: |
-                =60
-            Width: =48
-            X: =12
-            Y: =197
-            ZIndex: =2
-
-        img_customizing_74 As image:
-            Height: =48
-            Image: |
-                =salir
-            OnSelect: |-
-                =Navigate(scr_home);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =!varshowPopUphitosdecompra
-            Width: =48
-            X: =12
-            Y: =696
-            ZIndex: =3
-
-        Image2_10 As image:
-            Height: =32
-            Image: =desplegar
-            OnSelect: |-
-                =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
-            Visible: =!varshowPopUphitosdecompra
-            Width: =32
-            X: =20
-            Y: =143
-            ZIndex: =8
-
-        txtusuario_10 As label:
-            Color: =RGBA(77, 77, 77, 1)
-            Fill: =RGBA(70, 140, 140, 0)
-            Font: =Font.'Lato Hairline'
-            FontWeight: =FontWeight.Semibold
-            Height: =48
-            LineHeight: =0
-            Size: =12
-            Text: |
-                =User().FullName
-            Visible: =varshowPopUphitosdecompra
-            Width: =122
-            X: =60
-            Y: =197
-            ZIndex: =22
-
-        Image14_9 As image:
-            Height: =32
-            Image: =hidemenu
-            OnSelect: |-
-                =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
-            Visible: =varshowPopUphitosdecompra
-            Width: =140
-            X: =21
-            Y: =143
-            ZIndex: =23
-
-        img_familyoffice_41 As image:
-            Image: |
-                =logo
-            Visible: =varshowPopUphitosdecompra
-            Width: =60
-            X: =61
-            Y: =10
-            ZIndex: =24
-
-        Image15_10 As image:
-            Height: =48
-            Image: =home2
-            OnSelect: |-
-                =Navigate(scr_home);
-                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
-            Visible: =varshowPopUphitosdecompra
-            Width: =155
-            X: =13
-            Y: =696
-            ZIndex: =25
-
-        Gallery5_3 As gallery.galleryVertical:
-            DelayItemLoading: =true
-            Height: =340
-            Items: |-
-                =Filter(
-                    Table(
-                        {
-                            item: "Operations",
-                            screen: scr_managemenent,
-                            image: InvestmentManagement
-                        },
-                        {
-                            item: "Banks",
-                            screen: scr_banco,
-                            image: bank_white
-                        },
-                        {
-                            item: "Reports",
-                            screen: scr_reports,
-                            image: 'Analize Reports'
-                        },
-                        {
-                            item: "Tax Tracker",
-                            screen: scr_banco,
-                            image: 'tax tracker'
-                        },
-                        {
-                            item: "Upload",
-                            //screen: scr_banco,
-                            image: upload
-                        }
-                    ),
-                    If(
-                        varUserRole.operations = "1",
-                        item = "Operations"
-                    ) || If(
-                        varUserRole.bank = "1",
-                        item = "Banks"
-                    ) || If(
-                        varUserRole.report = "1",
-                        item = "Reports"
-                    ) || If(
-                        varUserRole.tax = "1",
-                        item = "Tax Tracker"
-                    ) || item = "Upload"
-                )
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =58
-            Visible: =!varshowPopUphitosdecompra
-            Width: =73
-            Y: =256
-            ZIndex: =27
-
-            Button8_6 As button:
-                Align: =Align.Left
-                BorderThickness: =0
-                Color: =If(ThisItem.item = "Banks", Color.White, ColorValue(varprimaryColor))
-                Fill: =If(ThisItem.item = "Banks", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
-                FocusedBorderThickness: =0
-                Height: =48
-                OnSelect: =Select(Parent)
-                PaddingLeft: =45
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: =
-                Width: =48
-                X: =5
-                Y: =5
-                ZIndex: =1
-
-            Image8_3 As image:
-                Height: =30
-                Image: =ThisItem.image
-                OnSelect: =Select(Parent)
-                Width: =30
-                X: =14
-                Y: =14
-                ZIndex: =2
-
-            Button8_7 As button:
-                Align: =Align.Left
-                BorderThickness: =0
-                Color: =ColorValue(varprimaryColor)
-                Fill: =RGBA(255, 255, 255, 0)
-                FocusedBorderThickness: =0
-                Height: =48
-                HoverFill: =RGBA(65, 128, 194, 0.1)
-                OnSelect: |-
-                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
-                    Navigate(ThisItem.screen);
-                    UpdateContext({varshowPopUphitosdecompra: false}))
-                PaddingLeft: =45
-                PressedFill: =RGBA(65, 128, 194, 0.15)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: =
-                Width: =48
-                X: =5
-                Y: =5
-                ZIndex: =3
-
-        Gallery5_2 As gallery.galleryVertical:
-            DelayItemLoading: =true
-            Height: =340
-            Items: |-
-                =Filter(
-                    Table(
-                        {
-                            item: "Operations",
-                            screen: scr_managemenent,
-                            image: InvestmentManagement
-                        },
-                        {
-                            item: "Banks",
-                            screen: scr_banco,
-                            image: bank_white
-                        },
-                        {
-                            item: "Reports",
-                            screen: scr_reports,
-                            image: 'Analize Reports'
-                        },
-                        {
-                            item: "Tax Tracker",
-                            screen: scr_banco,
-                            image: 'tax tracker'
-                        },
-                        {
-                            item: "Upload",
-                            //screen: scr_banco,
-                            image: upload
-                        }
-                    ),
-                    If(
-                        varUserRole.operations = "1",
-                        item = "Operations"
-                    ) || If(
-                        varUserRole.bank = "1",
-                        item = "Banks"
-                    ) || If(
-                        varUserRole.report = "1",
-                        item = "Reports"
-                    ) || If(
-                        varUserRole.tax = "1",
-                        item = "Tax Tracker"
-                    ) || item = "Upload"
-                )
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplateSize: =58
-            Visible: =varshowPopUphitosdecompra
-            Width: =175
-            X: =3
-            Y: =256
-            ZIndex: =28
-
-            Button8_4 As button:
-                Align: =Align.Left
-                BorderThickness: =0
-                Color: =If(ThisItem.item = "Banks", Color.White, ColorValue(varprimaryColor))
-                Fill: =If(ThisItem.item = "Banks", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
-                FocusedBorderThickness: =0
-                Height: =48
-                OnSelect: =Select(Parent)
-                PaddingLeft: =45
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: =ThisItem.item
-                Width: =156
-                Y: =5
-                ZIndex: =1
-
-            Image8_2 As image:
-                Height: =24
-                Image: =ThisItem.image
-                OnSelect: =Select(Parent)
-                Width: =24
-                X: =15
-                Y: =17
-                ZIndex: =2
-
-            Button8_5 As button:
-                Align: =Align.Left
-                BorderThickness: =0
-                Color: =ColorValue(varprimaryColor)
-                Fill: =RGBA(255, 255, 255, 0)
-                FocusedBorderThickness: =0
-                Height: =48
-                HoverFill: =RGBA(65, 128, 194, 0.1)
-                OnSelect: |-
-                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
-                    Navigate(ThisItem.screen);
-                    UpdateContext({varshowPopUphitosdecompra: false}))
-                PaddingLeft: =45
-                PressedFill: =RGBA(65, 128, 194, 0.15)
-                RadiusBottomLeft: =2
-                RadiusBottomRight: =2
-                RadiusTopLeft: =2
-                RadiusTopRight: =2
-                Size: =12
-                Text: =
-                Width: =156
-                Y: =5
-                ZIndex: =3
-
     Label2 As label:
         Color: =RGBA(77, 77, 77, 1)
         Font: =Font.Arial
@@ -335,7 +11,7 @@ scr_banco As screen:
         Width: =166
         X: =105
         Y: =30
-        ZIndex: =2
+        ZIndex: =1
 
     Dropdown As dropdown:
         BorderColor: =ColorValue(varlineColor)
@@ -348,7 +24,7 @@ scr_banco As screen:
         Width: =200
         X: =694
         Y: =26
-        ZIndex: =3
+        ZIndex: =2
 
     Dropdown2_3 As dropdown:
         BorderColor: =ColorValue(varlineColor)
@@ -361,7 +37,7 @@ scr_banco As screen:
         Width: =200
         X: =1138
         Y: =26
-        ZIndex: =4
+        ZIndex: =3
 
     grpCrearOrdenDeCompra_49 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
@@ -376,7 +52,7 @@ scr_banco As screen:
         Width: =1256
         X: =95
         Y: =101
-        ZIndex: =5
+        ZIndex: =4
 
         Canvas1_3 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -2726,7 +2402,7 @@ scr_banco As screen:
         Visible: =varshowPopUpIconDetalle
         Width: =1293
         X: =73
-        ZIndex: =19
+        ZIndex: =5
 
         Canvas1 As fluidGrid.fluidGridWithBlankCard:
             BorderThickness: =0
@@ -4798,6 +4474,330 @@ scr_banco As screen:
                     Y: =71
                     ZIndex: =16
 
+    Container2_18 As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(242, 242, 242, 1)
+        Height: =768
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =If(varshowPopUphitosdecompra,182,73)
+        ZIndex: =6
+
+        img_familyoffice_30 As image:
+            Image: |
+                =logo
+            Visible: =!varshowPopUphitosdecompra
+            Width: =60
+            X: =7
+            Y: =10
+            ZIndex: =1
+
+        imgusuario_22 As image:
+            Height: =48
+            Image: |
+                =User().Image
+            RadiusBottomLeft: |
+                =60
+            RadiusBottomRight: =60
+            RadiusTopLeft: |
+                =60
+            RadiusTopRight: |
+                =60
+            Width: =48
+            X: =12
+            Y: =197
+            ZIndex: =2
+
+        img_customizing_74 As image:
+            Height: =48
+            Image: |
+                =salir
+            OnSelect: |-
+                =Navigate(scr_home);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            Visible: =!varshowPopUphitosdecompra
+            Width: =48
+            X: =12
+            Y: =696
+            ZIndex: =3
+
+        Image2_10 As image:
+            Height: =32
+            Image: =desplegar
+            OnSelect: |-
+                =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
+            Visible: =!varshowPopUphitosdecompra
+            Width: =32
+            X: =20
+            Y: =143
+            ZIndex: =8
+
+        txtusuario_10 As label:
+            Color: =RGBA(77, 77, 77, 1)
+            Fill: =RGBA(70, 140, 140, 0)
+            Font: =Font.'Lato Hairline'
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            LineHeight: =0
+            Size: =12
+            Text: |
+                =User().FullName
+            Visible: =varshowPopUphitosdecompra
+            Width: =122
+            X: =60
+            Y: =197
+            ZIndex: =22
+
+        Image14_9 As image:
+            Height: =32
+            Image: =hidemenu
+            OnSelect: |-
+                =UpdateContext({varshowPopUphitosdecompra: !varshowPopUphitosdecompra})
+            Visible: =varshowPopUphitosdecompra
+            Width: =140
+            X: =21
+            Y: =143
+            ZIndex: =23
+
+        img_familyoffice_41 As image:
+            Image: |
+                =logo
+            Visible: =varshowPopUphitosdecompra
+            Width: =60
+            X: =61
+            Y: =10
+            ZIndex: =24
+
+        Image15_10 As image:
+            Height: =48
+            Image: =home2
+            OnSelect: |-
+                =Navigate(scr_home);
+                If(varshowPopUphitosdecompra, UpdateContext({varshowPopUphitosdecompra: false}))
+            Visible: =varshowPopUphitosdecompra
+            Width: =155
+            X: =13
+            Y: =696
+            ZIndex: =25
+
+        Gallery5_3 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =340
+            Items: |-
+                =Filter(
+                    Table(
+                        {
+                            item: "Operations",
+                            screen: scr_managemenent,
+                            image: InvestmentManagement
+                        },
+                        {
+                            item: "Banks",
+                            screen: scr_banco,
+                            image: bank_white
+                        },
+                        {
+                            item: "Reports",
+                            screen: scr_reports,
+                            image: 'Analize Reports'
+                        },
+                        {
+                            item: "Tax Tracker",
+                            screen: scr_tax_tracker,
+                            image: 'tax tracker'
+                        },
+                        {
+                            item: "Upload",
+                            //screen: scr_banco,
+                            image: upload
+                        }
+                    ),
+                    If(
+                        varUserRole.operations = "1",
+                        item = "Operations"
+                    ) || If(
+                        varUserRole.bank = "1",
+                        item = "Banks"
+                    ) || If(
+                        varUserRole.report = "1",
+                        item = "Reports"
+                    ) || If(
+                        varUserRole.tax = "1",
+                        item = "Tax Tracker"
+                    ) || item = "Upload"
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =58
+            Visible: =!varshowPopUphitosdecompra
+            Width: =73
+            Y: =256
+            ZIndex: =27
+
+            Button8_6 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =If(ThisItem.item = "Banks", Color.White, ColorValue(varprimaryColor))
+                Fill: =If(ThisItem.item = "Banks", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
+                FocusedBorderThickness: =0
+                Height: =48
+                OnSelect: =Select(Parent)
+                PaddingLeft: =45
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =
+                Width: =48
+                X: =5
+                Y: =5
+                ZIndex: =1
+
+            Image8_3 As image:
+                Height: =30
+                Image: =ThisItem.image
+                OnSelect: =Select(Parent)
+                Width: =30
+                X: =14
+                Y: =14
+                ZIndex: =2
+
+            Button8_7 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderThickness: =0
+                Height: =48
+                HoverFill: =RGBA(65, 128, 194, 0.1)
+                OnSelect: |-
+                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
+                    Navigate(ThisItem.screen);
+                    UpdateContext({varshowPopUphitosdecompra: false}))
+                PaddingLeft: =45
+                PressedFill: =RGBA(65, 128, 194, 0.15)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =
+                Width: =48
+                X: =5
+                Y: =5
+                ZIndex: =3
+
+        Gallery5_2 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =340
+            Items: |-
+                =Filter(
+                    Table(
+                        {
+                            item: "Operations",
+                            screen: scr_managemenent,
+                            image: InvestmentManagement
+                        },
+                        {
+                            item: "Banks",
+                            screen: scr_banco,
+                            image: bank_white
+                        },
+                        {
+                            item: "Reports",
+                            screen: scr_reports,
+                            image: 'Analize Reports'
+                        },
+                        {
+                            item: "Tax Tracker",
+                            screen: scr_tax_tracker,
+                            image: 'tax tracker'
+                        },
+                        {
+                            item: "Upload",
+                            //screen: scr_banco,
+                            image: upload
+                        }
+                    ),
+                    If(
+                        varUserRole.operations = "1",
+                        item = "Operations"
+                    ) || If(
+                        varUserRole.bank = "1",
+                        item = "Banks"
+                    ) || If(
+                        varUserRole.report = "1",
+                        item = "Reports"
+                    ) || If(
+                        varUserRole.tax = "1",
+                        item = "Tax Tracker"
+                    ) || item = "Upload"
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =58
+            Visible: =varshowPopUphitosdecompra
+            Width: =175
+            X: =3
+            Y: =256
+            ZIndex: =28
+
+            Button8_4 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =If(ThisItem.item = "Banks", Color.White, ColorValue(varprimaryColor))
+                Fill: =If(ThisItem.item = "Banks", ColorValue(varprimaryColor), ColorFade(ColorValue(varprimaryColor),90%))
+                FocusedBorderThickness: =0
+                Height: =48
+                OnSelect: =Select(Parent)
+                PaddingLeft: =45
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =ThisItem.item
+                Width: =156
+                Y: =5
+                ZIndex: =1
+
+            Image8_2 As image:
+                Height: =24
+                Image: =ThisItem.image
+                OnSelect: =Select(Parent)
+                Width: =24
+                X: =15
+                Y: =17
+                ZIndex: =2
+
+            Button8_5 As button:
+                Align: =Align.Left
+                BorderThickness: =0
+                Color: =ColorValue(varprimaryColor)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderThickness: =0
+                Height: =48
+                HoverFill: =RGBA(65, 128, 194, 0.1)
+                OnSelect: |-
+                    =If(ThisItem.item = "Upload", UpdateContext({varpopupdowload:true}),
+                    Navigate(ThisItem.screen);
+                    UpdateContext({varshowPopUphitosdecompra: false}))
+                PaddingLeft: =45
+                PressedFill: =RGBA(65, 128, 194, 0.15)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =12
+                Text: =
+                Width: =156
+                Y: =5
+                ZIndex: =3
+
     Screen_Download_10 As group:
         Height: =5
         Width: =5
@@ -4812,7 +4812,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =6
+            ZIndex: =7
 
         grpCrearOrdenDeCompra_53 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -4825,7 +4825,7 @@ scr_banco As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =7
+            ZIndex: =8
 
             TxtOrdendeCompra_319 As label:
                 Font: =Font.Arial
@@ -5015,7 +5015,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =8
+            ZIndex: =9
 
         grpdownloadxls_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5028,7 +5028,7 @@ scr_banco As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =9
+            ZIndex: =10
 
             TxtOrdendeCompra_321 As label:
                 Align: =Align.Center
@@ -5122,7 +5122,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =10
+            ZIndex: =11
 
         grpdownloadxls1_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5135,7 +5135,7 @@ scr_banco As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =11
+            ZIndex: =12
 
             TxtOrdendeCompra_317 As label:
                 Align: =Align.Center
@@ -5231,7 +5231,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =12
+            ZIndex: =13
 
         grpdownloadxls2_41 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5244,7 +5244,7 @@ scr_banco As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =13
+            ZIndex: =14
 
             TxtOrdendeCompra_326 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -5622,7 +5622,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =14
+            ZIndex: =15
 
         grpdownloadxls_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5635,7 +5635,7 @@ scr_banco As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =15
+            ZIndex: =16
 
             TxtOrdendeCompra_329 As label:
                 Font: =Font.Arial
@@ -5728,7 +5728,7 @@ scr_banco As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =16
+            ZIndex: =17
 
         grpdownloadxls1_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -5741,7 +5741,7 @@ scr_banco As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =17
+            ZIndex: =18
 
             TxtOrdendeCompra_330 As label:
                 Align: =Align.Center
@@ -5837,7 +5837,7 @@ scr_banco As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =18
+            ZIndex: =19
 
         grpdownloadxls2_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)

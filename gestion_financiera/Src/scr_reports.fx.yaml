@@ -132,7 +132,7 @@ scr_reports As screen:
                         },
                         {
                             item: "Tax Tracker",
-                            screen: scr_banco,
+                            screen: scr_tax_tracker,
                             image: 'tax tracker'
                         },
                         {
@@ -240,7 +240,7 @@ scr_reports As screen:
                         },
                         {
                             item: "Tax Tracker",
-                            screen: scr_banco,
+                            screen: scr_tax_tracker,
                             image: 'tax tracker'
                         },
                         {
@@ -327,8 +327,8 @@ scr_reports As screen:
     Container30 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =768
-        Width: =1293
-        X: =73
+        Width: =Parent.Width - Container2_17.Width
+        X: =Container2_17.X+Container2_17.Width
         ZIndex: =2
 
         Label1 As label:
