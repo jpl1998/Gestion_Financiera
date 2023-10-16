@@ -5,26 +5,28 @@ scr_home As screen:
         Height: =120
         Image: =GestionFinanciera
         Width: =120
-        X: =623
+        X: =(Parent.Width-Self.Width)/2
         Y: =56
         ZIndex: =1
 
     "'lbl_ tittle' As label":
+        Align: =Align.Center
         Font: =Font.Arial
         FontWeight: =FontWeight.Semibold
         Size: =24
         Text: ="Welcome, Mark Woods"
-        Width: =360
-        X: =503
+        Width: =492
+        X: =(Parent.Width-Self.Width)/2
         Y: =232
         ZIndex: =2
 
     lbl_subtittle As label:
+        Align: =Align.Center
         Font: =Font.Arial
         Size: =16
         Text: ="Wich function would you like to perform today?"
-        Width: =455
-        X: =455
+        Width: =549
+        X: =(Parent.Width-Self.Width)/2
         Y: =296
         ZIndex: =3
 

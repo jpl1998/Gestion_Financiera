@@ -1,12 +1,108 @@
 scr_customizing_Entities As screen:
 
+    Container28_1 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =36
+        LayoutMode: =LayoutMode.Auto
+        Width: =982
+        X: =345
+        Y: =100
+        ZIndex: =1
+
+        Label4_17 As label:
+            FillPortions: =1
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =11
+            Text: ="Entity"
+            Width: =170
+            ZIndex: =1
+
+        Label4_39 As label:
+            FillPortions: =1
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =12
+            Text: ="TIN"
+            Width: =115
+            X: =215
+            ZIndex: =2
+
+        Label4_40 As label:
+            FillPortions: =1
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =11
+            Text: ="Business Name"
+            Width: =120
+            X: =361
+            ZIndex: =3
+
+        Label4_68 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =12
+            Text: ="Bank Accounts"
+            Width: =130
+            X: =551
+            ZIndex: =4
+
+        Label4_69 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =12
+            Text: ="Currency"
+            Width: =100
+            X: =672
+            ZIndex: =5
+
+        Label4_70 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            OnSelect: =
+            PaddingTop: =8
+            Size: =12
+            Text: ="Status"
+            Width: =90
+            X: =777
+            ZIndex: =6
+
+        Container29_2 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            LayoutMinHeight: =10
+            LayoutMinWidth: =250
+            Width: =30
+            ZIndex: =7
+
+        Container29_3 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            LayoutMinHeight: =10
+            LayoutMinWidth: =250
+            Width: =30
+            ZIndex: =8
+
     Container4_21 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =692
         Width: =237
         X: =40
         Y: =76
-        ZIndex: =1
+        ZIndex: =2
 
         Button2_116 As button:
             Align: =Align.Left
@@ -421,132 +517,7 @@ scr_customizing_Entities As screen:
         Width: =320
         X: =1002
         Y: =32
-        ZIndex: =2
-
-    Button2_11 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =35
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="TIN"
-        Width: =70
-        X: =570
-        Y: =100
         ZIndex: =3
-
-    Button2_12 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =35
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="Business Name"
-        Width: =140
-        X: =700
-        Y: =100
-        ZIndex: =4
-
-    Button2_13 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =35
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="Bank Accounts"
-        Width: =140
-        X: =862
-        Y: =100
-        ZIndex: =5
-
-    Button2_14 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =35
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="Currency"
-        Width: =100
-        X: =1010
-        Y: =100
-        ZIndex: =6
-
-    Button2_15 As button:
-        Align: =Align.Left
-        BorderColor: =RGBA(255, 255, 255, 1)
-        BorderThickness: =0
-        Color: =RGBA(26, 26, 26, 1)
-        DisabledBorderColor: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =35
-        HoverBorderColor: =RGBA(255, 255, 255, 1)
-        HoverColor: =RGBA(166, 166, 166, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        PressedBorderColor: =RGBA(255, 255, 255, 1)
-        PressedColor: =RGBA(166, 166, 166, 1)
-        PressedFill: =RGBA(255, 255, 255, 1)
-        RadiusBottomLeft: =1
-        RadiusBottomRight: =1
-        RadiusTopLeft: =1
-        RadiusTopRight: =1
-        Size: =12
-        Text: ="Status"
-        Width: =100
-        X: =1123
-        Y: =100
-        ZIndex: =7
 
     Scn_Screen_2 As group:
         Height: =5
@@ -562,7 +533,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupconfgAddEntity:false})
             Visible: =varpopupconfgAddEntity
             Width: =1366
-            ZIndex: =33
+            ZIndex: =26
 
         grpCrearOrdenDeCompra_6 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -575,7 +546,7 @@ scr_customizing_Entities As screen:
             Width: =415
             X: =475
             Y: =28
-            ZIndex: =34
+            ZIndex: =29
 
             TxtOrdendeCompra_38 As label:
                 Font: =Font.Arial
@@ -789,7 +760,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupCnfEditEntity:false})
             Visible: =varpopupCnfEditEntity
             Width: =1366
-            ZIndex: =35
+            ZIndex: =30
 
         grpCrearOrdenDeCompra_7 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -802,7 +773,7 @@ scr_customizing_Entities As screen:
             Width: =415
             X: =475
             Y: =29
-            ZIndex: =36
+            ZIndex: =31
 
             Icon2_4 As icon.Cancel:
                 Height: =20
@@ -1012,7 +983,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupEliminateEntity:false})
             Visible: =varpopupEliminateEntity
             Width: =1366
-            ZIndex: =37
+            ZIndex: =32
 
         grpCrearOrdenDeCompra_8 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1025,7 +996,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =246
-            ZIndex: =38
+            ZIndex: =33
 
             TxtOrdendeCompra_35 As label:
                 Font: =Font.Arial
@@ -1120,7 +1091,7 @@ scr_customizing_Entities As screen:
             =UpdateContext({varpopupCnfEditFamilyOffice:false})
         Visible: =varpopupCnfEditFamilyOffice
         Width: =1366
-        ZIndex: =39
+        ZIndex: =34
 
     grpCrearOrdenDeCompra_54 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -1133,7 +1104,7 @@ scr_customizing_Entities As screen:
         Width: =415
         X: =475
         Y: =193
-        ZIndex: =40
+        ZIndex: =35
 
         TxtOrdendeCompra_90 As label:
             Font: =Font.Arial
@@ -1248,7 +1219,7 @@ scr_customizing_Entities As screen:
             =UpdateContext({varpopupEliminateFamilyOffice:false})
         Visible: =varpopupEliminateFamilyOffice
         Width: =1366
-        ZIndex: =41
+        ZIndex: =36
 
     grpCrearOrdenDeCompra_55 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -1261,7 +1232,7 @@ scr_customizing_Entities As screen:
         Width: =420
         X: =475
         Y: =246
-        ZIndex: =42
+        ZIndex: =37
 
         TxtOrdendeCompra_76 As label:
             Font: =Font.Arial
@@ -1355,7 +1326,7 @@ scr_customizing_Entities As screen:
             =UpdateContext({varpopupAddBank:false})
         Visible: =varpopupAddBank
         Width: =1366
-        ZIndex: =43
+        ZIndex: =38
 
     grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -1368,7 +1339,7 @@ scr_customizing_Entities As screen:
         Width: =415
         X: =477
         Y: =192
-        ZIndex: =44
+        ZIndex: =39
 
         TxtOrdendeCompra_77 As label:
             Font: =Font.Arial
@@ -1476,6 +1447,27 @@ scr_customizing_Entities As screen:
             Y: =229
             ZIndex: =31
 
+    Label2_7 As label:
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        OnSelect: =Navigate(scr_home)
+        Size: =20
+        Text: ="Back"
+        Width: =183
+        X: =67
+        Y: =32
+        ZIndex: =40
+
+    Image1_2 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =41
+
     Screen_Download As group:
         Height: =5
         Width: =5
@@ -1490,7 +1482,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =15
+            ZIndex: =8
 
         grpCrearOrdenDeCompra_39 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1503,7 +1495,7 @@ scr_customizing_Entities As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =16
+            ZIndex: =9
 
             TxtOrdendeCompra_113 As label:
                 Font: =Font.Arial
@@ -1693,7 +1685,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =17
+            ZIndex: =10
 
         grpdownloadxls As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1706,7 +1698,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =18
+            ZIndex: =11
 
             TxtOrdendeCompra_115 As label:
                 Align: =Align.Center
@@ -1800,7 +1792,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =19
+            ZIndex: =12
 
         grpdownloadxls1 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1813,7 +1805,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =20
+            ZIndex: =13
 
             TxtOrdendeCompra_116 As label:
                 Align: =Align.Center
@@ -1909,7 +1901,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =21
+            ZIndex: =14
 
         grpdownloadxls2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1922,7 +1914,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =22
+            ZIndex: =15
 
             TxtOrdendeCompra_118 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2300,7 +2292,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =23
+            ZIndex: =16
 
         grpdownloadxls_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2313,7 +2305,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =24
+            ZIndex: =17
 
             TxtOrdendeCompra_125 As label:
                 Align: =Align.Center
@@ -2407,7 +2399,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =25
+            ZIndex: =18
 
         grpdownloadxls1_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2420,7 +2412,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =26
+            ZIndex: =19
 
             TxtOrdendeCompra_126 As label:
                 Align: =Align.Center
@@ -2518,7 +2510,7 @@ scr_customizing_Entities As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =27
+            ZIndex: =20
 
         grpdownloadxls2_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2533,7 +2525,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =28
+            ZIndex: =21
 
             TxtOrdendeCompra_128 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2604,7 +2596,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =29
+            ZIndex: =22
 
         grpdownloadxls_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2617,7 +2609,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =30
+            ZIndex: =23
 
             TxtOrdendeCompra_129 As label:
                 Font: =Font.Arial
@@ -2710,7 +2702,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =31
+            ZIndex: =24
 
         grpdownloadxls1_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2723,7 +2715,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =32
+            ZIndex: =25
 
             TxtOrdendeCompra_130 As label:
                 Align: =Align.Center
@@ -2819,7 +2811,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =33
+            ZIndex: =27
 
         grpdownloadxls2_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2832,7 +2824,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =34
+            ZIndex: =28
 
             TxtOrdendeCompra_132 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2895,27 +2887,6 @@ scr_customizing_Entities As screen:
                 Y: =182
                 ZIndex: =6
 
-    Label2_7 As label:
-        Font: =Font.Arial
-        FontWeight: =FontWeight.Semibold
-        Height: =32
-        OnSelect: =Navigate(scr_home)
-        Size: =20
-        Text: ="Back"
-        Width: =183
-        X: =67
-        Y: =32
-        ZIndex: =45
-
-    Image1_2 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =46
-
     first_Screen_2 As group:
         Height: =5
         Width: =5
@@ -2931,7 +2902,7 @@ scr_customizing_Entities As screen:
             Width: =1
             X: =310
             Y: =32
-            ZIndex: =10
+            ZIndex: =4
 
         Button2_9 As button:
             Align: =Align.Left
@@ -2956,32 +2927,7 @@ scr_customizing_Entities As screen:
             Width: =177
             X: =343
             Y: =40
-            ZIndex: =11
-
-        Button2_10 As button:
-            Align: =Align.Left
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            Color: =RGBA(26, 26, 26, 1)
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =36
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverColor: =RGBA(166, 166, 166, 1)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(166, 166, 166, 1)
-            PressedFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =1
-            RadiusBottomRight: =1
-            RadiusTopLeft: =1
-            RadiusTopRight: =1
-            Size: =12
-            Text: ="Entity"
-            Width: =120
-            X: =350
-            Y: =100
-            ZIndex: =12
+            ZIndex: =5
 
         Gallery1_1 As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -2994,26 +2940,7 @@ scr_customizing_Entities As screen:
             Width: =1002
             X: =332
             Y: =136
-            ZIndex: =13
-
-            Label4_1 As label:
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =ThisItem.entity
-                Width: =170
-                ZIndex: =1
-
-            Image1_31 As image:
-                Height: =20
-                Image: =borrar
-                OnSelect: |-
-                    =UpdateContext({varpopupEliminateEntity:true})
-                Width: =20
-                X: =940
-                Y: =8
-                ZIndex: =8
+            ZIndex: =6
 
             Rectangle3_1 As rectangle:
                 BorderColor: =RGBA(147, 147, 147, 1)
@@ -3024,68 +2951,115 @@ scr_customizing_Entities As screen:
                 Y: =35
                 ZIndex: =9
 
-            Image1_30 As image:
-                Height: =20
-                Image: =editar
-                OnSelect: |-
-                    =UpdateContext({varpopupCnfEditEntity:true})
-                Width: =20
-                X: =902
-                Y: =8
-                ZIndex: =10
-
-            Label4_2 As label:
+            Container28 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
                 Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =ThisItem.tin
-                Width: =115
-                X: =215
-                ZIndex: =11
+                LayoutMode: =LayoutMode.Auto
+                Width: =982
+                ZIndex: =16
 
-            Label4_3 As label:
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =ThisItem.business_name
-                Width: =120
-                X: =361
-                ZIndex: =12
+                Label4_1 As label:
+                    FillPortions: =1
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =11
+                    Text: =ThisItem.entity
+                    Width: =170
+                    ZIndex: =1
 
-            Label4_8 As label:
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =CountRows(Filter('GF_DEV.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))
-                Width: =50
-                X: =551
-                ZIndex: =13
+                Label4_2 As label:
+                    FillPortions: =1
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: =ThisItem.tin
+                    Width: =115
+                    X: =215
+                    ZIndex: =2
 
-            Label4_9 As label:
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
-                Width: =70
-                X: =672
-                ZIndex: =14
+                Label4_3 As label:
+                    FillPortions: =1
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =11
+                    Text: =ThisItem.business_name
+                    Width: =120
+                    X: =361
+                    ZIndex: =3
 
-            Label4_12 As label:
-                Align: =Align.Center
-                Color: =If(ThisItem.status = "1", varGreenColor, varRedColor)
-                FontWeight: =FontWeight.Semibold
-                Height: =36
-                OnSelect: =Select(Parent)
-                PaddingTop: =8
-                Size: =12
-                Text: =If(ThisItem.status = "1", "Active", "Inactive")
-                Width: =90
-                X: =758
-                ZIndex: =15
+                Label4_8 As label:
+                    Align: =Align.Center
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: =CountRows(Filter('GF_DEV.Bank_Entity_Relationship',id_entity = ThisItem.id_entity))
+                    Width: =120
+                    X: =551
+                    ZIndex: =4
+
+                Label4_9 As label:
+                    Align: =Align.Center
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: =LookUp('GF_DEV.Currency', id_currency = ThisItem.id_currency).currency
+                    Width: =100
+                    X: =672
+                    ZIndex: =5
+
+                Label4_12 As label:
+                    Align: =Align.Center
+                    Color: =If(ThisItem.status = "1", varGreenColor, varRedColor)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    OnSelect: =
+                    PaddingTop: =8
+                    Size: =12
+                    Text: =If(ThisItem.status = "1", "Active", "Inactive")
+                    Width: =90
+                    X: =777
+                    ZIndex: =6
+
+                Container29 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    LayoutMinHeight: =10
+                    LayoutMinWidth: =250
+                    Width: =30
+                    ZIndex: =7
+
+                    Image1_30 As image:
+                        Height: =20
+                        Image: =editar
+                        OnSelect: |-
+                            =UpdateContext({varpopupCnfEditEntity:true})
+                        Width: =20
+                        X: =5
+                        Y: =10
+                        ZIndex: =1
+
+                Container29_1 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    LayoutMinHeight: =10
+                    LayoutMinWidth: =250
+                    Width: =30
+                    ZIndex: =8
+
+                    Image1_31 As image:
+                        Height: =20
+                        Image: =borrar
+                        OnSelect: |-
+                            =UpdateContext({varpopupEliminateEntity:true})
+                        Width: =20
+                        X: =5
+                        Y: =10
+                        ZIndex: =1
 
         Iconline_8 As rectangle:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -3096,5 +3070,5 @@ scr_customizing_Entities As screen:
             Width: =977
             X: =350
             Y: =136
-            ZIndex: =14
+            ZIndex: =7
 
