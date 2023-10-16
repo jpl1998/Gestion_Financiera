@@ -505,7 +505,7 @@ scr_roles As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varpopupEditUser:true})
+                    =UpdateContext({varpopupEditRole:true})
                 Width: =20
                 X: =911
                 Y: =8
@@ -615,7 +615,7 @@ scr_roles As screen:
 
         grpCrearOrdenDeCompra_97 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =477
+            Height: =AddNewRoleButton.Y + AddNewRoleButton.Height +30
             RadiusBottomLeft: =5
             RadiusBottomRight: =5
             RadiusTopLeft: =5
@@ -625,7 +625,7 @@ scr_roles As screen:
                 
             Width: =415
             X: =481
-            Y: =145
+            Y: =(Parent.Height-Self.Height)/2
             ZIndex: =11
 
             TxtOrdendeCompra_29 As label:
@@ -673,22 +673,11 @@ scr_roles As screen:
                 Y: =180
                 ZIndex: =16
 
-            TxtOrdendeCompra_32 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Status"
-                Width: =142
-                X: =240
-                Y: =174
-                ZIndex: =18
-
-            Button1_339 As button:
+            AddNewRoleButton As button:
                 BorderColor: =RGBA(255, 255, 255, 1)
                 BorderThickness: =0
                 DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =If(IsBlank(NewRoleNameTextInput.Text), DisplayMode.Disabled, DisplayMode.Edit)
                 Fill: |
                     =ColorValue(varprimaryColor)
                 Height: =44
@@ -706,10 +695,10 @@ scr_roles As screen:
                 RadiusBottomRight: =2
                 RadiusTopLeft: =2
                 RadiusTopRight: =2
-                Text: ="Add User"
+                Text: ="Add Role"
                 Width: =344
-                X: =38
-                Y: =404
+                X: =37
+                Y: =NewEnabledReportsContainer.Y+NewEnabledReportsContainer.Height+20
                 ZIndex: =29
 
             NewRoleNameTextInput As text:
@@ -745,7 +734,7 @@ scr_roles As screen:
                     LayoutMode: =LayoutMode.Auto
                     ZIndex: =1
 
-                    Checkbox2 As checkbox:
+                    NewRoleOperationsCheckbox As checkbox:
                         CheckboxSize: =25
                         FillPortions: =1
                         FocusedBorderThickness: =0
@@ -754,7 +743,7 @@ scr_roles As screen:
                         Text: ="Operations"
                         ZIndex: =1
 
-                    Checkbox2_1 As checkbox:
+                    NewRoleBankCheckbox As checkbox:
                         CheckboxSize: =25
                         FillPortions: =1
                         FocusedBorderThickness: =0
@@ -770,7 +759,7 @@ scr_roles As screen:
                     LayoutMode: =LayoutMode.Auto
                     ZIndex: =2
 
-                    Checkbox2_2 As checkbox:
+                    NewRoleReportCheckbox As checkbox:
                         CheckboxSize: =25
                         FillPortions: =1
                         FocusedBorderThickness: =0
@@ -779,7 +768,7 @@ scr_roles As screen:
                         Text: ="Report"
                         ZIndex: =1
 
-                    Checkbox2_3 As checkbox:
+                    NewRoleTaxCheckbox As checkbox:
                         CheckboxSize: =25
                         FillPortions: =1
                         FocusedBorderThickness: =0
@@ -795,7 +784,7 @@ scr_roles As screen:
                     LayoutMode: =LayoutMode.Auto
                     ZIndex: =3
 
-                    Checkbox2_4 As checkbox:
+                    NewRoleCustomizingCheckbox As checkbox:
                         CheckboxSize: =25
                         FillPortions: =1
                         FocusedBorderThickness: =0
@@ -805,6 +794,405 @@ scr_roles As screen:
                         ZIndex: =1
 
                     Container27 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =20
+                        ZIndex: =2
+
+            NewEnabledReportsContainer As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =If(NewRoleReportCheckbox.Value, 140, 0)
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =345
+                X: =33
+                Y: =340
+                ZIndex: =36
+
+                TxtOrdendeCompra_32 As label:
+                    Color: =RGBA(99, 99, 99, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    Size: =12
+                    Text: ="Enabled Reports"
+                    Width: =142
+                    X: =240
+                    Y: =174
+                    ZIndex: =1
+
+                Container13_3 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    NewRoleDetailCheckbox As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        LayoutMinWidth: =20
+                        Size: =8
+                        Text: ="Detail"
+                        ZIndex: =1
+
+                    NewRoleSummaryCheckbox As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        LayoutMinWidth: =20
+                        Size: =8
+                        Text: ="Summary"
+                        ZIndex: =2
+
+                Container13_4 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =3
+
+                    NewRoleProfitCheckbox As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Profitability"
+                        ZIndex: =1
+
+                    NewRoleBoardCheckbox As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Board"
+                        ZIndex: =2
+
+                Container13_5 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =4
+
+                    NewRoleLegalCheckbox As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Legal/Taxes"
+                        ZIndex: =1
+
+                    Container27_1 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =20
+                        ZIndex: =2
+
+    Scn_Screen_23 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        rctdegradado_280 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.2)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({varpopupEditRole:false})
+            Visible: =varpopupEditRole
+            Width: =1366
+            ZIndex: =16
+
+        grpCrearOrdenDeCompra_98 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =AddNewRoleButton_1.Y + AddNewRoleButton_1.Height +30
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Visible: =varpopupEditRole
+            Width: =415
+            X: =481
+            Y: =(Parent.Height-Self.Height)/2
+            ZIndex: =17
+
+            TxtOrdendeCompra_33 As label:
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =16
+                Text: ="Edit Role"
+                Width: =105
+                X: =157
+                Y: =19
+                ZIndex: =1
+
+            Icon2_165 As icon.Cancel:
+                Height: =20
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({varpopupEditRole:false})
+                Width: =20
+                X: =362
+                Y: =24
+                ZIndex: =13
+
+            TxtOrdendeCompra_34 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Role"
+                Width: =143
+                X: =32
+                Y: =72
+                ZIndex: =14
+
+            TxtOrdendeCompra_41 As label:
+                Color: =RGBA(99, 99, 99, 1)
+                Font: =Font.Arial
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Size: =12
+                Text: ="Enabled Modules"
+                Width: =200
+                X: =33
+                Y: =180
+                ZIndex: =16
+
+            AddNewRoleButton_1 As button:
+                BorderColor: =RGBA(255, 255, 255, 1)
+                BorderThickness: =0
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                Fill: |
+                    =ColorValue(varprimaryColor)
+                Height: =44
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverFill: |
+                    =ColorValue(varprimaryColor)
+                OnSelect: |-
+                    =
+                    UpdateContext({varpopupAddUser:false})
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: |
+                    =ColorValue(varprimaryColor)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Text: ="Add Role"
+                Width: =344
+                X: =37
+                Y: =NewEnabledReportsContainer_1.Y+NewEnabledReportsContainer_1.Height+20
+                ZIndex: =29
+
+            NewRoleNameTextInput_1 As text:
+                BorderColor: =ColorValue(varlineColor)
+                BorderThickness: =1
+                Default: =""
+                Height: =44
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Width: =344
+                X: =38
+                Y: =113
+                ZIndex: =34
+
+            Container4_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =101
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =344
+                X: =38
+                Y: =222
+                ZIndex: =35
+
+                Container13_9 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    NewRoleOperationsCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Operations"
+                        ZIndex: =1
+
+                    NewRoleBankCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Banks"
+                        ZIndex: =2
+
+                Container13_10 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    NewRoleReportCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Report"
+                        ZIndex: =1
+
+                    NewRoleTaxCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Tax Tracker"
+                        ZIndex: =2
+
+                Container13_11 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =3
+
+                    NewRoleCustomizingCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Customizing"
+                        ZIndex: =1
+
+                    Container27_3 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =20
+                        ZIndex: =2
+
+            NewEnabledReportsContainer_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =If(NewRoleReportCheckbox_1.Value, 140, 0)
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =345
+                X: =33
+                Y: =340
+                ZIndex: =36
+
+                TxtOrdendeCompra_42 As label:
+                    Color: =RGBA(99, 99, 99, 1)
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    Size: =12
+                    Text: ="Enabled Reports"
+                    Width: =142
+                    X: =240
+                    Y: =174
+                    ZIndex: =1
+
+                Container13_6 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    NewRoleDetailCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        LayoutMinWidth: =20
+                        Size: =8
+                        Text: ="Detail"
+                        ZIndex: =1
+
+                    NewRoleSummaryCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        LayoutMinWidth: =20
+                        Size: =8
+                        Text: ="Summary"
+                        ZIndex: =2
+
+                Container13_7 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =3
+
+                    NewRoleProfitCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Profitability"
+                        ZIndex: =1
+
+                    NewRoleBoardCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Board"
+                        ZIndex: =2
+
+                Container13_8 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =4
+
+                    NewRoleLegalCheckbox_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Legal/Taxes"
+                        ZIndex: =1
+
+                    Container27_2 As groupContainer.manualLayoutContainer:
                         DropShadow: =DropShadow.None
                         LayoutMinHeight: =20
                         LayoutMinWidth: =20

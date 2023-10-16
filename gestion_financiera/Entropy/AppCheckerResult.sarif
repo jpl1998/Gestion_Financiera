@@ -21084,19 +21084,169 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.Checkbox2_4.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_roles.rctdegradado_280.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.Checkbox2_4.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_roles.rctdegradado_280.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_roles",
+                "type": "scr_roles.rctdegradado_280"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.rctdegradado_280.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.rctdegradado_280.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_roles",
+                "type": "scr_roles.rctdegradado_280"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Icon2_165"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewRoleNameTextInput_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleOperationsCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleOperationsCheckbox_1.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.Checkbox2_4"
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleOperationsCheckbox_1"
               }
             }
           ],
@@ -21114,19 +21264,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_3.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleBankCheckbox_1.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_3.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleBankCheckbox_1.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_3"
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_9.NewRoleBankCheckbox_1"
               }
             }
           ],
@@ -21144,19 +21294,259 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_2.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleReportCheckbox_1.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_2.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleReportCheckbox_1.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.Checkbox2_2"
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleReportCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleTaxCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleTaxCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_10.NewRoleTaxCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_11.NewRoleCustomizingCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_11.NewRoleCustomizingCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.Container4_1.Container13_11.NewRoleCustomizingCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleDetailCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleDetailCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleDetailCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleSummaryCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleSummaryCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_6.NewRoleSummaryCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleProfitCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleProfitCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleProfitCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.NewRoleCustomizingCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.NewRoleCustomizingCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_2.NewRoleCustomizingCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleTaxCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleTaxCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleTaxCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleReportCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleReportCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13_1.NewRoleReportCheckbox"
               }
             }
           ],
@@ -37314,6 +37704,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleBoardCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleBoardCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_7.NewRoleBoardCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_8.NewRoleLegalCheckbox_1.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_8.NewRoleLegalCheckbox_1.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_98.NewEnabledReportsContainer_1.Container13_8.NewRoleLegalCheckbox_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scr_roles.rctdegradado_281.AccessibleLabel"
                 }
               ],
@@ -37734,19 +38184,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleBankCheckbox.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleBankCheckbox.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2_1"
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleBankCheckbox"
               }
             }
           ],
@@ -37764,19 +38214,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2.FocusedBorderThickness"
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleOperationsCheckbox.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2.FocusedBorderThickness",
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleOperationsCheckbox.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "scr_roles",
-                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.Checkbox2"
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.Container4.Container13.NewRoleOperationsCheckbox"
               }
             }
           ],
@@ -37818,6 +38268,156 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_5.NewRoleLegalCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_5.NewRoleLegalCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_5.NewRoleLegalCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleBoardCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleBoardCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleBoardCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleProfitCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleProfitCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_4.NewRoleProfitCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleSummaryCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleSummaryCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleSummaryCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleDetailCheckbox.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleDetailCheckbox.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "scr_roles",
+                "type": "scr_roles.grpCrearOrdenDeCompra_97.NewEnabledReportsContainer.Container13_3.NewRoleDetailCheckbox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -48063,36 +48663,6 @@
                 "member": "varshowPopUpProveedores",
                 "module": "scr_customizing_Entities",
                 "type": "scr_customizing_Entities"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scr_roles.varpopupEditUser"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scr_roles.varpopupEditUser",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varpopupEditUser",
-                "module": "scr_roles",
-                "type": "scr_roles"
               }
             }
           ],
