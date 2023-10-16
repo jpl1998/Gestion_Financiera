@@ -739,7 +739,7 @@ scr_customizing_country As screen:
             Width: =1
             X: =310
             Y: =32
-            ZIndex: =2
+            ZIndex: =4
 
         Button2_56 As button:
             Align: =Align.Left
@@ -764,7 +764,7 @@ scr_customizing_country As screen:
             Width: =275
             X: =343
             Y: =32
-            ZIndex: =3
+            ZIndex: =5
 
         Button1_31 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -791,7 +791,7 @@ scr_customizing_country As screen:
             Width: =320
             X: =1002
             Y: =32
-            ZIndex: =4
+            ZIndex: =6
 
         Button2_58 As button:
             Align: =Align.Left
@@ -816,7 +816,7 @@ scr_customizing_country As screen:
             Width: =177
             X: =350
             Y: =100
-            ZIndex: =5
+            ZIndex: =7
 
         Gallery1_7 As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -829,7 +829,7 @@ scr_customizing_country As screen:
             Width: =991
             X: =343
             Y: =136
-            ZIndex: =6
+            ZIndex: =8
 
             Label4_13 As label:
                 Height: =36
@@ -879,7 +879,7 @@ scr_customizing_country As screen:
             Width: =977
             X: =350
             Y: =136
-            ZIndex: =7
+            ZIndex: =9
 
     Label2_13 As label:
         Font: =Font.Arial
@@ -916,7 +916,7 @@ scr_customizing_country As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =8
+            ZIndex: =10
 
         grpCrearOrdenDeCompra_43 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -929,7 +929,7 @@ scr_customizing_country As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =9
+            ZIndex: =11
 
             TxtOrdendeCompra_199 As label:
                 Font: =Font.Arial
@@ -1119,7 +1119,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =10
+            ZIndex: =12
 
         grpdownloadxls_17 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1132,7 +1132,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =11
+            ZIndex: =13
 
             TxtOrdendeCompra_201 As label:
                 Align: =Align.Center
@@ -1226,7 +1226,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =12
+            ZIndex: =14
 
         grpdownloadxls1_17 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1239,7 +1239,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =13
+            ZIndex: =15
 
             TxtOrdendeCompra_197 As label:
                 Align: =Align.Center
@@ -1335,7 +1335,7 @@ scr_customizing_country As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =14
+            ZIndex: =16
 
         grpdownloadxls2_17 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1348,7 +1348,7 @@ scr_customizing_country As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =15
+            ZIndex: =17
 
             TxtOrdendeCompra_206 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -1726,7 +1726,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =16
+            ZIndex: =18
 
         grpdownloadxls_16 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1739,7 +1739,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =17
+            ZIndex: =19
 
             TxtOrdendeCompra_196 As label:
                 Align: =Align.Center
@@ -1833,7 +1833,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =18
+            ZIndex: =20
 
         grpdownloadxls1_16 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1846,7 +1846,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =19
+            ZIndex: =21
 
             TxtOrdendeCompra_194 As label:
                 Align: =Align.Center
@@ -1944,7 +1944,7 @@ scr_customizing_country As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =20
+            ZIndex: =22
 
         grpdownloadxls2_16 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1959,7 +1959,7 @@ scr_customizing_country As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =21
+            ZIndex: =23
 
             TxtOrdendeCompra_193 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2030,7 +2030,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =22
+            ZIndex: =24
 
         grpdownloadxls_19 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2043,7 +2043,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =23
+            ZIndex: =25
 
             TxtOrdendeCompra_209 As label:
                 Font: =Font.Arial
@@ -2136,7 +2136,7 @@ scr_customizing_country As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =24
+            ZIndex: =26
 
         grpdownloadxls1_19 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2149,7 +2149,7 @@ scr_customizing_country As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =25
+            ZIndex: =27
 
             TxtOrdendeCompra_210 As label:
                 Align: =Align.Center
@@ -2245,7 +2245,7 @@ scr_customizing_country As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =26
+            ZIndex: =28
 
         grpdownloadxls2_19 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2258,7 +2258,7 @@ scr_customizing_country As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =27
+            ZIndex: =29
 
             TxtOrdendeCompra_212 As label:
                 Color: =ColorValue(varprimaryColor)

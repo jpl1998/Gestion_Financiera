@@ -1357,125 +1357,6 @@ scr_customizing_Entities As screen:
         Width: =1366
         ZIndex: =43
 
-    grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =384
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Visible: =varpopupAddBank
-        Width: =415
-        X: =477
-        Y: =192
-        ZIndex: =44
-
-        TxtOrdendeCompra_77 As label:
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =32
-            Size: =16
-            Text: ="New Item"
-            Width: =105
-            X: =159
-            Y: =25
-            ZIndex: =1
-
-        Icon2_174 As icon.Cancel:
-            Height: =20
-            Icon: =Icon.Cancel
-            OnSelect: |-
-                =UpdateContext({varpopupAddBank:false})
-            Width: =20
-            X: =362
-            Y: =31
-            ZIndex: =13
-
-        TxtOrdendeCompra_83 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =12
-            Text: ="Bank"
-            Width: =143
-            X: =32
-            Y: =72
-            ZIndex: =14
-
-        TextInput2_31 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =38
-            Y: =116
-            ZIndex: =21
-
-        Button1_362 As button:
-            BorderColor: =RGBA(255, 255, 255, 1)
-            BorderThickness: =0
-            DisabledBorderColor: =RGBA(255, 255, 255, 1)
-            Fill: |
-                =ColorValue(varprimaryColor)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Normal
-            Height: =44
-            HoverBorderColor: =RGBA(255, 255, 255, 1)
-            HoverFill: |
-                =ColorValue(varprimaryColor)
-            OnSelect: |-
-                =UpdateContext({varshowPopUpProveedores:false})
-            PressedBorderColor: =RGBA(255, 255, 255, 1)
-            PressedColor: =RGBA(255, 255, 255, 1)
-            PressedFill: |
-                =ColorValue(varprimaryColor)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Size: =12
-            Text: ="Save"
-            Width: =344
-            X: =39
-            Y: =309
-            ZIndex: =29
-
-        TxtOrdendeCompra_84 As label:
-            Color: =RGBA(99, 99, 99, 1)
-            Font: =Font.Arial
-            FontWeight: =FontWeight.Semibold
-            Height: =30
-            Size: =12
-            Text: ="Bank Account"
-            Width: =143
-            X: =33
-            Y: =185
-            ZIndex: =30
-
-        TextInput2_32 As text:
-            BorderColor: =ColorValue(varlineColor)
-            BorderThickness: =1
-            Default: =""
-            Height: =44
-            HoverBorderColor: =ColorValue(varlineColor)
-            HoverFill: =RGBA(255, 255, 255, 1)
-            RadiusBottomLeft: =2
-            RadiusBottomRight: =2
-            RadiusTopLeft: =2
-            RadiusTopRight: =2
-            Width: =344
-            X: =39
-            Y: =229
-            ZIndex: =31
-
     Screen_Download As group:
         Height: =5
         Width: =5
@@ -1490,7 +1371,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =13
+            ZIndex: =15
 
         grpCrearOrdenDeCompra_39 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1503,7 +1384,7 @@ scr_customizing_Entities As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =14
+            ZIndex: =16
 
             TxtOrdendeCompra_113 As label:
                 Font: =Font.Arial
@@ -1693,7 +1574,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =15
+            ZIndex: =17
 
         grpdownloadxls As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1706,7 +1587,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =16
+            ZIndex: =18
 
             TxtOrdendeCompra_115 As label:
                 Align: =Align.Center
@@ -1800,7 +1681,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =17
+            ZIndex: =19
 
         grpdownloadxls1 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1813,7 +1694,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =18
+            ZIndex: =20
 
             TxtOrdendeCompra_116 As label:
                 Align: =Align.Center
@@ -1909,7 +1790,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =19
+            ZIndex: =21
 
         grpdownloadxls2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1922,7 +1803,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =20
+            ZIndex: =22
 
             TxtOrdendeCompra_118 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2300,7 +2181,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =21
+            ZIndex: =23
 
         grpdownloadxls_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2313,7 +2194,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =22
+            ZIndex: =24
 
             TxtOrdendeCompra_125 As label:
                 Align: =Align.Center
@@ -2407,7 +2288,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =23
+            ZIndex: =25
 
         grpdownloadxls1_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2420,7 +2301,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =24
+            ZIndex: =26
 
             TxtOrdendeCompra_126 As label:
                 Align: =Align.Center
@@ -2518,7 +2399,7 @@ scr_customizing_Entities As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =25
+            ZIndex: =27
 
         grpdownloadxls2_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2533,7 +2414,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =26
+            ZIndex: =28
 
             TxtOrdendeCompra_128 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2604,7 +2485,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =27
+            ZIndex: =29
 
         grpdownloadxls_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2617,7 +2498,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =28
+            ZIndex: =30
 
             TxtOrdendeCompra_129 As label:
                 Font: =Font.Arial
@@ -2710,7 +2591,7 @@ scr_customizing_Entities As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =29
+            ZIndex: =31
 
         grpdownloadxls1_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2723,7 +2604,7 @@ scr_customizing_Entities As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =30
+            ZIndex: =32
 
             TxtOrdendeCompra_130 As label:
                 Align: =Align.Center
@@ -2819,7 +2700,7 @@ scr_customizing_Entities As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =31
+            ZIndex: =33
 
         grpdownloadxls2_3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2832,7 +2713,7 @@ scr_customizing_Entities As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =32
+            ZIndex: =34
 
             TxtOrdendeCompra_132 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2895,6 +2776,125 @@ scr_customizing_Entities As screen:
                 Y: =182
                 ZIndex: =6
 
+    grpCrearOrdenDeCompra_56 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =384
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Visible: =varpopupAddBank
+        Width: =415
+        X: =477
+        Y: =192
+        ZIndex: =44
+
+        TxtOrdendeCompra_77 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            Size: =16
+            Text: ="New Item"
+            Width: =105
+            X: =159
+            Y: =25
+            ZIndex: =1
+
+        Icon2_174 As icon.Cancel:
+            Height: =20
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varpopupAddBank:false})
+            Width: =20
+            X: =362
+            Y: =31
+            ZIndex: =13
+
+        TxtOrdendeCompra_83 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12
+            Text: ="Bank"
+            Width: =143
+            X: =32
+            Y: =72
+            ZIndex: =14
+
+        TextInput2_31 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =38
+            Y: =116
+            ZIndex: =21
+
+        Button1_362 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =ColorValue(varprimaryColor)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Normal
+            Height: =44
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =ColorValue(varprimaryColor)
+            OnSelect: |-
+                =UpdateContext({varshowPopUpProveedores:false})
+            PressedBorderColor: =RGBA(255, 255, 255, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: |
+                =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =12
+            Text: ="Save"
+            Width: =344
+            X: =39
+            Y: =309
+            ZIndex: =29
+
+        TxtOrdendeCompra_84 As label:
+            Color: =RGBA(99, 99, 99, 1)
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            Size: =12
+            Text: ="Bank Account"
+            Width: =143
+            X: =33
+            Y: =185
+            ZIndex: =30
+
+        TextInput2_32 As text:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Default: =""
+            Height: =44
+            HoverBorderColor: =ColorValue(varlineColor)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Width: =344
+            X: =39
+            Y: =229
+            ZIndex: =31
+
     Label2_7 As label:
         Font: =Font.Arial
         FontWeight: =FontWeight.Semibold
@@ -2931,7 +2931,7 @@ scr_customizing_Entities As screen:
             Width: =1
             X: =310
             Y: =32
-            ZIndex: =8
+            ZIndex: =10
 
         Button2_9 As button:
             Align: =Align.Left
@@ -2956,7 +2956,7 @@ scr_customizing_Entities As screen:
             Width: =177
             X: =343
             Y: =40
-            ZIndex: =9
+            ZIndex: =11
 
         Button2_10 As button:
             Align: =Align.Left
@@ -2981,7 +2981,7 @@ scr_customizing_Entities As screen:
             Width: =120
             X: =350
             Y: =100
-            ZIndex: =10
+            ZIndex: =12
 
         Gallery1_1 As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -2994,7 +2994,7 @@ scr_customizing_Entities As screen:
             Width: =1002
             X: =332
             Y: =136
-            ZIndex: =11
+            ZIndex: =13
 
             Label4_1 As label:
                 Height: =36
@@ -3096,5 +3096,5 @@ scr_customizing_Entities As screen:
             Width: =977
             X: =350
             Y: =136
-            ZIndex: =12
+            ZIndex: =14
 

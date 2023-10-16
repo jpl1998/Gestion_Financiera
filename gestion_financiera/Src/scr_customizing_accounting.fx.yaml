@@ -416,7 +416,7 @@ scr_customizing_accounting As screen:
         Width: =320
         X: =1007
         Y: =40
-        ZIndex: =2
+        ZIndex: =4
 
     Group4_1 As group:
         Height: =5
@@ -1444,7 +1444,7 @@ scr_customizing_accounting As screen:
             Width: =1
             X: =310
             Y: =32
-            ZIndex: =3
+            ZIndex: =5
 
         Button2_88 As button:
             Align: =Align.Left
@@ -1469,7 +1469,7 @@ scr_customizing_accounting As screen:
             Width: =252
             X: =343
             Y: =40
-            ZIndex: =4
+            ZIndex: =6
 
         Button2_92 As button:
             Align: =Align.Left
@@ -1494,7 +1494,7 @@ scr_customizing_accounting As screen:
             Width: =177
             X: =350
             Y: =100
-            ZIndex: =5
+            ZIndex: =7
 
         Gallery1_14 As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -1507,7 +1507,7 @@ scr_customizing_accounting As screen:
             Width: =991
             X: =343
             Y: =136
-            ZIndex: =6
+            ZIndex: =8
 
             Label4_6 As label:
                 Height: =36
@@ -1546,7 +1546,7 @@ scr_customizing_accounting As screen:
             Width: =977
             X: =350
             Y: =136
-            ZIndex: =7
+            ZIndex: =9
 
     Screen_Download_13 As group:
         Height: =5

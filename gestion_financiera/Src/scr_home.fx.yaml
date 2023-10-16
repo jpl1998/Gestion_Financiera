@@ -19,6 +19,15 @@ scr_home As screen:
         Y: =232
         ZIndex: =2
 
+    lbl_subtittle As label:
+        Font: =Font.Arial
+        Size: =16
+        Text: ="Wich function would you like to perform today?"
+        Width: =455
+        X: =455
+        Y: =296
+        ZIndex: =3
+
     btn_investment_management As button:
         BorderColor: =ColorValue(varlineColor)
         BorderThickness: =1
@@ -39,59 +48,18 @@ scr_home As screen:
         Size: =16
         Text: ="Investment Management"
         Width: =240
-        X: =100
-        Y: =400
-        ZIndex: =3
-
-    lbl_subtittle As label:
-        Font: =Font.Arial
-        Size: =16
-        Text: ="Wich function would you like to perform today?"
-        Width: =455
-        X: =455
-        Y: =296
+        X: =99
+        Y: =116
         ZIndex: =4
-
-    btn_security As button:
-        BorderColor: =ColorValue(varprimaryColor)
-        Color: =ColorValue(varprimaryColor)
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =44
-        HoverBorderColor: =ColorValue(varprimaryColor)
-        HoverColor: =ColorValue(varprimaryColor)
-        HoverFill: =ColorFade(ColorValue(varprimaryColor), 0.9)
-        OnSelect: =Navigate(scr_security)
-        PaddingLeft: =40
-        PressedColor: =ColorValue(varprimaryColor)
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Size: =12
-        Text: ="Security"
-        Width: =200
-        X: =583
-        Y: =635
-        ZIndex: =5
 
     img_investmentmanagement As image:
         Height: =48
         Image: =InvestmentManagement
         OnSelect: =Navigate(scr_managemenent)
         Width: =48
-        X: =196
-        Y: =424
-        ZIndex: =6
-
-    img_security As image:
-        Height: =24
-        Image: =security
-        OnSelect: =Navigate(scr_security)
-        Width: =24
-        X: =624
-        Y: =646
-        ZIndex: =7
+        X: =195
+        Y: =140
+        ZIndex: =5
 
     btn_banks As button:
         BorderColor: =ColorValue(varlineColor)
@@ -113,9 +81,9 @@ scr_home As screen:
         Size: =16
         Text: ="Banks"
         Width: =240
-        X: =408
-        Y: =400
-        ZIndex: =8
+        X: =407
+        Y: =116
+        ZIndex: =6
 
     btn_analize_reports As button:
         BorderColor: =ColorValue(varlineColor)
@@ -137,9 +105,9 @@ scr_home As screen:
         Size: =16
         Text: ="Analize Reports"
         Width: =240
-        X: =717
-        Y: =400
-        ZIndex: =9
+        X: =716
+        Y: =116
+        ZIndex: =7
 
     btn_customizing As button:
         BorderColor: =ColorValue(varlineColor)
@@ -161,34 +129,92 @@ scr_home As screen:
         Size: =16
         Text: ="Customizing"
         Width: =240
-        X: =1026
-        Y: =400
-        ZIndex: =10
+        X: =1025
+        Y: =116
+        ZIndex: =8
 
     img_customizing As image:
         Height: =48
         Image: =Customizing
         OnSelect: =Navigate(scr_customizing_Entities)
         Width: =48
-        X: =1122
-        Y: =424
-        ZIndex: =11
+        X: =1121
+        Y: =140
+        ZIndex: =9
 
     img_banks As image:
         Height: =48
         Image: =Banks
         OnSelect: =Navigate(scr_banco)
         Width: =48
-        X: =504
-        Y: =424
-        ZIndex: =12
+        X: =503
+        Y: =140
+        ZIndex: =10
 
     img_analize_reports As image:
         Height: =48
         Image: ='Analize Reports'
         OnSelect: =Navigate(scr_reports)
         Width: =48
-        X: =813
-        Y: =424
+        X: =812
+        Y: =140
+        ZIndex: =11
+
+    Container2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =44
+        Width: =200
+        X: =(Parent.Width-Self.Width)/2
+        Y: =635
+        ZIndex: =12
+
+        btn_security As button:
+            BorderColor: =ColorValue(varprimaryColor)
+            Color: =ColorValue(varprimaryColor)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =44
+            HoverBorderColor: =ColorValue(varprimaryColor)
+            HoverColor: =ColorValue(varprimaryColor)
+            HoverFill: =ColorFade(ColorValue(varprimaryColor), 0.9)
+            OnSelect: =Navigate(scr_security)
+            PaddingLeft: =40
+            PressedColor: =ColorValue(varprimaryColor)
+            PressedFill: =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Text: ="Customizing"
+            Width: =200
+            ZIndex: =1
+
+        img_customizing_1 As image:
+            Height: =25
+            Image: =Customizing
+            OnSelect: =Navigate(scr_customizing_Entities)
+            Width: =25
+            X: =32
+            Y: =9
+            ZIndex: =2
+
+        Button4 As button:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =44
+            HoverFill: =RGBA(65, 128, 194, 0.1)
+            OnSelect: =Navigate(scr_security)
+            PressedFill: =RGBA(65, 128, 194, 0.15)
+            Text: =""
+            Width: =200
+            ZIndex: =3
+
+    Gallery2 As gallery.galleryHorizontal:
+        DelayItemLoading: =true
+        Height: =279
+        Items: =Table(If(true,{}))
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
+        X: =40
+        Y: =336
         ZIndex: =13
 

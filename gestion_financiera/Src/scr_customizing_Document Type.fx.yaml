@@ -822,7 +822,7 @@
             Width: =1
             X: =310
             Y: =32
-            ZIndex: =3
+            ZIndex: =5
 
         Button2_89 As button:
             Align: =Align.Left
@@ -847,7 +847,7 @@
             Width: =275
             X: =343
             Y: =32
-            ZIndex: =4
+            ZIndex: =6
 
         Button1_49 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -875,7 +875,7 @@
             Width: =320
             X: =1002
             Y: =32
-            ZIndex: =5
+            ZIndex: =7
 
         Button2_91 As button:
             Align: =Align.Left
@@ -900,7 +900,7 @@
             Width: =177
             X: =350
             Y: =100
-            ZIndex: =6
+            ZIndex: =8
 
         Gallery1_10 As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -913,7 +913,7 @@
             Width: =991
             X: =350
             Y: =126
-            ZIndex: =7
+            ZIndex: =9
 
             Label4_16 As label:
                 Height: =36
@@ -972,7 +972,7 @@
             Width: =977
             X: =350
             Y: =136
-            ZIndex: =8
+            ZIndex: =10
 
     Label2_16 As label:
         Font: =Font.Arial
@@ -1009,7 +1009,7 @@
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =9
+            ZIndex: =11
 
         grpCrearOrdenDeCompra_46 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1022,7 +1022,7 @@
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =10
+            ZIndex: =12
 
             TxtOrdendeCompra_259 As label:
                 Font: =Font.Arial
@@ -1212,7 +1212,7 @@
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =11
+            ZIndex: =13
 
         grpdownloadxls_29 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1225,7 +1225,7 @@
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =12
+            ZIndex: =14
 
             TxtOrdendeCompra_261 As label:
                 Align: =Align.Center
@@ -1319,7 +1319,7 @@
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =13
+            ZIndex: =15
 
         grpdownloadxls1_29 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1332,7 +1332,7 @@
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =14
+            ZIndex: =16
 
             TxtOrdendeCompra_257 As label:
                 Align: =Align.Center
@@ -1428,7 +1428,7 @@
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =15
+            ZIndex: =17
 
         grpdownloadxls2_29 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1441,7 +1441,7 @@
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =16
+            ZIndex: =18
 
             TxtOrdendeCompra_266 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -1819,7 +1819,7 @@
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =17
+            ZIndex: =19
 
         grpdownloadxls_28 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1832,7 +1832,7 @@
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =18
+            ZIndex: =20
 
             TxtOrdendeCompra_256 As label:
                 Align: =Align.Center
@@ -1926,7 +1926,7 @@
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =19
+            ZIndex: =21
 
         grpdownloadxls1_28 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -1939,7 +1939,7 @@
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =20
+            ZIndex: =22
 
             TxtOrdendeCompra_254 As label:
                 Align: =Align.Center
@@ -2037,7 +2037,7 @@
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =21
+            ZIndex: =23
 
         grpdownloadxls2_28 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2052,7 +2052,7 @@
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =22
+            ZIndex: =24
 
             TxtOrdendeCompra_253 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -2123,7 +2123,7 @@
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =23
+            ZIndex: =25
 
         grpdownloadxls_31 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2136,7 +2136,7 @@
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =24
+            ZIndex: =26
 
             TxtOrdendeCompra_269 As label:
                 Font: =Font.Arial
@@ -2229,7 +2229,7 @@
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =25
+            ZIndex: =27
 
         grpdownloadxls1_31 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2242,7 +2242,7 @@
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =26
+            ZIndex: =28
 
             TxtOrdendeCompra_270 As label:
                 Align: =Align.Center
@@ -2338,7 +2338,7 @@
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =27
+            ZIndex: =29
 
         grpdownloadxls2_31 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2351,7 +2351,7 @@
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =28
+            ZIndex: =30
 
             TxtOrdendeCompra_272 As label:
                 Color: =ColorValue(varprimaryColor)

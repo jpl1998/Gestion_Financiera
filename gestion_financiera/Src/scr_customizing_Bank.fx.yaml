@@ -1876,15 +1876,6 @@ scr_customizing_Bank As screen:
         Y: =32
         ZIndex: =48
 
-    Image1_3 As image:
-        Height: =32
-        Image: =flechaizquierda
-        OnSelect: =Navigate(scr_home)
-        Width: =32
-        X: =32
-        Y: =32
-        ZIndex: =49
-
     Group2 As group:
         Height: =5
         Width: =5
@@ -2001,6 +1992,15 @@ scr_customizing_Bank As screen:
                 Y: =202
                 ZIndex: =38
 
+    Image1_3 As image:
+        Height: =32
+        Image: =flechaizquierda
+        OnSelect: =Navigate(scr_home)
+        Width: =32
+        X: =32
+        Y: =32
+        ZIndex: =49
+
     first_Screen_12 As group:
         Height: =5
         Width: =5
@@ -2041,7 +2041,7 @@ scr_customizing_Bank As screen:
             Width: =1
             X: =298
             Y: =32
-            ZIndex: =4
+            ZIndex: =6
 
         Button2_171 As button:
             Align: =Align.Left
@@ -2066,7 +2066,7 @@ scr_customizing_Bank As screen:
             Width: =177
             X: =331
             Y: =40
-            ZIndex: =5
+            ZIndex: =7
 
         Button2_173 As button:
             Align: =Align.Left
@@ -2091,7 +2091,7 @@ scr_customizing_Bank As screen:
             Width: =80
             X: =338
             Y: =100
-            ZIndex: =6
+            ZIndex: =8
 
         BanksGallery As gallery.galleryVertical:
             DelayItemLoading: =true
@@ -2104,7 +2104,7 @@ scr_customizing_Bank As screen:
             Width: =991
             X: =331
             Y: =136
-            ZIndex: =7
+            ZIndex: =9
 
             Label4_27 As label:
                 Height: =36
@@ -2174,7 +2174,7 @@ scr_customizing_Bank As screen:
             Width: =977
             X: =338
             Y: =136
-            ZIndex: =8
+            ZIndex: =10
 
     Screen_Download_11 As group:
         Height: =5
@@ -2190,7 +2190,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupdowload:false})
             Visible: =varpopupdowload
             Width: =1366
-            ZIndex: =9
+            ZIndex: =11
 
         grpCrearOrdenDeCompra_50 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2203,7 +2203,7 @@ scr_customizing_Bank As screen:
             Width: =515
             X: =427
             Y: =126
-            ZIndex: =10
+            ZIndex: =12
 
             TxtOrdendeCompra_333 As label:
                 Font: =Font.Arial
@@ -2393,7 +2393,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadDailyxls
             Width: =1366
-            ZIndex: =11
+            ZIndex: =13
 
         grpdownloadxls_45 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2406,7 +2406,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =12
+            ZIndex: =14
 
             TxtOrdendeCompra_344 As label:
                 Align: =Align.Center
@@ -2500,7 +2500,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowloadDailyxls:true})
             Visible: =varpopupdowloadDailyxls1
             Width: =1366
-            ZIndex: =13
+            ZIndex: =15
 
         grpdownloadxls1_45 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2513,7 +2513,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =14
+            ZIndex: =16
 
             TxtOrdendeCompra_471 As label:
                 Align: =Align.Center
@@ -2609,7 +2609,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupdowloadDailyxls2:false})
             Visible: =varpopupdowloadDailyxls2
             Width: =1366
-            ZIndex: =15
+            ZIndex: =17
 
         grpdownloadxls2_44 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -2622,7 +2622,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =474
             Y: =205
-            ZIndex: =16
+            ZIndex: =18
 
             TxtOrdendeCompra_339 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -3000,7 +3000,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountxls
             Width: =1366
-            ZIndex: =17
+            ZIndex: =19
 
         grpdownloadxls_46 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3013,7 +3013,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =18
+            ZIndex: =20
 
             TxtOrdendeCompra_345 As label:
                 Align: =Align.Center
@@ -3107,7 +3107,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowloadAccountxls:true})
             Visible: =varpopupdowloadAccountxls1
             Width: =1366
-            ZIndex: =19
+            ZIndex: =21
 
         grpdownloadxls1_46 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3120,7 +3120,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =20
+            ZIndex: =22
 
             TxtOrdendeCompra_473 As label:
                 Align: =Align.Center
@@ -3218,7 +3218,7 @@ scr_customizing_Bank As screen:
                 =varpopupdowloadAccountxls2
                 
             Width: =1366
-            ZIndex: =21
+            ZIndex: =23
 
         grpdownloadxls2_46 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3233,7 +3233,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =22
+            ZIndex: =24
 
             TxtOrdendeCompra_342 As label:
                 Color: =ColorValue(varprimaryColor)
@@ -3304,7 +3304,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowload:true})
             Visible: =varpopupdowloadAccountpdf
             Width: =1366
-            ZIndex: =23
+            ZIndex: =25
 
         grpdownloadxls_47 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3317,7 +3317,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =430
             Y: =219
-            ZIndex: =24
+            ZIndex: =26
 
             TxtOrdendeCompra_346 As label:
                 Font: =Font.Arial
@@ -3410,7 +3410,7 @@ scr_customizing_Bank As screen:
                 UpdateContext({varpopupdowloadAccountpdf:true})
             Visible: =varpopupdowloadAccountpdf1
             Width: =1366
-            ZIndex: =25
+            ZIndex: =27
 
         grpdownloadxls1_47 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3423,7 +3423,7 @@ scr_customizing_Bank As screen:
             Width: =504
             X: =433
             Y: =247
-            ZIndex: =26
+            ZIndex: =28
 
             TxtOrdendeCompra_475 As label:
                 Align: =Align.Center
@@ -3519,7 +3519,7 @@ scr_customizing_Bank As screen:
                 =UpdateContext({varpopupdowloadAccountpdf2:false});
             Visible: =varpopupdowloadAccountpdf2
             Width: =1366
-            ZIndex: =27
+            ZIndex: =29
 
         grpdownloadxls2_47 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
@@ -3532,7 +3532,7 @@ scr_customizing_Bank As screen:
             Width: =420
             X: =475
             Y: =205
-            ZIndex: =28
+            ZIndex: =30
 
             TxtOrdendeCompra_343 As label:
                 Color: =ColorValue(varprimaryColor)

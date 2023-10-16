@@ -444,7 +444,7 @@ scr_roles As screen:
         UserRolesGallery_1 As gallery.galleryVertical:
             DelayItemLoading: =true
             Height: =223
-            Items: ='GF_DEV.User_Role'
+            Items: =SortByColumns('GF_DEV.Roles',"role",SortOrder.Ascending)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =10
@@ -459,41 +459,34 @@ scr_roles As screen:
                 OnSelect: =Select(Parent)
                 PaddingTop: =8
                 Size: =12
-                Text: =ThisItem.username
+                Text: =ThisItem.role
                 Width: =152
                 ZIndex: =1
 
             Label2_24 As label:
+                Align: =Align.Center
                 Height: =36
                 Size: =12
-                Text: =ThisItem.email
+                Text: =Sum(ThisItem.operations, ThisItem.bank, ThisItem.report, ThisItem.tax)
                 Width: =279
-                X: =181
+                X: =230
                 ZIndex: =2
 
             Label2_25 As label:
+                Align: =Align.Center
                 Height: =36
                 Size: =12
-                Text: =LookUp('GF_DEV.Roles', id_role = ThisItem.id_role).role
+                Text: =Sum(Value(ThisItem.tax_detail), Value(ThisItem.tax_summary), Value(ThisItem.tax_profitability), Value(ThisItem.tax_board), Value(ThisItem.tax_legal))
                 Width: =169
-                X: =501
+                X: =588
                 ZIndex: =3
-
-            Label2_26 As label:
-                Color: =RGBA(54, 176, 75, 1)
-                FontWeight: =FontWeight.Semibold
-                Height: =36
-                Size: =12
-                Text: =If(ThisItem.status="1", "Active","Inactivo")
-                Width: =91
-                X: =694
-                ZIndex: =4
 
             Image1_33 As image:
                 Height: =20
                 Image: =borrar
                 OnSelect: |-
                     =UpdateContext({varpopupEliminateUser:true})
+                Visible: =ThisItem.role <> "Admin"
                 Width: =20
                 X: =949
                 Y: =8
@@ -535,43 +528,36 @@ scr_roles As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
-                Text: ="User"
+                Text: ="Role"
                 Width: =48
                 ZIndex: =1
 
             Label1_12 As label:
+                Align: =Align.Center
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
-                Text: ="Email"
-                Width: =56
-                X: =188
+                Text: ="Enabled Modules"
+                Width: =200
+                X: =263
                 ZIndex: =2
 
             Label1_14 As label:
+                Align: =Align.Center
                 FontWeight: =FontWeight.Semibold
                 Height: =36
                 Size: =12
-                Text: ="Role"
-                Width: =61
-                X: =506
+                Text: ="Enabled Reports"
+                Width: =200
+                X: =565
                 ZIndex: =3
-
-            Label1_15 As label:
-                FontWeight: =FontWeight.Semibold
-                Height: =36
-                Size: =12
-                Text: ="Status"
-                Width: =80
-                X: =692
-                ZIndex: =4
 
             Label1_16 As label:
                 FontWeight: =FontWeight.Bold
                 Height: =36
                 Text: ="Hitos"
                 Width: =0
-                X: =747
+                X: =765
                 ZIndex: =7
 
         Iconline_7 As rectangle:
@@ -604,7 +590,7 @@ scr_roles As screen:
             RadiusTopLeft: =3
             RadiusTopRight: =3
             Size: =12
-            Text: ="Add User"
+            Text: ="Add Role"
             Width: =320
             X: =1014
             Y: =32
@@ -647,7 +633,7 @@ scr_roles As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =16
-                Text: ="Add user"
+                Text: ="Add Role"
                 Width: =105
                 X: =157
                 Y: =19
@@ -669,7 +655,7 @@ scr_roles As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =12
-                Text: ="User"
+                Text: ="Role"
                 Width: =143
                 X: =32
                 Y: =72
@@ -681,8 +667,8 @@ scr_roles As screen:
                 FontWeight: =FontWeight.Semibold
                 Height: =30
                 Size: =12
-                Text: ="Role"
-                Width: =142
+                Text: ="Enabled Modules"
+                Width: =200
                 X: =33
                 Y: =180
                 ZIndex: =16
@@ -695,8 +681,8 @@ scr_roles As screen:
                 Size: =12
                 Text: ="Status"
                 Width: =142
-                X: =33
-                Y: =288
+                X: =240
+                Y: =174
                 ZIndex: =18
 
             Button1_339 As button:
@@ -710,17 +696,7 @@ scr_roles As screen:
                 HoverFill: |
                     =ColorValue(varprimaryColor)
                 OnSelect: |-
-                    =Patch(
-                        'GF_DEV.User_Role',
-                        Defaults('GF_DEV.User_Role'),
-                        {
-                            id_user: First(SortByColumns('GF_DEV.User_Role',"id_user",SortOrder.Descending)).id_role+1,
-                            username: UserNameComboBox_1.Selected.DisplayName,
-                            email: UserNameComboBox_1.Selected.Mail,
-                            id_role: UserRoleDropdown_1.Selected.id_role,
-                            status: If(UserStatusDropdown_1.Selected.Value = "Activo", "1", "0")
-                        }
-                    );
+                    =
                     UpdateContext({varpopupAddUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -736,219 +712,103 @@ scr_roles As screen:
                 Y: =404
                 ZIndex: =29
 
-            UserRoleDropdown_1 As dropdown:
+            NewRoleNameTextInput As text:
                 BorderColor: =ColorValue(varlineColor)
                 BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
+                Default: =""
                 Height: =44
-                Items: ='GF_DEV.Roles'
-                Width: =344
-                X: =38
-                Y: =227
-                ZIndex: =32
-
-            UserStatusDropdown_1 As dropdown:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
-                Height: =44
-                Items: =["Activo","Inactivo"]
-                Width: =344
-                X: =38
-                Y: =335
-                ZIndex: =33
-
-            UserNameComboBox_1 As combobox:
-                BorderColor: =ColorValue(varlineColor)
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
-                DisplayFields: =["DisplayName","Mail"]
-                Height: =44
-                InputTextPlaceholder: ="Search User"
-                Items: |-
-                    =Office365Users.SearchUser({searchTerm:Self.SearchText})
-                SearchFields: =["DisplayName"]
-                SearchItems: |-
-                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameComboBox_1.SearchText,"DisplayName")
-                SelectMultiple: =false
-                Template: =ListItemTemplate.Person
-                Width: =344
-                X: =38
-                Y: =115
-                ZIndex: =34
-
-    thr_Screen_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =17
-
-        rctdegradado_280 As rectangle:
-            Fill: =RGBA(0, 0, 0, 0.2)
-            Height: =768
-            OnSelect: |-
-                =UpdateContext({varpopupEditUser:false})
-            Visible: |
-                =varpopupEditUser
-            Width: =1366
-            ZIndex: =12
-
-        grpCrearOrdenDeCompra_98 As groupContainer.manualLayoutContainer:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =477
-            RadiusBottomLeft: =5
-            RadiusBottomRight: =5
-            RadiusTopLeft: =5
-            RadiusTopRight: =5
-            Visible: |
-                =varpopupEditUser
-            Width: =415
-            X: =481
-            Y: =145
-            ZIndex: =13
-
-            TxtOrdendeCompra_33 As label:
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =16
-                Text: ="Edit user"
-                Width: =105
-                X: =157
-                Y: =19
-                ZIndex: =1
-
-            Icon2_165 As icon.Cancel:
-                Height: =20
-                Icon: =Icon.Cancel
-                OnSelect: |-
-                    =UpdateContext({varpopupEditUser:false})
-                Width: =20
-                X: =362
-                Y: =24
-                ZIndex: =13
-
-            TxtOrdendeCompra_34 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="User"
-                Width: =143
-                X: =32
-                Y: =72
-                ZIndex: =14
-
-            TxtOrdendeCompra_41 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Role"
-                Width: =142
-                X: =33
-                Y: =180
-                ZIndex: =16
-
-            TxtOrdendeCompra_42 As label:
-                Color: =RGBA(99, 99, 99, 1)
-                Font: =Font.Arial
-                FontWeight: =FontWeight.Semibold
-                Height: =30
-                Size: =12
-                Text: ="Status"
-                Width: =142
-                X: =33
-                Y: =288
-                ZIndex: =18
-
-            Button1_431 As button:
-                BorderColor: =RGBA(255, 255, 255, 1)
-                BorderThickness: =0
-                DisabledBorderColor: =RGBA(255, 255, 255, 1)
-                Fill: |
-                    =ColorValue(varprimaryColor)
-                Height: =44
-                HoverBorderColor: =RGBA(255, 255, 255, 1)
-                HoverFill: |
-                    =ColorValue(varprimaryColor)
-                OnSelect: |-
-                    =Patch(
-                        'GF_DEV.User_Role',
-                        LookUp('GF_DEV.User_Role', UserRolesGallery_1.Selected.id_user = id_user),
-                        {
-                            username: UserNameEditComboBox_1.Selected.DisplayName,
-                            email: UserNameEditComboBox_1.Selected.Mail,
-                            id_role: RoleEditDropdown_1.Selected.id_role,
-                            status: If(UserStatusEditDropdown_1.Selected.Value = "Activo", "1", "0")
-                        }
-                    );
-                    UpdateContext({varpopupEditUser:false})
-                PressedBorderColor: =RGBA(255, 255, 255, 1)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: |
-                    =ColorValue(varprimaryColor)
+                HoverBorderColor: =ColorValue(varlineColor)
+                HoverFill: =RGBA(255, 255, 255, 1)
                 RadiusBottomLeft: =2
                 RadiusBottomRight: =2
                 RadiusTopLeft: =2
                 RadiusTopRight: =2
-                Text: ="Save"
                 Width: =344
                 X: =38
-                Y: =404
-                ZIndex: =29
-
-            RoleEditDropdown_1 As dropdown:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
-                Default: =LookUp('GF_DEV.Roles', id_role = UserRolesGallery_1.Selected.id_role).role
-                Height: =44
-                Items: ='GF_DEV.Roles'
-                Width: =344
-                X: =38
-                Y: =227
-                ZIndex: =32
-
-            UserStatusEditDropdown_1 As dropdown:
-                BorderColor: =ColorValue(varlineColor)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
-                Default: =If(UserRolesGallery_1.Selected.status = "1","Activo","Inactivo")
-                Height: =44
-                Items: =["Activo","Inactivo"]
-                Width: =344
-                X: =38
-                Y: =335
-                ZIndex: =33
-
-            UserNameEditComboBox_1 As combobox:
-                BorderColor: =ColorValue(varlineColor)
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronFill: =ColorValue(varlineColor)
-                DefaultSelectedItems: |-
-                    =Office365Users.SearchUser({searchTerm:UserRolesGallery_1.Selected.username})
-                DisplayFields: =["DisplayName","Mail"]
-                Height: =44
-                InputTextPlaceholder: ="Search User"
-                Items: |-
-                    =Office365Users.SearchUser({searchTerm:Self.SearchText})
-                SearchFields: =["DisplayName"]
-                SearchItems: |-
-                    =Search(Office365Users.SearchUser({searchTerm:Self.SearchText}),UserNameEditComboBox_1.SearchText,"DisplayName")
-                SelectMultiple: =false
-                Template: =ListItemTemplate.Person
-                Width: =344
-                X: =33
                 Y: =113
                 ZIndex: =34
+
+            Container4 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =101
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =344
+                X: =38
+                Y: =222
+                ZIndex: =35
+
+                Container13 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Checkbox2 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Operations"
+                        ZIndex: =1
+
+                    Checkbox2_1 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Banks"
+                        ZIndex: =2
+
+                Container13_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =2
+
+                    Checkbox2_2 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Report"
+                        ZIndex: =1
+
+                    Checkbox2_3 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Tax Tracker"
+                        ZIndex: =2
+
+                Container13_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =3
+
+                    Checkbox2_4 As checkbox:
+                        CheckboxSize: =25
+                        FillPortions: =1
+                        FocusedBorderThickness: =0
+                        Height: =35
+                        Size: =8
+                        Text: ="Customizing"
+                        ZIndex: =1
+
+                    Container27 As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =20
+                        ZIndex: =2
 
     four_Screen_1 As group:
         Height: =5
@@ -1039,7 +899,7 @@ scr_roles As screen:
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(255, 0, 0, 1)
                 OnSelect: |-
-                    =Remove('GF_DEV.User_Role',UserRolesGallery_1.Selected);
+                    =Remove('GF_DEV.Roles',UserRolesGallery_1.Selected);
                     UpdateContext({varpopupEliminateUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -1059,8 +919,7 @@ scr_roles As screen:
                 Font: =Font.Arial
                 Height: =59
                 HtmlText: |-
-                    ="<center> It's not possible to delete the <b><font color=""#4280c2"">" & UserRolesGallery_1.Selected.username &"</font></b> item as there are 8 associated bank accounts.
-                    "
+                    ="<center> The  role <b><font color=""#4280c2"">" & UserRolesGallery_1.Selected.role &"</font></b>  will be permanently deleted. Are you sure to delete the role?"
                 Width: =372
                 X: =26
                 Y: =70
