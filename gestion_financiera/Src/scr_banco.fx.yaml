@@ -2267,6 +2267,7 @@ scr_banco As screen:
                             Items: =AddColumns('GF_DEV.Bank',"showAccounts",true)
                             Layout: =Layout.Vertical
                             LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
                             TemplateSize: =126
                             Width: =579
                             Y: =33
@@ -2302,18 +2303,20 @@ scr_banco As screen:
                                 X: =270
                                 ZIndex: =3
 
-                            Label12_1 As label:
+                            TotalBalanceAllBanksLabel As label:
                                 Align: =Align.Right
                                 Height: =32
                                 OnSelect: =Select(Parent)
                                 Text: |-
-                                    =With(
-                                        {
-                                            active_balance: Filter('GF_DEV.Bank_Balance', ind_act = "1"),
-                                            bank_accounts: Filter('GF_DEV.Bank_Entity_Relationship', id_bank = ThisItem.id_bank)
-                                        },
-                                        CountRows(bank_accounts)
-                                    )
+                                    =
+                                    Sum(
+                                            ForAll(
+                                                Filter('GF_DEV.Bank_Balance', ind_act = "1"),
+                                                final_balance
+                                            ),
+                                            Value
+                                        )
+                                Visible: =false
                                 X: =419
                                 ZIndex: =4
 
@@ -2360,6 +2363,13 @@ scr_banco As screen:
                                 Width: =30
                                 Y: =7
                                 ZIndex: =7
+
+                            Label19 As label:
+                                Align: =Align.Right
+                                OnSelect: =Select(Parent)
+                                Text: =(Value(TotalBankBalanceLabel.Text)) / Value(TotalBalanceAllBanksLabel.Text)
+                                X: =419
+                                ZIndex: =8
 
                     CompositeColumnChart1_2 As group:
                         Height: =5
