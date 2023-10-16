@@ -8,7 +8,9 @@ App As appinfo:
         Set(varBackgroundColor, ColorValue("#FAFAFA"));
         Set(varRedColor, ColorValue("#CC0000"));
         Set(varGreenColor, RGBA(54, 176, 75, 1));
-        Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"))
+        Set(varCurrentPeriod, LookUp('GF_DEV.Accounting_Period_Month',status="Open"));
+        Set(varUser,LookUp('GF_DEV.User_Role',email = User().Email));
+        Set(varUserRole, LookUp('GF_DEV.Roles', id_role = varUser.id_role))
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

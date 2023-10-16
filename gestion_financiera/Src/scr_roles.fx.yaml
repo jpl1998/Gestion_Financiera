@@ -505,7 +505,18 @@ scr_roles As screen:
                 Height: =20
                 Image: =editar
                 OnSelect: |-
-                    =UpdateContext({varSelectedRole: ThisItem, varpopupEditRole:true})
+                    =Reset(EditRoleNameTextInput);
+                    Reset(EditRoleOperationsCheckbox);
+                    Reset(EditRoleBankCheckbox);
+                    Reset(EditRoleReportCheckbox);
+                    Reset(EditRoleTaxCheckbox);
+                    Reset(EditRoleCustomizingCheckbox);
+                    Reset(EditRoleDetailCheckbox);
+                    Reset(EditRoleSummaryCheckbox);
+                    Reset(EditRoleProfitCheckbox);
+                    Reset(EditRoleBoardCheckbox);
+                    Reset(EditRoleLegalCheckbox);
+                    UpdateContext({varSelectedRole: ThisItem, varpopupEditRole:true})
                 Width: =20
                 X: =911
                 Y: =8
@@ -1041,6 +1052,7 @@ scr_roles As screen:
                             tax_legal: If(EditRoleLegalCheckbox.Value,"1","0")
                         }
                     );
+                    Set(varUserRole, LookUp('GF_DEV.Roles', id_role = varUser.id_role));
                     UpdateContext({varpopupEditRole:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -1205,6 +1217,7 @@ scr_roles As screen:
 
                     EditRoleDetailCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax_detail = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1215,6 +1228,7 @@ scr_roles As screen:
 
                     EditRoleSummaryCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax_summary = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1233,6 +1247,7 @@ scr_roles As screen:
 
                     EditRoleProfitCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax_profitability = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1242,6 +1257,7 @@ scr_roles As screen:
 
                     EditRoleBoardCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax_board = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35
@@ -1259,6 +1275,7 @@ scr_roles As screen:
 
                     EditRoleLegalCheckbox As checkbox:
                         CheckboxSize: =25
+                        Default: =varSelectedRole.tax_legal = "1"
                         FillPortions: =1
                         FocusedBorderThickness: =0
                         Height: =35

@@ -17,7 +17,7 @@ scr_managemenent As screen:
         FontWeight: =FontWeight.Semibold
         Size: =24
         Text: ="Summary"
-        Width: =230
+        Width: =329
         X: =105
         Y: =30
         ZIndex: =2

@@ -28,138 +28,6 @@ scr_home As screen:
         Y: =296
         ZIndex: =3
 
-    btn_investment_management As button:
-        BorderColor: =ColorValue(varlineColor)
-        BorderThickness: =1
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Font: =Font.Arial
-        Height: =180
-        HoverBorderColor: =ColorValue(varprimaryColor)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        OnSelect: =Navigate(scr_managemenent)
-        PaddingTop: =70
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Size: =16
-        Text: ="Investment Management"
-        Width: =240
-        X: =99
-        Y: =116
-        ZIndex: =4
-
-    img_investmentmanagement As image:
-        Height: =48
-        Image: =InvestmentManagement
-        OnSelect: =Navigate(scr_managemenent)
-        Width: =48
-        X: =195
-        Y: =140
-        ZIndex: =5
-
-    btn_banks As button:
-        BorderColor: =ColorValue(varlineColor)
-        BorderThickness: =1
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Font: =Font.Arial
-        Height: =180
-        HoverBorderColor: =ColorValue(varprimaryColor)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        OnSelect: =Navigate(scr_banco)
-        PaddingTop: =70
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Size: =16
-        Text: ="Banks"
-        Width: =240
-        X: =407
-        Y: =116
-        ZIndex: =6
-
-    btn_analize_reports As button:
-        BorderColor: =ColorValue(varlineColor)
-        BorderThickness: =1
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Font: =Font.Arial
-        Height: =180
-        HoverBorderColor: =ColorValue(varprimaryColor)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        OnSelect: =Navigate(scr_reports)
-        PaddingTop: =70
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Size: =16
-        Text: ="Analize Reports"
-        Width: =240
-        X: =716
-        Y: =116
-        ZIndex: =7
-
-    btn_customizing As button:
-        BorderColor: =ColorValue(varlineColor)
-        BorderThickness: =1
-        Color: =RGBA(0, 0, 0, 1)
-        Fill: =RGBA(255, 255, 255, 1)
-        Font: =Font.Arial
-        Height: =180
-        HoverBorderColor: =ColorValue(varprimaryColor)
-        HoverColor: =RGBA(0, 0, 0, 1)
-        HoverFill: =RGBA(255, 255, 255, 1)
-        OnSelect: =Navigate(scr_customizing_Entities)
-        PaddingTop: =70
-        PressedFill: =ColorValue(varprimaryColor)
-        RadiusBottomLeft: =5
-        RadiusBottomRight: =5
-        RadiusTopLeft: =5
-        RadiusTopRight: =5
-        Size: =16
-        Text: ="Customizing"
-        Width: =240
-        X: =1025
-        Y: =116
-        ZIndex: =8
-
-    img_customizing As image:
-        Height: =48
-        Image: =Customizing
-        OnSelect: =Navigate(scr_customizing_Entities)
-        Width: =48
-        X: =1121
-        Y: =140
-        ZIndex: =9
-
-    img_banks As image:
-        Height: =48
-        Image: =Banks
-        OnSelect: =Navigate(scr_banco)
-        Width: =48
-        X: =503
-        Y: =140
-        ZIndex: =10
-
-    img_analize_reports As image:
-        Height: =48
-        Image: ='Analize Reports'
-        OnSelect: =Navigate(scr_reports)
-        Width: =48
-        X: =812
-        Y: =140
-        ZIndex: =11
-
     Container2 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =44
@@ -211,10 +79,105 @@ scr_home As screen:
     Gallery2 As gallery.galleryHorizontal:
         DelayItemLoading: =true
         Height: =279
-        Items: =Table(If(true,{}))
+        Items: |-
+            =Filter(
+                Table(
+                    {
+                        item: "Operations",
+                        screen: scr_managemenent,
+                        image: InvestmentManagement
+                    },
+                    {
+                        item: "Banks",
+                        screen: scr_banco,
+                        image: Banks
+                    },
+                    {
+                        item: "Reports",
+                        screen: scr_reports,
+                        image: InvestmentManagement
+                    },
+                    {
+                        item: "Tax Tracker",
+                        screen: scr_banco,
+                        image: InvestmentManagement
+                    }
+                ),
+                If(
+                    varUserRole.operations = "1",
+                    item = "Operations"
+                ) || If(
+                    varUserRole.bank = "1",
+                    item = "Banks"
+                ) || If(
+                    varUserRole.report = "1",
+                    item = "Reports"
+                ) || If(
+                    varUserRole.tax = "1",
+                    item = "Tax Tracker"
+                )
+            )
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
-        X: =40
+        TemplateSize: =287
+        Width: =(Self.AllItemsCount * (Self.TemplateWidth + Self.TemplatePadding))+ Self.TemplatePadding
+        X: =(Parent.Width-Self.Width)/2
         Y: =336
         ZIndex: =13
+
+        btn_investment_management_1 As button:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =180
+            HoverBorderColor: =ColorValue(varprimaryColor)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Navigate(scr_managemenent)
+            PaddingTop: =70
+            PressedFill: =ColorValue(varprimaryColor)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =16
+            Text: =ThisItem.item
+            Width: =240
+            X: =25
+            Y: =40
+            ZIndex: =1
+
+        img_investmentmanagement_1 As image:
+            Height: =48
+            Image: =ThisItem.image
+            OnSelect: =Navigate(scr_managemenent)
+            Width: =48
+            X: =121
+            Y: =64
+            ZIndex: =2
+
+        btn_investment_management_2 As button:
+            BorderColor: =ColorValue(varlineColor)
+            BorderThickness: =1
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.Arial
+            Height: =180
+            HoverBorderColor: =ColorValue(varprimaryColor)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(65, 128, 194, 0.1)
+            OnSelect: =Navigate(ThisItem.screen)
+            PaddingTop: =70
+            PressedFill: =RGBA(65, 128, 194, 0.15)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =16
+            Text: =
+            Width: =240
+            X: =25
+            Y: =40
+            ZIndex: =3
 

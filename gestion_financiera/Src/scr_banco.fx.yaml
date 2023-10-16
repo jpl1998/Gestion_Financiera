@@ -2345,7 +2345,7 @@ scr_banco As screen:
                                 WeightLabel As label:
                                     Align: =Align.Right
                                     Height: =30
-                                    Text: =ThisItem.account_num
+                                    Text: =
                                     X: =409
                                     ZIndex: =3
 

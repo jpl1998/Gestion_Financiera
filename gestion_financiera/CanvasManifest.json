@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 6,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -146,7 +146,6 @@
     "scr_customizing_Terms",
     "scr_customizing_Operations",
     "scr_customizing_Document Type",
-    "scr_customizing_Balance Structure",
     "scr_reports",
     "scr_banco",
     "scr_managemenent"

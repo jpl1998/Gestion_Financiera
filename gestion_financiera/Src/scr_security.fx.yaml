@@ -888,6 +888,8 @@ scr_security As screen:
                             status: If(UserStatusEditDropdown.Selected.Value = "Activo", "1", "0")
                         }
                     );
+                    Set(varUser,LookUp('GF_DEV.User_Role',email = User().Email));
+                    Set(varUserRole, LookUp('GF_DEV.Roles', id_role = varUser.id_role));
                     UpdateContext({varpopupEditUser:false})
                 PressedBorderColor: =RGBA(255, 255, 255, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
